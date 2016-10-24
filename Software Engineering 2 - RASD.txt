@@ -1,0 +1,49 @@
+Software Engineering 2 - RASD
+
+
+
+- Description of the problem
+
+- Goals
+	- Divided by users
+
+- Domain properties
+
+- Glossary
+
+- Assumptions
+
+- Constraints
+
+- Hardware limitations
+
+- Proposed system
+
+- Stakeholders
+
+- Actors
+
+- Requirements
+	- Functional
+	- Non functional
+		- Interface
+		- Documentation
+
+- Architecture considerations
+
+- Specification
+
+- Scenarios
+
+- UML
+	- Use Case diagram
+		- Diagram
+		- Description	
+	- Class diagram
+	- Activity diagram
+	- Sequence diagram
+	- State chart diagram
+
+- Alloy
+
+- Used Tools
