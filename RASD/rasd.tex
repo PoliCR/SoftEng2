@@ -1,0 +1,161 @@
+ \documentclass[11pt,a4paper]{report}
+
+\usepackage[margin=2.3cm]{geometry}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{titlesec, blindtext, color}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{lastpage}
+
+
+%----------------------------------------------------------------------------------------
+%   Title Style Chapter
+%----------------------------------------------------------------------------------------
+\definecolor{gray75}{gray}{0.65}
+\newcommand{\hsp}{\hspace{15pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+%----------------------------------------------------------------------------------------
+%   Link in ToC
+%----------------------------------------------------------------------------------------
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+%----------------------------------------------------------------------------------------
+%   Header/Footer
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy} 
+%\lhead{\sectionmark}
+%\chead{}
+%\rhead{}
+%\lfoot{}
+%%\cfoot{\thepage/\pageref{LastPage}}
+%\cfoot{\thepage}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0.3pt}
+%%\renewcommand{\footrulewidth}{0.3pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhf{}
+\fancyhead[C]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% New Page for each section
+%\newcommand{\sectionbreak}{\clearpage}
+
+% Renaming of ToC
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+%----------------------------------------------------------------------------------------
+%   START DOCUMENT 
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLEPAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % Defines a new command for the horizontal lines, change thickness here
+
+ \vspace*{1cm}
+ 
+\center % Center everything on the page
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=0.25]{../logo.png}\\[0.4cm] % Include a department/university logo - this will require the graphicx package
+
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTION
+%----------------------------------------------------------------------------------------
+
+\textsc{\Large \textbf{Politecnico di Milano}\\MSc Computer Science and Engineering}\\[2cm] % Name of your university/college
+\textsc{\Large \textbf{Software Engineering 2}\\[0.1cm]Academic Year 2016-2017}\\[1cm] % Major heading such as course name
+%\textsc{\LARGE Minor Heading}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Requirements Analysis and\\Specification Document\\[0.5cm]\textit{PowerEnJoy}}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Author:}\\
+%John \textsc{Smith} % Your name
+%\end{flushleft}
+%\end{minipage}
+%~
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%Dr. James \textsc{Smith} % Supervisor's Name
+%\end{flushright}
+%\end{minipage}\\[4cm]
+
+ %If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+\LARGE{
+\begin{center}
+\begin{tabular}{ r  l }
+	Melloni Giulio & Matricola \\
+	Renzi Marco & Matricola \\
+	Testa Filippo & 875456 \\
+\end{tabular}
+\end{center}
+}
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+ \vspace*{0.8cm}
+{\LARGE {\it Release Date: October 25$^{th}$, 2016\\Version 0.1}}
+%vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+%----------------------------------------------------------------------------------------
+%   TOC
+%----------------------------------------------------------------------------------------
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+%  TEXT
+%----------------------------------------------------------------------------------------
+
+%\vspace{0.5cm}
+
+%\begin{figure}[H]
+%\centering
+%\fbox{\includegraphics[width=\textwidth,keepaspectratio]{../usecase_user1}}
+%\caption{Casi d'Uso Lato Giocatore}
+%\end{figure}
+
+%----------------------------------------------------------------------------------------
+%   END DOCUMENT
+%----------------------------------------------------------------------------------------
+\end{document}
