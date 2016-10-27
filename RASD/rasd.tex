@@ -21,7 +21,7 @@
 
 
 %----------------------------------------------------------------------------------------
-%   Link in ToC
+%   Link Style in ToC
 %----------------------------------------------------------------------------------------
 \hypersetup{
     colorlinks,
@@ -72,66 +72,51 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % Defines a new command for the horizontal lines, change thickness here
 
- \vspace*{1cm}
+ \vspace*{0.3cm}
  
 \center % Center everything on the page
 
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
-
-\includegraphics[scale=0.25]{../logo.png}\\[0.4cm] % Include a department/university logo - this will require the graphicx package
-
+\includegraphics[scale=0.33]{../logo.png}\\[0.4cm] 
 
 %----------------------------------------------------------------------------------------
 %	HEADING SECTION
 %----------------------------------------------------------------------------------------
-
-\textsc{\Large \textbf{Politecnico di Milano}\\MSc Computer Science and Engineering}\\[2cm] % Name of your university/college
-\textsc{\Large \textbf{Software Engineering 2}\\[0.1cm]Academic Year 2016-2017}\\[1cm] % Major heading such as course name
-%\textsc{\LARGE Minor Heading}\\[0.5cm] % Minor heading such as course title
+\textsc{\Large \textbf{Politecnico di Milano}\\MSc Computer Science and Engineering}\\[1.7cm] \textsc{\Large \textbf{Software Engineering 2}\\[0.1cm]Academic Year 2016-2017}\\[1cm] 
+%\textsc{\LARGE Minor Heading}\\[0.5cm] 
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Requirements Analysis and\\Specification Document\\[0.5cm]\textit{PowerEnJoy}}\\[0.4cm] % Title of your document
+{ \huge \bfseries Requirements Analysis and\\Specification Document\\[0.5cm]\textit{PowerEnJoy}}\\[0.4cm] % Title of document
 \HRule \\[1.5cm]
  
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
 %----------------------------------------------------------------------------------------
-%\begin{minipage}{0.4\textwidth}
-%\begin{flushleft} \large
-%\emph{Author:}\\
-%John \textsc{Smith} % Your name
-%\end{flushleft}
-%\end{minipage}
-%~
-%\begin{minipage}{0.4\textwidth}
-%\begin{flushright} \large
-%\emph{Supervisor:} \\
-%Dr. James \textsc{Smith} % Supervisor's Name
-%\end{flushright}
-%\end{minipage}\\[4cm]
-
- %If you don't want a supervisor, uncomment the two lines below and remove the section above
-%\Large \emph{Author:}\\
+\Large \emph{Author:}\\
 \LARGE{
 \begin{center}
 \begin{tabular}{ r  l }
-	Melloni Giulio & Matricola \\
-	Renzi Marco & Matricola \\
+	Melloni Giulio & 876279\\
+	Renzi Marco & 878269\\
 	Testa Filippo & 875456 \\
 \end{tabular}
 \end{center}
+}
+\vspace*{0.8cm}
+\Large{\emph{Reference Professor:} \\
+{\textsc{Mottola} Luca} 
 }
 
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
- \vspace*{0.8cm}
+ \vspace*{1cm}
 {\LARGE {\it Release Date: October 25$^{th}$, 2016\\Version 0.1}}
 %vfill % Fill the rest of the page with whitespace
 
@@ -144,15 +129,60 @@
 \tableofcontents
 
 %----------------------------------------------------------------------------------------
-%  TEXT
+%  BEGIN TEXT
 %----------------------------------------------------------------------------------------
+\chapter{Introduction}
+\section{Description of the problem}
+\section{Purpose}
+% is the same of section just above??
+\section{Scope}
+%identifies system-to-be and in its application domain
+% GOAL HERE?
+\section{Definitions, acronyms and abbreviations}
+%glossary and similar...
+\section{Reference Documents}
+% ???
+\section{Overview}
+% summary description of the section of the document
+\chapter{Overall Description}
+\section{Product perspective}
+% external interfaces (user, hw+sw), operations and site adaptions...
+\section{Product functions}
+% major functions  (GOAL HERE?)
+\section{User characteristics}
+\section{Constraints}
+% any kind of limitations in the development
+\section{Assumptions}
+\subsection{Text assumptions}
+% TODO
+\subsection{Domain assumptions}
+% TODO
+\chapter{Specific Requirements}
+\section{External Interface Requirements}
+\subsection{User Interfaces}
+\subsection{Hardware Interfaces}
+\subsection{Software Interfaces}
+\subsection{Communication Interfaces}
+\section{Functional Requirements}
+% deriving requirements from goals'
+\chapter{Scenarios}
+\chapter{Modeling the System}
+\section{UML Models}
+\subsection{Use Cases}
+\subsection{Class Diagram}
+\subsection{Sequence Diagram}
+\subsection{Statechart Diagram}
+\subsection{Activity Diagram}
+\section{Alloy}
+\chapter{Document Preparation}
+\section{Tools}
+\section{Timing}
 
-%\vspace{0.5cm}
 
 %\begin{figure}[H]
 %\centering
-%\fbox{\includegraphics[width=\textwidth,keepaspectratio]{../usecase_user1}}
-%\caption{Casi d'Uso Lato Giocatore}
+%\fbox{\includegraphics[width=\textwidth,keepaspectratio]{../file.jpg}}
+%\caption{Caption}
 %\end{figure}
 
 %----------------------------------------------------------------------------------------
