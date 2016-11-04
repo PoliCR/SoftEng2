@@ -1,0 +1,71 @@
+Name: Registration.
+Actors: User not registered.
+Entry conditions: There are no entry conditions.
+Flow of events:
+	- The user compile the form with his personal data.
+	- The user bind an external payment account.
+	- The user bind a driving licence.
+	- The user confirm registration thanks to the mail sent by the system.
+Exit conditions:
+	- The user has an account and the system recognizes him.
+Exceptions:
+	- The external payment account doesn't exist.
+	- The external driving licence doesn't exist or is invalid.
+	- Some of the personal data aren't accepted (for example a small password).
+	In both of these cases the system ask user to replace with correct data.
+
+
+Name: Search for a car.
+Actors: User registered.
+Entry conditions: The user must be logged into the system.
+Flow of events:
+	- The user go to the searching screen.
+	- The user decides to search for a car manually scrolling the map, specifing a place or automatically thanks to GPS location.
+	- The user selects the range within he wants to find the car.
+	- The system shows you available cars and near parking area.
+Exit conditions: The user has searched for a car and he sees on the display a list of cars or a map with car and parking area positions.
+Exceptions:
+	- The location doesn't exist.
+	- GPS is off.
+	All of this cases are solved displaying the error to the user. 
+	For example: if there are no cars "WRONG LOCATION", if the GPS if off "GPS IS OFF".
+
+
+Name: Reserve a car.
+Actors: User registered.
+Entry conditions: User must be logged and must have select a car thanks to the search.
+Flow of events:
+	- User confirms the prenotation with a duration of 1 hour.
+Exit conditions: The user has reserved a car that he will takes in an hour. He can check the prenotation in the "MANAGE RESERVATION" screen, where he can also delete it. Other users sees this car as reserved.
+Exceptions:
+	- User's balace isn't positive.
+	The system displays an error to the user due to his balance and brings him back to start screen.
+
+
+Name: Pick up a car.
+Actors: User registered.
+Entry conditions: User must be logged.
+Flow of events:
+	- User wants to unlock a car that isn't reserved (or maybe reserved by him).
+	- The system unlocks the car verifing the user GPS position.
+	- User enteres into the car.
+Exit conditions: The user can enter and drive the car, starting by clicking "START" on car display.
+Exceptions:
+	- The system can't verify user position due to user's GPS.
+	The system tells user to power on the GPS.
+	- User hasn't money to afford the order.
+	The system displays an error to the user due to his balance and brings him back to start screen.
+
+
+Name: Stop driving.
+Actors: User.
+Entry conditions: User must be logged and must have taken a car.
+Flow of events:
+	- User powers off the car.
+	- User selects from the car-display that he has ended the service.
+	- The system displays to the user the cost of the service showing promotions and penalities.
+Exit conditions: User exits to the car and pays the service.
+Exceptions:
+	- The user can't afford the payment.
+	- The user doesn't click on finish.
+	In both of these case the external system payment's laws are applied.
