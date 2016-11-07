@@ -17,6 +17,8 @@
 %----------------------------------------------------------------------------------------
 \definecolor{gray75}{gray}{0.65}
 \newcommand{\hsp}{\hspace{15pt}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 
 
@@ -133,13 +135,51 @@
 %----------------------------------------------------------------------------------------
 \chapter{Introduction}
 \section{Description of the problem}
+This project is modeling a car sharing service.
+The cars can be reserved or picked up if free thanks to a web-application.
+This can be used by a mobile phone or thanks to a web browser.
+The application can be used by two different type of people:
+	\begin{itemize}
+		\item Users
+		\item Workers
+	\end{itemize}
+User account granted different functionalities: he can, for instance, search for a car using GPS or specifing location, reserve or pick a car up.
+Worker account is used by PowerEnjoy employees: they can find exhausted battery of cars and charge them thanks to GPS location.
+We are modelling only the user system and we are not considering the employees.
+All these functionalities can be access by users if and only if they are registered into the system:
+this means that the client has to put his personal data, for instance the name, surname and other info, a valid driving licence, checked by the system, and an existing external payment account.
+When the registration is complete, the user must confirm using the email sent by the system.
+After he is registered, he can log into the system and use it in order to take a car.
 %\section{Purpose}
 % is the same of section just above??
 \section{Scope}
+The project has a specific purpose: the user can register himself on the website and access to the main functionalities of this service.
+So, the user can search for a car giving GPS position, specifing the location or choosing manually it from the map; after he has searched for it, the user can choose the one which prefers and then select if pick it up or reserve for most an hour, removing this car from the available ones.
 %identifies system-to-be and in its application domain
 % GOAL HERE?
 \section{Definitions, acronyms and abbreviations}
-%glossary and similar...
+\textit{Guest}: the client who isn't already registered. So he can't access to the system functionalities because he isn't an user yet.\\
+\textit{Client}: the client is the user who interacts with the application. He can use the system functionalities, designed to be used by people who are registered with valid data.\\
+\textit{System}: the system is the server side of the application. This is meant to be the side of the process which answers to user's question and sends back to him data.\\
+\textit{Registration}: this let a guest becomes a valid user recognized by the system. The registration has three steps:
+	\begin{itemize}
+		\item \textbf{Personal Data} Here the user must insert his personal data, which means, for instance, the name and surname, the date of birth, the residence address and the billing address.\\
+		\item \textbf{Driving Licence} In order to take the car and drive it, the user must have a driving licence which is recognized by the system thanks to its data.\\
+		\item \textbf{External Payment} An user can perform these actions if he has a positive balance on the external payment account that is bind to the PowerEnjoy account when registering.\\
+	\end{itemize}	
+If an user puts wrong data, or close the registration process not completing all these steps, the registration isn't done.
+\textit{Search}: this funcionality lets the user searching for a car in three different ways:
+	\begin{itemize}
+		\item MAP - The user scrolls the map on the start screen of the application and he can select cars diplayed by green indicators.
+		\item GPS - The user can select to use it location and then automatically display all the available cars on the map.
+		\item POSITION - The user gives the position where he wants to find the car.
+	\end{itemize}
+	In the last two cases, the user has to specify also a range where he wants to find the cars in.\\
+\textit{Reservation}: after searching, the user can reserve the car for most an hour. That means that the user can take the car in one hour, and the car is displayed as unavailable. If the car is not took in one hour, the car becomes again available and the user has to pay a fee of 1?. \\
+\textit{Manage reservation}: if the user has reserved a car, he can delete the reservation. If the user delete the reservation, the car become available and the user can reserve another car (maybe nearer for instance).\\
+\textit{Pick Up}: \\
+\textit{Stop driving}: \\
+
 \section{Reference Documents}
 % ???
 \section{Overview}
