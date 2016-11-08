@@ -81,7 +81,7 @@
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
-\includegraphics[scale=0.33]{../logo.png}\\[0.4cm] 
+\includegraphics[scale=0.33]{../../logo.png}\\[0.4cm] 
 
 %----------------------------------------------------------------------------------------
 %	HEADING SECTION
@@ -161,11 +161,14 @@ So, the user can search for a car giving GPS position, specifing the location or
 \textit{Guest}: the client who isn't already registered. So he can't access to the system functionalities because he isn't an user yet.\\
 \textit{Client}: the client is the user who interacts with the application. He can use the system functionalities, designed to be used by people who are registered with valid data.\\
 \textit{System}: the system is the server side of the application. This is meant to be the side of the process which answers to user's question and sends back to him data.\\
+\textit{Car}: the car is the vehicle used by the client.\\
+\textit{Safe Area}: these are the parkings where the user has to place the car when he ends the run in order to avoid fees.\\
+\textit{Charging Area}: these are safe area where the car can be recharged thanks to the charging station placed. \\
 \textit{Registration}: this let a guest becomes a valid user recognized by the system. The registration has three steps:
 	\begin{itemize}
-		\item \textbf{Personal Data} Here the user must insert his personal data, which means, for instance, the name and surname, the date of birth, the residence address and the billing address.\\
-		\item \textbf{Driving Licence} In order to take the car and drive it, the user must have a driving licence which is recognized by the system thanks to its data.\\
-		\item \textbf{External Payment} An user can perform these actions if he has a positive balance on the external payment account that is bind to the PowerEnjoy account when registering.\\
+		\item \textbf{Personal Data} Here the user must insert his personal data, which means, for instance, the name and surname, the date of birth, the residence address and the billing address.
+		\item \textbf{Driving Licence} In order to take the car and drive it, the user must have a driving licence which is recognized by the system thanks to its data.
+		\item \textbf{External Payment} An user can perform these actions if he has a positive balance on the external payment account that is bind to the PowerEnjoy account when registering.
 	\end{itemize}	
 If an user puts wrong data, or close the registration process not completing all these steps, the registration isn't done.
 \textit{Search}: this funcionality lets the user searching for a car in three different ways:
@@ -175,13 +178,29 @@ If an user puts wrong data, or close the registration process not completing all
 		\item POSITION - The user gives the position where he wants to find the car.
 	\end{itemize}
 	In the last two cases, the user has to specify also a range where he wants to find the cars in.\\
-\textit{Reservation}: after searching, the user can reserve the car for most an hour. That means that the user can take the car in one hour, and the car is displayed as unavailable. If the car is not took in one hour, the car becomes again available and the user has to pay a fee of 1?. \\
-\textit{Manage reservation}: if the user has reserved a car, he can delete the reservation. If the user delete the reservation, the car become available and the user can reserve another car (maybe nearer for instance).\\
-\textit{Pick Up}: \\
-\textit{Stop driving}: \\
+\textit{Reservation}: after searching, the user can reserve the car for most an hour. That means that the user can take the car in one hour, and the car is displayed as unavailable. If the car is not taken in one hour, the car becomes again available and the user has to pay a fee of 1?. \\
+\textit{Manage reservation}: if the user has reserved a car, he can delete the reservation. If the user deletes the reservation, the car becomes available and the user can reserve another car (maybe nearer for instance).\\
+\textit{Pick Up}: After the search the user can take the car without reserving it. That means that he can ask to the system to unlock the car that he is going to take soon. Otherwise, he can use this functionality in order to unlock the car he has reserved.\\
+\textit{Stop driving}: when the user decides to stop his run, he's invited to click on the stop button on the display which sent to the server the data needed to calculate the payment, for instance the people on board, the location where the user has stopped, the charge of the car.\\
 
 \section{Reference Documents}
-% ???
+	\begin{itemize}
+		\item Specification Document:
+		\begin{itemize}
+			\item \textit{Assignments+AA+2016-2017.pdf}
+		\end{itemize}
+		\item \textit{IEEE Std 830-1998 IEEE Recommended Pratice for Software Requirements Specifications.}
+		\item Examples documents:
+		\begin{itemize}
+			\item \textit{2012\_project\_RASD\_example\_SWIMv2.pdf}
+			\item \textit{RASD sample from Oct.20 lecture.pdf}
+			\item \textit{RASD\_MPH\_Lozano\_Onatra.pdf}
+			\item \textit{RASD\_Foglieni\_Fumarola\_Maggi.pdf}
+			\item \textit{RASD\_meteocal-example1.pdf}
+			\item \textit{RASD\_meteocal-example2.pdf}
+			\item \textit{RASD\_meteocal-example3.pdf}
+		\end{itemize}
+	\end{itemize}
 \section{Overview}
 % summary description of the section of the document
 \chapter{Overall Description}
