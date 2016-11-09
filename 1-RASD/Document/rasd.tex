@@ -37,67 +37,78 @@ Moreover, to induce a more eco-friendly behavior of the users, the system will a
 left with no more than of 50\% battery empty (-20\%), the car is left at special parking area and the user take care of plugging the car into the power grid (-30\%). Additionally, the system provide a special option, called \textit{money saving option}, which lets the user insert their final destination and he will get from the system information about the area where to park the car to get a special discount. The area selected from the system ensures a uniform distribution of the car around the city and depends also on the final destination inserted.\\
 On the other hand, the last ride of users will be charged with a 30\% of the total cost if the car is left at more than 3 km from the nearest charging area or with the battery level under 20\%.\\
 Regarding the company employees, the system will let them use special functions to retrieve specific information about the cars (battery level, internal working status,...) and their position in the city, so they can take care of moving cars that has been left both in safe area and in other zones where parking is not allowed, according to the system's terms, to charging area in such a way to assure an equal distribution of the cars throughout the city.
+
 \subsection{Goal}
+From the previous description of the purpose, it is possible to define the following goals that the system has to fulfill towards the user needs.
 \begin{Goal}
-\item The user can apply the registration form\item The user can log in\item The user can search for a car in a certain location\item The user can search for a car in his current position\item The user can rent an available car on the spot\item The user can reserve a car\item The user can delete the reservation of a car\item The user can obtain special discounts or penalties on his last ride
+\item The user can apply the registration form
+\item The user can log in
+\item The user can search for a car in a certain location
+\item The user can search for a car in his current position
+\item The user can rent an available car on the spot
+\item The user can reserve a car
+\item The user can delete the reservation of a car
+\item The user can obtain special discounts or penalties on his last ride
 \end{Goal}
 
 \section{Scope}
-The project has a specific purpose: the user can register himself on the website and access to the main functionalities of this service.
-So, the user can search for a car giving GPS position, specifying the location or choosing manually it from the map; after he has searched for it, the user can choose the one which prefers and then select if pick it up or reserve for most an hour, removing this car from the available ones.
 %identifies system-to-be and in its application domain
 % analysis world-machine (define boundaries)
+%TODO
+
+
 \section{Definitions, acronyms and abbreviations}
-\textit{Guest}: the client who isn't already registered. So he can't access to the system functionalities because he isn't an user yet.\\
-\textit{Client}: the client is the user who interacts with the application. He can use the system functionalities, designed to be used by people who are registered with valid data.\\
-\textit{System}: the system is the server side of the application. This is meant to be the side of the process which answers to user's question and sends back to him data.\\
-\textit{Car}: the car is the vehicle used by the client.\\
-\textit{Safe Area}: these are the parkings where the user has to place the car when he ends the run in order to avoid fees.\\
-\textit{Charging Area}: these are safe area where the car can be recharged thanks to the charging station placed. \\
-\textit{Registration}: this let a guest becomes a valid user recognized by the system. The registration has three steps:
-	\begin{itemize}
-		\item \textbf{Personal Data} Here the user must insert his personal data, which means, for instance, the name and surname, the date of birth, the residence address and the billing address.
-		\item \textbf{Driving License} In order to take the car and drive it, the user must have a driving license which is recognized by the system thanks to its data.
-		\item \textbf{External Payment} An user can perform these actions if he has a positive balance on the external payment account that is bind to the PowerEnjoy account when registering.
-	\end{itemize}	
-If an user puts wrong data, or close the registration process not completing all these steps, the registration isn't done.
-\textit{Search}: this functionality lets the user searching for a car in three different ways:
-	\begin{itemize}
-		\item MAP - The user scrolls the map on the start screen of the application and he can select cars diplayed by green indicators.
-		\item GPS - The user can select to use it location and then automatically display all the available cars on the map.
-		\item POSITION - The user gives the position where he wants to find the car.
-	\end{itemize}
-	In the last two cases, the user has to specify also a range where he wants to find the cars in.\\
-\textit{Reservation}: after searching, the user can reserve the car for most an hour. That means that the user can take the car in one hour, and the car is displayed as unavailable. If the car is not taken in one hour, the car becomes again available and the user has to pay a fee of 1?. \\
-\textit{Manage reservation}: if the user has reserved a car, he can delete the reservation. If the user deletes the reservation, the car becomes available and the user can reserve another car (maybe nearer for instance).\\
-\textit{Pick Up}: After the search the user can take the car without reserving it. That means that he can ask to the system to unlock the car that he is going to take soon. Otherwise, he can use this functionality in order to unlock the car he has reserved.\\
-\textit{Stop driving}: when the user decides to stop his run, he's invited to click on the stop button on the display which sent to the server the data needed to calculate the payment, for instance the people on board, the location where the user has stopped, the charge of the car.\\
+\textbf{System}: sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
+In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operation (e.g.: reservation and renting).\\
+\noindent \\
+\textbf{Renting}: it is the act to pick-up an available car and start driving it.\\
+\noindent \\
+\textbf{Ride}: the event of pick-up a car, drive it around the city and park it. Every Ride is associated to a single user and to a single car.\\
+\noindent \\
+\textbf{Reservation}: it is the action of book an available car for the next hour. 
+\textbf{Car}: a car is an electrical vehicle that will be used from registered user. \\
+\noindent \\
+\textbf{Not Registered User}: indicates a person who hasn't registered yet to the system; for this reason he can't access to any of the offered function. The only possible action that can be carried out is the registration to get a personal account.\\ 
+\indent \\
+\textbf{Registered User}: referred also simply as \textit{User}, interacts with the system to use the sharing service. He has an account (which contains personal information, driving license number and payment data) that must be used to accede to the application to exploit all the functionality. \\
+\noindent \\
+\textbf{Employee}: it's a person who work for the company, whose main function is to plug the car, that haven't been plugged in by the users, into the power grid. He is also in charge of taking care of the status of the cars and to move the vehicles that haven't been parked in a safe area to a charging area.\\
+\noindent \\
+\textbf{Safe Area}: indicates a set of parking lots where the users have to leave the car at the end of the rent; the set of the Safe Areas is pre-defined by the system management. These areas are spread all over the city.\\
+\noindent \\
+\textbf{Plug}: defines the electrical component that physically connect the car to the power grid.\\ 
+\noindent \\
+\textbf{Charging Area}: is a special \textit{Safe Area} that also provides a certain number of plugs that let to connect the car into the power grid to recharge the battery.\\
+\noindent \\
+\textbf{Registration}: the procedure that an unregistered user has to perform to become a registered user. At the end the unregistered user will have an account. To complete this operation three different types of data are required: personal information, driving license number and payment info.\\
+\noindent \\
+\textbf{Search}: this functionality lets the registered user search for available cars within a certain range from its current position of the user or from a specified address.
 
 \section{Reference Documents}
+During the writing of this document, the following documents have been taken into account:
 	\begin{itemize}
 		\item Specification Document:
 		\begin{itemize}
 			\item \textit{Assignments+AA+2016-2017.pdf}
 		\end{itemize}
 		\item \textit{IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications.}
-		\item Examples documents:
+		\item Example document:
 		\begin{itemize}
-			\item \textit{2012\_project\_RASD\_example\_SWIMv2.pdf}
 			\item \textit{RASD sample from Oct.20 lecture.pdf}
-			\item \textit{RASD\_MPH\_Lozano\_Onatra.pdf}
-			\item \textit{RASD\_Foglieni\_Fumarola\_Maggi.pdf}
-			\item \textit{RASD\_meteocal-example1.pdf}
-			\item \textit{RASD\_meteocal-example2.pdf}
-			\item \textit{RASD\_meteocal-example3.pdf}
 		\end{itemize}
 	\end{itemize}
+	
 \section{Overview}
 % summary description of the section of the document
+In this first chapter, after a brief description of the starting problem, the explanation of the system-to-be and its application domain (according to the \textit{World and the Machine Paper}), the goals that the system has to achieve to fulfill the user needs have been stated out.\\
+Finally, there is a glossary that help to identify and define in a unique way some words and concepts, that will be used later in this document and in the next ones, that could be misunderstood.
+%TODO
+
 \chapter{Overall Description}
 \section{Product perspective}
 % external interfaces (user, hw+sw), operations and site adaptions...
 \section{Product functions}
-% major functions  (GOAL HERE?)
+% major functions
 \section{User characteristics}
 \section{Constraints}
 % any kind of limitations in the development
@@ -113,10 +124,73 @@ If an user puts wrong data, or close the registration process not completing all
 \subsection{Software Interfaces}
 \subsection{Communication Interfaces}
 \section{Functional Requirements}
-% deriving requirements from goals'
+% deriving requirements from goals
+1 The user can apply the registration form 
+1.1)	The system checks whether the user entered all the required data.
+1.2)	The system checks whether the current user is already registered or not.
+1.3)	The systems checks that there is only one user with that name.
+1.4)	The system generates a password for the access and sends it back to the new user.
+1.5)	[D.A.] We assume the user enters valid payment credentials.
+2 The user can log in
+2.1) The system checks the input data and verifies whether the user is already registered.
+2.2) The system confirms the access.
+3 The user can search for a car in a certain location
+3.1) The system verifies whether the given location exists.
+3.2) The system shows the available cars within the range of distance specified by the user from the given location.
+3.3) [D.A.] The GPS position is accurate.
+
+4 The user can search for a car in his current position
+4.1) The system obtains the user position via GPS.
+4.2) The system shows the available cars within the range of distance specified by the user from his current position.
+4.3) [D.A.] The GPS position is accurate.
+
+
+5 The user can rent an available car on the spot
+5.1) The system obtains the user position via GPS and checks he is nearby.
+5.2) The system verifies the car is available.
+5.3) The system unlocks the car.
+5.4) [D.A.] The payment info of the user is correct.
+5.5) [D.A.] The payment is assigned to an external service.
+// Another Goal? ?The user rides the car? or the requirements ?he system locks the car??
+6 The user can reserve a car.
+6.1) The system lets the user choose a car among those that are in the specified area.
+6.2) The system checks that the car is available.
+6.3) The system flags the car as ?reserved?.
+6.3) [D.A] The system verifies that the remaining balance is positive. 
+7 The user can delete the reservation of a car.
+7.1) The system checks that the user has one active reservation.
+7.2) The system lets the user delete his active reservation.
+
+ 8 The user can obtain special discounts or penalties on his last ride
+8.1) The system checks the position of the car at the end of the ride.
+8.2) The system checks the battery charge level at the end of the ride.
+8.3) The system checks whether the car is plugged into the power grid by the user at the end of the ride.
+8.4) The system computes the discount (or penalty) considering the previous points.
+8.5) [D.A.] We assume that the number of passengers is known thanks to sensor measures inside the car.
+
 \section{Non Functional Requirements}
+
 \chapter{Scenarios}
-\chapter{Modeling the System}
+\textbf{Scenario 1}\\
+Mario is a young man who wants to go to his girlfriend house. After evaluating all the possibilities, he ends up with reserving an electric car. Since it is the first time, he registers to the car sharing system, PowerEnJoy. After entering his credentials (name, Social Security Number, address, license number, email) and payment info, Mario chooses his login name. The system checks the correctness of the input data and sends Mario an email to complete the registration together with a password for the access. 
+Finally Mario is able to enter his personal page on his smartphone. He searches for a car nearby (he selects a maximum distance of 1 km from his current position) and he finds some available cars in a safe parking just 0.5 km far. That's a good news! He texts his girlfriend Anna and picks up the car.\\ \noindent \\
+\textbf{Scenario 2}\\
+It's a rainy Sunday in Milan and Bob, Tom and John are going to the stadium to see the football match. Bob knows that today there is a strike of all the public vehicles and so he suggests his friends picking up an electric car. The match is at 3 p.m. but the three friends want to be sure to arrive to the stadium in time, so they decide to reserve the car as soon as possible. They are going to leave at 2 p.m. and the system lets them do the reservation only from 1 p.m. on. Since only Tom has a car license and an account on PowerEnJoy, he applies for reservation. He accesses his personal page and enters his GPS position to look for a car near his house. Unfortunately no car is available. He then enters Bob's house way and luckily he finds one and eventually carries out the reservation. The system verifies that the remaining credit is positive, and as soon as checked it marks the car as reserved. 
+The three friends reach the car and start their trip. As they arrive to the stadium, to their great surprise they find out that they are entitled to a discount as the car screen displays: Congratulations, you have been accompanied by at least two people! You get a 10\% discount on your ride!. \\ \noindent \\
+\textbf{Scenario 3}\\
+It's Saturday afternoon and Anthony is willing to throw a party this evening. He needs to go shopping at the supermarket but his dad picked up his car this morning. He decides to reserve a car for the trip back home so that he can bring the shopping bags. Anthony is already registered on PowerEnJoy but he has never reserved a car before. He searches for a car near the supermarket and luckily finds one. He?s very cautious and decides to read all the terms and conditions of the reservation. He finds out that the system reserves the car for up to one hour from the confirmation and after that time, in case he does not pick it up, he will be fined 1 EUR. Nonetheless, Anthony is self-confident and decides to confirm the reservation.
+After leaving the market, Anthony opens the PowerEnJoy app on his smartphone to tell the system he's nearby. When he reaches the car, he sees that the car is ready to go. He then opens the trunk and puts his shopping bags in. As soon as he ignites the engine, he is impressed by the big display near the radio: firstly, on the screen he reads Welcome Sir, PowerEnJoy wishes you a pleasant trip! Fare count starts right now and as he drives through the streets the system shows him the current charge of the car, the current bill and a GPS interface where safe areas for parking are marked by red labels. As Anthony turns in Golgi street, the car also signals that there is a special charging station nearby and if he decides to stop there and plug the car into the power grid he will be awarded with a 30\% discount on the ride. Unfortunately Anthony's home is not so close so he keeps driving for a while.
+After about 20 minutes, Anthony finally reaches a safe parking near home and decides to stop the car there. As he turns it off, the display shows a nice message: Had a great trip? We hope so. The battery charge level is still high (>=50\%): you are entitled to a 20\% discount on this ride!. After closing the trunk, Anthony checks that the system automatically blocks the car and then he goes home.\\ \noindent \\
+\textbf{Scenario 4}\\
+It's a very hot summer day in Milan and James wants to go swimming. His mother Jane suggests him picking up an electric car to go there. James thinks it's a good idea and so he turns on his personal computer and go to PowerEnJoy site. After registering, he reserves a car and search for safe parking areas near the swimming pool. There is one really close to it.
+James then reaches the car, he puts his bag in and ignites the engine. The pool is pretty far and James knows that he will pay some extra money for that. As he arrives, the display on the car signals that the battery charge level is very low: Battery is low (more than 80\% empty). You are charged a 30\% more on the last ride to compensate for the re-charge on site.\\ \noindent \\
+\textbf{Scenario 5}\\
+Franklin is very happy today because it is his grandfather?s George birthday and so he decides to rent an electric car to visit his grandparents. George lives together with Maria (Franklin's grandmother) in a country house, in the Milan suburbs. Unfortunately the house is in an isolated area and the PowerEnJoy app signals that there is only a standard safe parking near George?s house and that the closest charging station from it is 4 km far. Franklin knows that he will be charged a 30\% more on his ride (as he has read in the terms and conditions on the site) but nevertheless he reserves a car.
+As he arrives at the safe parking and turns the car off, the display of the car notifies him: The closest power station is pretty far (more than 3 km). You are charged a 30\% more on the last ride to compensate for the re-charge on site. Franklin is still happy anyway because he knows that his grandfather will appreciate his visit.\\ \noindent \\
+\textbf{Scenario 6}\\
+Tom is a young cheapskate and after considering all the possibilities to reach the bus station he ends up with the decision of renting an electric car. He chooses PowerEnJoy because he has read of the money saving option that is available on its cars. After registering on the site and reserving a car near his home, he reaches the parking to pick it up. As he gets in the car and starts the engine, he searches for the money saving option on the big display. He's prompted to enter his destination and after a while the system shows some parking areas and power stations with the corresponding available discounts. Tom chooses a charging station near the gym as a parking and starts riding. As he arrives, he plugs the car in the power grid and he obtains a 30\% discount on his ride.
+
+\chapter{Modeling the Requirements}
 \section{UML Models}
 \subsection{Use Cases}
 \subsection{Class Diagram}
@@ -124,20 +198,285 @@ If an user puts wrong data, or close the registration process not completing all
 \subsection{Statechart Diagram}
 \subsection{Activity Diagram}
 \section{Alloy}
+
 \subsection{Source Code}
+\begin{alloyCode}
+open util/boolean
+
+//Define the car
+sig Car{
+	state: one State,
+	batteryLevel: Int,
+	peopleOnBoard: Int,
+	maxPeople: Int,
+	location: Position,
+	locked: Bool
+}
+{
+    batteryLevel>=0
+	batteryLevel=<100
+	peopleOnBoard<=maxPeople
+	maxPeople=5
+	peopleOnBoard>=0
+}
+//Define the abstract state of a car
+abstract sig State{ }
+
+//Define specific states of a car
+sig AvailableState extends State{ }
+sig BrokenState extends State{ }
+sig InUseState extends State{ }
+sig ReservedState extends State{ }
+sig OnChargeState extends State{ }
+
+//Define a safe area
+sig SafeArea{
+	position: Position,
+	occupiedParkingLots: Int,
+	totalOutlets: Int
+}	
+{
+	occupiedParkingLots >= 0
+	totalOutlets > 5 and totalOutlets < 20
+	totalOutlets >= occupiedParkingLots
+}
+//Define a charging area
+sig ChargingArea extends SafeArea{
+	carsInCharge: set Car
+} 
+{
+	carsInCharge.state in OnChargeState
+	#carsInCharge <= totalOutlets
+	occupiedParkingLots = #carsInCharge
+
+}
+//Define a user
+sig User{
+	carInUse: lone Car,
+	reservation: lone Reservation
+}
+{
+	//If a user is riding a car then he can not have a reservation and viceversa
+	#carInUse>0 => #reservation=0	
+	#reservation>0 => #carInUse=0 
+	carInUse != none => carInUse.state in InUseState
+}
+//Define a Reservation
+sig Reservation{
+	user: User,
+	car: Car
+}
+{
+	car.state in ReservedState
+}
+//Define a Ride
+sig Ride{
+	user: User,
+	car: Car,
+	time: Int, 
+	cost: Int, 
+	moneySavingOption: Bool, 
+	initialPosition: Position,
+	finalPosition: Position,
+	pluggedIn:Bool,
+	discount: Int,
+	extraCharge:Int
+}
+{
+	time > 0
+	cost > 0
+	cost = computeCost[1,time]
+	discount >= 0
+	extraCharge >= 0
+	initialPosition != finalPosition
+	car.state in InUseState
+	initialPosition in (SafeArea.position + ChargingArea.position)
+	finalPosition in (SafeArea.position + ChargingArea.position)
+	car.batteryLevel = computeBatteryLevel[time] 
+}
+//Define a position
+sig Position{
+	lat: Int,
+	long: Int
+} 
+{
+	lat > 0
+	lat < 8 
+	long > 0
+	long < 8
+}
+
+
+/***   FACTs   ***/
+
+
+// Each car can be used exclusively from a single user at a time
+fact {
+	all disjoint u1, u2: User | u1.carInUse & u2.carInUse = none
+}
+// Each reservation has a unique car
+fact{
+	all r1,r2:Reservation| r1&r2 = none => r1.car & r2.car = none
+}
+//There can't be multiple users with the same reservation
+fact{
+	all u1:User|  (u1.reservation != none) => ( no u2:User| (u2 & u1 = none) and u1.reservation = u2.reservation)
+}
+//Each car in use is assigned to only one ride
+fact{
+	all disjoint r1,r2:Ride| r1.car & r2.car = none
+}
+//Each user is either on a ride or reserves a car
+fact{
+	Ride.user & Reservation.user = none
+}
+//If the car is reserved or in available state then its charge is at 100\%
+fact{
+	all c:Car|(c.state in ReservedState or c.state in AvailableState) => c.batteryLevel=100
+}
+//If the car is InUseState it must have at least one person on board 	
+fact{
+	all c:Car|(c.state in InUseState) <=> c.peopleOnBoard>0
+}
+//If the car is InUseState, its charge is different than 0 and 100 (Constraint added for readability)
+fact{
+	all c:Car|(c.state in InUseState) => c.batteryLevel !=100 and c.batteryLevel!=0
+}
+//If a car is on charge its batteryLevel is less than 100 (Constraint added for readability)
+fact{
+	all c:Car|(c.state in OnChargeState) => c.batteryLevel <100
+}
+//Cars are always locked unless they're inUseState
+fact{
+	all c:Car|(c.locked = False) <=> c.state in InUseState
+}
+//Cars that are OnChargeState are in a chargingArea
+fact{
+	no c:Car|(c.state in OnChargeState) and c.location not in ChargingArea.position
+}
+//All cars not riding are in a safe area or in a charging area
+fact{
+	all c:Car|(c.state not in InUseState) <=> ( c.location in SafeArea.position or c.location in ChargingArea.position)
+}
+//All cars inUseState are assigned to a ride
+fact{
+	all c:Car|(c.state in InUseState) => c in Ride.car 
+}
+//A user on ride can park in a SafeArea only if there is at least one free parking lot
+fact{
+	all r:Ride,s:SafeArea|(r.finalPosition in s.position ) => (s.totalOutlets > s.occupiedParkingLots)
+}
+//A user on ride can park in a ChargingArea only if there is at least one free parking lot
+fact{
+	all r:Ride,c:ChargingArea|(r.finalPosition in c.position ) => (c.totalOutlets > c.occupiedParkingLots)	
+}
+//A user that plugs the car in the power grid after a ride is in ChargingArea
+fact{
+	all r:Ride|(r.pluggedIn = True) => r.finalPosition in ChargingArea.position
+}
+//If user has a discount he can not have an extraCharge
+fact{
+	all r:Ride|(r.discount != 0) => (r.extraCharge = 0)
+}
+//If user has an extraCharge he can not have a discount
+fact{
+	all r:Ride|(r.extraCharge != 0) => (r.discount = 0)
+}
+//A user gets a 10\% discount on the last ride if and only if he's accompanied by at the least two people
+fact{
+	all r:Ride|(r.car.peopleOnBoard > 2 and r.car.batteryLevel < 50 and r.pluggedIn = False ) <=> r.discount = 10
+}
+//A user gets a 20\% discount on the last ride if and only if the batteryLevel is greater than 50\% at the end of the ride
+fact{
+	all r:Ride|(r.car.batteryLevel > 50 and r.pluggedIn = False ) <=> r.discount = 20
+}
+//A user gets a 30\% discount on the last ride if takes care of plugging the car in the power grid at the end of the ride
+fact{
+	all r:Ride|(r.pluggedIn = True) <=> r.discount = 30
+}
+//A user gets a 30\% discount on the last ride and the system guarantees a uniform distribution of cars among the SafeAreas if the user activates the MoneySavingOption
+fact{
+	all r:Ride|(r.moneySavingOption = True) => r.discount = 30 and (all disjoint s1,s2:SafeArea| s1.occupiedParkingLots = s2.occupiedParkingLots)
+}
+//A user gets a 30\% extraCharge on the last ride if the batteryLevel is lower than 20\% at the end of the ride
+fact{
+	all r:Ride|(r.car.batteryLevel < 20) => r.extraCharge = 30
+}
+//A user gets a 30\% extraCharge on the last ride if he parks the car in a spot which is more than 3 km far from the nearest ChargingArea
+fact{
+	all r:Ride| all c:ChargingArea| distance[r.finalPosition,c.position,3] = True => r.extraCharge = 30
+}
+//The sets of possible values for the discount and extraCharge are finite
+fact{
+	all r:Ride|(r.discount = 10 or r.discount = 20 or r.discount = 30 or r.discount = 0) and (r.extraCharge = 0 or r.extraCharge = 30)
+}
+//Each ride has only one user
+fact{
+	all r1:Ride,r2:Ride| (r1 & r2 = none) => (r1.user & r2.user = none)
+}
+//Each car is either on a ride or reserved
+fact{
+	Ride.car & Reservation.car = none
+}
+//For each reservation, the user of the reserved car is whom reserved the car
+fact{
+	all r:Reservation| r.user.reservation = r 
+}
+//Each car must have a state
+fact{
+	all s:State| (s != none) => (some c:Car| c.state = s)
+}
+
+
+//This function returns true if the distance between the two given positions is greater than range, else false
+fun distance(p1:Position,p2:Position,range:Int): Bool{
+	(add[mul[minus[p1.lat,p2.lat],minus[p1.lat,p2.lat]],mul[minus[p1.long,p2.long],minus[p1.long,p2.long]]]) > mul[range,range] implies True else False
+}
+//This function returns the cost of a ride given the fare and the time
+fun computeCost(fare:Int,time:Int):Int{
+	mul[fare,time]
+}
+//This function returns the batteryLevel of a car given the time of the ride
+fun computeBatteryLevel(time:Int):Int{
+	minus[100,mul[time,1]]
+}
+
+
+//Each user who is riding a car can not have a reservation at the same time
+assert RideOrReserve{
+	all u:User|(u.carInUse != none) => (no r:Reservation | r.user = u)
+}
+//If a car is broken then it can not be riding
+assert BrokenCarNotRiding{
+	all c:Car|(c.state in BrokenState) => (no r:Ride| r.car = c)
+}
+//If a user takes care of plugging the car in the power grid he is rewarded with 30\% discount on the last ride
+assert PluggingTheCarIsGood{
+	all r:Ride|(r.pluggedIn = True) => r.discount = 30
+}
+
+
+pred showWorld{
+	#User>1
+	#Ride>1
+	#Reservation>1
+	#Car>1
+	#ChargingArea>1
+}
+
+run showWorld for 5 but 8 int
+
+check RideOrReserve for 8 int
+check BrokenCarNotRiding for 8 int
+check PluggingTheCarIsGood for 8 int
+
+\end{alloyCode} 
+\subsection{Generated World}
 %\subsection{}
 \chapter{RASD Preparation}
 \section{Tools}
 \section{Timing}
-
-
-%\begin{figure}[H]
-%\centering
-%\fbox{\includegraphics[width=\textwidth,keepaspectratio]{../file.jpg}}
-%\caption{Caption}
-%\end{figure}
-
 %----------------------------------------------------------------------------------------
 %   END DOCUMENT
 %----------------------------------------------------------------------------------------
-\end{document}
+\end{document} 
