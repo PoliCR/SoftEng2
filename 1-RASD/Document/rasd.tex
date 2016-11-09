@@ -1,129 +1,15 @@
 \documentclass[11pt,a4paper]{report}
 
-\usepackage[margin=2.3cm]{geometry}
-\usepackage[english]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[latin1]{inputenc}
-\usepackage{graphicx}
-\usepackage{titlesec, blindtext, color}
-\usepackage{fancyhdr}
-\usepackage{hyperref}
-\usepackage{float}
-\usepackage{lastpage}
-
-
-%----------------------------------------------------------------------------------------
-%   Title Style Chapter
-%----------------------------------------------------------------------------------------
-\definecolor{gray75}{gray}{0.65}
-\newcommand{\hsp}{\hspace{15pt}}
-\newcommand\tab[1][1cm]{\hspace*{#1}}
-\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
-
-
-%----------------------------------------------------------------------------------------
-%   Link Style in ToC
-%----------------------------------------------------------------------------------------
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
-
-
-%----------------------------------------------------------------------------------------
-%   Header/Footer
-%----------------------------------------------------------------------------------------
-\pagestyle{fancy} 
-%\lhead{\sectionmark}
-%\chead{}
-%\rhead{}
-%\lfoot{}
-%%\cfoot{\thepage/\pageref{LastPage}}
-%\cfoot{\thepage}
-%\rfoot{}
-%\renewcommand{\headrulewidth}{0.3pt}
-%%\renewcommand{\footrulewidth}{0.3pt}
-
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\fancyhf{}
-\fancyhead[C]{\leftmark}
-\fancyfoot[C]{\thepage}
-
-% New Page for each section
-%\newcommand{\sectionbreak}{\clearpage}
-
-% Renaming of ToC
-\addto\captionsenglish{% Replace "english" with the language you use
-  \renewcommand{\contentsname}%
-    {Table of Contents}%
-}
+%INPUT of SETTINGS (usepackage, styles, new command,...)
+\input{prefs}
 
 %----------------------------------------------------------------------------------------
 %   START DOCUMENT 
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	TITLEPAGE
-%----------------------------------------------------------------------------------------
-\begin{titlepage}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % Defines a new command for the horizontal lines, change thickness here
-
- \vspace*{0.3cm}
- 
-\center % Center everything on the page
-
-%----------------------------------------------------------------------------------------
-%	LOGO SECTION
-%----------------------------------------------------------------------------------------
-\includegraphics[scale=0.33]{../../logo.png}\\[0.4cm] 
-
-%----------------------------------------------------------------------------------------
-%	HEADING SECTION
-%----------------------------------------------------------------------------------------
-\textsc{\Large \textbf{Politecnico di Milano}\\MSc Computer Science and Engineering}\\[1.7cm] \textsc{\Large \textbf{Software Engineering 2}\\[0.1cm]Academic Year 2016-2017}\\[1cm] 
-%\textsc{\LARGE Minor Heading}\\[0.5cm] 
-
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
-
-\HRule \\[0.4cm]
-{ \huge \bfseries Requirements Analysis and\\Specification Document\\[0.5cm]\textit{PowerEnJoy}}\\[0.4cm] % Title of document
-\HRule \\[1.5cm]
- 
-%----------------------------------------------------------------------------------------
-%	AUTHOR SECTION
-%----------------------------------------------------------------------------------------
-\Large \emph{Author:}\\
-\LARGE{
-\begin{center}
-\begin{tabular}{ r  l }
-	Melloni Giulio & 876279\\
-	Renzi Marco & 878269\\
-	Testa Filippo & 875456 \\
-\end{tabular}
-\end{center}
-}
-\vspace*{0.8cm}
-\Large{\emph{Reference Professor:} \\
-{\textsc{Mottola} Luca} 
-}
-
-%----------------------------------------------------------------------------------------
-%	DATE SECTION
-%----------------------------------------------------------------------------------------
- \vspace*{1cm}
-{\LARGE {\it Release Date: November 13$^{th}$, 2016\\Version 1.0}}
-%vfill % Fill the rest of the page with whitespace
-
-\end{titlepage}
-
+% INPUT OF TITLE PAGE
+\input{titlepage}
 
 %----------------------------------------------------------------------------------------
 %   TOC
@@ -146,19 +32,15 @@ Lastly, the system will be developed from scratch because there is no mention of
 
 \section{Purpose}
 Analyzing the system-to-be in a more detailed way, it is possible to better define the functionalities that has to be offered to the users and the employees.\\
-The users will have the possibility to register to get a personal account, which is necessary to access to all the functionalities provided, and once he's logged-in, he can search for an available car within a certain range from his current position or from a given address and, in case, pick the car up immediately without any reservation or he has the possibility to reserve a chosen car for up to one hour before the usage (and delete the reservation if the car won't be used in order to avoid to get a fee). \\
+The users will have the possibility to register to get a personal account, which is mandatory to access to all the functionalities provided, and once he's logged-in, he can search for an available car within a certain range from his current position or from a given address and, in case, pick the car up immediately without any reservation; he has also the possibility to reserve a chosen car for up to one hour before the usage (and delete the reservation if the car won't be used in order to avoid to get a fee). The users, while registering, have to provide all personal information, a valid driving license and payment info; the whole procedure of the payment will rely on an external payment system, deferring to it all issues about information validity.
 Moreover, to induce a more eco-friendly behavior of the users, the system will apply special discounts or extra charge to cost of the last ride according to some different conditions. In particular, will be awarded users that will satisfy at least one of the following conditions: the user took at least two other passengers (-10\%), the car is 
-left no more than of 50\% battery empty (-20\%), the car is left at special parking area and the user take care of plugging the car into the power grid (-30\%). Additionally, the system provide a special option, called \textit{money saving option}, which lets the user insert their final destination and he will get from the system information about the area where to park the car to get a special discount. The area selected from the system ensures a uniform distribution of the car around the city and depends also on the final destination inserted.
-On the other hand, the last ride of users will be charged with a 30\% of the cost if the car is left at more than 3 km from the nearest charging area or with the battery level under 20\%.\\
-Regarding the company employees, the system will let them use special functions to retrieve information about cars (battery level, internal status,...) and their position in the city so
-
-All these functionalities can be access by users if and only if they are registered into the system:
-this means that the client has to put his personal data, for instance the name, surname and other info, a valid driving license, checked by the system, and an existing external payment account.
-When the registration is complete, the user must confirm using the email sent by the system.
-After he is registered, he can log into the system and use it in order to take a car.
-
+left with no more than of 50\% battery empty (-20\%), the car is left at special parking area and the user take care of plugging the car into the power grid (-30\%). Additionally, the system provide a special option, called \textit{money saving option}, which lets the user insert their final destination and he will get from the system information about the area where to park the car to get a special discount. The area selected from the system ensures a uniform distribution of the car around the city and depends also on the final destination inserted.\\
+On the other hand, the last ride of users will be charged with a 30\% of the total cost if the car is left at more than 3 km from the nearest charging area or with the battery level under 20\%.\\
+Regarding the company employees, the system will let them use special functions to retrieve specific information about the cars (battery level, internal working status,...) and their position in the city, so they can take care of moving cars that has been left both in safe area and in other zones where parking is not allowed, according to the system's terms, to charging area in such a way to assure an equal distribution of the cars throughout the city.
 \subsection{Goal}
-%TODO
+\begin{Goal}
+\item The user can apply the registration form\item The user can log in\item The user can search for a car in a certain location\item The user can search for a car in his current position\item The user can rent an available car on the spot\item The user can reserve a car\item The user can delete the reservation of a car\item The user can obtain special discounts or penalties on his last ride
+\end{Goal}
 
 \section{Scope}
 The project has a specific purpose: the user can register himself on the website and access to the main functionalities of this service.

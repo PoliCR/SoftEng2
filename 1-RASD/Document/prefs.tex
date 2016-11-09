@@ -1,0 +1,82 @@
+\usepackage[margin=3cm]{geometry}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{titlesec, blindtext, color}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{lastpage}
+
+
+%----------------------------------------------------------------------------------------
+%   Title Style Chapter
+%----------------------------------------------------------------------------------------
+\definecolor{gray75}{gray}{0.65}
+\newcommand{\hsp}{\hspace{15pt}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+%----------------------------------------------------------------------------------------
+%  ToC
+%----------------------------------------------------------------------------------------
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Renaming of ToC
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+%----------------------------------------------------------------------------------------
+%   Header/Footer
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy} 
+%\lhead{\sectionmark}
+%\chead{}
+%\rhead{}
+%\lfoot{}
+%%\cfoot{\thepage/\pageref{LastPage}}
+%\cfoot{\thepage}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0.3pt}
+%%\renewcommand{\footrulewidth}{0.3pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhf{}
+\fancyhead[C]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+
+%-----------
+% New Page for each section
+%---------
+%\newcommand{\sectionbreak}{\clearpage}
+
+%-------
+% Numbered list for goals
+%-------
+\newlist{Goal}{enumerate}{1}
+\setlist[Goal]{label=[G\arabic*]}
+
+%-------
+% Numbered list for requirements
+%-------
+\newlist{Req}{enumerate}{1}
+\setlist[Req]{label=[R\arabic*]}
+
+%-------
+% Numbered list for domain assumptions
+%-------
+\newlist{DA}{enumerate}{1}
+\setlist[DA]{label=[DA\arabic*]}
