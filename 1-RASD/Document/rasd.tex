@@ -119,7 +119,7 @@
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
  \vspace*{1cm}
-{\LARGE {\it Release Date: October 25$^{th}$, 2016\\Version 0.1}}
+{\LARGE {\it Release Date: November 13$^{th}$, 2016\\Version 1.0}}
 %vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
@@ -134,29 +134,37 @@
 %  BEGIN TEXT
 %----------------------------------------------------------------------------------------
 \chapter{Introduction}
+
 \section{Description of the problem}
-This project is modeling a car sharing service.
-The cars can be reserved or picked up if free thanks to a web-application.
-This can be used by a mobile phone or thanks to a web browser.
-The application can be used by two different type of people:
+The given problem consists of developing a system for managing a car-sharing service. This system will then let the users to register to get an account, search for available cars over the city and reserve or pick up the chosen car. The system will be implemented as a web-application so it can be used from either mobile devices or personal computers.\\ 
+It is possible to identify two main type of people that will use the system, also called \textit{actors}:
 	\begin{itemize}
 		\item Users
-		\item Workers
+		\item Employees
 	\end{itemize}
-User account granted different functionalities: he can, for instance, search for a car using GPS or specifing location, reserve or pick a car up.
-Worker account is used by PowerEnjoy employees: they can find exhausted battery of cars and charge them thanks to GPS location.
-We are modelling only the user system and we are not considering the employees.
+Lastly, the system will be developed from scratch because there is no mention of an actual existing system.
+
+\section{Purpose}
+Analyzing the system-to-be in a more detailed way, it is possible to better define the functionalities that has to be offered to the users and the employees.\\
+The users will have the possibility to register to get a personal account, which is necessary to access to all the functionalities provided, and once he's logged-in, he can search for an available car within a certain range from his current position or from a given address and, in case, pick the car up immediately without any reservation or he has the possibility to reserve a chosen car for up to one hour before the usage (and delete the reservation if the car won't be used in order to avoid to get a fee). \\
+Moreover, to induce a more eco-friendly behavior of the users, the system will apply special discounts or extra charge to cost of the last ride according to some different conditions. In particular, will be awarded users that will satisfy at least one of the following conditions: the user took at least two other passengers (-10\%), the car is 
+left no more than of 50\% battery empty (-20\%), the car is left at special parking area and the user take care of plugging the car into the power grid (-30\%). Additionally, the system provide a special option, called \textit{money saving option}, which lets the user insert their final destination and he will get from the system information about the area where to park the car to get a special discount. The area selected from the system ensures a uniform distribution of the car around the city and depends also on the final destination inserted.
+On the other hand, the last ride of users will be charged with a 30\% of the cost if the car is left at more than 3 km from the nearest charging area or with the battery level under 20\%.\\
+Regarding the company employees, the system will let them use special functions to retrieve information about cars (battery level, internal status,...) and their position in the city so
+
 All these functionalities can be access by users if and only if they are registered into the system:
-this means that the client has to put his personal data, for instance the name, surname and other info, a valid driving licence, checked by the system, and an existing external payment account.
+this means that the client has to put his personal data, for instance the name, surname and other info, a valid driving license, checked by the system, and an existing external payment account.
 When the registration is complete, the user must confirm using the email sent by the system.
 After he is registered, he can log into the system and use it in order to take a car.
-%\section{Purpose}
-% is the same of section just above??
+
+\subsection{Goal}
+%TODO
+
 \section{Scope}
 The project has a specific purpose: the user can register himself on the website and access to the main functionalities of this service.
-So, the user can search for a car giving GPS position, specifing the location or choosing manually it from the map; after he has searched for it, the user can choose the one which prefers and then select if pick it up or reserve for most an hour, removing this car from the available ones.
+So, the user can search for a car giving GPS position, specifying the location or choosing manually it from the map; after he has searched for it, the user can choose the one which prefers and then select if pick it up or reserve for most an hour, removing this car from the available ones.
 %identifies system-to-be and in its application domain
-% GOAL HERE?
+% analysis world-machine (define boundaries)
 \section{Definitions, acronyms and abbreviations}
 \textit{Guest}: the client who isn't already registered. So he can't access to the system functionalities because he isn't an user yet.\\
 \textit{Client}: the client is the user who interacts with the application. He can use the system functionalities, designed to be used by people who are registered with valid data.\\
@@ -167,11 +175,11 @@ So, the user can search for a car giving GPS position, specifing the location or
 \textit{Registration}: this let a guest becomes a valid user recognized by the system. The registration has three steps:
 	\begin{itemize}
 		\item \textbf{Personal Data} Here the user must insert his personal data, which means, for instance, the name and surname, the date of birth, the residence address and the billing address.
-		\item \textbf{Driving Licence} In order to take the car and drive it, the user must have a driving licence which is recognized by the system thanks to its data.
+		\item \textbf{Driving License} In order to take the car and drive it, the user must have a driving license which is recognized by the system thanks to its data.
 		\item \textbf{External Payment} An user can perform these actions if he has a positive balance on the external payment account that is bind to the PowerEnjoy account when registering.
 	\end{itemize}	
 If an user puts wrong data, or close the registration process not completing all these steps, the registration isn't done.
-\textit{Search}: this funcionality lets the user searching for a car in three different ways:
+\textit{Search}: this functionality lets the user searching for a car in three different ways:
 	\begin{itemize}
 		\item MAP - The user scrolls the map on the start screen of the application and he can select cars diplayed by green indicators.
 		\item GPS - The user can select to use it location and then automatically display all the available cars on the map.
@@ -189,7 +197,7 @@ If an user puts wrong data, or close the registration process not completing all
 		\begin{itemize}
 			\item \textit{Assignments+AA+2016-2017.pdf}
 		\end{itemize}
-		\item \textit{IEEE Std 830-1998 IEEE Recommended Pratice for Software Requirements Specifications.}
+		\item \textit{IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications.}
 		\item Examples documents:
 		\begin{itemize}
 			\item \textit{2012\_project\_RASD\_example\_SWIMv2.pdf}
