@@ -84,13 +84,15 @@
 \setlist[DA]{label=[DA\arabic*]}
 
 %-----
-% Image box
+% Image box, arguments: file path, caption
 %----
-%\begin{figure}[H]
-%\centering
-%\fbox{\includegraphics[width=\textwidth,keepaspectratio]{../file.jpg}}
-%\caption{Caption}
-%\end{figure}
+\newcommand{\imagebox}[3]{
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth,keepaspectratio,angle=#3]{#1}}
+\caption{#2}
+\end{figure}
+}
 
 %---
 % Alloy listing
@@ -118,14 +120,14 @@
 	{exists}{$\exists$}1
 	{!in}{$\not\in$}1
 	{\\in}{$\in$}1
-	{=>}{$\implies$}1
+	{=>}{$\implies$}3
 	% the following isn't actually Alloy, but it gives the option to produce nicer latex
 	{|=>}{$\Rightarrow$}2
 	{<=set}{$\subseteq$}1
 	{+set}{$\cup$}1
 	{*set}{$\cap$}1
 	{==>}{$\Longrightarrow$}3
-	{<==>}{$\iff$}4
+	{<=>}{$\iff$}4
 	{...}{$\ldots$}1
 	{\\hl}{$\hline$}1
 	{\\alpha}{$\alpha$}1
@@ -166,7 +168,7 @@
 	sensitive=true,
 	morecomment=[l]//,%
 	%morecomment=[l]{--},%
-	%morecomment=[s]{/*}{*/},%
+	morecomment=[s]{/*}{*/},%
 	morestring=[b]",
 	numbers=none,
 	firstnumber=1,
@@ -183,6 +185,8 @@
 		captionpos=b,
 		xleftmargin=8pt,
 		xrightmargin=8pt,
+		 breaklines=true,
+		  tabsize=3,
 		%basicstyle=\ttfamily,
-		}}
-	{}
+	}
+} {}
