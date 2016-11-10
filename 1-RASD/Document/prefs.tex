@@ -75,13 +75,19 @@
 % Numbered list for requirements
 %-------
 \newlist{Req}{enumerate}{1}
-\setlist[Req]{label=[R\arabic*]}
+\setlist[Req]{label=[R\arabic*],leftmargin=0.6in}
 
 %-------
 % Numbered list for domain assumptions
 %-------
 \newlist{DA}{enumerate}{1}
-\setlist[DA]{label=[DA\arabic*]}
+\setlist[DA]{label=[DA\arabic*],leftmargin=0.6in}
+
+%-------
+% Numbered list for text assumptions
+%-------
+\newlist{TA}{enumerate}{1}
+\setlist[TA]{label=[TA\arabic*],leftmargin=0.6in}
 
 %-----
 % Image box, arguments: file path, caption
@@ -190,3 +196,12 @@
 		%basicstyle=\ttfamily,
 	}
 } {}
+
+%---
+% Recall item commands
+%---
+\newcommand\itemtext[2]{%
+	\expandafter\gdef\csname item#1\endcsname{#2}%
+	\label{#1}#2}
+
+\newcommand\useitemtext[2]{\csname item#1\endcsname}

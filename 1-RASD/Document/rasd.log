@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  10 NOV 2016 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  11 NOV 2016 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -388,6 +388,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 35.
 \enitdp@Req=\count146
 \c@DAi=\count147
 \enitdp@DA=\count148
+\c@TAi=\count149
+\enitdp@TA=\count150
 ) (./rasd.aux)
 \openout1 = `rasd.aux'.
 
@@ -442,16 +444,16 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count149
+\scratchcounter=\count151
 \scratchdimen=\dimen137
 \scratchbox=\box34
-\nofMPsegments=\count150
-\nofMParguments=\count151
+\nofMPsegments=\count152
+\nofMParguments=\count153
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count152
+\MPscratchCnt=\count154
 \MPscratchDim=\dimen138
-\MPnumerator=\count153
-\makeMPintoPDFobject=\count154
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
 \everyMPtoPDFconversion=\toks29
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -477,7 +479,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count155
+\c@section@level=\count157
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -490,7 +492,7 @@ LaTeX Info: Redefining \nameref on input line 9.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 9.
-\c@lstlisting=\count156
+\c@lstlisting=\count158
  (./titlepage.tex
 <../../logo.png, id=156, 306.14375pt x 302.12875pt>
 File: ../../logo.png Graphic file (type png)
@@ -505,7 +507,7 @@ ogo.png>]) (./rasd.tocpdfTeX warning (ext4): destination with the same identifi
 er (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ...erline {6}RASD Preparation}{22}{chapter.6}
+l.37 ...erline {6}RASD Preparation}{24}{chapter.6}
                                                    [1
 
 ])
@@ -536,187 +538,208 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
  [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--86
+Underfull \hbox (badness 10000) in paragraph at lines 68--93
 
  []
 
-[5] [6]
+[5] [6] [7]
 Chapter 2.
-[7
+[8
 
 ]
 Chapter 3.
-[8
 
-] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+[9
+
+] [10]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
 
  []
 
-[10
 
-] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--223
+
+ []
+
+[11
+
+] [12] [13]
 Chapter 5.
-[12
+[14
 
-] [13] [14] [15] [16] [17] [18]
-<../Alloy/execution.png, id=581, 531.9875pt x 457.71pt>
+] [15] [16] [17] [18] [19] [20]
+<../Alloy/execution.png, id=614, 531.9875pt x 457.71pt>
 File: ../Alloy/execution.png Graphic file (type png)
 
 <use ../Alloy/execution.png>
-Package pdftex.def Info: ../Alloy/execution.png used on input line 485.
+Package pdftex.def Info: ../Alloy/execution.png used on input line 512.
 (pdftex.def)             Requested size: 426.79135pt x 367.20914pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 485--485
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 512--512
  [][] 
  []
 
-<../Alloy/alloy_world1.png, id=582, 3391.67125pt x 810.02625pt>
+<../Alloy/alloy_world1.png, id=615, 3391.67125pt x 810.02625pt>
 File: ../Alloy/alloy_world1.png Graphic file (type png)
 
 <use ../Alloy/alloy_world1.png>
-Package pdftex.def Info: ../Alloy/alloy_world1.png used on input line 486.
+Package pdftex.def Info: ../Alloy/alloy_world1.png used on input line 513.
 (pdftex.def)             Requested size: 426.79135pt x 101.92047pt.
 
-<../Alloy/alloy_world2.png, id=583, 2526.43875pt x 668.4975pt>
+<../Alloy/alloy_world2.png, id=616, 2526.43875pt x 668.4975pt>
 File: ../Alloy/alloy_world2.png Graphic file (type png)
 
 <use ../Alloy/alloy_world2.png>
-Package pdftex.def Info: ../Alloy/alloy_world2.png used on input line 487.
+Package pdftex.def Info: ../Alloy/alloy_world2.png used on input line 514.
 (pdftex.def)             Requested size: 426.79135pt x 112.92903pt.
- [19pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [21pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.487 .../alloy_world2.png}{Generated world 2}{90}
+l.514 .../alloy_world2.png}{Generated world 2}{90}
                                                    <../Alloy/execution.png>]
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.488 
-       <../Alloy/alloy_world1.png (PNG copy)>] [21pdfTeX warning (ext4): destin
+l.515 
+       <../Alloy/alloy_world1.png (PNG copy)>] [23pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.5.3}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.489 \chapter
+l.516 \chapter
               {RASD Preparation} <../Alloy/alloy_world2.png (PNG copy)>]
 Chapter 6.
 
 AED: lastpage setting LastPage
-[22
+[24
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 495.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 495.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 522.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 522.
  (./rasd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 495.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 495.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 522.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 522.
 Package rerunfilecheck Info: File `rasd.out' has not changed.
 (rerunfilecheck)             Checksum: 386699C2FD7AE08CC0FB05EE06EFFCEC;2413.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 495.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 522.
  ) 
 Here is how much of TeX's memory you used:
- 9944 strings out of 493089
- 140175 string characters out of 6134842
- 419774 words of memory out of 5000000
- 12936 multiletter control sequences out of 15000+600000
- 22634 words of font info for 52 fonts, out of 8000000 for 9000
+ 10007 strings out of 493089
+ 140671 string characters out of 6134842
+ 420820 words of memory out of 5000000
+ 12981 multiletter control sequences out of 15000+600000
+ 23335 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  31i,12n,43p,918b,1985s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbi2074.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/cm-super/sfxc1440.pfb>
-Output written on rasd.pdf (23 pages, 1004138 bytes).
+r/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbi2074.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/cm-super/sfxc1440.pfb>
+Output written on rasd.pdf (25 pages, 1033781 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 680 compressed objects within 7 object streams
- 346 named destinations out of 1000 (max. 500000)
+ 776 PDF objects out of 1000 (max. 8388607)
+ 717 compressed objects within 8 object streams
+ 363 named destinations out of 1000 (max. 500000)
  325 words of extra memory for PDF output out of 10000 (max. 10000000)
 

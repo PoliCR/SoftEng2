@@ -41,20 +41,21 @@ Regarding the company employees, the system will let them use special functions 
 \subsection{Goal}
 From the previous description of the purpose, it is possible to define the following goals that the system has to fulfill towards the \textit{\textbf{user}} needs.
 \begin{Goal}
-\item The user can apply the registration form
-\item The user can log in
-\item The user can search for a car in a certain location
-\item The user can search for a car in his current position
-\item The user can rent an available car on the spot
-\item The user can reserve a car
-\item The user can delete the reservation of a car
-\item The user can obtain special discounts or penalties on his last ride
+\item \itemtext{G1} {The user can apply the registration form}
+\item \itemtext{G2} {The user can log in}
+\item \itemtext{G3} {The user can search for a car in a certain location}
+\item \itemtext{G4} {The user can search for a car in his current position}
+\item \itemtext{G5} {The user can rent an available car on the spot}
+\item \itemtext{G6} {The user can reserve a car}
+\item \itemtext{G7} {The user can delete the reservation of a car}
+\item \itemtext{G8} {The user can obtain special discounts or penalties on his last ride}
 \end{Goal}
 Furthermore, the system has also  \textbf{\textit{employee}}
 %TODO
 \begin{Goal}[resume]
-\item The employee can search for the cars over the city
-\item The employee can update the status of the cars
+\item \itemtext{G9} The employee can log in into the system
+\item \itemtext{G10} The employee can search for the cars over the city
+\item \itemtext{G11} The employee can update the status of the cars
 \end{Goal}
 
 \section{Scope}
@@ -120,9 +121,14 @@ Finally, there is a glossary that help to identify and define in a unique way so
 % any kind of limitations in the development
 \section{Assumptions}
 \subsection{Text assumptions}
-% TODO
+\begin{TA}
+	\item In the case in which more conditions have been simultaneously satisfied at the same time, the system will reward the user with maximum discount among the ones obtained
+	\item When the user has enabled the \textit{money saving option} and he parks in the suggested area, the system will apply a discount of 30\% on the last ride
+	\item In order to get the discount of 30\%, the user has no more than 5 minutes after the end of the rent to plug the car into the power grid. This is a reasonable time to allow the user to get out of the car (and maybe to pick bags out from the trunk) and correctly plug the car. Furthermore, this is also done to ensure that it's really the user that actually carried out the action and not somebody else (e.g. the employee)
+	\item To identify in a unique way the end of the rent, the user, just after shutting down the engine, has to push the button on the car screen to confirm the end of the ride
+\end{TA}
 \subsection{Domain assumptions}
-% TODO
+%TODO
 \chapter{Specific Requirements}
 \section{External Interface Requirements}
 \subsection{User Interfaces}
@@ -130,50 +136,57 @@ Finally, there is a glossary that help to identify and define in a unique way so
 \subsection{Software Interfaces}
 \subsection{Communication Interfaces}
 \section{Functional Requirements}
-% deriving requirements from goals
-1 The user can apply the registration form 
-1.1)	The system checks whether the user entered all the required data.
-1.2)	The system checks whether the current user is already registered or not.
-1.3)	The systems checks that there is only one user with that name.
-1.4)	The system generates a password for the access and sends it back to the new user.
-1.5)	[D.A.] We assume the user enters valid payment credentials.
-2 The user can log in
-2.1) The system checks the input data and verifies whether the user is already registered.
-2.2) The system confirms the access.
-3 The user can search for a car in a certain location
-3.1) The system verifies whether the given location exists.
-3.2) The system shows the available cars within the range of distance specified by the user from the given location.
-3.3) [D.A.] The GPS position is accurate.
+Deriving requirements from goals.\\
 
-4 The user can search for a car in his current position
-4.1) The system obtains the user position via GPS.
-4.2) The system shows the available cars within the range of distance specified by the user from his current position.
-4.3) [D.A.] The GPS position is accurate.
-
-
-5 The user can rent an available car on the spot
-5.1) The system obtains the user position via GPS and checks he is nearby.
-5.2) The system verifies the car is available.
-5.3) The system unlocks the car.
-5.4) [D.A.] The payment info of the user is correct.
-5.5) [D.A.] The payment is assigned to an external service.
-// Another Goal? ?The user rides the car? or the requirements ?he system locks the car??
-6 The user can reserve a car.
-6.1) The system lets the user choose a car among those that are in the specified area.
-6.2) The system checks that the car is available.
-6.3) The system flags the car as ?reserved?.
-6.3) [D.A] The system verifies that the remaining balance is positive. 
-7 The user can delete the reservation of a car.
-7.1) The system checks that the user has one active reservation.
-7.2) The system lets the user delete his active reservation.
-
- 8 The user can obtain special discounts or penalties on his last ride
-8.1) The system checks the position of the car at the end of the ride.
-8.2) The system checks the battery charge level at the end of the ride.
-8.3) The system checks whether the car is plugged into the power grid by the user at the end of the ride.
-8.4) The system computes the discount (or penalty) considering the previous points.
-8.5) [D.A.] We assume that the number of passengers is known thanks to sensor measures inside the car.
-
+	\ref{G1} \useitemtext{G1}\\
+	\begin{Req}
+		\item The system checks whether the user entered all the required data.
+		\item	The system checks whether the current user is already registered or not.
+		\item The systems checks that there is only one user with that name.
+		\item The system generates a password for the access and sends it back to the new user.
+	\end{Req}
+	[D.A.] We assume the user enters valid payment credentials.
+	
+	\ref{G2} \useitemtext{G2}\\
+	\begin{Req}[resume]
+		\item The system checks the input data and verifies whether the user is already registered.
+		\item The system confirms the access.
+	\end{Req}
+	
+	\ref{G3} \useitemtext{G3}\\
+	\begin{Req}
+		\item The system verifies whether the given location exists.
+		\item The system shows the available cars within the range of distance specified by the user from the given location.
+	\end{Req}
+	[D.A.] The GPS position is accurate.
+	
+ 	\ref{G4} \useitemtext{G4}\\
+ 	4.1) The system obtains the user position via GPS.
+ 	4.2) The system shows the available cars within the range of distance specified by the user from his current position.
+ 	4.3) [D.A.] The GPS position is accurate.
+ 	
+ 	\ref{G5} \useitemtext{G5}\\
+ 	5.1) The system obtains the user position via GPS and checks he is nearby.
+ 	5.2) The system verifies the car is available.
+ 	5.3) The system unlocks the car.
+ 	5.4) [D.A.] The payment info of the user is correct.
+ 	5.5) [D.A.] The payment is assigned to an external service.
+ 	
+	\ref{G6} \useitemtext{G6}\\
+	6.1) The system lets the user choose a car among those that are in the specified area.
+	6.2) The system checks that the car is available.
+	6.3) The system flags the car as ?reserved?.
+	6.3) [D.A] The system verifies that the remaining balance is positive. 
+	
+	\ref{G7} \useitemtext{G7}\\
+	7.1) The system checks that the user has one active reservation.
+	7.2) The system lets the user delete his active reservation.
+	\ref{G8} \useitemtext{G8}\\
+	8.1) The system checks the position of the car at the end of the ride.
+	8.2) The system checks the battery charge level at the end of the ride.
+	8.3) The system checks whether the car is plugged into the power grid by the user at the end of the ride.
+	8.4) The system computes the discount (or penalty) considering the previous points.
+	8.5) [D.A.] We assume that the number of passengers is known thanks to sensor measures inside the car.
 \section{Non Functional Requirements}
 
 \chapter{Scenarios}
@@ -194,7 +207,7 @@ It's a very hot summer day in Milan and James wants to go swimming. His mother J
 James then reaches the car, he puts his bag in and ignites the engine. The pool is pretty far and James knows that he will pay some extra money for that. As he arrives, the display on the car signals that the battery charge level is very low: Battery is low (more than 80\% empty). You are charged a 30\% more on the last ride to compensate for the re-charge on site.\\ 
 \noindent \\
 \textbf{Scenario 5}\\
-Franklin is very happy today because it is his grandfather?s George birthday and so he decides to rent an electric car to visit his grandparents. George lives together with Maria (Franklin's grandmother) in a country house, in the Milan suburbs. Unfortunately the house is in an isolated area and the PowerEnJoy app signals that there is only a standard safe parking near George?s house and that the closest charging station from it is 4 km far. Franklin knows that he will be charged a 30\% more on his ride (as he has read in the terms and conditions on the site) but nevertheless he reserves a car.
+Franklin is very happy today because it is his grandfather?s George birthday and so he decides to rent an electric car to visit his grandparents. George lives together with Maria (Franklin's grandmother) in a country house, in the Milan suburbs. Unfortunately the house is in an isolated area and the PowerEnJoy app signals that there is only a standard safe parking near George's house and that the closest charging station from it is 4 km far. Franklin knows that he will be charged a 30\% more on his ride (as he has read in the terms and conditions on the site) but nevertheless he reserves a car.
 As he arrives at the safe parking and turns the car off, the display of the car notifies him: The closest power station is pretty far (more than 3 km). You are charged a 30\% more on the last ride to compensate for the re-charge on site. Franklin is still happy anyway because he knows that his grandfather will appreciate his visit.\\ 
 \noindent \\
 \textbf{Scenario 6}\\
@@ -492,7 +505,8 @@ run showWorld for 5 but 8 int
 check RideOrReserve for 8 int
 check BrokenCarNotRiding for 8 int
 check PluggingTheCarIsGood for 8 int
-\end{alloyCode} 
+\end{alloyCode}
+\vspace*{0.3cm}
 \subsection{Generated World}
 %to insert a new image use command \imagebox{file_path_from_cur _dir}{caption}
 \imagebox{../Alloy/execution.png}{Result of the execution of Alloy code}{0}
