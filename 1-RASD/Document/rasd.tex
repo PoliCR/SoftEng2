@@ -128,6 +128,14 @@ Finally, there is a glossary that help to identify and define in a unique way so
 	\item To identify in a unique way the end of the rent, the user, just after shutting down the engine, has to push the button on the car screen to confirm the end of the ride
 \end{TA}
 \subsection{Domain assumptions}
+\begin{DA}
+	\item We assume the user enters valid payment credentials
+	\item The GPS position is accurate
+	\item The payment info of the user is correct
+	\item The payment is assigned to an external service
+	\item The system verifies that the remaining balance is positive
+	\item The number of passengers is known thanks to sensor measures inside the car
+\end{DA}
 %TODO
 \chapter{Specific Requirements}
 \section{External Interface Requirements}
@@ -137,56 +145,59 @@ Finally, there is a glossary that help to identify and define in a unique way so
 \subsection{Communication Interfaces}
 \section{Functional Requirements}
 Deriving requirements from goals.\\
-
-	\ref{G1} \useitemtext{G1}\\
-	\begin{Req}
-		\item The system checks whether the user entered all the required data.
-		\item	The system checks whether the current user is already registered or not.
-		\item The systems checks that there is only one user with that name.
-		\item The system generates a password for the access and sends it back to the new user.
-	\end{Req}
-	[D.A.] We assume the user enters valid payment credentials.
-	
-	\ref{G2} \useitemtext{G2}\\
-	\begin{Req}[resume]
-		\item The system checks the input data and verifies whether the user is already registered.
-		\item The system confirms the access.
-	\end{Req}
-	
-	\ref{G3} \useitemtext{G3}\\
-	\begin{Req}
-		\item The system verifies whether the given location exists.
-		\item The system shows the available cars within the range of distance specified by the user from the given location.
-	\end{Req}
-	[D.A.] The GPS position is accurate.
-	
- 	\ref{G4} \useitemtext{G4}\\
- 	4.1) The system obtains the user position via GPS.
- 	4.2) The system shows the available cars within the range of distance specified by the user from his current position.
- 	4.3) [D.A.] The GPS position is accurate.
- 	
- 	\ref{G5} \useitemtext{G5}\\
- 	5.1) The system obtains the user position via GPS and checks he is nearby.
- 	5.2) The system verifies the car is available.
- 	5.3) The system unlocks the car.
- 	5.4) [D.A.] The payment info of the user is correct.
- 	5.5) [D.A.] The payment is assigned to an external service.
- 	
-	\ref{G6} \useitemtext{G6}\\
-	6.1) The system lets the user choose a car among those that are in the specified area.
-	6.2) The system checks that the car is available.
-	6.3) The system flags the car as ?reserved?.
-	6.3) [D.A] The system verifies that the remaining balance is positive. 
-	
-	\ref{G7} \useitemtext{G7}\\
-	7.1) The system checks that the user has one active reservation.
-	7.2) The system lets the user delete his active reservation.
-	\ref{G8} \useitemtext{G8}\\
-	8.1) The system checks the position of the car at the end of the ride.
-	8.2) The system checks the battery charge level at the end of the ride.
-	8.3) The system checks whether the car is plugged into the power grid by the user at the end of the ride.
-	8.4) The system computes the discount (or penalty) considering the previous points.
-	8.5) [D.A.] We assume that the number of passengers is known thanks to sensor measures inside the car.
+\noindent \\
+\noindent \ref{G1} \useitemtext{G1}\\
+\begin{Req}
+\item The system checks whether the user entered all the required data.
+\item	The system checks whether the current user is already registered or not.
+\item The systems checks that there is only one user with that name.
+\item The system generates a password for the access and sends it back to the new user.
+\end{Req}
+	[DA1]\\
+\noindent\ref{G2} \useitemtext{G2}\\
+\begin{Req}[resume]
+\item The system checks the input data and verifies whether the user is already registered.
+\item The system confirms the access.
+\end{Req}
+\noindent\ref{G3} \useitemtext{G3}\\
+\begin{Req}[resume]
+\item The system verifies whether the given location exists.
+\item The system shows the available cars within the range of distance specified by the user from the given location.
+\end{Req}
+	[DA2] \\
+\noindent\ref{G4} \useitemtext{G4}\\
+\begin{Req}[resume]
+\item The system obtains the user position via GPS.
+\item The system shows the available cars within the range of distance specified by the user from his current position.
+\end{Req}
+	[DA2] \\
+\noindent\ref{G5} \useitemtext{G5}\\
+\begin{Req}[resume]
+\item The system obtains the user position via GPS and checks he is nearby.
+\item The system verifies the car is available.
+\item The system unlocks the car.
+\end{Req}
+	[DA3], [DA4]\\
+\noindent\ref{G6} \useitemtext{G6}\\
+\begin{Req}[resume]
+\item The system lets the user choose a car among those that are in the specified area.
+\item The system checks that the car is available.
+\item The system flags the car as Reserved.
+\end{Req}
+[DA5]\\
+\noindent\ref{G7} \useitemtext{G7}\\
+\begin{Req}[resume]
+\item The system checks that the user has one active reservation.
+\item The system lets the user delete his active reservation.
+\end{Req}
+\noindent\ref{G8} \useitemtext{G8}\\
+\begin{Req}[resume]
+\item The system checks the position of the car at the end of the ride.
+\item The system checks the battery charge level at the end of the ride.
+\item The system checks whether the car is plugged into the power grid by the user at the end of the ride.
+\item The system computes the discount (or penalty) considering the previous points.
+\end{Req}
+[DA6]
 \section{Non Functional Requirements}
 
 \chapter{Scenarios}
