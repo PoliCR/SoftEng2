@@ -16,7 +16,7 @@
 %----------------------------------------------------------------------------------------
 %   Title Style Chapter
 %----------------------------------------------------------------------------------------
-\definecolor{gray75}{gray}{0.65}
+\definecolor{gray75}{gray}{0.70}
 \newcommand{\hsp}{\hspace{15pt}}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
@@ -44,21 +44,31 @@
 %   Header/Footer
 %----------------------------------------------------------------------------------------
 \pagestyle{fancy} 
-%\lhead{\sectionmark}
-%\chead{}
-%\rhead{}
-%\lfoot{}
-%%\cfoot{\thepage/\pageref{LastPage}}
-%\cfoot{\thepage}
-%\rfoot{}
-%\renewcommand{\headrulewidth}{0.3pt}
-%%\renewcommand{\footrulewidth}{0.3pt}
-
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancyhf{}
-\fancyhead[C]{\leftmark}
-\fancyfoot[C]{\thepage}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
+%\renewcommand{\chaptermark}[1]{%
+% \markboth{\chaptername
+% \ \thechapter.\ #1}{}}
+
+%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\lhead{\nouppercase{\leftmark}}
+%\chead{}
+\rhead{\nouppercase{\rightmark}}
+\lfoot{RASD - \textit{Version 1.0}}
+%\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.008pt}
+\renewcommand{\footrulewidth}{0.008pt}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyfoot[R]{\thepage}%
+	\renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+	\renewcommand{\footrulewidth}{0.008pt}% Line at the footer visible
+}
 
 %-----------
 % New Page for each section
@@ -196,7 +206,8 @@
 		%basicstyle=\ttfamily,
 	}
 } {}
-
+%--- End of listing for Alloy
+%
 %---
 % Recall item commands
 %---
