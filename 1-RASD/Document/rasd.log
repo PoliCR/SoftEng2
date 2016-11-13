@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  13 NOV 2016 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  13 NOV 2016 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -522,20 +522,20 @@ Package pdftex.def Info: ../../logo.png used on input line 15.
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../l
-ogo.png>]
+ogo.png>]) (./rasd.toc [1
+
+])
+\tf@toc=\write4
+\openout4 = `rasd.toc'.
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]) (./rasd.toc [1
-
-])
-\tf@toc=\write4
-\openout4 = `rasd.toc'.
-
- [2] (./rasd.lof)
+[2] (./rasd.lof)
 \tf@lof=\write5
 \openout5 = `rasd.lof'.
 
@@ -618,12 +618,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--102
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.102 
-       [2] [3] [4]
+[2] [3] [4]
 Chapter 2.
 [5
 
@@ -718,7 +713,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--287
 ] [11] [12]
 Chapter 5.
 
-<../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg, id=384, 12
+<../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg, id=381, 12
 99.85625pt x 936.49875pt>
 File: ../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg Graphi
 c file (type jpg)
@@ -766,7 +761,7 @@ Overfull \hbox (23.99998pt too wide) in paragraph at lines 348--348
  []
 
 
-<../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg, id=409, 921.44
+<../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg, id=406, 921.44
 25pt x 724.7075pt>
 File: ../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg Graphic fi
 le (type jpg)
@@ -782,7 +777,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 351--351
 
 [16]
 <../UML_Model/UML_img/Charge_Sequence__Interaction1__Charge_SequenceDiagram_9.j
-pg, id=427, 626.34pt x 817.0525pt>
+pg, id=424, 626.34pt x 817.0525pt>
 File: ../UML_Model/UML_img/Charge_Sequence__Interaction1__Charge_SequenceDiagra
 m_9.jpg Graphic file (type jpg)
 
@@ -796,7 +791,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 353--353
  [][] 
  []
 
-<../UML_Model/UML_img/p1.jpg, id=428, 616.3025pt x 663.47874pt>
+<../UML_Model/UML_img/p1.jpg, id=425, 616.3025pt x 663.47874pt>
 File: ../UML_Model/UML_img/p1.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/p1.jpg>
@@ -815,7 +810,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 354--354
 l.354 ...}{Reservation Sequence Diagram Part 1}{0}
                                                    <../UML_Model/UML_img/Genera
 l_Class__General_ClassDiagram_3.jpg>]
-<../UML_Model/UML_img/p2.jpg, id=433, 616.3025pt x 582.175pt>
+<../UML_Model/UML_img/p2.jpg, id=430, 616.3025pt x 582.175pt>
 File: ../UML_Model/UML_img/p2.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/p2.jpg>
@@ -834,7 +829,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 355--355
 l.355 ...}{Reservation Sequence Diagram Part 2}{0}
                                                    <../UML_Model/UML_img/Charge
 _Sequence__Interaction1__Charge_SequenceDiagram_9.jpg>]
-<../UML_Model/UML_img/p3.jpg, id=438, 616.3025pt x 868.24374pt>
+<../UML_Model/UML_img/p3.jpg, id=435, 616.3025pt x 868.24374pt>
 File: ../UML_Model/UML_img/p3.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/p3.jpg>
@@ -859,7 +854,7 @@ l.356 ...}{Reservation Sequence Diagram Part 3}{0}
                                                   \fi \fi 
 l.357 \subsection{Statechart Diagram}
                                       <../UML_Model/UML_img/p2.jpg>]
-<../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg, id=448, 646.
+<../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg, id=444, 646.
 415pt x 390.45876pt>
 File: ../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg Graphic 
 file (type jpg)
@@ -880,7 +875,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 358--358
                                                   \fi \fi 
 l.359 \subsection{Activity Diagram}
                                     <../UML_Model/UML_img/p3.jpg>]
-<../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg, id=453, 74
+<../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg, id=450, 74
 7.79375pt x 648.4225pt>
 File: ../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg Graphi
 c file (type jpg)
@@ -895,7 +890,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 360--360
  []
 
 
-<../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg, id=454, 657.
+<../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg, id=451, 657.
 45625pt x 514.92375pt>
 File: ../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg Graphic 
 file (type jpg)
@@ -918,7 +913,7 @@ l.361 ...vityDiagram_2}{Check Activity Diagram}{0}
                                                    <../UML_Model/UML_img/Car_St
 ateChart__Car_StateChartDiagram_0.jpg>]
 <../UML_Model/UML_img/Registration_Activity__Registration_ActivityDiagram_6.jpg
-, id=459, 1187.43625pt x 1003.75pt>
+, id=456, 1187.43625pt x 1003.75pt>
 File: ../UML_Model/UML_img/Registration_Activity__Registration_ActivityDiagram_
 6.jpg Graphic file (type jpg)
 
@@ -941,7 +936,7 @@ l.362 ...gram_6}{Registration Activity Diagram}{0}
                                                    <../UML_Model/UML_img/Charge
 _Activity__Charge_ActivityDiagram_1.jpg>]
 <../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.jpg, 
-id=464, 1324.95pt x 1336.995pt>
+id=461, 1324.95pt x 1336.995pt>
 File: ../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.
 jpg Graphic file (type jpg)
 
@@ -978,7 +973,7 @@ entifier (name{figure.5.11}) has been already used, duplicate ignored
 l.378 }
         <../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram
 _7.jpg>] [27] [28] [29] [30] [31] [32]
-<../Alloy/execution.png, id=760, 531.9875pt x 457.71pt>
+<../Alloy/execution.png, id=756, 531.9875pt x 457.71pt>
 File: ../Alloy/execution.png Graphic file (type png)
 
 <use ../Alloy/execution.png>
@@ -989,14 +984,14 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 643--643
  [][] 
  []
 
-<../Alloy/alloy_world1.png, id=761, 3391.67125pt x 810.02625pt>
+<../Alloy/alloy_world1.png, id=757, 3391.67125pt x 810.02625pt>
 File: ../Alloy/alloy_world1.png Graphic file (type png)
 
 <use ../Alloy/alloy_world1.png>
 Package pdftex.def Info: ../Alloy/alloy_world1.png used on input line 644.
 (pdftex.def)             Requested size: 426.79135pt x 101.92047pt.
  [33]
-<../Alloy/alloy_world2.png, id=785, 2526.43875pt x 668.4975pt>
+<../Alloy/alloy_world2.png, id=782, 2526.43875pt x 668.4975pt>
 File: ../Alloy/alloy_world2.png Graphic file (type png)
 
 <use ../Alloy/alloy_world2.png>
@@ -1066,10 +1061,10 @@ mf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sfxc1440.pfb>
-Output written on rasd.pdf (42 pages, 1899027 bytes).
+Output written on rasd.pdf (41 pages, 1898736 bytes).
 PDF statistics:
- 963 PDF objects out of 1000 (max. 8388607)
- 874 compressed objects within 9 object streams
+ 960 PDF objects out of 1000 (max. 8388607)
+ 872 compressed objects within 9 object streams
  447 named destinations out of 1000 (max. 500000)
  380 words of extra memory for PDF output out of 10000 (max. 10000000)
 
