@@ -1,4 +1,5 @@
-\usepackage[margin=3cm]{geometry}
+\usepackage{geometry}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=3cm,includefoot, includehead}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
@@ -12,6 +13,8 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{tabularx}
+\makeatletter\let\MPtrue\@minipagetrue\makeatother
 
 %----------------------------------------------------------------------------------------
 %   Title Style Chapter
@@ -216,3 +219,22 @@
 	\label{#1}#2}
 
 \newcommand\useitemtext[2]{\csname item#1\endcsname}
+
+%--- 
+% Table for use case descriptions
+%---
+\newcommand{\usecasedesc}[6]{%
+	\begin{table}[H]
+		\begin{tabular}{p{0.3\linewidth} p{0.7\linewidth}}
+			%\begin{tabular}{\linewidth}{>{\setlength\hsize{.25\hsize}}X>{\setlength\hsize{.75\hsize}\setlength\linewidth{\hsize}}X}
+			\textit{Name} & #1 \\
+			\textit{Actors} & #2 \\
+			\textit{Entry conditions} &\MPtrue#3\\
+			\textit{Flow of events} &\MPtrue#4\\
+			\textit{Exit conditions} & #5\\
+			\textit{Exceptions} & #6\\
+		\end{tabular}
+	\end{table}
+}
+
+%\newcommand{optusecase}{[leftmargin=0.50cm,nosep]}

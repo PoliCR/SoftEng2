@@ -38,7 +38,7 @@ It is possible to identify two main types of people that will interact with \tex
 
 \section{Purpose}
 Analyzing the system-to-be in a more detailed way, it is possible to better define the functionalities that the system should provide to the users and the employees.\\
-The user has the possibility to register to get a personal account on \textit{PowerEnJoy}, which is by the way mandatory to access to all the functionalities provided. A logged-in user can search for an available car within a certain range from his current position or from a given address and, in case, he can pick up the car. Finally,he has the possibility to reserve a chosen car(he can also delete the reservation subsequently if the car won't be used: in this way he is free from fees).\\
+The user has the possibility to register to get a personal account on \textit{PowerEnJoy}, which is by the way mandatory to access to all the functionalities provided. A logged-in user can search for an available car within a certain range from his current position or from a given address and, in case, he can pick up the car. Finally, he has the possibility to reserve a chosen car (he can also delete the reservation subsequently if the car won't be used: in this way he is free from fees).\\
 Moreover, to promote a more eco-friendly behaviour of the users, the system applies special discounts or extra charges on the cost of the rides according to some different conditions that will be described in the Non Functional Requirements section.\\ 
 With regards to the company employees, the system will let them use special functions to retrieve specific information about the cars (e.g.: battery level, internal working status) and their positions. In this way, they can move cars from safe areas to charging areas and vice versa if needed.
 
@@ -69,7 +69,7 @@ The system-to-be will interact with three main world entities: \textit{People}, 
 \textit{People} entity includes the clients and all those people who have a relation with the system, such as the employees.
 For what concerns the clients, the interaction with the system consists in both the functionalities that the system provides and the events that are triggered by the users. Log-in, reservations of cars, rides, notifications, parking are the main shared phenomena between the clients and the system.\\Employees collaborate with the system in terms of managing the cars: the search of cars, the notification of their states, the parking are the core shared phenomena between the employees and the system.\\
 \textit{Physical platform} consists of the physical infrastructure of the world with which the system exchanges information. It includes the cars, the \textit{Safe Areas} and \textit{Charging Areas}.
-Unlocking,locking the cars and routes management are the main phenomena that are shared with the system.\\\textit{Safe Areas} and \textit{Charging Areas} come into account when considering the search for the availability of parking lots or of power plugs.\\Finally,\textit{External software services} are the software tools that cooperate with the system-to-be. They can be considered external systems that already exist in the environment. The main ones are the payment system and GPS location system. The first one interacts with \textit{PowerEnJoy} in the reservation and in the payment phases while GPS system helps with all those actions that require information about position(search for a car, notification, parking, reservation).
+Unlocking, locking the cars and routes management are the main phenomena that are shared with the system.\\\textit{Safe Areas} and \textit{Charging Areas} come into account when considering the search for the availability of parking lots or of power plugs.\\Finally, \textit{External software services} are the software tools that cooperate with the system-to-be. They can be considered external systems that already exist in the environment. The main ones are the payment system and GPS location system. The first one interacts with \textit{PowerEnJoy} in the reservation and in the payment phases while GPS system helps with all those actions that require information about position(search for a car, notification, parking, reservation).
 \section{Definitions, acronyms and abbreviations}
 \textbf{System}: sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
 In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operations (e.g.: reservation and renting).\\
@@ -78,7 +78,8 @@ In particular, its structure and implementation will be explained in the followi
 \noindent \\
 \textbf{Ride}: the event of picking-up a car, driving through the city and parking it. Every Ride is associated to a single user and to a single car.\\
 \noindent \\
-\textbf{Reservation}: it is the action of booking an available car. 
+\textbf{Reservation}: it is the action of booking an available car.\\
+\noindent \\ 
 \textbf{Car}: a car is an electrical vehicle that will be used by a registered user. \\
 \noindent \\
 \textbf{Not Registered User}: indicates a person who hasn't registered to the system yet; for this reason he can't access to any of the offered function. The only possible action that he can carry out is the registration to get a personal account.\\ 
@@ -119,9 +120,9 @@ During the writing of this document, the following resources have been taken int
 In this first chapter, after a brief description of the given problem, the explanation of the system-to-be and its application domain (according to the \textit{World and the Machine Paper}), the goals that the system have to achieve have been stated out.
 Subsequently, a glossary has been inserted in order to help the reader in identifying in a unique way some words and concepts, that will be used later on in this document and also in the next ones.\\
 In the second chapter, there is a small presentation of the product perspective and the main functionalities; after that, a basic analysis and characterization of the beneficiaries (users and employees) of the system-to-be is pointed out. The last part of this chapter covers the assumptions that have been made in order to develop the system.\\
-In the third chapter, which is the core of the RASD, the Functional Requirements are derived from the goals defined in the first chapter.Next, Non Functional Requirements will describe how the system performs the functionalities.\\
+In the third chapter, which is the core of the RASD, the Functional Requirements are derived from the goals defined in the first chapter. Next, Non Functional Requirements will describe how the system performs the functionalities.\\
 The fourth chapter gathers a bunch of scenarios for all the possible usages of the system.\\
-In the fifth chapter, the Requirements of the system-to-be are modelled firstly using a semi-formal notation (UML), via different types of diagrams, and secondly through Alloy code; in the end of the chapter the graphical output of the Alloy Analyser is given.
+In the fifth chapter, the Requirements of the system-to-be are modelled firstly using a semi-formal notation (UML), via different types of diagrams, and secondly through Alloy code; in the end of the chapter the graphical output of the Alloy Analyser is given.\\
 The sixth chapter include the tools that have been used to redact this document and the time effort required to complete it.
 \chapter{Overall Description}
 \section{Product perspective}
@@ -165,32 +166,37 @@ Deriving requirements from goals.\\
 \item The systems checks that there is only one user with that name.
 \item The system generates a password for the access and sends it back to the new user.
 \end{Req}
-	[DA1]\\
-\noindent\ref{G2} \useitemtext{G2}\\
+\hspace{0.4cm}[DA1]\\
+\noindent\\
+\ref{G2} \useitemtext{G2}\\
 \begin{Req}[resume]
 \item The system checks the input data and verifies whether the user is already registered.
 \item The system confirms the access.
 \end{Req}
-\noindent\ref{G3} \useitemtext{G3}\\
+\noindent
+\ref{G3} \useitemtext{G3}\\
 \begin{Req}[resume]
 \item The system verifies whether the given location exists.
 \item The system shows the available cars within the range of distance specified by the user from the given location.
 \end{Req}
-	[DA2] \\
-\noindent\ref{G4} \useitemtext{G4}\\
+\hspace{0.4cm}[DA2] \\
+\noindent\\
+\ref{G4} \useitemtext{G4}\\
 \begin{Req}[resume]
 \item The system obtains the user position via GPS.
 \item The system shows the available cars within the range of distance specified by the user from his current position.
 \end{Req}
-	[DA2] \\
-\noindent\ref{G5} \useitemtext{G5}\\
+\hspace{0.4cm}[DA2] \\
+\noindent\\
+\ref{G5} \useitemtext{G5}\\
 \begin{Req}[resume]
 \item The system obtains the user position via GPS and checks he is nearby.
 \item The system verifies the car is available.
 \item The system unlocks the car.
 \end{Req}
-	[DA3], [DA4]\\
-\noindent\ref{G6} \useitemtext{G6}\\
+\hspace{0.4cm}[DA3], [DA4]\\
+\noindent\\
+\ref{G6} \useitemtext{G6}\\
 \begin{Req}[resume]
 \item The system shows those cars that are in the area specified by the user.
 \item The system verifies that the user balance is not negative.
@@ -208,8 +214,8 @@ Deriving requirements from goals.\\
 \item The system checks whether the car is plugged into the power grid by the user at the end of the ride.
 \item The system computes the discount (or extra charge) considering the previous points.
 \end{Req}
-[DA6]\\
-\noindent\ref{G9} \useitemtext{G9}\\
+\hspace{0.4cm}[DA6]\\
+\noindent\\\ref{G9} \useitemtext{G9}\\
 \begin{Req}[resume]
 \item The system computes a possible discount or an extra charge.
 \item The system computes the total cost of the ride.
@@ -227,8 +233,9 @@ Deriving requirements from goals.\\
 \item The system verifies whether the given location exists.
 \item The system shows the cars within the range of distance specified by the employee from the given location.
 \end{Req}
-	[DA2] \\
-\noindent\ref{G12} \useitemtext{G12}\\
+\hspace{0.4cm}[DA2] \\
+\noindent\\
+\ref{G12} \useitemtext{G12}\\
 \begin{Req}[resume]
 \item The system shows the current state of the car.
 \item The system updates the state of the car with the new value.
@@ -249,119 +256,111 @@ The ways the functionalities of the system-to-be are provided are described by t
 \end{enumerate}
 \chapter{Scenarios}
 \textbf{Scenario 1}\\
-Mario is a young man who wants to go to his girlfriend house.After evaluating all the possibilities,he ends up with reserving an electric car.Since it is the first time,he registers to the car sharing system,PowerEnJoy.After entering his credentials(name, Social Security Number,address,license number, email) and payment info,Mario chooses his login name.The system checks the correctness of the input data and sends Mario an email to complete the registration together with a password for the access.\\
-Finally Mario is able to enter his personal page on his smartphone.He searches for a car nearby(he selects a maximum distance of 1 km from his current position) and he finds some available cars in a safe parking just 0,5 km far. That's good news!He texts his girlfriend Anna and picks up the car. 
+Mario is a young man who wants to go to his girlfriend house. After evaluating all the possibilities, he ends up with reserving an electric car. Since it is the first time, he registers to the car sharing system, PowerEnJoy. After entering his credentials (name, Social Security Number, address, license number, email) and payment info, Mario chooses his login name. The system checks the correctness of the input data and sends Mario an email to complete the registration together with a password for the access.\\
+Finally Mario is able to enter his personal page on his smartphone. He searches for a car nearby (he selects a maximum distance of 1 km from his current position) and he finds some available cars in a safe parking just 0,5 km far. That's good news! He texts his girlfriend Anna and picks up the car. \\
 \noindent \\
 \textbf{Scenario 2}\\
-It's a rainy Sunday in Milan and Bob,Tom and John are going to the stadium to see the football match.Bob knows that today there is a strike of all the public vehicles and so he suggests his friends picking up an electric car.The match is at 3 p.m. but the three friends want to be sure to arrive to the stadium in time, so they decide to reserve the car as soon as possible.They are going to leave at 2 p.m. and the system lets them do the reservation only from 1 p.m. on.Since only Tom has a car license and an account on PowerEnJoy,he applies for reservation.He accesses his personal page and enters his GPS position to look for a car near his house.Unfortunately no car is available.He then enters Bob's home address and luckily he finds one and eventually carries out the reservation.The system verifies that the remaining credit is positive,and as soon as checked it marks the car as "reserved".\\ 
-The three friends reach the car and start their trip.As they arrive at the stadium,to their great surprise they find out that they are entitled to a discount as the car screen displays:" Congratulations,you have been accompanied by at least two people!You get a 10\% discount on your ride!".\\ 
+It's a rainy Sunday in Milan and Bob, Tom and John are going to the stadium to see the football match. Bob knows that today there is a strike of all the public vehicles and so he suggests his friends picking up an electric car. The match is at 3 p.m. but the three friends want to be sure to arrive to the stadium in time, so they decide to reserve the car as soon as possible. They are going to leave at 2 p.m. and the system lets them do the reservation only from 1 p.m. on. Since only Tom has a car license and an account on PowerEnJoy, he applies for reservation. He accesses his personal page and enters his GPS position to look for a car near his house. Unfortunately no car is available. He then enters Bob's home address and luckily he finds one and eventually carries out the reservation. The system verifies that the remaining credit is positive, and as soon as checked it marks the car as "reserved".\\ 
+The three friends reach the car and start their trip. As they arrive at the stadium, to their great surprise they find out that they are entitled to a discount as the car screen displays:" Congratulations, you have been accompanied by at least two people! You get a 10\% discount on your ride!".\\ 
 \noindent \\
 \textbf{Scenario 3}\\
-It's Saturday afternoon and Anthony is willing to throw a party this evening.He needs to go shopping at the supermarket but his dad picked up his car this morning.He decides to reserve a car for the trip back home so that he can bring the shopping bags.Anthony is already registered on PowerEnJoy but he has never reserved a car before.He searches for a car near the supermarket and luckily finds one.He's very cautious and decides to read all the terms and conditions of the reservation.He finds out that the system reserves the car for up to one hour from the confirmation and after that time,in case he does not pick it up,he will be fined 1 EUR.Nonetheless,Anthony is self-confident and decides to confirm the reservation.\\
-After leaving the market,Anthony accesses to PowerEnJoy with his smartphone to tell the system he's nearby.When he reaches the car,he sees that the car is ready to go.He then opens the trunk and puts his shopping bags in.As soon as the engine ignites,he is impressed by the big display near the radio:firstly,on the screen he reads "Welcome Sir,PowerEnJoy wishes you a pleasant trip!Fare count starts right now" and as he drives through the streets the system shows him the current charge of the car,the current bill and a GPS interface where safe areas for parking are marked by red labels.As Anthony turns in Golgi street,the car also signals that there is a special charging station nearby and if he decides to stop there and plug the car into the power grid he will be awarded with a 30\% discount on the ride.Unfortunately Anthony's home is not so close so he keeps driving for a while.After about 20 minutes,Anthony finally reaches a safe parking near home and decides to stop the car there.As he turns it off,the display shows a nice message: "Had a great trip?We hope so.The battery charge level is still high(>=50\%): you are entitled to a 20\% discount on this ride!".After closing the trunk,Anthony checks that the system automatically blocks the car and then he goes home.\\ \noindent \\
+It's Saturday afternoon and Anthony is willing to throw a party this evening. He needs to go shopping at the supermarket but his dad picked up his car this morning. He decides to reserve a car for the trip back home so that he can bring the shopping bags. Anthony is already registered on PowerEnJoy but he has never reserved a car before. He searches for a car near the supermarket and luckily finds one. He's very cautious and decides to read all the terms and conditions of the reservation. He finds out that the system reserves the car for up to one hour from the confirmation and after that time, in case he does not pick it up, he will be fined 1 EUR. Nonetheless, Anthony is self-confident and decides to confirm the reservation.\\
+After leaving the market, Anthony accesses to PowerEnJoy with his smartphone to tell the system he's nearby. When he reaches the car, he sees that the car is ready to go. He then opens the trunk and puts his shopping bags in. As soon as the engine ignites, he is impressed by the big display near the radio: firstly, on the screen he reads "Welcome Sir, PowerEnJoy wishes you a pleasant trip! Fare count starts right now" and as he drives through the streets the system shows him the current charge of the car, the current bill and a GPS interface where safe areas for parking are marked by red labels. As Anthony turns in Golgi street, the car also signals that there is a special charging station nearby and if he decides to stop there and plug the car into the power grid he will be awarded with a 30\% discount on the ride.Unfortunately Anthony's home is not so close so he keeps driving for a while. After about 20 minutes, Anthony finally reaches a safe parking near home and decides to stop the car there. As he turns it off, the display shows a nice message: "Had a great trip? We hope so. The battery charge level is still high(>=50\%): you are entitled to a 20\% discount on this ride!".After closing the trunk, Anthony checks that the system automatically blocks the car and then he goes home.\\ \noindent \\
 \textbf{Scenario 4}\\
-It's a very hot summer day in Milan and James wants to go swimming.His mother Jane suggests him picking up an electric car to go there.James thinks it's a good idea and so he turns on his personal computer and go to PowerEnJoy site.After registering,he reserves a car and search for safe parking areas near the swimming pool.There is one really close to it.James then reaches the car,he puts his bag in and starts the car.The pool is pretty far and James knows that he will pay some extra money for that.As he arrives,the display on the car signals that the battery charge level is very low:"Battery is low(more than 80\% empty).You are charged a 30\% more on the last ride to compensate for the re-charge on site."\\ 
+It's a very hot summer day in Milan and James wants to go swimming. His mother Jane suggests him picking up an electric car to go there. James thinks it's a good idea and so he turns on his personal computer and go to PowerEnJoy site. After registering,he reserves a car and search for safe parking areas near the swimming pool. There is one really close to it. James then reaches the car, he puts his bag in and starts the car. The pool is pretty far and James knows that he will pay some extra money for that. As he arrives, the display on the car signals that the battery charge level is very low: "Battery is low (more than 80\% empty). You are charged a 30\% more on the last ride to compensate for the re-charge on site."\\ 
 \noindent \\
 \textbf{Scenario 5}\\
-Franklin is very happy today because it is his grandfather's George birthday and so he decides to rent an electric car to visit his grandparents.George lives together with Maria(Franklin's grandmother) in a country house,in the Milan suburbs.Unfortunately the house is in an isolated area and the PowerEnJoy web app signals that there is only a standard safe parking near George's house and that the closest charging station from it is 4 km far.Franklin knows that he will be charged a 30\% more on his ride(as he has read in the terms and conditions on the site) but nevertheless he reserves a car.\\
-As he arrives at the safe parking and turns the car off,the display of the car notifies him:"The closest power station is pretty far(more than 3 km).You are charged a 30\% more on the last ride to compensate for the re-charge on site.".Franklin is still happy anyway because he knows that his grandfather will appreciate his visit.\\ 
+Franklin is very happy today because it is his grandfather's George birthday and so he decides to rent an electric car to visit his grandparents. George lives together with Maria (Franklin's grandmother) in a country house, in the Milan suburbs. Unfortunately the house is in an isolated area and the PowerEnJoy web app signals that there is only a standard safe parking near George's house and that the closest charging station from it is 4 km far. Franklin knows that he will be charged a 30\% more on his ride(as he has read in the terms and conditions on the site) but nevertheless he reserves a car.\\
+As he arrives at the safe parking and turns the car off, the display of the car notifies him: "The closest power station is pretty far(more than 3 km). You are charged a 30\% more on the last ride to compensate for the re-charge on site.". Franklin is still happy anyway because he knows that his grandfather will appreciate his visit.\\ 
 \noindent \\
 \textbf{Scenario 6}\\
-Tom is a young cheapskate and after considering all the possibilities to reach the bus station he ends up with the decision of renting an electric car.He chooses PowerEnJoy because he has read of the money saving option that is available on its cars.After registering on the site and reserving a car near his home,he reaches the parking to pick it up.As he gets in the car and starts the engine,he searches for the money saving option on the big display.He's prompted to enter his destination and after a while the system shows some parking areas and power stations with the corresponding available discounts.Tom chooses a charging station near the gym as a parking and starts riding.As he arrives,he plugs the car in the power grid and he obtains a 30\% discount on his ride.\\
+Tom is a young cheapskate and after considering all the possibilities to reach the bus station he ends up with the decision of renting an electric car. He chooses PowerEnJoy because he has read of the money saving option that is available on its cars. After registering on the site and reserving a car near his home, he reaches the parking to pick it up. As he gets in the car and starts the engine, he searches for the money saving option on the big display. He's prompted to enter his destination and after a while the system shows some parking areas and power stations with the corresponding available discounts. Tom chooses a charging station near the gym as a parking and starts riding. As he arrives, he plugs the car in the power grid and he obtains a 30\% discount on his ride.\\
 \noindent \\
 \textbf{Scenario 7}\\ 
-Harold is fit man who lives in Milan.He works as an employee for PowerEnJoy,an electric car-sharing company of the city,and everyday he rides his folding bike around the city to monitor the state of the cars.As he arrives in the SafeArea in Da Vinci street,he finds out  that a car has a flat tire.What a pity!Harold takes his smartphone,goes to PowerEnJoy web site and enters in administrator mode.He signals the unavailability of the car,marking it as "Broken".\\
+Harold is fit man who lives in Milan. He works as an employee for PowerEnJoy, an electric car-sharing company of the city, and everyday he rides his folding bike around the city to monitor the state of the cars. As he arrives in the SafeArea in Da Vinci street, he finds out  that a car has a flat tire. What a pity! Harold takes his smartphone, goes to PowerEnJoy web site and enters in administrator mode. He signals the unavailability of the car, marking it as "Broken".\\
 \noindent \\
 \textbf{Scenario 8}\\
-It's 9 a.m and Jessica's work schedule has just started.She is an employee at PowerEnJoy,the most famous electric car-sharing company in Milan.She applied for this job because she does not like to work in an office all day long.Her main task is to take care of the cars in the parking areas.
-As she arrives at the PowerEnJoy SafeArea in Verdi street,she finds out that a car needs to be charged.She accesses to the PowerEnjoy site with her smartphone and enters in administrator mode in order to mark the car as "On Charge".Jessica then unfolds her bike and puts it in the trunk of the car.
-As she plugs the car in the power grid,a client arrives with another car,finishing the ride.The client is in a hurry and forgets to plug in the car,so Jessica takes care of it too.
+It's 9 a.m and Jessica's work schedule has just started. She is an employee at PowerEnJoy, the most famous electric car-sharing company in Milan. She applied for this job because she does not like to work in an office all day long. Her main task is to take care of the cars in the parking areas.\\
+As she arrives at the PowerEnJoy SafeArea in Verdi street, she finds out that a car needs to be charged. She accesses to the PowerEnjoy site with her smartphone and enters in administrator mode in order to mark the car as "On Charge". Jessica then unfolds her bike and puts it in the trunk of the car.\\
+As she plugs the car in the power grid,a client arrives with another car,finishing the ride. The client is in a hurry and forgets to plug in the car, so Jessica takes care of it too.
 \\
 
 \chapter{Modeling the Requirements}
-
-\section{UML Models}
 %to insert a new image use command \imagebox{file_path}{caption}{angle of rotation}
+\section{UML Models}
+
 \subsection{Use Cases}
-\subsubsection{Diagrams}
+\subsubsection{Diagram}
+\imagebox{../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4}{Use Case Diagram}{0}
 \subsubsection{Descriptions}
-Name: Registration.
-Actors: User not registered,the system.
-Entry conditions: There are no entry conditions.
-Flow of events:
-- The user compiles the form with his personal data.
-- The user inserts his external payment account.
-- The user inserts his driving license number.
-- The user confirms the registration thanks to the mail sent by the system.
-Exit conditions:
-- The user has an account and the system recognizes him.
-Exceptions:
-- The external payment account doesn't exist.
-- The driving license number doesn't exist or is invalid.
-- Some of the personal data are not accepted (for example a small password).
-In any of these cases the system asks the user to reinsert correct data.
+\usecasedesc{\textbf{Registration}}
+{User not registered, the system}
+{There are no entry conditions}
+{\begin{enumerate}
+		\item The user compiles the form with his personal data.
+		\item The user inserts his external payment account.
+		\item The user inserts his driving license number.
+		\item The user confirms the registration thanks to the mail sent by the system.
+\end{enumerate}}
+{The user has an account and the system recognizes him}{\begin{itemize}
+\item The external payment account doesn't exist.
+\item The driving license number doesn't exist or is invalid.
+\item Some of the personal data are not accepted (for example a small password).
+\end{itemize}In any of these cases the system asks the user to reinsert correct data.}
 
+\usecasedesc{\textbf{Search for a car}}{ User registered, the system}{The user must be logged into the system}{\begin{enumerate}
+		\item The user goes to the search interface.
+		\item The user decides to search for a car manually navigating the map or specifying a place or automatically using the GPS location system.
+		\item The user selects the range within he wants to find the car.
+		\item The system shows the available cars and the near parking areas.
+\end{enumerate}}{The user sees on the display a list of cars or a map with cars and parking area positions}{\begin{itemize}
+\item The location doesn't exist.
+\item GPS is off.
+\end{itemize}All of these cases are solved displaying an error to the user. 
+For example: if there are no cars "NO CARS AVAILABLE", if the GPS is off "GPS IS OFF".}
 
-Name: Search for a car.
-Actors: User registered,the system.
-Entry conditions: The user must be logged into the system.
-Flow of events:
-- The user goes to the search interface.
-- The user decides to search for a car manually navigating the map or specifying a place or automatically using the GPS location system.
-- The user selects the range within he wants to find the car.
-- The system shows the available cars and the near parking areas.
-Exit conditions: The user sees on the display a list of cars or a map with cars and parking area positions.
-Exceptions:
-- The location doesn't exist.
-- GPS is off.
-All of these cases are solved displaying an error to the user. 
-For example: if there are no cars "NO CARS AVAILABLE", if the GPS is off "GPS IS OFF".
+\usecasedesc{\textbf{Reserve a car}}{User registered, the system}{User must be logged in and must have a selected car  thanks to the previous search}{\begin{enumerate}
+	\item User confirms the reservation with a duration of 1 hour.
+\end{enumerate}}{The user has reserved a car that he is be able to take in an hour. He can check the reservation in the "MANAGE RESERVATION" panel and possibly cancel it. This car is marked as reserved.}{\begin{itemize}
+\item User's balance isn't positive.
+\end{itemize}
+The system displays an error and brings him back to the initial page.}
 
-
-Name: Reserve a car.
-Actors: User registered,the system.
-Entry conditions: User must be logged in and must have a selected car  thanks to the previous search.
-Flow of events:
-- User confirms the reservation with a duration of 1 hour.
-Exit conditions: The user has reserved a car that he is be able to take in an hour. He can check the reservation in the "MANAGE RESERVATION" panel and possibly cancel it. This car is marked as reserved.
-Exceptions:
-- User's balance isn't positive.
-The system displays an error and brings him back to the initial page.
-
-
-Name: Pick up a car.
-Actors: User registered,the system.
-Entry conditions: User must be logged in.
-Flow of events:
-- User wants to unlock a car which is not reserved by someone else.
-- The system unlocks the car verifying the user GPS position and the user balance.
-- User enters into the car.
-Exit conditions: The user can enter and drive the car, starting by clicking "START" on the car display.
-Exceptions:
-- The system can't verify the user position because the user GPS is off.
+\usecasedesc{\textbf{Pick up a car}}{User registered, the system}{User must be logged in}{\begin{enumerate}
+		\item User wants to unlock a car which is not reserved by someone else
+		\item The system unlocks the car verifying the user GPS position and the user balance
+		\item User enters into the car
+\end{enumerate}}{The user can enter and drive the car, starting by clicking "START" on the car display}{\begin{enumerate}
+\item The system can't verify the user position because the user GPS is off.
 The system asks the user to turn the GPS on.
-- User has a non-positive balance.
-The system displays an error to and brings him back to the initial page.
+\item User has a non-positive balance.
+\end{enumerate}The system displays an error to and brings him back to the initial page.}
 
+\usecasedesc{\textbf{Park the car}}{User, the system}{User must be logged in and must have taken a car}{\begin{enumerate}
+		\item User parks the car in a \textit{Safe Area} or in \textit{Charging Area}
+		\item User powers off the car.
+		\item User notifies on the car-display that the ride is over.
+		\item The system displays the cost of the service showing possible discounts or extra charges.
+		\item The system locks the car.
+\end{enumerate}}{User exits the car and pays the service(with an external system)}{\begin{enumerate}
+	\item The user can't afford the ride.
+	\item The user doesn't click on the finish button on the car display.
+\end{enumerate}In both of these cases the external system payment is responsible.}
 
-Name: Park the car.
-Actors: User,the system.
-Entry conditions: User must be logged in and must have taken a car.
-Flow of events:
-- User parks the car in a \textit{Safe Area} or in \textit{Charging Area}
-- User powers off the car.
-- User notifies on the car-display that the ride is over.
-- The system displays the cost of the service showing possible discounts or extra charges.
-- The system locks the car.
-Exit conditions: User exits the car and pays the service(with an external system).
-Exceptions:
-- The user can't afford the ride.
-- The user doesn't click on the finish button on the car display.
-In both of these cases the external system payment is responsible.
 \subsection{Class Diagram}
+\imagebox{../UML_Model/UML_img/General_Class__General_ClassDiagram_3}{Class Diagram}{0}
 \subsection{Sequence Diagram}
+\imagebox{../UML_Model/UML_img/Charge_Sequence__Interaction1__Charge_SequenceDiagram_9}{Charge Sequence Diagram}{0}
+\imagebox{../UML_Model/UML_img/p1}{Reservation Sequence Diagram Part 1}{0}
+\imagebox{../UML_Model/UML_img/p2}{Reservation Sequence Diagram Part 2}{0}
+\imagebox{../UML_Model/UML_img/p3}{Reservation Sequence Diagram Part 3}{0}
 \subsection{Statechart Diagram}
+\imagebox{../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0}{Car status Statechart}{0}
 \subsection{Activity Diagram}
+\imagebox{../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1}{Charge Activity Diagram}{0}
+\imagebox{../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2}{Check Activity Diagram}{0}
+\imagebox{../UML_Model/UML_img/Registration_Activity__Registration_ActivityDiagram_6}{Registration Activity Diagram}{0}
+\imagebox{../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7}{Reservation Activity Diagram}{0}
 \section{Alloy}
 
 \subsection{Source Code}
@@ -651,11 +650,11 @@ During the writing of this document, the following application tools have been u
 \begin{itemize}
 	\item Star UML, for creating all types of UML models for the requirements
 	\item TeXstudio, for writing the document in \LaTeX
-	\item AlloyAnalyzer, for running the Alloy code 
+	\item AlloyAnalyzer, for running the Alloy code
+	\item Balsamiq, for creating the mockups of the user interface
 \end{itemize}
 \section{Timing}
-[TBD]
-% TODO
+In order to complete this document, each author worked for 45 hours.
 %\section{Changelog}
 %
 %----------------------------------------------------------------------------------------
