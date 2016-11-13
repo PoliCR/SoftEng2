@@ -38,12 +38,9 @@ It is possible to identify two main types of people that will interact with \tex
 
 \section{Purpose}
 Analyzing the system-to-be in a more detailed way, it is possible to better define the functionalities that the system should provide to the users and the employees.\\
-The users will have the possibility to register to get a personal account on \textit{PowerEnJoy}, which is by the way mandatory to access to all the functionalities provided. Once the user is logged-in, he can search for an available car within a certain range from his current position or from a given address and, in case, he can pick up the car. He has also the possibility to reserve a chosen car for up to one hour before the ride (he can also delete the reservation subsequently if the car won't be used: in this way he is free from fees). The users, while registering, have to provide all personal information, a valid driving license and payment info; the whole procedure of the payment will rely on an external payment system, deferring to it all issues about information validity.\\
-Moreover, to promote a more eco-friendly behaviour of the users, the system will apply special discounts or extra charge on the cost of the rides according to some different conditions.\\ 
-For what concerns discounts,users that satisfy at least one of the following conditions will be awarded : the user takes at least two other passengers (-10\%); the car is 
-left with no more than of 50\% empty battery(-20\%); the car is left at special parking area and the user takes care of plugging the car into the power grid (-30\%). Additionally, the system provides a special option, called \textit{money saving option}, which lets the user insert his/her final destination and he/she gets from the system information about the area where to park the car in order to get a special discount. The area selected from the system ensures a uniform distribution of the car in the city and depends also on the final destination the user has inserted.\\
-Talking about extra charges, the last ride of a user will be charged with a 30\% more if the car is left at more than 3 km from the nearest charging area or with the battery level under 20\%.\\
-Regarding the company employees, the system will let them use special functions to retrieve specific information about the cars (e.g.: battery level, internal working status) and their positions. In this way, they can move cars from safe areas to charging areas and vicec versa if needed.
+The user has the possibility to register to get a personal account on \textit{PowerEnJoy}, which is by the way mandatory to access to all the functionalities provided. A logged-in user can search for an available car within a certain range from his current position or from a given address and, in case, he can pick up the car. Finally,he has the possibility to reserve a chosen car(he can also delete the reservation subsequently if the car won't be used: in this way he is free from fees).\\
+Moreover, to promote a more eco-friendly behaviour of the users, the system applies special discounts or extra charges on the cost of the rides according to some different conditions that will be described in the Non Functional Requirements section.\\ 
+With regards to the company employees, the system will let them use special functions to retrieve specific information about the cars (e.g.: battery level, internal working status) and their positions. In this way, they can move cars from safe areas to charging areas and vice versa if needed.
 
 \subsection{Goals}
 From the previous description of the \textit{Purpose} of the system, it is possible to define the following goals that the system has to fulfil to catch the \textit{\textbf{User}} needs.
@@ -56,20 +53,23 @@ From the previous description of the \textit{Purpose} of the system, it is possi
 \item \itemtext{G6} {The user can reserve a car}
 \item \itemtext{G7} {The user can delete the reservation of a car}
 \item \itemtext{G8} {The user can obtain special discounts or penalties on his last ride}
+\item \itemtext{G9} {The user can park the car in a \textit{Safe Area} or in a \textit{Charging Area}}
 \end{Goal}
 Furthermore, since the system will be used by company employees too, it has to fulfil the following goals with respect to the \textbf{\textit{Employee}} actor. 
 \begin{Goal}[resume]
-\item \itemtext{G9} The employee can log in into the system
-\item \itemtext{G10} The employee can search for the cars over the city
-\item \itemtext{G11} The employee can update the status of the cars
+\item \itemtext{G10} {The employee can log into the system}
+\item \itemtext{G11} {The employee can search for cars over the city}
+\item \itemtext{G12} {The employee can update the status of cars}
 \end{Goal}
 
 \section{Scope}
 %identifies system-to-be and in its application domain
 % analysis world-machine (define boundaries)
-%TODO
-
-
+The system-to-be will interact with three main world entities: \textit{People}, \textit{Physical platform} and \textit{External software services}.
+\textit{People} entity includes the clients and all those people who have a relation with the system, such as the employees.
+For what concerns the clients, the interaction with the system consists in both the functionalities that the system provides and the events that are triggered by the users. Log-in, reservations of cars, rides, notifications, parking are the main shared phenomena between the clients and the system.\\Employees collaborate with the system in terms of managing the cars: the search of cars, the notification of their states, the parking are the core shared phenomena between the employees and the system.\\
+\textit{Physical platform} consists of the physical infrastructure of the world with which the system exchanges information. It includes the cars, the \textit{Safe Areas} and \textit{Charging Areas}.
+Unlocking,locking the cars and routes management are the main phenomena that are shared with the system.\\\textit{Safe Areas} and \textit{Charging Areas} come into account when considering the search for the availability of parking lots or of power plugs.\\Finally,\textit{External software services} are the software tools that cooperate with the system-to-be. They can be considered external systems that already exist in the environment. The main ones are the payment system and GPS location system. The first one interacts with \textit{PowerEnJoy} in the reservation and in the payment phases while GPS system helps with all those actions that require information about position(search for a car, notification, parking, reservation).
 \section{Definitions, acronyms and abbreviations}
 \textbf{System}: sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
 In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operations (e.g.: reservation and renting).\\
@@ -119,9 +119,9 @@ During the writing of this document, the following resources have been taken int
 In this first chapter, after a brief description of the given problem, the explanation of the system-to-be and its application domain (according to the \textit{World and the Machine Paper}), the goals that the system have to achieve have been stated out.
 Subsequently, a glossary has been inserted in order to help the reader in identifying in a unique way some words and concepts, that will be used later on in this document and also in the next ones.\\
 In the second chapter, there is a small presentation of the product perspective and the main functionalities; after that, a basic analysis and characterization of the beneficiaries (users and employees) of the system-to-be is pointed out. The last part of this chapter covers the assumptions that have been made in order to develop the system.\\
-In the third chapter, which is the core of the RASD, the Functional Requirements are derived from the goals defined in the first chapter.Next, Non Functional Requirements will be presented.\\
+In the third chapter, which is the core of the RASD, the Functional Requirements are derived from the goals defined in the first chapter.Next, Non Functional Requirements will describe how the system performs the functionalities.\\
 The fourth chapter gathers a bunch of scenarios for all the possible usages of the system.\\
-In the fifth chapter, the Functional Requirements of the system-to-be are modelled firstly using a semi-formal notation (UML), via different types of diagrams, and secondly through Alloy code; in the end of the chapter the graphical output of the Alloy Analyser is given.
+In the fifth chapter, the Requirements of the system-to-be are modelled firstly using a semi-formal notation (UML), via different types of diagrams, and secondly through Alloy code; in the end of the chapter the graphical output of the Alloy Analyser is given.
 The sixth chapter include the tools that have been used to redact this document and the time effort required to complete it.
 \chapter{Overall Description}
 \section{Product perspective}
@@ -135,9 +135,10 @@ The sixth chapter include the tools that have been used to redact this document 
 \section{Assumptions}
 \subsection{Text assumptions}
 \begin{TA}
-	\item Regarding to discounts awarding, in case many conditions are simultaneously satisfied, the system will reward the user with the maximum discount among the available ones
-	\item Regarding to discounts awarding, in order to get a discount of 30\% for plugging the car into the power grid, the user has no more than 5 minutes to complete the action. This is a reasonable time to allow the user to get out of the car (and possibly to pick up the bags in the trunk) and correctly plug in it. Furthermore, this is also done to ensure that it's really the user that actually carries out the action and not someone else (e.g. the employee)
-	\item Regarding to the ride experience, to identify in a unique way the end of the rent, the user, just after shutting down the engine, has to push a button on the car screen to confirm the end of the ride
+	\item With reference to discounts awarding, in case many conditions are simultaneously satisfied, the system will reward the user with the maximum discount among the available ones
+	\item With reference to discounts awarding, in order to get a discount of 30\% for plugging the car into the power grid, the user has no more than 5 minutes to complete the action. This is a reasonable time to allow the user to get out of the car (and possibly to pick up the bags in the trunk) and correctly plug in it. Furthermore, this is also done to ensure that it's really the user who actually carries out the action and not someone else (e.g. the employee)
+	\item With reference to discounts awarding, when the user enables the \textit{money saving option} and enters his final destination, the system computes the best-fit parking area (\textit{Safe Area} or \textit{Charging Area}) where to leave the car in order to ensure a uniform distribution of the cars in the city. Furthermore, the user is rewarded with 30\% of discount on his last ride
+	\item With reference to the ride experience, to identify in a unique way the end of the rent, the user, just after shutting down the engine, has to push a button on the car screen to confirm the end of the ride
 \end{TA}
 \subsection{Domain assumptions}
 \begin{DA}
@@ -145,7 +146,6 @@ The sixth chapter include the tools that have been used to redact this document 
 	\item The GPS position is accurate
 	\item The payment info of the user is correct
 	\item The payment is assigned to an external service
-	\item The system verifies that the remaining balance is positive
 	\item The number of passengers is known thanks to sensor measurements inside the car
 \end{DA}
 %TODO
@@ -192,11 +192,10 @@ Deriving requirements from goals.\\
 	[DA3], [DA4]\\
 \noindent\ref{G6} \useitemtext{G6}\\
 \begin{Req}[resume]
-\item The system lets the user choose a car among those that are in the specified area.
-\item The system checks that the car is available.
+\item The system shows those cars that are in the area specified by the user.
+\item The system verifies that the user balance is not negative.
 \item The system flags the car as Reserved.
 \end{Req}
-[DA5]\\
 \noindent\ref{G7} \useitemtext{G7}\\
 \begin{Req}[resume]
 \item The system checks that the user has one active reservation.
@@ -207,13 +206,47 @@ Deriving requirements from goals.\\
 \item The system checks the position of the car at the end of the ride.
 \item The system checks the battery charge level at the end of the ride.
 \item The system checks whether the car is plugged into the power grid by the user at the end of the ride.
-\item The system computes the discount (or penalty) considering the previous points.
+\item The system computes the discount (or extra charge) considering the previous points.
 \end{Req}
-[DA6]
-%TODO deriving req for employees
+[DA6]\\
+\noindent\ref{G9} \useitemtext{G9}\\
+\begin{Req}[resume]
+\item The system computes a possible discount or an extra charge.
+\item The system computes the total cost of the ride.
+\item The system shows the cost on the car screen.
+\item The system requests the payment to the external system.
+\item The system locks the car.
+\end{Req}
+\noindent\ref{G10} \useitemtext{G10}\\
+\begin{Req}[resume]
+\item The system checks the input data and verifies whether the account really exists.
+\item The system confirms the access in administrator mode.
+\end{Req}
+\noindent\ref{G11} \useitemtext{G11}\\
+\begin{Req}[resume]
+\item The system verifies whether the given location exists.
+\item The system shows the cars within the range of distance specified by the employee from the given location.
+\end{Req}
+	[DA2] \\
+\noindent\ref{G12} \useitemtext{G12}\\
+\begin{Req}[resume]
+\item The system shows the current state of the car.
+\item The system updates the state of the car with the new value.
+\end{Req}
 \section{Non Functional Requirements}
-%TODO
-
+The ways the functionalities of the system-to-be are provided are described by the Non Functional Requirements.\\
+\begin{enumerate}
+\item In order to distinguish between the users and the employees, the system provides two different modes of execution of the application: user mode and administrator mode. This is also graphically represented by a slightly different interface of the app, as seen in the User Interface section.
+\item The reservation has an upper limit on time: the system can reserve a car for up to one hour before the ride. After that time expires with no ride, the system charges 1 EUR fee to the user.
+\item The system provides discounts or extra charges on the last ride with this policy:
+\begin{itemize}
+\item If the number of people on board is greater than 2 then the system applies a 10\% discount.
+\item If the battery charge level is greater than 50\% then the system applies a 20\% discount.
+\item If the car is left at a \textit{Charging Area} and the user takes care of plugging the car into the power grid, the system applies a discount of 30\%.
+\item  If the car is left at more than 3 KM from the nearest \textit{Charging Area} or with more than 80\% of the battery empty, the system charges 30\% extra charge.
+\item  If the user enables the money saving option, the system applies a 30\% discount and guarantees a uniform distribution of the cars in the \textit{Safe Areas} and in the \textit{Charging Areas}in the city.
+\end{itemize}
+\end{enumerate}
 \chapter{Scenarios}
 \textbf{Scenario 1}\\
 Mario is a young man who wants to go to his girlfriend house.After evaluating all the possibilities,he ends up with reserving an electric car.Since it is the first time,he registers to the car sharing system,PowerEnJoy.After entering his credentials(name, Social Security Number,address,license number, email) and payment info,Mario chooses his login name.The system checks the correctness of the input data and sends Mario an email to complete the registration together with a password for the access.\\
@@ -253,7 +286,7 @@ As she plugs the car in the power grid,a client arrives with another car,finishi
 \subsubsection{Diagrams}
 \subsubsection{Descriptions}
 Name: Registration.
-Actors: User not registered.
+Actors: User not registered,the system.
 Entry conditions: There are no entry conditions.
 Flow of events:
 - The user compiles the form with his personal data.
@@ -270,7 +303,7 @@ In any of these cases the system asks the user to reinsert correct data.
 
 
 Name: Search for a car.
-Actors: User registered.
+Actors: User registered,the system.
 Entry conditions: The user must be logged into the system.
 Flow of events:
 - The user goes to the search interface.
@@ -286,7 +319,7 @@ For example: if there are no cars "NO CARS AVAILABLE", if the GPS is off "GPS IS
 
 
 Name: Reserve a car.
-Actors: User registered.
+Actors: User registered,the system.
 Entry conditions: User must be logged in and must have a selected car  thanks to the previous search.
 Flow of events:
 - User confirms the reservation with a duration of 1 hour.
@@ -297,7 +330,7 @@ The system displays an error and brings him back to the initial page.
 
 
 Name: Pick up a car.
-Actors: User registered.
+Actors: User registered,the system.
 Entry conditions: User must be logged in.
 Flow of events:
 - User wants to unlock a car which is not reserved by someone else.
@@ -311,13 +344,15 @@ The system asks the user to turn the GPS on.
 The system displays an error to and brings him back to the initial page.
 
 
-Name: Stop driving.
-Actors: User.
+Name: Park the car.
+Actors: User,the system.
 Entry conditions: User must be logged in and must have taken a car.
 Flow of events:
+- User parks the car in a \textit{Safe Area} or in \textit{Charging Area}
 - User powers off the car.
 - User notifies on the car-display that the ride is over.
 - The system displays the cost of the service showing possible discounts or extra charges.
+- The system locks the car.
 Exit conditions: User exits the car and pays the service(with an external system).
 Exceptions:
 - The user can't afford the ride.
