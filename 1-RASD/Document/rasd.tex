@@ -69,7 +69,7 @@ The system-to-be will interact with three main world entities: \textit{People}, 
 \textit{People} entity includes the clients and all those people who have a relation with the system, such as the employees.
 For what concerns the clients, the interaction with the system consists in both the functionalities that the system provides and the events that are triggered by the users. Log-in, reservations of cars, rides, notifications, parking are the main shared phenomena between the clients and the system.\\Employees collaborate with the system in terms of managing the cars: the search of cars, the notification of their states, the parking are the core shared phenomena between the employees and the system.\\
 \textit{Physical platform} consists of the physical infrastructure of the world with which the system exchanges information. It includes the cars, the \textit{Safe Areas} and \textit{Charging Areas}.
-Unlocking, locking the cars and routes management are the main phenomena that are shared with the system.\\\textit{Safe Areas} and \textit{Charging Areas} come into account when considering the search for the availability of parking lots or of power plugs.\\Finally, \textit{External software services} are the software tools that cooperate with the system-to-be. They can be considered external systems that already exist in the environment. The main ones are the payment system and GPS location system. The first one interacts with \textit{PowerEnJoy} in the reservation and in the payment phases while GPS system helps with all those actions that require information about position(search for a car, notification, parking, reservation).
+Unlocking, locking the cars and routes management are the main phenomena that are shared with the system.\\\textit{Safe Areas} and \textit{Charging Areas} come into account when considering the search for the availability of parking lots or of power plugs.\\Finally, \textit{External software services} are the software tools that cooperate with the system-to-be. They can be considered external systems that already exist in the environment. The main ones are the payment system and GPS location system. The first one interacts with \textit{PowerEnJoy} in the reservation and in the payment phases while GPS system helps with all those actions that require information about position (search for a car, notification, parking, reservation).
 \section{Definitions, acronyms and abbreviations}
 \textbf{System}: sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
 In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operations (e.g.: reservation and renting).\\
@@ -123,15 +123,17 @@ In the second chapter, there is a small presentation of the product perspective 
 In the third chapter, which is the core of the RASD, the Functional Requirements are derived from the goals defined in the first chapter. Next, Non Functional Requirements will describe how the system performs the functionalities.\\
 The fourth chapter gathers a bunch of scenarios for all the possible usages of the system.\\
 In the fifth chapter, the Requirements of the system-to-be are modelled firstly using a semi-formal notation (UML), via different types of diagrams, and secondly through Alloy code; in the end of the chapter the graphical output of the Alloy Analyser is given.\\
-The sixth chapter include the tools that have been used to redact this document and the time effort required to complete it.
+The sixth chapter includes the tools that have been used to redact this document and the time effort required to complete it.
 \chapter{Overall Description}
 \section{Product perspective}
 % external interfaces (user, hw+sw), operations and site adaptions...
-\section{Product functions}
-% major functions
+\textit{PowerEnJoy} will be implemented as a web-application. This means that the system can be used from every recent mobile device (e.g.: smartphone, tablet) and from personal computers.\\
+Into the system will be integrated specific modules for communicating with a GPS system, which is necessary to correctly manage the cars and users position, and the external payment system.
+%\section{Product functions}
 \section{User characteristics}
-%what?
-\section{Constraints}
+The users that will interact with the system don't need any deep knowledge in both computer and Internet usage. For this reason, everyone will be able to benefit from the functionalities provided by the web-application.\\
+Also on the side of the company employees isn't required any specific ability for using the system interface. 
+%\section{Constraints}
 % any kind of limitations in the development
 \section{Assumptions}
 \subsection{Text assumptions}
@@ -149,13 +151,18 @@ The sixth chapter include the tools that have been used to redact this document 
 	\item The payment is assigned to an external service
 	\item The number of passengers is known thanks to sensor measurements inside the car
 \end{DA}
-%TODO
 \chapter{Specific Requirements}
 \section{External Interface Requirements}
 \subsection{User Interfaces}
+\imagebox{../Mockups/Web.png}{Web-application view on personal computers}{0}
+\imagebox{../Mockups/Mobile.png}{Web-application view on mobile devices}{0}
 \subsection{Hardware Interfaces}
+The system will need to have an hardware interface in order to exchange data with the cars. This data involve information about number of the people on the car and the status of the internal components.
 \subsection{Software Interfaces}
-\subsection{Communication Interfaces}
+Software interfaces are required between \textit{PowerEnJoy} both the external payment system and the GPS system.
+In the first case, the exchanged messages will we about account validity, money amount to pay and result of transactions.\\
+While in the second the information that will flow between the two entities cover, mainly, the treatment of the GPS coordinates.
+%\subsection{Communication Interfaces}
 \section{Functional Requirements}
 Deriving requirements from goals.\\
 \noindent \\

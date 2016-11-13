@@ -2,20 +2,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Web-application view on personal computers}}{7}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Web-application view on mobile devices}}{8}{figure.3.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Use Case Diagram}}{13}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Class Diagram}}{17}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Charge Sequence Diagram}}{18}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Reservation Sequence Diagram Part 1}}{19}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Reservation Sequence Diagram Part 2}}{20}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Reservation Sequence Diagram Part 3}}{21}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Car status Statechart}}{22}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Charge Activity Diagram}}{23}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Check Activity Diagram}}{24}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Registration Activity Diagram}}{25}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Reservation Activity Diagram}}{26}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Result of the execution of Alloy code}}{34}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Generated world 1}}{35}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Generated world 2}}{36}{figure.5.14}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Use Case Diagram}}{15}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Class Diagram}}{19}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Charge Sequence Diagram}}{20}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Reservation Sequence Diagram Part 1}}{21}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Reservation Sequence Diagram Part 2}}{22}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Reservation Sequence Diagram Part 3}}{23}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Car status Statechart}}{24}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Charge Activity Diagram}}{25}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Check Activity Diagram}}{26}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Registration Activity Diagram}}{27}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Reservation Activity Diagram}}{28}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Result of the execution of Alloy code}}{36}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Generated world 1}}{37}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Generated world 2}}{38}{figure.5.14}
 \addvspace {10\p@ }

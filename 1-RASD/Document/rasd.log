@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  13 NOV 2016 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  13 NOV 2016 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -513,7 +513,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 9.
 \c@lstlisting=\count159
  (./titlepage.tex
-<../../logo.png, id=156, 306.14375pt x 302.12875pt>
+<../../logo.png, id=144, 306.14375pt x 302.12875pt>
 File: ../../logo.png Graphic file (type png)
  <use ../../logo.png>
 Package pdftex.def Info: ../../logo.png used on input line 15.
@@ -522,13 +522,13 @@ Package pdftex.def Info: ../../logo.png used on input line 15.
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../l
-ogo.png>]) (./rasd.toc [1
-
-])
+ogo.png>]) (./rasd.toc)
 \tf@toc=\write4
 \openout4 = `rasd.toc'.
 
+ [1
 
+]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -624,423 +624,457 @@ Chapter 2.
 
 ] [6]
 Chapter 3.
+<../Mockups/Web.png, id=296, 3933.69624pt x 2688.0425pt>
+File: ../Mockups/Web.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--164
+<use ../Mockups/Web.png>
+Package pdftex.def Info: ../Mockups/Web.png used on input line 157.
+(pdftex.def)             Requested size: 426.79135pt x 291.62498pt.
 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 157--157
+ [][] 
  []
 
+<../Mockups/Mobile.png, id=297, 3707.8525pt x 1673.25125pt>
+File: ../Mockups/Mobile.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--172
+<use ../Mockups/Mobile.png>
+Package pdftex.def Info: ../Mockups/Mobile.png used on input line 158.
+(pdftex.def)             Requested size: 426.79135pt x 192.5858pt.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--185
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--192
-
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 158--158
+ [][] 
  []
 
 [7
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.159 \subsection{Hardware Interfaces}
+                                       <../Mockups/Web.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 167--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.182 \end{Req}
+                <../Mockups/Mobile.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
+Underfull \hbox (badness 10000) in paragraph at lines 196--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
 [9]
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--253
+
+ []
+
+[10] [11]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--287
+Underfull \hbox (badness 10000) in paragraph at lines 265--294
 
  []
 
-[10
+[12
 
-] [11] [12]
+] [13] [14]
 Chapter 5.
 
-<../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg, id=381, 12
+<../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg, id=382, 12
 99.85625pt x 936.49875pt>
 File: ../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg Graphi
 c file (type jpg)
 
 <use ../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/General_UseCase__General_UseCaseD
-iagram_4.jpg used on input line 294.
+iagram_4.jpg used on input line 301.
 (pdftex.def)             Requested size: 426.79135pt x 307.48795pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 294--294
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 301--301
  [][] 
  []
 
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 309--309
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 316--316
 [][] 
  []
 
-[13
+[15
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.310 
+l.317 
        <../UML_Model/UML_img/General_UseCase__General_UseCaseDiagram_4.jpg>]
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 320--320
-[][] 
- []
-
-[14]
 Overfull \hbox (23.99998pt too wide) in paragraph at lines 327--327
 [][] 
  []
 
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 337--337
-[][] 
- []
-
-[15]
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 348--348
+[16]
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 334--334
 [][] 
  []
 
 
-<../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg, id=406, 921.44
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 344--344
+[][] 
+ []
+
+[17]
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 355--355
+[][] 
+ []
+
+
+<../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg, id=407, 921.44
 25pt x 724.7075pt>
 File: ../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg Graphic fi
 le (type jpg)
 
 <use ../UML_Model/UML_img/General_Class__General_ClassDiagram_3.jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/General_Class__General_ClassDiagr
-am_3.jpg used on input line 351.
+am_3.jpg used on input line 358.
 (pdftex.def)             Requested size: 426.79135pt x 335.65852pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 351--351
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 358--358
  [][] 
  []
 
-[16]
+[18]
 <../UML_Model/UML_img/Charge_Sequence__Interaction1__Charge_SequenceDiagram_9.j
-pg, id=424, 626.34pt x 817.0525pt>
+pg, id=425, 626.34pt x 817.0525pt>
 File: ../UML_Model/UML_img/Charge_Sequence__Interaction1__Charge_SequenceDiagra
 m_9.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/Charge_Sequence__Interaction1__Charge_SequenceDiagram
 _9.jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/Charge_Sequence__Interaction1__Ch
-arge_SequenceDiagram_9.jpg used on input line 353.
+arge_SequenceDiagram_9.jpg used on input line 360.
 (pdftex.def)             Requested size: 426.79135pt x 556.76028pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 353--353
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 360--360
  [][] 
  []
 
-<../UML_Model/UML_img/p1.jpg, id=425, 616.3025pt x 663.47874pt>
+<../UML_Model/UML_img/p1.jpg, id=426, 616.3025pt x 663.47874pt>
 File: ../UML_Model/UML_img/p1.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/p1.jpg>
-Package pdftex.def Info: ../UML_Model/UML_img/p1.jpg used on input line 354.
+Package pdftex.def Info: ../UML_Model/UML_img/p1.jpg used on input line 361.
 (pdftex.def)             Requested size: 426.79135pt x 459.47125pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 354--354
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 361--361
  [][] 
  []
 
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.354 ...}{Reservation Sequence Diagram Part 1}{0}
+l.361 ...}{Reservation Sequence Diagram Part 1}{0}
                                                    <../UML_Model/UML_img/Genera
 l_Class__General_ClassDiagram_3.jpg>]
-<../UML_Model/UML_img/p2.jpg, id=430, 616.3025pt x 582.175pt>
+<../UML_Model/UML_img/p2.jpg, id=431, 616.3025pt x 582.175pt>
 File: ../UML_Model/UML_img/p2.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/p2.jpg>
-Package pdftex.def Info: ../UML_Model/UML_img/p2.jpg used on input line 355.
+Package pdftex.def Info: ../UML_Model/UML_img/p2.jpg used on input line 362.
 (pdftex.def)             Requested size: 426.79135pt x 403.16693pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 355--355
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 362--362
  [][] 
  []
 
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.355 ...}{Reservation Sequence Diagram Part 2}{0}
+l.362 ...}{Reservation Sequence Diagram Part 2}{0}
                                                    <../UML_Model/UML_img/Charge
 _Sequence__Interaction1__Charge_SequenceDiagram_9.jpg>]
-<../UML_Model/UML_img/p3.jpg, id=435, 616.3025pt x 868.24374pt>
+<../UML_Model/UML_img/p3.jpg, id=436, 616.3025pt x 868.24374pt>
 File: ../UML_Model/UML_img/p3.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/p3.jpg>
-Package pdftex.def Info: ../UML_Model/UML_img/p3.jpg used on input line 356.
+Package pdftex.def Info: ../UML_Model/UML_img/p3.jpg used on input line 363.
 (pdftex.def)             Requested size: 426.79135pt x 601.27481pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 356--356
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 363--363
  [][] 
  []
 
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 ...}{Reservation Sequence Diagram Part 3}{0}
+l.363 ...}{Reservation Sequence Diagram Part 3}{0}
                                                    <../UML_Model/UML_img/p1.jpg
->] [20pdfTeX warning (ext4): destination with the same identifier (name{figure.
+>] [22pdfTeX warning (ext4): destination with the same identifier (name{figure.
 5.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.357 \subsection{Statechart Diagram}
+l.364 \subsection{Statechart Diagram}
                                       <../UML_Model/UML_img/p2.jpg>]
-<../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg, id=444, 646.
+<../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg, id=446, 646.
 415pt x 390.45876pt>
 File: ../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg Graphic 
 file (type jpg)
 
 <use ../UML_Model/UML_img/Car_StateChart__Car_StateChartDiagram_0.jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/Car_StateChart__Car_StateChartDia
-gram_0.jpg used on input line 358.
+gram_0.jpg used on input line 365.
 (pdftex.def)             Requested size: 426.79135pt x 257.79889pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 358--358
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 365--365
  [][] 
  []
 
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.5.6
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.5.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.359 \subsection{Activity Diagram}
+l.366 \subsection{Activity Diagram}
                                     <../UML_Model/UML_img/p3.jpg>]
-<../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg, id=450, 74
+<../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg, id=451, 74
 7.79375pt x 648.4225pt>
 File: ../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg Graphi
 c file (type jpg)
 
 <use ../UML_Model/UML_img/Charge_Activity__Charge_ActivityDiagram_1.jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/Charge_Activity__Charge_ActivityD
-iagram_1.jpg used on input line 360.
+iagram_1.jpg used on input line 367.
 (pdftex.def)             Requested size: 426.79135pt x 370.07957pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 360--360
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 367--367
  [][] 
  []
 
 
-<../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg, id=451, 657.
+<../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg, id=452, 657.
 45625pt x 514.92375pt>
 File: ../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg Graphic 
 file (type jpg)
 
 <use ../UML_Model/UML_img/Check_Activity__Check_ActivityDiagram_2.jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/Check_Activity__Check_ActivityDia
-gram_2.jpg used on input line 361.
+gram_2.jpg used on input line 368.
 (pdftex.def)             Requested size: 426.79135pt x 334.27219pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 361--361
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 368--368
  [][] 
  []
 
-[22pdfTeX warning (ext4): destination with the same identifier (name{figure.5.7
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.5.7
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.361 ...vityDiagram_2}{Check Activity Diagram}{0}
+l.368 ...vityDiagram_2}{Check Activity Diagram}{0}
                                                    <../UML_Model/UML_img/Car_St
 ateChart__Car_StateChartDiagram_0.jpg>]
 <../UML_Model/UML_img/Registration_Activity__Registration_ActivityDiagram_6.jpg
-, id=456, 1187.43625pt x 1003.75pt>
+, id=457, 1187.43625pt x 1003.75pt>
 File: ../UML_Model/UML_img/Registration_Activity__Registration_ActivityDiagram_
 6.jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/Registration_Activity__Registration_ActivityDiagram_6
 .jpg>
 Package pdftex.def Info: ../UML_Model/UML_img/Registration_Activity__Registrati
-on_ActivityDiagram_6.jpg used on input line 362.
+on_ActivityDiagram_6.jpg used on input line 369.
 (pdftex.def)             Requested size: 426.79135pt x 360.76772pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 362--362
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 369--369
  [][] 
  []
 
-[23pdfTeX warning (ext4): destination with the same identifier (name{figure.5.8
+[25pdfTeX warning (ext4): destination with the same identifier (name{figure.5.8
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.362 ...gram_6}{Registration Activity Diagram}{0}
+l.369 ...gram_6}{Registration Activity Diagram}{0}
                                                    <../UML_Model/UML_img/Charge
 _Activity__Charge_ActivityDiagram_1.jpg>]
 <../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.jpg, 
-id=461, 1324.95pt x 1336.995pt>
+id=462, 1324.95pt x 1336.995pt>
 File: ../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.
 jpg Graphic file (type jpg)
 
 <use ../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.j
 pg>
 Package pdftex.def Info: ../UML_Model/UML_img/Reservation_Activity__Reservation
-_ActivityDiagram_7.jpg used on input line 363.
+_ActivityDiagram_7.jpg used on input line 370.
 (pdftex.def)             Requested size: 426.79135pt x 430.66246pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 363--363
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 370--370
  [][] 
  []
 
-[24pdfTeX warning (ext4): destination with the same identifier (name{figure.5.9
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.5.9
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.363 ...agram_7}{Reservation Activity Diagram}{0}
+l.370 ...agram_7}{Reservation Activity Diagram}{0}
                                                    <../UML_Model/UML_img/Check_
-Activity__Check_ActivityDiagram_2.jpg>] [25pdfTeX warning (ext4): destination w
+Activity__Check_ActivityDiagram_2.jpg>] [27pdfTeX warning (ext4): destination w
 ith the same identifier (name{figure.5.10}) has been already used, duplicate ig
 nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.364 \section{Alloy}
+l.371 \section{Alloy}
                       <../UML_Model/UML_img/Registration_Activity__Registration
-_ActivityDiagram_6.jpg>] [26pdfTeX warning (ext4): destination with the same id
+_ActivityDiagram_6.jpg>] [28pdfTeX warning (ext4): destination with the same id
 entifier (name{figure.5.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.378 }
+l.385 }
         <../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram
-_7.jpg>] [27] [28] [29] [30] [31] [32]
-<../Alloy/execution.png, id=756, 531.9875pt x 457.71pt>
+_7.jpg>] [29] [30] [31] [32] [33] [34]
+<../Alloy/execution.png, id=758, 531.9875pt x 457.71pt>
 File: ../Alloy/execution.png Graphic file (type png)
 
 <use ../Alloy/execution.png>
-Package pdftex.def Info: ../Alloy/execution.png used on input line 643.
+Package pdftex.def Info: ../Alloy/execution.png used on input line 650.
 (pdftex.def)             Requested size: 426.79135pt x 367.20914pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 643--643
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 650--650
  [][] 
  []
 
-<../Alloy/alloy_world1.png, id=757, 3391.67125pt x 810.02625pt>
+<../Alloy/alloy_world1.png, id=759, 3391.67125pt x 810.02625pt>
 File: ../Alloy/alloy_world1.png Graphic file (type png)
 
 <use ../Alloy/alloy_world1.png>
-Package pdftex.def Info: ../Alloy/alloy_world1.png used on input line 644.
+Package pdftex.def Info: ../Alloy/alloy_world1.png used on input line 651.
 (pdftex.def)             Requested size: 426.79135pt x 101.92047pt.
- [33]
-<../Alloy/alloy_world2.png, id=782, 2526.43875pt x 668.4975pt>
+ [35]
+<../Alloy/alloy_world2.png, id=783, 2526.43875pt x 668.4975pt>
 File: ../Alloy/alloy_world2.png Graphic file (type png)
 
 <use ../Alloy/alloy_world2.png>
-Package pdftex.def Info: ../Alloy/alloy_world2.png used on input line 645.
+Package pdftex.def Info: ../Alloy/alloy_world2.png used on input line 652.
 (pdftex.def)             Requested size: 426.79135pt x 112.92903pt.
- [34pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [36pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.645 .../alloy_world2.png}{Generated world 2}{90}
+l.652 .../alloy_world2.png}{Generated world 2}{90}
                                                    <../Alloy/execution.png>]
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.646 
-       <../Alloy/alloy_world1.png (PNG copy)>] [36pdfTeX warning (ext4): destin
+l.653 
+       <../Alloy/alloy_world1.png (PNG copy)>] [38pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.5.14}) has been already used, dupli
 cate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.647 \chapter
+l.654 \chapter
               {RASD Preparation} <../Alloy/alloy_world2.png (PNG copy)>]
 Chapter 6.
 
 AED: lastpage setting LastPage
-[37
+[39
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 663.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 663.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 670.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 670.
  (./rasd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 663.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 663.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 670.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 670.
 Package rerunfilecheck Info: File `rasd.out' has not changed.
-(rerunfilecheck)             Checksum: 94BED9E6D6FE17B0F1CDECA9374DF750;2414.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 663.
+(rerunfilecheck)             Checksum: 4D3C609F3C0E203E503513C029D1A6F9;2214.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 670.
  ) 
 Here is how much of TeX's memory you used:
- 10253 strings out of 493089
- 145814 string characters out of 6134842
- 424673 words of memory out of 5000000
- 13125 multiletter control sequences out of 15000+600000
+ 10262 strings out of 493089
+ 145988 string characters out of 6134842
+ 424789 words of memory out of 5000000
+ 13130 multiletter control sequences out of 15000+600000
  24099 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,12n,49p,1330b,1985s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,12n,44p,1330b,1985s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -1061,10 +1095,10 @@ mf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sfxc1440.pfb>
-Output written on rasd.pdf (41 pages, 1898736 bytes).
+Output written on rasd.pdf (43 pages, 2897443 bytes).
 PDF statistics:
- 960 PDF objects out of 1000 (max. 8388607)
- 872 compressed objects within 9 object streams
- 447 named destinations out of 1000 (max. 500000)
- 380 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 962 PDF objects out of 1000 (max. 8388607)
+ 868 compressed objects within 9 object streams
+ 448 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 
