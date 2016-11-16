@@ -1,0 +1,240 @@
+\usepackage{geometry}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=3cm,includefoot, includehead}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{titlesec, blindtext, color}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\makeatletter\let\MPtrue\@minipagetrue\makeatother
+
+%----------------------------------------------------------------------------------------
+%   Title Style Chapter
+%----------------------------------------------------------------------------------------
+\definecolor{gray75}{gray}{0.70}
+\newcommand{\hsp}{\hspace{15pt}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+%----------------------------------------------------------------------------------------
+%  ToC
+%----------------------------------------------------------------------------------------
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Renaming of ToC
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+%----------------------------------------------------------------------------------------
+%   Header/Footer
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy} 
+\fancyhf{}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+%\renewcommand{\chaptermark}[1]{%
+% \markboth{\chaptername
+% \ \thechapter.\ #1}{}}
+
+%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\lhead{\nouppercase{\leftmark}}
+%\chead{}
+\rhead{\nouppercase{\rightmark}}
+\lfoot{DD - \textit{Version 1.0}}
+%\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.008pt}
+\renewcommand{\footrulewidth}{0.008pt}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyfoot[R]{\thepage}%
+	\renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+	\renewcommand{\footrulewidth}{0.008pt}% Line at the footer visible
+}
+
+%-----------
+% New Page for each section
+%---------
+%\newcommand{\sectionbreak}{\clearpage}
+
+%-------
+% Numbered list for goals
+%-------
+\newlist{Goal}{enumerate}{1}
+\setlist[Goal]{label=[G\arabic*],leftmargin=0.6in}
+
+%-------
+% Numbered list for requirements
+%-------
+\newlist{Req}{enumerate}{1}
+\setlist[Req]{label=[R\arabic*],leftmargin=0.6in}
+
+%-------
+% Numbered list for domain assumptions
+%-------
+\newlist{DA}{enumerate}{1}
+\setlist[DA]{label=[DA\arabic*],leftmargin=0.6in}
+
+%-------
+% Numbered list for text assumptions
+%-------
+\newlist{TA}{enumerate}{1}
+\setlist[TA]{label=[TA\arabic*],leftmargin=0.6in}
+
+%-----
+% Image box, arguments: file path, caption
+%----
+\newcommand{\imagebox}[3]{
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth,keepaspectratio,angle=#3]{#1}}
+\caption{#2}
+\end{figure}
+}
+
+%---
+% Alloy listing
+%---
+\definecolor{pgreen}{rgb}{0,0.64,0.013}
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+
+\lstdefinelanguage{alloy}{
+	keywords={
+		assert, pred, all, no, lone, one, some, check, run,
+		but, let, implies, not, iff, in, and, or, set, sig, Int, int,
+		if, then, else, exactly, disj, fact, fun, module, abstract,
+		extends, open, none, univ, iden, seq},
+	literate=%
+	{:}{$\colon$}1
+	%{|}{$\bullet$}1
+	{==}{$=$}1
+	{=}{$=$}1
+	{!=}{$\neq$}1
+	{&&}{$\land$}1
+	{||}{$\lor$}1
+	{<=}{$\le$}1
+	{>=}{$\ge$}1
+	%{all}{$\forall$}1
+	{exists}{$\exists$}1
+	{!in}{$\not\in$}1
+	{\\in}{$\in$}1
+	{=>}{$\implies$}3
+	% the following isn't actually Alloy, but it gives the option to produce nicer latex
+	{|=>}{$\Rightarrow$}2
+	{<=set}{$\subseteq$}1
+	{+set}{$\cup$}1
+	{*set}{$\cap$}1
+	{==>}{$\Longrightarrow$}3
+	{<=>}{$\iff$}4
+	{...}{$\ldots$}1
+	{\\hl}{$\hline$}1
+	{\\alpha}{$\alpha$}1
+	{\\beta}{$\beta$}1
+	{\\gamma}{$\gamma$}1
+	{\\delta}{$\delta$}1
+	{\\epsilon}{$\epsilon$}1
+	{\\zeta}{$\zeta$}1
+	{\\eta}{$\eta$}1
+	{\\theta}{$\theta$}1
+	{\\iota}{$\iota$}1
+	{\\kappa}{$\kappa$}1
+	{\\lambda}{$\lambda$}1
+	{\\mu}{$\mu$}1
+	{\\nu}{$\nu$}1
+	{\\xi}{$\xi$}1
+	{\\pi}{$\pi$}1
+	{\\rho}{$\rho$}1
+	{\\sigma}{$\sigma$}1
+	{\\tau}{$\tau$}1
+	{\\upsilon}{$\upsilon$}1
+	{\\phi}{$\phi$}1
+	{\\chi}{$\chi$}1
+	{\\psi}{$\psi$}1
+	{\\omega}{$\omega$}1
+	{\\Gamma}{$\Gamma$}1
+	{\\Delta}{$\Delta$}1
+	{\\Theta}{$\Theta$}1
+	{\\Lambda}{$\Lambda$}1
+	{\\Xi}{$\Xi$}1
+	{\\Pi}{$\Pi$}1
+	{\\Sigma}{$\Sigma$}1
+	{\\Upsilon}{$\Upsilon$}1
+	{\\Phi}{$\Phi$}1
+	{\\Psi}{$\Psi$}1
+	{\\Omega}{$\Omega$}1
+	{\\EOF}{\;}1,
+	sensitive=true,
+	morecomment=[l]//,%
+	%morecomment=[l]{--},%
+	morecomment=[s]{/*}{*/},%
+	morestring=[b]",
+	numbers=none,
+	firstnumber=1,
+	%numberstyle=\tiny,
+	%basicstyle=\scriptsize\ttfamily,
+	commentstyle=\color{pgreen},
+	keywordstyle=\color{pblue},
+	%ndkeywordstyle=\bfseries,
+}
+
+\lstnewenvironment{alloyCode}{%	
+	\lstset{language=alloy,
+		floatplacement={tbp},
+		captionpos=b,
+		xleftmargin=8pt,
+		xrightmargin=8pt,
+		 breaklines=true,
+		  tabsize=3,
+		%basicstyle=\ttfamily,
+	}
+} {}
+%--- End of listing for Alloy
+%
+%---
+% Recall item commands
+%---
+\newcommand\itemtext[2]{%
+	\expandafter\gdef\csname item#1\endcsname{#2}%
+	\label{#1}#2}
+
+\newcommand\useitemtext[2]{\csname item#1\endcsname}
+
+%--- 
+% Table for use case descriptions
+%---
+\newcommand{\usecasedesc}[6]{%
+	\begin{table}[H]
+		\begin{tabular}{p{0.3\linewidth} p{0.7\linewidth}}
+			%\begin{tabular}{\linewidth}{>{\setlength\hsize{.25\hsize}}X>{\setlength\hsize{.75\hsize}\setlength\linewidth{\hsize}}X}
+			\textit{Name} & #1 \\
+			\textit{Actors} & #2 \\
+			\textit{Entry conditions} &\MPtrue#3\\
+			\textit{Flow of events} &\MPtrue#4\\
+			\textit{Exit conditions} & #5\\
+			\textit{Exceptions} & #6\\
+		\end{tabular}
+	\end{table}
+}
+
+%\newcommand{optusecase}{[leftmargin=0.50cm,nosep]}

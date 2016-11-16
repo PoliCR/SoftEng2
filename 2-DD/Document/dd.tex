@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{report}
+
+%INPUT of SETTINGS (usepackage, styles, new command,...)
+\input{dd_prefs}
+
+%-------------------------------------------------------------------------
+%   START DOCUMENT 
+%-------------------------------------------------------------------------
+\begin{document}
+
+% INPUT OF TITLE PAGE
+\input{dd_titlepage}
+
+%-------------------------------------------------------------------------
+%   TOC
+%-------------------------------------------------------------------------
+%\pagestyle{plain}
+\pagenumbering{roman}
+\thispagestyle{empty}
+\tableofcontents
+\listoffigures
+\cleardoublepage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+%--------------------------------------------------------------------
+%  BEGIN TEXT
+%--------------------------------------------------------------------
+\chapter{Introduction}
+\section{Purpose}
+\section{Scope}
+\section{Definitions, Acronyms, Abbreviations}
+\section{Reference Documents}
+\section{Document Structure}
+
+\chapter{Architectural Design}
+\section{Overview}
+%high level components and their interaction
+% here you can introduce the high level components of your architecture
+%and describe the main interaction between them (no details here. You can say why some components talk to each other, why, if the communication is synchronous or asynchronous, any other info you think is useful at this point).
+\section{Component View}
+%here you have a refinement of what you have in Section 4.B and identify sub-components. For instance, the diagram in slide 6 could be a diagram showing a  component view
+\section{Deployment View}
+%this is what you have in slide 8, that is, the identification of the artifact that need to be deployed to have the system working
+\section{Runtime View}
+%may use sequence diagrams to describe the way components interact to accomplish specific tasks typically related to use cases
+%this is what you have in slide 9 plus sequence diagrams describing the way components behave in order to accomplish a certain activity
+\section{Component interfaces}
+%here you define the interfaces of your components, that is, which operations they offer to the external world, their meaning, any input and output parameter (name, possible set of values/type)
+\section{Selected Architectural Styles and Patterns}
+%explanation (which, why and how) styles/patterns used
+\section{Other Design Document}
+\chapter{Algorithm Design}
+%Focus on the definition of the most relevant algorithmic part
+\chapter{User Interface Design}
+%Provide an overview on how the user interface(s) of your system will look like; if you have included this part in the RASD, you can simply refer to what you have already done, possibly, providing here some extensions if applicable.
+\chapter{Requirements Traceability}
+%Explain how the requirements you have defined in the RASD map to the design elements that you have defined in this document.
+\chapter{Effort Spent}
+%In this section you will include information about the number of hours each group member has worked towards the fulfillment of this deadline.
+\chapter{References}
+%-------------------------------------------------------------------------
+%   END DOCUMENT
+%-------------------------------------------------------------------------
+\end{document} 
