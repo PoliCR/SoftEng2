@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {2.4}Runtime View}{2}{section.2.4}
 \contentsline {section}{\numberline {2.5}Component interfaces}{2}{section.2.5}
 \contentsline {section}{\numberline {2.6}Selected Architectural Styles and Patterns}{2}{section.2.6}
-\contentsline {section}{\numberline {2.7}Other Design Document}{2}{section.2.7}
+\contentsline {section}{\numberline {2.7}Other Design Decisions}{2}{section.2.7}
 \contentsline {chapter}{\numberline {3}Algorithm Design}{3}{chapter.3}
 \contentsline {chapter}{\numberline {4}User Interface Design}{4}{chapter.4}
 \contentsline {chapter}{\numberline {5}Requirements Traceability}{5}{chapter.5}
