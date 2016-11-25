@@ -27,9 +27,52 @@
 %--------------------------------------------------------------------
 \chapter{Introduction}
 \section{Purpose}
+Analyzing the system-to-be in a more detailed way, it is possible to better define the functionalities that the system should provide to the users and the employees.\\
+The user has the possibility to register to get a personal account on \textit{PowerEnJoy}, which is by the way mandatory to access to all the functionalities provided. A logged-in user can search for an available car within a certain range from his current position or from a given address and, in case, he can pick up the car. Finally, he has the possibility to reserve a chosen car (he can also delete the reservation subsequently if the car won't be used: in this way he is free from fees).\\
+Moreover, to promote a more eco-friendly behaviour of the users, the system applies special discounts or extra charges on the cost of the rides according to some different conditions that will be described in the Non Functional Requirements section.\\ 
+With regards to the company employees, the system will let them use special functions to retrieve specific information about the cars (e.g.: battery level, internal working status) and their positions. In this way, they can move cars from safe areas to charging areas and vice versa if needed.
+
 \section{Scope}
-\section{Definitions, Acronyms, Abbreviations}
+The system-to-be will interact with three main world entities: \textit{People}, \textit{Physical platform} and \textit{External software services}.
+\textit{People} entity includes the clients and all those people who have a relation with the system, such as the employees.
+For what concerns the clients, the interaction with the system consists in both the functionalities that the system provides and the events that are triggered by the users. Log-in, reservations of cars, rides, notifications, parking are the main shared phenomena between the clients and the system.\\Employees collaborate with the system in terms of managing the cars: the search of cars, the notification of their states, the parking are the core shared phenomena between the employees and the system.\\
+\textit{Physical platform} consists of the physical infrastructure of the world with which the system exchanges information. It includes the cars, the \textit{Safe Areas} and \textit{Charging Areas}.
+Unlocking, locking the cars and routes management are the main phenomena that are shared with the system.\\\textit{Safe Areas} and \textit{Charging Areas} come into account when considering the search for the availability of parking lots or of power plugs.\\Finally, \textit{External software services} are the software tools that cooperate with the system-to-be. They can be considered external systems that already exist in the environment. The main ones are the payment system and GPS location system. The first one interacts with \textit{PowerEnJoy} in the reservation and in the payment phases while GPS system helps with all those actions that require information about position (search for a car, notification, parking, reservation).
+
+\section{Definitions, Acronyms and Abbreviations}
+\begin{description}
+\item[System] sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
+In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operations (e.g.: reservation and renting).
+\item[Renting] it is the act of picking-up an available car and of starting to drive.
+\item[Ride] the event of picking-up a car, driving through the city and parking it. Every Ride is associated to a single user and to a single car.
+\item[Reservation] it is the action of booking an available car.
+\item[Car] a car is an electrical vehicle that will be used by a registered user.
+\item[Not Registered User] indicates a person who hasn't registered to the system yet; for this reason he can't access to any of the offered function. The only possible action that he can carry out is the registration to get a personal account.
+\item[Registered User] interacts with the system to use the sharing service. He has an account (which contains personal information, driving license number and payment data) that must be used to access to the application in order to exploit all the functionalities.
+\item[Employee] it's a person who works for the company, whose main task is to plug into the power grid those cars that haven't been plugged in by the users. He is also in charge of taking care of the status of the cars and of moving the vehicles from a safe area to a charging area and vice versa if needed.
+\item[Safe Area] indicates a set of parking lots where the users have to leave the car at the end of the rent; the set of the Safe Areas is pre-defined by the system management. These areas are spread all over the city.
+\item[Plug] defines the electrical component that physically connects the car to the power grid.
+\item[Charging Area] is a special \textit{Safe Area} that also provides a certain number of plugs that connect the cars to the power grid in order to recharge the battery.
+\item[Registration] the procedure that an unregistered user has to perform to become a registered user. At the end, the unregistered user will have an account. To complete this operation three different types of data are required: personal information, driving license number and payment info.
+\item[Search] this functionality lets the registered user search for available cars within a certain range from his/her current position or from a specified address.
+\item[RASD] is the acronym of \textit{Requirements Analysis and Specification Document}
+\item[DD] is the acronym of \textit{Design Document}
+\end{description}
+
 \section{Reference Documents}
+During the writing of this document, the following resources have been taken into account:
+\begin{itemize}
+	\item Specification Document:
+	\begin{itemize}
+		\item \textit{Assignments+AA+2016-2017.pdf}
+		\item \textit{RASD.pdf}
+	\end{itemize}
+	\item Example document:
+	\begin{itemize}
+		\item \textit{Sample Design Deliverable Discussed on Nov. 2.pdf}
+	\end{itemize}
+	\item Papers on \textit{Green Move Project}
+\end{itemize}
 \section{Document Structure}
 
 \chapter{Architectural Design}
@@ -58,6 +101,13 @@
 \chapter{Effort Spent}
 %In this section you will include information about the number of hours each group member has worked towards the fulfillment of this deadline.
 \chapter{References}
+\section{Tools}
+During the writing of this document, the following application tools have been used:
+\begin{itemize}
+	\item Star UML, for creating all types of UML models
+	\item TeXstudio, for writing the document in \LaTeX
+	\item Balsamiq, for creating the mockups of the user interface
+\end{itemize}
 %-------------------------------------------------------------------------
 %   END DOCUMENT
 %-------------------------------------------------------------------------
