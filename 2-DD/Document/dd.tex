@@ -41,11 +41,12 @@ Unlocking, locking the cars and routes management are the main phenomena that ar
 
 \section{Definitions, Acronyms and Abbreviations}
 \begin{description}
-\item[System] sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
+\item[PowerEnJoy]is the name of the system that has to be developed.
+\item[System]sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
 In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operations (e.g.: reservation and renting).
-\item[Renting] it is the act of picking-up an available car and of starting to drive.
+\item[Renting]it is the act of picking-up an available car and of starting to drive.
 \item[Ride] the event of picking-up a car, driving through the city and parking it. Every Ride is associated to a single user and to a single car.
-\item[Reservation] it is the action of booking an available car.
+\item[Reservation]it is the action of booking an available car.
 \item[Car] a car is an electrical vehicle that will be used by a registered user.
 \item[Not Registered User] indicates a person who hasn't registered to the system yet; for this reason he can't access to any of the offered function. The only possible action that he can carry out is the registration to get a personal account.
 \item[Registered User] interacts with the system to use the sharing service. He has an account (which contains personal information, driving license number and payment data) that must be used to access to the application in order to exploit all the functionalities.
@@ -74,7 +75,13 @@ During the writing of this document, the following resources have been taken int
 	\item Papers on \textit{Green Move Project}
 \end{itemize}
 \section{Document Structure}
-
+The first chapter recalls the purpose and the scope of the system that has to be developed and in particular of the current document, which focuses on the architecture of \textit{PowerEnJoy}.\\
+In the second chapter, which is the core of the \textit{Design Document},
+the overall architecture will be presented at various levels of abstraction. After that a brief explanation of the architectural styles and patterns used is provided.\\
+The third chapter covers the algorithmic part of the system; some interesting algorithms that will be useful later on in the real implementation are described in pseudocode.\\
+The fourth chapter contains the mockups of both the webapp user interfaces and the ad-hoc touch screen embedded into the cars. Along with them, there is a small description.\\
+The fifth chapter reports the mapping of the requirements, identified in the \textit{RASD}, with respect to the architecture's component.\\
+The sixth and seventh chapters simply refers to the time effort spent in writing the \textit{DD} and the used tools to do it.
 \chapter{Architectural Design}
 \section{Overview}
 %high level components and their interaction
@@ -92,6 +99,7 @@ During the writing of this document, the following resources have been taken int
 \section{Selected Architectural Styles and Patterns}
 %explanation (which, why and how) styles/patterns used
 \section{Other Design Decisions}
+%ER+altro
 \chapter{Algorithm Design}
 %Focus on the definition of the most relevant algorithmic part
 \chapter{User Interface Design}
@@ -107,6 +115,7 @@ During the writing of this document, the following application tools have been u
 	\item Star UML, for creating all types of UML models
 	\item TeXstudio, for writing the document in \LaTeX
 	\item Balsamiq, for creating the mockups of the user interface
+	\item draw.io, for drawing the diagrams of the architecture
 \end{itemize}
 %-------------------------------------------------------------------------
 %   END DOCUMENT
