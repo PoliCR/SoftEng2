@@ -13,9 +13,10 @@
 \contentsline {section}{\numberline {2.5}Component interfaces}{4}{section.2.5}
 \contentsline {section}{\numberline {2.6}Selected Architectural Styles and Patterns}{4}{section.2.6}
 \contentsline {section}{\numberline {2.7}Other Design Decisions}{4}{section.2.7}
-\contentsline {chapter}{\numberline {3}Algorithm Design}{5}{chapter.3}
-\contentsline {chapter}{\numberline {4}User Interface Design}{6}{chapter.4}
-\contentsline {chapter}{\numberline {5}Requirements Traceability}{7}{chapter.5}
-\contentsline {chapter}{\numberline {6}Effort Spent}{8}{chapter.6}
-\contentsline {chapter}{\numberline {7}References}{9}{chapter.7}
-\contentsline {section}{\numberline {7.1}Tools}{9}{section.7.1}
+\contentsline {subsection}{\numberline {2.7.1}ER Diagram}{4}{subsection.2.7.1}
+\contentsline {chapter}{\numberline {3}Algorithm Design}{6}{chapter.3}
+\contentsline {chapter}{\numberline {4}User Interface Design}{7}{chapter.4}
+\contentsline {chapter}{\numberline {5}Requirements Traceability}{8}{chapter.5}
+\contentsline {chapter}{\numberline {6}Effort Spent}{9}{chapter.6}
+\contentsline {chapter}{\numberline {7}References}{10}{chapter.7}
+\contentsline {section}{\numberline {7.1}Tools}{10}{section.7.1}

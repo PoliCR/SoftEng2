@@ -99,7 +99,11 @@ The sixth and seventh chapters simply refers to the time effort spent in writing
 \section{Selected Architectural Styles and Patterns}
 %explanation (which, why and how) styles/patterns used
 \section{Other Design Decisions}
-%ER+altro
+\subsection{ER Diagram}
+An important issue in the Design Process is to select the suitable data that the system has to store in the database.This is crucial in the Design Phase because it affects the implementation of all the system functionalities, which rely on these data.The following diagram shows the pieces of information that the database server provides to the application.
+\imagebox{../UML/UML_img/ERProject}{ER Diagram}{0}
+\noindent The diagram suggests that the system has two types of \textit{Users}: \textit{Customer} and \textit{Employee}.As already stated in the \textit{RASD} this is done to distinguish the roles and permissions of the two types of actors.\\The system has to store information about the \textit{Ride} such as the time (in order to be able to compute the cost),possible discount or extra charge and the initial and final position so to keep track of the associated \textit{Car}.\\\textit{Cars} are identified by their unique license plate and the system is always updated on their current state, which is one of the shown above.\\The system also records the info of each \textit{Reservation} in terms of the user and the corresponding car.This is clearly not enough to identify in a unique way a reservation, so the attribute Id is used as a key field for it.\\Finally the system stores the data that are necessary to properly represent the \textit{SafeAreas} and the \textit{ChargingAreas}: their position,their id, information about the number of total outlets and the cars that are parked.This piece of information is crucial for some key functionalities of the system, such as the computation of the uniform distribution of cars in the city.
+
 \chapter{Algorithm Design}
 %Focus on the definition of the most relevant algorithmic part
 \chapter{User Interface Design}
