@@ -80,25 +80,34 @@ In the second chapter, which is the core of the \textit{Design Document},
 the overall architecture will be presented at various levels of abstraction. After that a brief explanation of the architectural styles and patterns used is provided.\\
 The third chapter covers the algorithmic part of the system; some interesting algorithms that will be useful later on in the real implementation are described in pseudocode.\\
 The fourth chapter contains the mockups of both the webapp user interfaces and the ad-hoc touch screen embedded into the cars. Along with them, there is a small description.\\
-The fifth chapter reports the mapping of the requirements, identified in the \textit{RASD}, with respect to the architecture's component.\\
-The sixth and seventh chapters simply refers to the time effort spent in writing the \textit{DD} and the used tools to do it.
+The fifth chapter reports the mapping of the requirements, identified in the \textit{RASD}, with respect to the architecture's components.\\
+The sixth and seventh chapters simply refers to the time effort spent in writing the \textit{DD} and the tools used to do it.
 \chapter{Architectural Design}
 \section{Overview}
 %high level components and their interaction
 % here you can introduce the high level components of your architecture
 %and describe the main interaction between them (no details here. You can say why some components talk to each other, why, if the communication is synchronous or asynchronous, any other info you think is useful at this point).
+The system-to-be, \textit{PowerEnJoy}, will adopt a three-tier architecture, which means that the application will be designed by taking into account three physical levels as shown in the following figure:
+%imagebox
+\begin{itemize}
+\item \textbf{Client Tier} includes all the devices (PCs, 					smartphones) and software with which the people (\textit{Users} and \textit{Employees}) and the cars will be able to interact with the 			system.
+\item \textbf{Web Tier} represents the set of machines (and 				software) where the core of the application will be run on.
+\item \textbf{Database Tier} is the physical layer in charge of storing the data that are necessary to the system.
+\end{itemize}
+\noindent Each of these tiers will run a precise piece of software and following sections will go into the details in terms of software components, but it is useful to have already at this point a glimpse on the logical distribution of the application modules.\\
+\noindent The figure suggests that \textit{Client Tier} will be organized quite differently between the PCs, smartphones and the Car sides. While PCs in the Client Tier will only host the Presentation layer, in the Car there will be both the GUI and a small part of application logic. This is necessary to elaborate some information on the car, such as the interaction of the car with other components within the car itself (i.e. sensors) or out of it (i.e. the charging plug).\\For both the PCs and the Car,however, the business logic of the application is on an Application server, in the Web Tier. Finally, the persistent data are stored in the Database Tier. 
 \section{Component View}
 %here you have a refinement of what you have in Section 4.B and identify sub-components. For instance, the diagram in slide 6 could be a diagram showing a  component view
 This section focuses on the internal structure of the system-to-be in terms of the sub-components that it will be composed of and their relations.\\Before going into details, it is useful to recall from the Overview section that the deployment of the application is slightly different between the PC/Mobile and the Car platforms. This is reflected in the following component diagram in which the \textit{Device} (i.e. Mobile and PC) and the \textit{Car} nodes are shaped in different ways, hosting different components and different interfaces with the server.\\One one hand, the \textit{Devices} interact with the application through \textit{WebAppAPI}, on the other hand, the \textit{Car} exposes its proper \textit{CarAPI} and deals with the \textit{ServerAPI} to share information with the application running on the server.\\With regard to the Webapp, there are the following components to take into account:
 \begin{description}
-\item[ViewRender]is the component in charge of managing the viewable part of the application. It has two main roles: firstly, to fetch the user inputs coming from the Device browser (through the \textit{WebAppAPI}) and to pass them to the \textit{Dispatcher}, and secondly to ship the HTML pages that it receives from the other components to the \textit{Device} browser.
+\item[ViewRender]is the component in charge of managing the viewable part of the application. It has two main roles: firstly, to fetch the user inputs coming from the Device browser (through the \textit{WebAppAPI}) and to pass them to the \textit{Dispatcher}, and secondly to ship the Web pages that it receives from the other components to the \textit{Device} browser.
 \item[Dispatcher] is the item responsible for the sorting of the incoming requests. It scans the type of request that it receives from the \textit{ViewRender} and selects the suitable component that will take care of it.
-\item[ReservationManager] is the module designed to manage the reservation requests. It elaborates the data it gets from the \textit{Dispatcher} and it produces an output in terms of an HTML page that it sends to the \textit{ViewRender}. In doing that, it has to communicate with the \textit{Model} component to get information from the Database and eventually to update it. It also exchanges information with the \textit{ServerCommunicationManager} to notify the selected car of the reservation request.
-\item[RegistrationManager] handles the registration requests. It is connected to the \textit{Model} in order to update the data on the Database. It also produces an appropriate HTML page and sends it to the \textit{ViewRender}.
+\item[ReservationManager] is the module designed to manage the reservation requests. It elaborates the data it gets from the \textit{Dispatcher} and it produces an output in terms of a Web page that it sends to the \textit{ViewRender}. In doing that, it has to communicate with the \textit{Model} component to get information from the Database and eventually to update it. It also exchanges information with the \textit{ServerCommunicationManager} to notify the selected car of the reservation request.
+\item[RegistrationManager] handles the registration requests. It is connected to the \textit{Model} in order to update the data on the Database. It also produces an appropriate Web page and sends it to the \textit{ViewRender}.
 \item[StateManager] is the component that takes care of updating the cars state. Thus, it is linked with the \textit{Model} and with the \textit{ServerCommunicationManager}
-As the previous Manager components, it produces an HTML page to notify the success of the operation.
-\item[LogInManager] deals with the log in requests. It updates the Database thanks to the \textit{Model} component. It produces an HMTL page. \item[MapController] is the component that manages the map that the user and the system can deal with. It makes use of an external \textit{MapService} thanks to the \textit{MapAPI} and it retrieves data (such as the location of the cars or the Safe areas and Charging areas) from the database and updates the \textit{Model} too. It exchanges information with the \textit{ReservationManager} too.
-\item[RideManager] is in charge of the rides management. It has both to retrieve data from the car (thanks to the \textit{ServerCommunicationManager} and the \textit{Dispatcher}
+As the previous Manager components, it produces an Web page to notify the success of the operation.
+\item[LogInManager] deals with the log in requests. It updates the Database thanks to the \textit{Model} component. It produces a Web page. \item[MapController] is the component that manages the map that the user and the system can deal with. It makes use of an external \textit{MapService} thanks to the \textit{MapAPI} and it retrieves data (such as the location of the cars or the Safe areas and Charging areas) from the database and updates the \textit{Model} too. It exchanges information with the \textit{ReservationManager} too.
+\item[RideManager] is in charge of the rides management. It has both to retrieve data from the car (thanks to the \textit{ServerCommunicationManager} and the \textit{Dispatcher})
 and to ship information to it. To do so, it also needs to get info from the \textit{MapController}.\\It is linked to the \textit{RideCostCalculator} and \textit{PaymentManager} components that offers to it the obvious services.
 Finally, this component access the Database through the \textit{Model}.
 \item[RideCostCalculator] is the specific component that compute the cost of a ride. To perform this operation it needs info from the \textit{RideManager}.
@@ -108,15 +117,23 @@ is the specific component of the Webapp that manages the communication with the 
 \item[Model] is the component that is responsible for the data management within the app. It is linked to all the Manager components and it is the bridge between the server on which the app is running and the Database server. A suitable interface is provided by the DBMS, \textit{DBMSAPI}.
 \end{description}
 
-With regard to the Car, the following components are designed:
+\noindent With regard to the Car, the following components are designed:
 \begin{description}
 \item[CarCommunicationManager] handles the data that the car receives from the Webapp and those data that it has do send back. It is linked to the \textit{CentralUnit}.
 \item[CentralUnit] manages the info that come from all the sensors within the car and those that it receives from the server. As a consequence, it communicates with the \textit{ScreenManger} to update the data to be displayed on the screen.
 \item[ScreenManager] is the component that organize the data received from the \textit{CentralUnit} and display them on the screen panel. It also gets the user input and delivers it to the \textit{CentralUnit}.
 \end{description}
-
+\imagebox{../Architecture_Overview_Img/ComponentDiagram}{Component Diagram}{0}
 \section{Deployment View}
 %this is what you have in slide 8, that is, the identification of the artifact that need to be deployed to have the system working
+As already seen in the Overview section, the system is organised in a three-tier architecture. This section explores the distribution of the application over the physical nodes. Let us introduce the following image which represents the deployment of the application:
+\imagebox{../Architecture_Overview_Img/DeploymentDiagram}{Deployment Diagram}{0}
+The \textbf{Client Tier} includes three types of devices: \textit{Mobile Device}, \textit{PC} and \textit{Car}. The first two ones can access the Webapp surfing the \textit{Internet} through a browser that is already installed on the device.
+As already stated in the Overview, the \textit{Cars} are treated slight differently and they have a \textit{Built In SW} which manages the communication with the WebApp. The connection with the server passes through \textit{Internet} anyway.\\
+The \textbf{Web Tier} consists in an \textit{Application Server} on which the business logic of the application is run. It is here where all the requests coming from the devices of the Client Tier
+are processed and as a consequence proper Web pages are created. The \textit{Application Server} is then linked to a remote \textit{Database Server} through a LAN network.\\
+The \textbf{Database Tier} hosts a \textit{Database Server}, that is a remote machine whose job is to store all the data that are necessary for the system to provide its functionalities. The \textit{Database Server} can access the physical DB through an appropriate software, \textit{MySql} which makes possible the exchange of data from and to the \textit{Application Server}.
+
 \section{Runtime View}
 %may use sequence diagrams to describe the way components interact to accomplish specific tasks typically related to use cases
 %this is what you have in slide 9 plus sequence diagrams describing the way components behave in order to accomplish a certain activity
