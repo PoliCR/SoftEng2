@@ -113,6 +113,14 @@
 \end{figure}
 }
 
+\newcommand{\imageboxNoFit}[4]{
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[keepaspectratio,angle=#3,scale=#4]{#1}}
+\caption{#2}
+\end{figure}
+}
+
 %---
 % Alloy listing
 %---
@@ -125,15 +133,15 @@
 	literate=%
 	{:}{$\colon$}1
 	%{|}{$\bullet$}1
-	{==}{$=$}1
-	{=}{$=$}1
+	%{==}{$=$}1
+	%{=}{$=$}1
 	{!=}{$\neq$}1
-	{&&}{$\land$}1
-	{||}{$\lor$}1
+	%{&&}{$\land$}1
+	%{||}{$\lor$}1
 	{<=}{$\le$}1
 	{>=}{$\ge$}1
 	%{all}{$\forall$}1
-	{exists}{$\exists$}1
+	%{exists}{$\exists$}1
 	{!in}{$\not\in$}1
 	{\\in}{$\in$}1
 	{=>}{$\implies$}3
@@ -199,10 +207,10 @@
 	\lstset{language=pseudocode,
 		floatplacement={tbp},
 		captionpos=b,
-		xleftmargin=8pt,
-		xrightmargin=8pt,
-		 breaklines=true,
-		  tabsize=3,
+		xleftmargin=2pt,
+		xrightmargin=2pt,
+		breaklines=true,
+		tabsize=3,
 		%basicstyle=\ttfamily,
 	}
 } {}
