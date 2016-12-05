@@ -149,6 +149,118 @@ An important issue in the Design Process is to select the suitable data that the
 
 \chapter{Algorithm Design}
 %Focus on the definition of the most relevant algorithmic part
+\section{Discount}
+\begin{pseudocodeEnv}
+//Discount calculator
+
+float CAR_PENALITY := 0.3;
+float CAR_CHARGE_DISCOUNT := 0.2;
+float CAR_PEOPLE_DISCOUNT := 0.1;
+float CAR_POSITION_DISCOUNT := 0.3;
+float CAR_CHARGE_CONSTANT := 0.5;
+float CAR_PEOPLE_CONSTANT := 0.3;
+float MIN_BATTERY_CONSTANT := 0.2;
+
+//Check if the user has some discounts or penalities
+function float calculateDiscount (Position position, integer peopleNumber, float carCharge, integer price, Car car){
+	if not checkPenalty()
+		return price*(1-max(checkDiscount(position, car), checkDiscount(peopleNumber), checkDiscount(carCharge)));
+	endif
+	return price*(1+CAR_PENALITY);
+}
+
+//Check if the user can obtain the discount of the car left with more than 50% of battery
+function integer checkDiscount(float carCharge){
+	if carCharge >= CAR_CHARGE_CONSTANT
+		return CAR_CHARGE_DISCOUNT;
+	endif
+	return 0;
+}
+
+//Check if the user can obtain the discount because he had two passengers
+function integer checkDiscount(integer peopleNumber){
+	if peopleNumber >= CAR_PEOPLE_CONSTANT
+		return CAR_PEOPLE_DISCOUNT;
+	endif
+	return 0;
+}
+
+//Check if the user can obtain the discount because he had left the car plugged in a charging area
+function integer checkDiscount(Position position, Car car){
+	if chargingAreaPositions.contains(position) && car.isPlugged()
+		return CAR_POSITION_DISCOUNT;
+	endif
+	return 0;
+}
+
+//Check if the user has left the car with left of 20% of battery or he has left the car too far from the nearest charging area
+function bool checkPenalty(){
+	if carCharge < MIN_BATTERY_CONSTANT || tooFarFrom(position)
+		return true;
+	endif
+	return false;
+}
+
+//Check if exists a charging area near the car
+function boolean tooFarFrom(Position position){
+	for each Position called chargingAreaPosition in chargingAreaPositions)
+		if Position.distance(chargingAreaPosition, position)<MAX_DISTANCE
+			return false;
+		endif
+	endfor
+	return true;
+}
+\end{pseudocodeEnv}
+\section{Distribution}
+\begin{pseudocodeEnv}
+//Uniform distribution	
+
+float KM_INCREASE := 0.5;
+	
+//This function gives the nearest position to the place where you want to park
+function Position giveBestPosition(Position finalPosition){
+	int totalPositionCounted := 0;
+	int totalCarCounted := 0;
+	return checkUniformity(finalPosition, totalPositionCounted, totalCarCounted, KM_INCREASE).getFirst().getPosition();
+}
+	
+//This method checks the uniformity finding the best place where the variance is high
+function List<PositionMediaVariance> checkUniformity(finalPosition, totalPositionCounted, totalCarCounted, range){
+	List<PositionMediaVariance> positionMediaVarianceList;
+	
+	if totalCarCounted == 0 && totalPositionCounted == 0
+		for each Position called chargingAreaPosition in chargingAreaPosition)
+			totalPositionCounted++;
+			totalCarCounted = totalCarCounted + chargingAreaPosition.getCars().size();
+		endfor
+	endif
+	
+	for each Position called chargingAreaPosition in nearChargingAreaPositions(range, finalPosition){
+		if chargingAreaPosition.hasFreePlug()
+			positionMediaVarianceList.add(new PositionMediaVariance(chargingAreaPosition, totalCarCounted / totalPositionCounted, totalCarCounted / totalPositionCounted - chargingAreaPosition.getCars()));
+		endif
+	}
+		
+	if not positionMediaVariance.isEmpty(){
+		return positionMediaVarianceList.sort();
+	}
+	
+	checkUniformity(finalPosition, totalPositionCounted, totalCarCounted, range + KM_INCREASE);
+}
+
+//This checks the nearest charging area in a certain range.
+function List<Position> nearChargingAreaPositions(int range){
+	List<Position> nearChargingAreaPositionsArrayList;
+	for each Position called chargingAreaPosition in chargingAreaPositions)
+		if Position.distance(chargingAreaPosition, finalPosition) < range
+			nearChargingAreaPositionsArrayList.add(chargingAreaPosition);
+		endif
+	endfor
+}
+
+//Return if the car is plugged in a charging area
+function boolean isPlugged()
+\end{pseudocodeEnv}
 \chapter{User Interface Design}
 %Provide an overview on how the user interface(s) of your system will look like; if you have included this part in the RASD, you can simply refer to what you have already done, possibly, providing here some extensions if applicable.
 \chapter{Requirements Traceability}

@@ -119,12 +119,9 @@
 \definecolor{pgreen}{rgb}{0,0.64,0.013}
 \definecolor{pblue}{rgb}{0.13,0.13,1}
 
-\lstdefinelanguage{alloy}{
+\lstdefinelanguage{pseudocode}{
 	keywords={
-		assert, pred, all, no, lone, one, some, check, run,
-		but, let, implies, not, iff, in, and, or, set, sig, Int, int,
-		if, then, else, exactly, disj, fact, fun, module, abstract,
-		extends, open, none, univ, iden, seq},
+		function, if, endif, for, each, endfor, return, called, in, boolean, integer, float, Position, Car, List, PositionMediaVariance, not, break},
 	literate=%
 	{:}{$\colon$}1
 	%{|}{$\bullet$}1
@@ -198,8 +195,8 @@
 	%ndkeywordstyle=\bfseries,
 }
 
-\lstnewenvironment{alloyCode}{%	
-	\lstset{language=alloy,
+\lstnewenvironment{pseudocodeEnv}{%	
+	\lstset{language=pseudocode,
 		floatplacement={tbp},
 		captionpos=b,
 		xleftmargin=8pt,
