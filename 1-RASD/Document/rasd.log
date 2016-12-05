@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  13 NOV 2016 23:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  5 DEC 2016 13:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,7 +970,7 @@ l.368 ...gram_6}{Registration Activity Diagram}{0}
                                                    <../UML_Model/UML_img/Charge
 _Activity__Charge_ActivityDiagram_1.jpg>]
 <../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.jpg, 
-id=458, 1324.95pt x 1336.995pt>
+id=458, 1351.0475pt x 1367.1075pt>
 File: ../UML_Model/UML_img/Reservation_Activity__Reservation_ActivityDiagram_7.
 jpg Graphic file (type jpg)
 
@@ -978,7 +978,7 @@ jpg Graphic file (type jpg)
 pg>
 Package pdftex.def Info: ../UML_Model/UML_img/Reservation_Activity__Reservation
 _ActivityDiagram_7.jpg used on input line 369.
-(pdftex.def)             Requested size: 426.79135pt x 430.66246pt.
+(pdftex.def)             Requested size: 426.79135pt x 431.85104pt.
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 369--369
  [][] 
@@ -1070,7 +1070,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 669.
 Here is how much of TeX's memory you used:
  10258 strings out of 493089
  145960 string characters out of 6134842
- 424783 words of memory out of 5000000
+ 424786 words of memory out of 5000000
  13130 multiletter control sequences out of 15000+600000
  24099 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1095,7 +1095,7 @@ mf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sfxc1440.pfb>
-Output written on rasd.pdf (43 pages, 2897458 bytes).
+Output written on rasd.pdf (43 pages, 2898461 bytes).
 PDF statistics:
  957 PDF objects out of 1000 (max. 8388607)
  863 compressed objects within 9 object streams
