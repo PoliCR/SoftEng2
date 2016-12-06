@@ -9,15 +9,19 @@
 \BOOKMARK [1][-]{section.2.2}{Component View}{chapter.2}% 9
 \BOOKMARK [1][-]{section.2.3}{Deployment View}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.4}{Runtime View}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.5}{Component interfaces}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.6}{Selected Architectural Styles and Patterns}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.7}{Other Design Decisions}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.7.1}{ER Diagram}{section.2.7}% 15
-\BOOKMARK [0][-]{chapter.3}{Algorithm Design}{}% 16
-\BOOKMARK [1][-]{section.3.1}{Discount and Penalties Calculation}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.2}{Distribution }{chapter.3}% 18
-\BOOKMARK [0][-]{chapter.4}{User Interface Design}{}% 19
-\BOOKMARK [0][-]{chapter.5}{Requirements Traceability}{}% 20
-\BOOKMARK [0][-]{chapter.6}{Effort Spent}{}% 21
-\BOOKMARK [0][-]{chapter.7}{References}{}% 22
-\BOOKMARK [1][-]{section.7.1}{Tools}{chapter.7}% 23
+\BOOKMARK [2][-]{subsection.2.4.1}{Reservation}{section.2.4}% 12
+\BOOKMARK [2][-]{subsection.2.4.2}{Ride Start}{section.2.4}% 13
+\BOOKMARK [2][-]{subsection.2.4.3}{Ride Stop}{section.2.4}% 14
+\BOOKMARK [2][-]{subsection.2.4.4}{Car Plug-in}{section.2.4}% 15
+\BOOKMARK [1][-]{section.2.5}{Component interfaces}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.6}{Selected Architectural Styles and Patterns}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.7}{Other Design Decisions}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.7.1}{ER Diagram}{section.2.7}% 19
+\BOOKMARK [0][-]{chapter.3}{Algorithm Design}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Discount and Penalties Calculation}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.2}{Distribution }{chapter.3}% 22
+\BOOKMARK [0][-]{chapter.4}{User Interface Design}{}% 23
+\BOOKMARK [0][-]{chapter.5}{Requirements Traceability}{}% 24
+\BOOKMARK [0][-]{chapter.6}{Effort Spent}{}% 25
+\BOOKMARK [0][-]{chapter.7}{References}{}% 26
+\BOOKMARK [1][-]{section.7.1}{Tools}{chapter.7}% 27

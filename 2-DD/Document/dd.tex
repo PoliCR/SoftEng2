@@ -132,6 +132,20 @@ The \textbf{Data Tier} hosts a \textit{Database Server}, that is a remote machin
 \section{Runtime View}
 %may use sequence diagrams to describe the way components interact to accomplish specific tasks typically related to use cases
 %this is what you have in slide 9 plus sequence diagrams describing the way components behave in order to accomplish a certain activity
+In this section, some \textit{sequence diagrams} will be provided in order to better explain how the components of the system behave and interact with each others to fulfill the key functionalities.
+\subsection{Reservation}
+\imagebox{../UML/UML_img/Reservation_sequence}{Reservation - Sequence Diagram}{0}
+The flow of information starts from the user, through the ViewRender, and then request is dispatched to the ReservationManager. It is responsible for updating the model and to notify the operation also to the chosen car. Finally the user receive a confirmation for his reservation.
+\subsection{Ride Start}
+In order to pick-ip an available car, the user has to use the Webapp to start the operation. Before unlocking the car, the system checks that the user balance is at least greater than zero. In the negative case, the user is notified about the abortion of the operation, caused by a non-positive balance. Otherwise the system change the status of the chosen car and unlocks it. Then the user can get on board, and through the touch screen can activate the \textit{Money Saving Option} and enters his final destination. Finally he press the \textit{start} button. The system detects whether the user has enabled the special option and in this case search and notify the suggested area where to park in order to be eligible to obtain the discount on the ride.
+In the end the on board screen prompt the a message that states that the user can start driving.
+\imagebox{../UML/UML_img/RideStart_sequence}{Start of the Ride -  Sequence Diagram}{0}
+\subsection{Ride Stop}
+The stop signal of the ride is given by the user from the touch screen embedded into the car. So the car communicates with the system, sending to message that the user has ended his ride and along with it, it sends also the key parameters (i.e. final position, battery level and people on board) that will be used to calculate the discount or the penalty that has to be applied to the ride cost. Then the system computes a temporary cost of the ride that will be displayed on the car screen. The user confirms it and gets off the car. After the confirmation, the user has a limited time to plug the car into the power grid to obtain the relative discount. After when the timer ends, the car sends a message to the system a message to communicate if the user has or not plugged in the car. At this point the system calculates the real cost of the last ride, since it has all the required data, and complete the payment stage of the operation through the external system.
+\imagebox{../UML/UML_img/RideStop_sequence}{Stop of the Ride - Sequence Diagram}{0}
+\subsection{Car Plug-in}
+The employee of the company is responsible for plugging in all the cars that haven't attached to the power grid from the users. Through the Webapp the employee registers the operation, then the system takes care of changing the status of the car.
+\imagebox{../UML/UML_img/ReplugCar_sequence}{Car Plug In by Employee - Sequence Diagram}{0}
 \section{Component interfaces}
 %here you define the interfaces of your components, that is, which operations they offer to the external world, their meaning, any input and output parameter (name, possible set of values/type)
 \section{Selected Architectural Styles and Patterns}
