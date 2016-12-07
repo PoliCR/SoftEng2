@@ -369,7 +369,8 @@ This section shows how both Functional \& Non-Functional Requirements, already l
 			\end{itemize}
 		\item The system flags the car as Reserved.
 			\begin{itemize}
-				\item RideManager
+				\item ReservationManger
+				\item StateManager
 				\item Model
 			\end{itemize}
 		\item The system checks that the user has one active reservation.
@@ -496,7 +497,7 @@ This section shows how both Functional \& Non-Functional Requirements, already l
 	\item The reservation has an upper limit on time: the system can reserve a car for up to one hour before the ride. After that time expires with no ride, the system charges 1 EUR fee to the user.
 	\begin{itemize}
 		\item ReservationManager
-		\item RideManager
+		\item StateManager
 		\item Model
 		\item PaymentManager
 	\end{itemize}
