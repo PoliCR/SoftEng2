@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  7 DEC 2016 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.15)  7 DEC 2016 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -513,7 +513,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 9.
 \c@lstlisting=\count159
  (./dd_titlepage.tex
-<../../logo.png, id=116, 306.14375pt x 302.12875pt>
+<../../logo.png, id=120, 306.14375pt x 302.12875pt>
 File: ../../logo.png Graphic file (type png)
  <use ../../logo.png>
 Package pdftex.def Info: ../../logo.png used on input line 15.
@@ -561,7 +561,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2] [3]
 Chapter 2.
-<../Architecture_Overview_Img/DD_a.png, id=213, 368.37625pt x 636.3775pt>
+<../Architecture_Overview_Img/DD_a.png, id=218, 368.37625pt x 636.3775pt>
 File: ../Architecture_Overview_Img/DD_a.png Graphic file (type png)
 
 <use ../Architecture_Overview_Img/DD_a.png>
@@ -578,7 +578,7 @@ has been already used, duplicate ignored
 l.87 \item \textbf
                   {Application Tier} represents the set of machines (and 			...
  <../Architecture_Overview_Img/DD_a.png>]
-<../Architecture_Overview_Img/DD_b.png, id=220, 303.1325pt x 551.05875pt>
+<../Architecture_Overview_Img/DD_b.png, id=225, 303.1325pt x 551.05875pt>
 File: ../Architecture_Overview_Img/DD_b.png Graphic file (type png)
 
 <use ../Architecture_Overview_Img/DD_b.png>
@@ -593,7 +593,7 @@ ne 93.
 l.98 \item
           [ViewRender]is the component in charge of managing the viewable pa...
  <../Architecture_Overview_Img/DD_b.png>] [6]
-<../Architecture_Overview_Img/ComponentDiagram.jpg, id=230, 1546.77875pt x 1152
+<../Architecture_Overview_Img/ComponentDiagram.jpg, id=235, 1546.77875pt x 1152
 .305pt>
 File: ../Architecture_Overview_Img/ComponentDiagram.jpg Graphic file (type jpg)
 
@@ -607,7 +607,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 121--121
  []
 
 [7]
-<../Architecture_Overview_Img/DeploymentDiagram.jpg, id=235, 679.53876pt x 732.
+<../Architecture_Overview_Img/DeploymentDiagram.jpg, id=240, 679.53876pt x 732.
 7375pt>
 File: ../Architecture_Overview_Img/DeploymentDiagram.jpg Graphic file (type jpg
 )
@@ -631,7 +631,7 @@ duplicate ignored
 l.136 \subsection{Reservation}
                                <../Architecture_Overview_Img/DeploymentDiagram.
 jpg>]
-<../UML/UML_img/Reservation_sequence.jpg, id=244, 1715.40875pt x 373.395pt>
+<../UML/UML_img/Reservation_sequence.jpg, id=249, 1715.40875pt x 373.395pt>
 File: ../UML/UML_img/Reservation_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/Reservation_sequence.jpg>
@@ -643,7 +643,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 137--137
  [][] 
  []
 
-<../UML/UML_img/RideStart_sequence.jpg, id=245, 2223.30624pt x 1098.1025pt>
+<../UML/UML_img/RideStart_sequence.jpg, id=250, 2223.30624pt x 1098.1025pt>
 File: ../UML/UML_img/RideStart_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/RideStart_sequence.jpg>
@@ -662,7 +662,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 142--142
                                                   \fi \fi 
 l.143 \subsection{Ride Stop}
                              <../UML/UML_img/Reservation_sequence.jpg>]
-<../UML/UML_img/RideStop_sequence.jpg, id=252, 2860.6875pt x 1005.7575pt>
+<../UML/UML_img/RideStop_sequence.jpg, id=257, 2860.6875pt x 1005.7575pt>
 File: ../UML/UML_img/RideStop_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/RideStop_sequence.jpg>
@@ -674,7 +674,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 145--145
  [][] 
  []
 
-<../UML/UML_img/ReplugCar_sequence.jpg, id=253, 1047.915pt x 268.00125pt>
+<../UML/UML_img/ReplugCar_sequence.jpg, id=258, 1047.915pt x 268.00125pt>
 File: ../UML/UML_img/ReplugCar_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/ReplugCar_sequence.jpg>
@@ -701,7 +701,7 @@ ate ignored
 l.148 ...lug In by Employee - Sequence Diagram}{0}
                                                    <../UML/UML_img/RideStart_se
 quence.jpg> <../UML/UML_img/RideStop_sequence.jpg>]
-<../UML/UML_img/ERProject.png, id=258, 1593.955pt x 916.42375pt>
+<../UML/UML_img/ERProject.png, id=263, 1593.955pt x 916.42375pt>
 File: ../UML/UML_img/ERProject.png Graphic file (type png)
 
 <use ../UML/UML_img/ERProject.png>
@@ -732,7 +732,7 @@ Chapter 3.
 
 ] [15] [16] [17]
 Chapter 4.
-<../Mockup_img/Web.png, id=394, 3933.69624pt x 2686.035pt>
+<../Mockup_img/Web.png, id=400, 3933.69624pt x 2686.035pt>
 File: ../Mockup_img/Web.png Graphic file (type png)
 
 <use ../Mockup_img/Web.png>
@@ -743,7 +743,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 277--277
  [][] 
  []
 
-<../Mockup_img/Mobile.png, id=395, 3707.8525pt x 1673.25125pt>
+<../Mockup_img/Mobile.png, id=401, 3707.8525pt x 1673.25125pt>
 File: ../Mockup_img/Mobile.png Graphic file (type png)
 
 <use ../Mockup_img/Mobile.png>
@@ -754,7 +754,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 278--278
  [][] 
  []
 
-<../Mockup_img/Car.png, id=396, 2764.3275pt x 461.725pt>
+<../Mockup_img/Car.png, id=402, 2764.3275pt x 461.725pt>
 File: ../Mockup_img/Car.png Graphic file (type png)
 
 <use ../Mockup_img/Car.png>
@@ -803,20 +803,20 @@ AED: lastpage setting LastPage
 [26
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 502.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 502.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
  (./dd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 502.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 502.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
 Package rerunfilecheck Info: File `dd.out' has not changed.
-(rerunfilecheck)             Checksum: 788F7686D74FCE943A68B05CE476BC0A;1740.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 502.
+(rerunfilecheck)             Checksum: DC17ACD09BF54BCAA193B91DEA12CF67;1814.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 523.
  ) 
 Here is how much of TeX's memory you used:
- 9912 strings out of 493089
- 140328 string characters out of 6134842
+ 9921 strings out of 493089
+ 140440 string characters out of 6134842
  335793 words of memory out of 5000000
- 13021 multiletter control sequences out of 15000+600000
+ 13026 multiletter control sequences out of 15000+600000
  23398 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  31i,12n,45p,978b,1962s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -839,10 +839,10 @@ exmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfxc1440.pfb>
-Output written on dd.pdf (29 pages, 2169491 bytes).
+Output written on dd.pdf (29 pages, 2170375 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 212 named destinations out of 1000 (max. 500000)
- 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 585 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 298 words of extra memory for PDF output out of 10000 (max. 10000000)
 

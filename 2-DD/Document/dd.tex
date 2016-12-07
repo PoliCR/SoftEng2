@@ -281,210 +281,231 @@ function boolean isPlugged()
 %Explain how the requirements you have defined in the RASD map to the design elements that you have defined in this document.
 This section shows how both Functional \& Non-Functional Requirements, already listed in the \textit{RASD}, are mapped with respect to the components that the system is made of.
 \section{Functional Requirements}
-\begin{Req}
-	\item The system checks whether the user entered all the required data.
-		\begin{itemize}
-			\item ViewRender
-		\end{itemize}
-	\item The system checks whether the current user is already registered or not.
-		\begin{itemize}
-			\item ViewRender
-			\item RegistrationManager
-			\item Model
-		\end{itemize}
-	\item The systems checks that there is only one user with that name.
-		\begin{itemize}
-			\item ViewRender
-			\item RegistrationManager
-			\item Model
-		\end{itemize}
-	\item The system generates a password for the access and sends it back to the new user.
-		\begin{itemize}
-			\item ViewRender
-			\item RegistrationManager
-		\end{itemize}
-	\item The system checks the input data and verifies whether the user is already registered.
-		\begin{itemize}
-			\item ViewRender
-			\item LogInManager
-			\item Model
-		\end{itemize}
-	\item The system confirms the access.
-		\begin{itemize}
-			\item ViewRender
-			\item LogInManager
-		\end{itemize}
-	\item The system verifies whether the given location exists.
-		\begin{itemize}
-			\item RideManager
-			\item MapController
-		\end{itemize}
-	\item The system shows the available cars within the range of distance specified by the user from the given location.
-		\begin{itemize}
-			\item ViewRender
-			\item MapController
-		\end{itemize}
-	\item The system obtains the user position via GPS.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-		\end{itemize}
-	\item The system shows the available cars within the range of distance specified by the user from his current position.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item MapController
-			\item Model
-		\end{itemize}
-	\item The system obtains the user position via GPS and checks he is nearby.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item MapController
-			\item Model
-		\end{itemize}
-	\item The system verifies the car is available.
-		\begin{itemize}
-			\item Model
-		\end{itemize}
-	\item The system unlocks the car.
-		\begin{itemize}
-			\item RideManager
-			\item Model
-			\item ServerCommunicationManager
-			\item CarCommunicationManager
-			\item CentralUnit
-		\end{itemize}
-	\item The system shows those cars that are in the area specified by the user.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item MapController
-			\item Model
-		\end{itemize}
-	\item The system verifies that the user balance is not negative.
-		\begin{itemize}
-			\item RideManager
-			\item PaymentManager
-		\end{itemize}
-	\item The system flags the car as Reserved.
-		\begin{itemize}
-			\item RideManager
-			\item Model
-		\end{itemize}
-	\item The system checks that the user has one active reservation.
-		\begin{itemize}
-			\item ReservationManager
-			\item Model
-		\end{itemize}
-	\item The system lets the user delete his active reservation.
-		\begin{itemize}
-			\item ReservationManager
-			\item Model
-		\end{itemize}
-	\item The system checks the position of the car at the end of the ride.
-		\begin{itemize}
-			\item CentralUnit
-			\item CarCommunicationManager
-			\item ServerCommunicationManager
-			\item Dispatcher
-			\item RideManager
-			\item MapController
-		\end{itemize}
-	\item The system checks the battery charge level at the end of the ride.
-		\begin{itemize}
-			\item CentralUnit
-			\item CarCommunicationManager
-			\item ServerCommunicationManager
-			\item Dispatcher
-			\item RideManager
-		\end{itemize}
-	\item The system checks whether the car is plugged into the power grid by the user at the end of the ride.
-		\begin{itemize}
-			\item CentralUnit
-			\item CarCommunicationManager
-			\item ServerCommunicationManager
-			\item Dispatcher
-			\item RideManager
-		\end{itemize}	
-	%TODO sistemare REQ!!
-	\item The system computes the discount (or extra charge) considering the previous points.
-		\begin{itemize}
-			\item RideManager
-			\item RideCostCalculator
-		\end{itemize}
-	\item The system computes a possible discount or an extra charge.
-		\begin{itemize}
-			\item RideManager
-			\item RideCostCalculator
-		\end{itemize}
-	\item The system computes the total cost of the ride.
-		\begin{itemize}
-			\item RideManager
-			\item RideCostCalculator
-		\end{itemize}
-	\item The system shows the cost on the car screen.
-		\begin{itemize}
-			\item RideManager
-			\item ServerCommunicationManager
-			\item CarCommunicationManager
-			\item CentralUnit
-			\item ScreenManager 
-		\end{itemize}
-	\item The system requests the payment to the external system.
-		\begin{itemize}
-			\item RideManager
-			\item PaymentManager 
-		\end{itemize}
-	\item The system locks the car.
-		\begin{itemize}
-			\item RideManager
-			\item ServerCommunicationManager
-			\item CarCommunicationManager
-			\item CentralUnit
-		\end{itemize}
-	%TODO altro req ripetuto!(registration o login?)
-	\item The system checks the input data and verifies whether the account really exists.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item LogInManager
-			\item Model
-		\end{itemize}
-	\item The system confirms the access in administrator mode.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item LogInManager
-			\item Model
-		\end{itemize}
-	%TODO ancora...
-	\item The system verifies whether the given location exists.
-		\begin{itemize}
-			\item RideManager
-			\item MapController
-		\end{itemize}
-	\item The system shows the cars within the range of distance specified by the employee from the given location.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item MapController
-			\item Model
-		\end{itemize}
-	\item The system shows the current state of the car.
-		\begin{itemize}
-			\item ViewRender
-			\item StateManager
-			\item Model
-		\end{itemize}
-	\item The system updates the state of the car with the new value.
-		\begin{itemize}
-			\item ViewRender
-			\item Dispatcher
-			\item StateManager
-			\item Model
-		\end{itemize}
-\end{Req}
+	\begin{Req}
+		\item The system checks whether the user entered all the required data.
+			\begin{itemize}
+				\item ViewRender
+			\end{itemize}
+		\item The system checks whether the current user is already registered or not.
+			\begin{itemize}
+				\item ViewRender
+				\item RegistrationManager
+				\item Model
+			\end{itemize}
+		\item The systems checks that there is only one user with that name.
+			\begin{itemize}
+				\item ViewRender
+				\item RegistrationManager
+				\item Model
+			\end{itemize}
+		\item The system generates a password for the access and sends it back to the new user.
+			\begin{itemize}
+				\item ViewRender
+				\item RegistrationManager
+			\end{itemize}
+		\item The system checks the input data and verifies whether the user is already registered.
+			\begin{itemize}
+				\item ViewRender
+				\item LogInManager
+				\item Model
+			\end{itemize}
+		\item The system confirms the access.
+			\begin{itemize}
+				\item ViewRender
+				\item LogInManager
+			\end{itemize}
+		\item The system verifies whether the given location exists.
+			\begin{itemize}
+				\item RideManager
+				\item MapController
+			\end{itemize}
+		\item The system shows the available cars within the range of distance specified by the user from the given location.
+			\begin{itemize}
+				\item ViewRender
+				\item MapController
+			\end{itemize}
+		\item The system obtains the user position via GPS.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+			\end{itemize}
+		\item The system shows the available cars within the range of distance specified by the user from his current position.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item MapController
+				\item Model
+			\end{itemize}
+		\item The system obtains the user position via GPS and checks he is nearby.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item MapController
+				\item Model
+			\end{itemize}
+		\item The system verifies the car is available.
+			\begin{itemize}
+				\item Model
+			\end{itemize}
+		\item The system unlocks the car.
+			\begin{itemize}
+				\item RideManager
+				\item Model
+				\item ServerCommunicationManager
+				\item CarCommunicationManager
+				\item CentralUnit
+			\end{itemize}
+		\item The system shows those cars that are in the area specified by the user.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item MapController
+				\item Model
+			\end{itemize}
+		\item The system verifies that the user balance is not negative.
+			\begin{itemize}
+				\item RideManager
+				\item PaymentManager
+			\end{itemize}
+		\item The system flags the car as Reserved.
+			\begin{itemize}
+				\item RideManager
+				\item Model
+			\end{itemize}
+		\item The system checks that the user has one active reservation.
+			\begin{itemize}
+				\item ReservationManager
+				\item Model
+			\end{itemize}
+		\item The system lets the user delete his active reservation.
+			\begin{itemize}
+				\item ReservationManager
+				\item Model
+			\end{itemize}
+		\item The system checks the position of the car at the end of the ride.
+			\begin{itemize}
+				\item CentralUnit
+				\item CarCommunicationManager
+				\item ServerCommunicationManager
+				\item Dispatcher
+				\item RideManager
+				\item MapController
+			\end{itemize}
+		\item The system checks the battery charge level at the end of the ride.
+			\begin{itemize}
+				\item CentralUnit
+				\item CarCommunicationManager
+				\item ServerCommunicationManager
+				\item Dispatcher
+				\item RideManager
+			\end{itemize}
+		\item The system checks whether the car is plugged into the power grid by the user at the end of the ride.
+			\begin{itemize}
+				\item CentralUnit
+				\item CarCommunicationManager
+				\item ServerCommunicationManager
+				\item Dispatcher
+				\item RideManager
+			\end{itemize}	
+		%TODO sistemare REQ!!
+		\item The system computes the discount (or extra charge) considering the previous points.
+			\begin{itemize}
+				\item RideManager
+				\item RideCostCalculator
+			\end{itemize}
+		\item The system computes a possible discount or an extra charge.
+			\begin{itemize}
+				\item RideManager
+				\item RideCostCalculator
+			\end{itemize}
+		\item The system computes the total cost of the ride.
+			\begin{itemize}
+				\item RideManager
+				\item RideCostCalculator
+			\end{itemize}
+		\item The system shows the cost on the car screen.
+			\begin{itemize}
+				\item RideManager
+				\item ServerCommunicationManager
+				\item CarCommunicationManager
+				\item CentralUnit
+				\item ScreenManager 
+			\end{itemize}
+		\item The system requests the payment to the external system.
+			\begin{itemize}
+				\item RideManager
+				\item PaymentManager 
+			\end{itemize}
+		\item The system locks the car.
+			\begin{itemize}
+				\item RideManager
+				\item ServerCommunicationManager
+				\item CarCommunicationManager
+				\item CentralUnit
+			\end{itemize}
+		%TODO altro req ripetuto!(registration o login?)
+		\item The system checks the input data and verifies whether the account really exists.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item LogInManager
+				\item Model
+			\end{itemize}
+		\item The system confirms the access in administrator mode.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item LogInManager
+				\item Model
+			\end{itemize}
+		%TODO ancora...
+		\item The system verifies whether the given location exists.
+			\begin{itemize}
+				\item RideManager
+				\item MapController
+			\end{itemize}
+		\item The system shows the cars within the range of distance specified by the employee from the given location.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item MapController
+				\item Model
+			\end{itemize}
+		\item The system shows the current state of the car.
+			\begin{itemize}
+				\item ViewRender
+				\item StateManager
+				\item Model
+			\end{itemize}
+		\item The system updates the state of the car with the new value.
+			\begin{itemize}
+				\item ViewRender
+				\item Dispatcher
+				\item StateManager
+				\item Model
+			\end{itemize}
+	\end{Req}
+\section{Non Functional Requirements}
+\begin{enumerate}
+	\item In order to distinguish between the users and the employees, the system provides two different modes of execution of the application: user mode and administrator mode. This is also graphically represented by a slightly different interface of the app.
+	\begin{itemize}
+		\item ViewRender
+		\item LogInManager
+		\item Model
+	\end{itemize}
+	\item The reservation has an upper limit on time: the system can reserve a car for up to one hour before the ride. After that time expires with no ride, the system charges 1 EUR fee to the user.
+	\begin{itemize}
+		\item ReservationManager
+		\item RideManager
+		\item Model
+		\item PaymentManager
+	\end{itemize}
+	\item The system provides discounts or extra charges on the last ride with the policy specified in the \textit{RASD}.
+	\begin{itemize}
+		\item RideManager
+		\item RideCostCalculator
+	\end{itemize}
+\end{enumerate}
 \chapter{Effort Spent}
 %In this section you will include information about the number of hours each group member has worked towards the fulfillment of this deadline.
 \chapter{References}
