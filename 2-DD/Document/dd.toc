@@ -16,8 +16,8 @@
 \contentsline {subsection}{\numberline {2.4.4}Car Plug-in}{12}{subsection.2.4.4}
 \contentsline {section}{\numberline {2.5}Component interfaces}{12}{section.2.5}
 \contentsline {section}{\numberline {2.6}Selected Architectural Styles and Patterns}{12}{section.2.6}
-\contentsline {section}{\numberline {2.7}Other Design Decisions}{12}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}ER Diagram}{12}{subsection.2.7.1}
+\contentsline {section}{\numberline {2.7}Other Design Decisions}{13}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}ER Diagram}{13}{subsection.2.7.1}
 \contentsline {chapter}{\numberline {3}Algorithm Design}{14}{chapter.3}
 \contentsline {section}{\numberline {3.1}Discount and Penalties Calculation}{14}{section.3.1}
 \contentsline {section}{\numberline {3.2}Cars Uniform Distribution}{15}{section.3.2}

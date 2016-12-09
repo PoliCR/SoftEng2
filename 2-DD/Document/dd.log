@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.25)  8 DEC 2016 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.25)  9 DEC 2016 12:49
 entering extended mode
 **./dd.tex
 (dd.tex
@@ -587,14 +587,19 @@ File: ../Architecture_Overview_Img/DD_b.png Graphic file (type png)
 
 <use ../Architecture_Overview_Img/DD_b.png>
 Package pdftex.def Info: ../Architecture_Overview_Img/DD_b.png used on input li
-ne 93.
+ne 91.
 (pdftex.def)             Requested size: 303.13176pt x 551.05739pt.
- [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
-}) has been already used, duplicate ignored
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.98 \item
+l.99 \item
           [ViewRender]is the component in charge of managing the viewable pa...
  <../Architecture_Overview_Img/DD_b.png>] [6]
 <../Architecture_Overview_Img/ComponentDiagram.jpg, id=233, 1546.77875pt x 1152
@@ -603,10 +608,10 @@ File: ../Architecture_Overview_Img/ComponentDiagram.jpg Graphic file (type jpg)
 
  <use ../Architecture_Overview_Img/ComponentDiagram.jpg>
 Package pdftex.def Info: ../Architecture_Overview_Img/ComponentDiagram.jpg used
- on input line 121.
+ on input line 122.
 (pdftex.def)             Requested size: 426.79135pt x 317.94861pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 121--121
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 122--122
  [][] 
  []
 
@@ -617,14 +622,14 @@ File: ../Architecture_Overview_Img/DeploymentDiagram.jpg Graphic file (type jpg
 )
  <use ../Architecture_Overview_Img/DeploymentDiagram.jpg>
 Package pdftex.def Info: ../Architecture_Overview_Img/DeploymentDiagram.jpg use
-d on input line 125.
+d on input line 126.
 (pdftex.def)             Requested size: 679.53711pt x 732.73572pt.
  [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.126 \noindent
+l.127 \noindent
                 The \textbf{Client Tier} includes three types of devices: \t...
  <../Architecture_Overview_Img/ComponentDiagram.jpg>] [9pdfTeX warning (ext4): 
 destination with the same identifier (name{figure.2.4}) has been already used, 
@@ -632,7 +637,7 @@ duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 \subsection{Reservation}
+l.137 \subsection{Reservation}
                                <../Architecture_Overview_Img/DeploymentDiagram.
 jpg>]
 <../UML/UML_img/Reservation_sequence.jpg, id=247, 1715.40875pt x 373.395pt>
@@ -640,10 +645,10 @@ File: ../UML/UML_img/Reservation_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/Reservation_sequence.jpg>
 Package pdftex.def Info: ../UML/UML_img/Reservation_sequence.jpg used on input 
-line 137.
+line 138.
 (pdftex.def)             Requested size: 426.79135pt x 92.8984pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 137--137
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 138--138
  [][] 
  []
 
@@ -652,10 +657,10 @@ File: ../UML/UML_img/RideStart_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/RideStart_sequence.jpg>
 Package pdftex.def Info: ../UML/UML_img/RideStart_sequence.jpg used on input li
-ne 142.
+ne 143.
 (pdftex.def)             Requested size: 426.79135pt x 210.78636pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 142--142
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 143--143
  [][] 
  []
 
@@ -664,17 +669,17 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 142--142
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.143 \subsection{Ride Stop}
+l.144 \subsection{Ride Stop}
                              <../UML/UML_img/Reservation_sequence.jpg>]
 <../UML/UML_img/RideStop_sequence.jpg, id=255, 2860.6875pt x 1005.7575pt>
 File: ../UML/UML_img/RideStop_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/RideStop_sequence.jpg>
 Package pdftex.def Info: ../UML/UML_img/RideStop_sequence.jpg used on input lin
-e 145.
+e 146.
 (pdftex.def)             Requested size: 426.79135pt x 150.04375pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 145--145
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 146--146
  [][] 
  []
 
@@ -683,10 +688,10 @@ File: ../UML/UML_img/ReplugCar_sequence.jpg Graphic file (type jpg)
 
 <use ../UML/UML_img/ReplugCar_sequence.jpg>
 Package pdftex.def Info: ../UML/UML_img/ReplugCar_sequence.jpg used on input li
-ne 148.
+ne 149.
 (pdftex.def)             Requested size: 426.79135pt x 109.14922pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 148--148
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 149--149
  [][] 
  []
 
@@ -695,24 +700,24 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 148--148
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.148 ...lug In by Employee - Sequence Diagram}{0}
+l.149 ...lug In by Employee - Sequence Diagram}{0}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.2.7}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.148 ...lug In by Employee - Sequence Diagram}{0}
+l.149 ...lug In by Employee - Sequence Diagram}{0}
                                                    <../UML/UML_img/RideStart_se
 quence.jpg> <../UML/UML_img/RideStop_sequence.jpg>]
 <../UML/UML_img/ERProject.png, id=261, 1593.955pt x 916.42375pt>
 File: ../UML/UML_img/ERProject.png Graphic file (type png)
 
 <use ../UML/UML_img/ERProject.png>
-Package pdftex.def Info: ../UML/UML_img/ERProject.png used on input line 156.
+Package pdftex.def Info: ../UML/UML_img/ERProject.png used on input line 160.
 (pdftex.def)             Requested size: 426.79135pt x 245.36816pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 156--156
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 160--160
  [][] 
  []
 
@@ -721,15 +726,14 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 156--156
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.157 \noindent
-                The diagram suggests that the system has two types of \texti...
- <../UML/UML_img/ReplugCar_sequence.jpg>] [13pdfTeX warning (ext4): destination
- with the same identifier (name{figure.2.9}) has been already used, duplicate i
-gnored
+l.160 ...{../UML/UML_img/ERProject}{ER Diagram}{0}
+                                                   <../UML/UML_img/ReplugCar_se
+quence.jpg>] [13pdfTeX warning (ext4): destination with the same identifier (na
+me{figure.2.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.161 \chapter
+l.165 \chapter
               {Algorithm Design} <../UML/UML_img/ERProject.png>]
 Chapter 3.
 [14
@@ -740,10 +744,10 @@ Chapter 4.
 File: ../Mockup_img/Web.png Graphic file (type png)
 
 <use ../Mockup_img/Web.png>
-Package pdftex.def Info: ../Mockup_img/Web.png used on input line 277.
+Package pdftex.def Info: ../Mockup_img/Web.png used on input line 281.
 (pdftex.def)             Requested size: 426.79135pt x 291.4072pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 277--277
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 281--281
  [][] 
  []
 
@@ -751,10 +755,10 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 277--277
 File: ../Mockup_img/Mobile.png Graphic file (type png)
 
 <use ../Mockup_img/Mobile.png>
-Package pdftex.def Info: ../Mockup_img/Mobile.png used on input line 278.
+Package pdftex.def Info: ../Mockup_img/Mobile.png used on input line 282.
 (pdftex.def)             Requested size: 426.79135pt x 192.5858pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 278--278
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 282--282
  [][] 
  []
 
@@ -762,10 +766,10 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 278--278
 File: ../Mockup_img/Car.png Graphic file (type png)
 
 <use ../Mockup_img/Car.png>
-Package pdftex.def Info: ../Mockup_img/Car.png used on input line 279.
+Package pdftex.def Info: ../Mockup_img/Car.png used on input line 283.
 (pdftex.def)             Requested size: 426.79135pt x 71.28482pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 279--279
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 283--283
  [][] 
  []
 
@@ -776,21 +780,21 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.279 ...ar.png}{On-Board Car Screen Interface}{0}
+l.283 ...ar.png}{On-Board Car Screen Interface}{0}
                                                    <../Mockup_img/Web.png>]
 [19pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.280 \chapter
+l.284 \chapter
               {Requirements Traceability}pdfTeX warning (ext4): destination wit
 h the same identifier (name{figure.4.3}) has been already used, duplicate ignor
 ed
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.280 \chapter
+l.284 \chapter
               {Requirements Traceability} <../Mockup_img/Mobile.png> <../Mockup
 _img/Car.png>]
 Chapter 5.
@@ -807,14 +811,14 @@ AED: lastpage setting LastPage
 [26
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 512.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 512.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
  (dd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 512.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 512.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
 Package rerunfilecheck Info: File `dd.out' has not changed.
 (rerunfilecheck)             Checksum: D2F058FB29179F0BA242ABB19C56FDE2;1843.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 512.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 516.
  ) 
 Here is how much of TeX's memory you used:
  9955 strings out of 493334
@@ -823,7 +827,7 @@ Here is how much of TeX's memory you used:
  13104 multiletter control sequences out of 15000+200000
  23398 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,12n,45p,981b,1960s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,12n,45p,1732b,1960s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\renzu\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecrm0800.pk> <C:\Users\renzu\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbx1200.pk> <C:\Users\renzu\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -844,7 +848,7 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\renzu
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on dd.pdf (29 pages, 2120347 bytes).
+Output written on dd.pdf (29 pages, 2121875 bytes).
 PDF statistics:
  998 PDF objects out of 1000 (max. 8388607)
  214 named destinations out of 1000 (max. 500000)
