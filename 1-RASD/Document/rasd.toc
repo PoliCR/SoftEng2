@@ -36,3 +36,4 @@
 \contentsline {chapter}{\numberline {6}RASD Preparation}{39}{chapter.6}
 \contentsline {section}{\numberline {6.1}Tools}{39}{section.6.1}
 \contentsline {section}{\numberline {6.2}Timing}{39}{section.6.2}
+\contentsline {section}{\numberline {6.3}Changelog}{39}{section.6.3}

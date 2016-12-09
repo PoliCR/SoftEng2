@@ -176,7 +176,7 @@ Deriving requirements from goals.\\
 \noindent\\
 \ref{G2} \useitemtext{G2}\\
 \begin{Req}[resume]
-\item The system checks the input data and verifies whether the user is already registered.
+\item The system checks the input data and verifies whether the account really exists.
 \item The system confirms the access.
 \end{Req}
 \noindent
@@ -218,25 +218,30 @@ Deriving requirements from goals.\\
 \item The system checks the position of the car at the end of the ride.
 \item The system checks the battery charge level at the end of the ride.
 \item The system checks whether the car is plugged into the power grid by the user at the end of the ride.
-\item The system computes the discount (or extra charge) considering the previous points.
+\item The system checks the number of people on board.
+\item The system computes the discount or extra charge.
 \end{Req}
 \hspace{0.4cm}[DA6]\\
 \noindent\\\ref{G9} \useitemtext{G9}\\
-\begin{Req}[resume]
-\item The system computes a possible discount or an extra charge.
+\begin{Req}[start = 23]
+\item The system computes the discount or extra charge.
 \item The system computes the total cost of the ride.
 \item The system shows the cost on the car screen.
 \item The system requests the payment to the external system.
 \item The system locks the car.
 \end{Req}
 \noindent\ref{G10} \useitemtext{G10}\\
-\begin{Req}[resume]
+\begin{Req}[start = 5]
 \item The system checks the input data and verifies whether the account really exists.
+\end{Req}
+\begin{Req}[start = 28]
 \item The system confirms the access in administrator mode.
 \end{Req}
 \noindent\ref{G11} \useitemtext{G11}\\
-\begin{Req}[resume]
+\begin{Req}[start = 7]
 \item The system verifies whether the given location exists.
+\end{Req}
+\begin{Req}[start = 29]
 \item The system shows the cars within the range of distance specified by the employee from the given location.
 \end{Req}
 \hspace{0.4cm}[DA2] \\
@@ -661,7 +666,12 @@ During the writing of this document, the following application tools have been u
 \end{itemize}
 \section{Timing}
 In order to complete this document, each author worked for 45 hours.
-%\section{Changelog}
+\section{Changelog}
+The current document, \textit{RASD Version 1.1}, is a revision of the previous one with some updates and error fixes.In particular:
+\begin{itemize}
+\item Grammatical errors have been corrected.
+\item The enumeration of the Functional Requirements have been updated in order to make it simpler to read them.
+\end{itemize}
 %
 %----------------------------------------------------------------------------------------
 %   END DOCUMENT
