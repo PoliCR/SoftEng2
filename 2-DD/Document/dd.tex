@@ -149,14 +149,21 @@ The employee of the company is responsible for plugging in all the cars that hav
 \imagebox{../UML/UML_img/ReplugCar_sequence}{Car Plug In by Employee - Sequence Diagram}{0}
 \section{Component interfaces}
 %here you define the interfaces of your components, that is, which operations they offer to the external world, their meaning, any input and output parameter (name, possible set of values/type)
+Each component of the system, already identified in the \textit{Component View}, has a specific interface that other components can use in order to require the execution of a certain operation (maybe with some input parameters) that sometimes might return a result. Then, in this section, the interfaces that each object offers are described along with theirs input parameters and output values.\\
+\newline
+\begin{tabularx}{\textwidth}{ | X | X| X | X| }
+	\hline
+	 \multicolumn{4}{|c|}{\textit{ViewRender}} \\
+	\hline
+	Interface Name&Input Parameters&Output Values&Description\\
+	\hline
+\end{tabularx}
 \section{Selected Architectural Styles and Patterns}
 %explanation (which, why and how) styles/patterns used
-In this section the design principles and choices that have been adopted in the development of the system will be faced.\\First of all, the type of the application.\textit{PowerEnJoy} will be developed as a Webapp in order to make it independent from the particular underlying Operating System. Thus, the software portability increases and the programmers' work overhead decreases.\\The choice of a Webapp leads to the implementation of a standard multi-tier architecture and this is why the proposed one is a three-tier structure. The presence of heterogeneous nodes on the \textit{Client Tier} (PCs/Smartphones and Cars) with different roles  has to be taken into account in the design phase. The solution is achieved with a proper and different software layers organisation: PCs/Smartphones run only the Presentation layer through the browser, while the Cars are equipped with a Built In SW which is in charge of both the GUI and part of the application logic. The system, however, is able to interact with both of these clients thanks to proper API.\\With regard to software design principles, there can be found, at this stage, at least two suitable design patterns: the \textit{MVC} and \textit{State} patterns.\\The \textit{MVC Pattern} is recommended for identifying the logical functionalities of the software modules (thus, increasing the cohesion) and to make it easier to apply changes to them in the future (thus, increasing the maintainability).\\The \textit{State Pattern} is suitable for treating the car states. With this solution, in each state, only a defined set of operations can be applied to a car. This makes the problem of managing a car simpler and avoids undesired behaviours.
-
-
+In this section the design principles and choices that have been adopted in the development of the system will be faced.\\First of all, the type of the application. \textit{PowerEnJoy} will be developed as a Webapp in order to make it independent from the particular underlying Operating System. Thus, the software portability increases and the programmers' work overhead decreases.\\The choice of a Webapp leads to the implementation of a standard multi-tier architecture and this is why the proposed one is a three-tier structure. The presence of heterogeneous nodes on the \textit{Client Tier} (PCs/Smartphones and Cars) with different roles  has to be taken into account in the design phase. The solution is achieved with a proper and different software layers organisation: PCs/Smartphones run only the Presentation layer through the browser, while the Cars are equipped with a Built In SW which is in charge of both the GUI and part of the application logic. The system, however, is able to interact with both of these clients thanks to proper APIs.\\With regard to software design principles, there can be found, at this stage, at least two suitable design patterns: the \textit{MVC} and \textit{State} patterns.\\The \textit{MVC Pattern} is recommended for identifying the logical functionalities of the software modules (thus, increasing the cohesion) and to make it easier to apply changes to them in the future (thus, increasing the maintainability).\\The \textit{State Pattern} is suitable for treating the car states. With this solution, in each state, only a defined set of operations can be applied to a car. This makes the problem of managing a car simpler and avoids undesired behaviours.
 \section{Other Design Decisions}
 \subsection{ER Diagram}
-An important issue in the Design Process is to select the suitable data that the system has to store in the database.This is crucial in the Design Phase because it affects the implementation of all the system functionalities, which rely on these data.The following diagram shows the pieces of information that the database server provides to the application.
+An important issue in the Design Process is to select the suitable data that the system has to store in the database. This is crucial in the Design Phase because it affects the implementation of all the system functionalities, which rely on these data. The following diagram shows the pieces of information that the database server provides to the application.
 \imagebox{../UML/UML_img/ERProject}{ER Diagram}{0}
 \noindent The diagram suggests that the system has two types of \textit{Person}: \textit{User} and \textit{Employee}. As already stated in the \textit{RASD} this is done to distinguish the roles and permissions of the two types of actors.\\
 The system has to store information about the \textit{Ride} such as the time (in order to be able to compute the cost), possible discount or extra charge and the initial and final position so to keep track of the associated \textit{Car}.\\\textit{Cars} are identified by their unique license plate and the system is always updated on their current state, which is one of the shown above.\\The system also records the info of each \textit{Reservation} in terms of the user and the corresponding car. This is clearly not enough to identify in a unique way a reservation, so the attribute Id is used as a key field for it.\\
@@ -168,7 +175,7 @@ Finally the system stores the data that are necessary to properly represent the 
 \begin{pseudocodeEnv}
 //Discount calculator
 
-float CAR_PENALITY := 0.3;
+float CAR_PENALTY := 0.3;
 float CAR_CHARGE_DISCOUNT := 0.2;
 float CAR_PEOPLE_DISCOUNT := 0.1;
 float CAR_POSITION_DISCOUNT := 0.3;
@@ -176,7 +183,7 @@ float CAR_CHARGE_CONSTANT := 0.5;
 float CAR_PEOPLE_CONSTANT := 0.3;
 float MIN_BATTERY_CONSTANT := 0.2;
 
-//Check if the user has some discounts or penalities
+//Check if the user has some discounts or penalties
 function float calculateDiscount (Position position, integer peopleNumber, float carCharge, integer price, Car car){
 	if not checkPenalty()
 		return price*(1-max(checkDiscount(position, car), checkDiscount(peopleNumber), checkDiscount(carCharge)));
@@ -283,7 +290,7 @@ function boolean isPlugged()
 \imagebox{../Mockup_img/Car.png}{On-Board Car Screen Interface}{0}
 \chapter{Requirements Traceability}
 %Explain how the requirements you have defined in the RASD map to the design elements that you have defined in this document.
-This section shows how both Functional \& Non-Functional Requirements, already listed in the \textit{RASD}, are mapped with respect to the components that the system is made of.
+This section shows how both Functional and Non-Functional Requirements, already listed in the \textit{RASD}, are mapped with respect to the components that the system is made of.
 \section{Functional Requirements}
 	\begin{Req}
 		\item The system checks whether the user entered all the required data.
