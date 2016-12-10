@@ -149,15 +149,340 @@ The employee of the company is responsible for plugging in all the cars that hav
 \imagebox{../UML/UML_img/ReplugCar_sequence}{Car Plug In by Employee - Sequence Diagram}{0}
 \section{Component interfaces}
 %here you define the interfaces of your components, that is, which operations they offer to the external world, their meaning, any input and output parameter (name, possible set of values/type)
-Each component of the system, already identified in the \textit{Component View}, has a specific interface that other components can use in order to require the execution of a certain operation (maybe with some input parameters) that sometimes might return a result. Then, in this section, the interfaces that each object offers are described along with theirs input parameters and output values.\\
-\newline
-\begin{tabularx}{\textwidth}{ | X | X| X | X| }
+Each component of the system, already identified in the \textit{Component View}, has a specific interface that other components can use in order to require the execution of a certain operation (maybe with some input parameters) that sometimes might return a concrete result. Then, in this section, the interfaces that each component offers are briefly described along with theirs input parameters and output effects.
+\subsubsection{ViewRender}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
-	 \multicolumn{4}{|c|}{\textit{ViewRender}} \\
+	Interface Name& ReserveACar\\
 	\hline
-	Interface Name&Input Parameters&Output Values&Description\\
+	Input & Identifier of the car, username\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Through the webapp, the user can select the car to reserve and send the request to the system. Therefore the ViewRender collects the identifier of the selected car and the username and passes these data to the Dispatcher\\
+	\hline\hline
+	Interface Name& PickUpCar\\
+	\hline
+	Input & Identifier of the car, username\\
+	\hline
+	Output & -\\
+	\hline
+	Description &When a user wants to start a new ride, using the webapp, he can simply select the available car he want to use. The ViewRender component catches his username and the unique identifier of the chosen car and, after that, calls the suitable interface of the Dispatcher with the obtained information.\\
+	\hline\hline
+	Interface Name& AbortPickUp\\
+	\hline
+	Input & Error message\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description &This interface refers specifically to the case in which the ride cannot be started because the user has a non-positive money balance. Hence the output will be a webpage that reports this critical information to the user.\\
+	\hline\hline
+	Interface Name& ChangeCarState\\
+	\hline
+	Input & Car identifier, new status of the car\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description &Permits to update the status of the indicated car with the new state. In output will be a new webpage that confirms the result of the operation and shows all the information of the car.\\
 	\hline
 \end{tabularx}
+
+\subsubsection{Dispatcher}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& DispatchRequest\\
+	\hline
+	Input & Specific request of operation\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Processes the incoming request from the user/employee; it is responsible for passing the request to the proper component that knows how to deal with it.\\
+	\hline
+\end{tabularx}
+
+\subsubsection{ReservationManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& ManageNewReservation\\
+	\hline
+	Input & username, car identifier\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description &Handles the request for a new reservation. Using the given username and car identifier, the ReservationManager collaborates with other components of the system in order to complete the process. As an output, a webpage is produced with summary information about the reservation operation.\\
+	\hline \hline
+	Interface Name& DeleteReservation\\
+	\hline
+	Input & username\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description &The user has the possibility to cancel his reservation before the interval time expires. If this operation can be carried out without errors, according to the service policy, the reservation is effectively deleted from the model and an output webpage will be generated with a confirmation message. While if the reservation cannot be cancelled the webpage will simply notify an error message.\\
+	\hline
+\end{tabularx}
+
+\subsubsection{RegistrationManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& NewUserRegistration\\
+	\hline
+	Input& Name, Surname, Address, Date of Birth, email, phone number, driving license, payment information\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description &A person that wants to use \textit{PowerEnJoy} must be registered to the service. The operation of registration of a new user, offered via this interface, requires all the personal information of the user and the payment data. The result of this operation is a webpage with a recap of the inserted information and a confirmation of the success of registration.\\
+	\hline
+\end{tabularx}
+
+\subsubsection{StateManager}
+%TODO decidere chi aggiorna lo stato (direttamente sul model o da questo comp)
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& \\
+	\hline
+	Input& New state, car identifier\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+
+\subsubsection{LogInManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& LogInRequest\\
+	\hline
+	Input & Username and password of the account\\
+	\hline
+	Output & Webpage\\
+	\hline
+	Description & Used in case of login operation, requires the username of the account and its password, if the check is successful returns a webpage appropriate to the account type (user or employee) otherwise, in case of failure, the returned webpage contains an error message.\\
+	\hline
+\end{tabularx}
+
+\subsubsection{MapController}
+%TODO map v. gps...
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& \\
+	\hline
+	Input & \\
+	\hline
+	Output & \\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+
+\subsubsection{RideManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& StartRide\\
+	\hline
+	Input & Car identifier, username\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It is the first operation executed when a user wants to pick up a car; then the RideManager interacts with other components to complete to pick up request. The pick up process started from the user, begins from the webapp and, if no errors are encountered, concludes on screen embedded into the car. Otherwise, the errors verified during all the operations are reported to the user through the webapp (via the ViewRender).\\
+	\hline
+	\hline
+	Interface Name& RideParams\\
+	\hline
+	Input &SaveMoneyOpt, Final Destination\\
+	\hline
+	Output & -\\
+	\hline
+	Description &This lets the RideManager component to know whether the user has enabled or not the \textit{MoneySavingOption} and, if enabled, the final destination; these two parameters are received from the on-board screen of the car.\\
+	\hline
+	\hline
+	Interface Name& RideStop\\
+	\hline
+	Input &Number of people on board, final position, battery level\\
+	\hline
+	Output & -\\
+	\hline
+	Description &First operation done by the RideManager when the user wants to end his ride; Taking as input the number of people on board on the car during the ride, the final position (that is where the car has been parked) and the battery level, asks to the proper component to compute temporary cost of the ride that after will be communicated to the user through the on board screen. In this operation, the act of plugging the car into the power grid has not been taken into account because the system gives the user a small amount of time to get off the car and, if he wants, to plug it. Only after this time interval it is possible to check whether the user has or not plugged in the car (and compute the real final cost)\\
+	\hline
+	\hline
+	Interface Name& RideEnd\\
+	\hline
+	Input &-\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Represents a signal received from the car, when the user has confirmed the end of the ride through the screen. So, the status of the car can be updated.\\
+	\hline
+	\hline
+	Interface Name& RidePayment\\ %TODO
+	\hline
+	Input &PluggedIn, \\
+	\hline
+	Output & -\\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+
+\subsubsection{RideCostCalculator}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& CalculateCost\\
+	\hline
+	Input & Number of people on board, final position of the ride, battery level, car plugged into power grid, money saving option enabled\\
+	\hline
+	Output & Cost of the ride (floating point number)\\
+	\hline
+	Description &Computes the total cost of the ride starting from number of people onboard during the ride, the final position where the user left the car, the final battery level and a flag that signals if the user has plugged or not the car into the power grid at the end of the ride. During the computation, the service policy presented in the RASD will be applied in order to correctly apply discounts or extra charges; the output of this operation is a number which represents the final cost of ride.\\
+	\hline
+\end{tabularx}
+
+\subsubsection{PaymentManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& ExecutePayment\\
+	\hline
+	Input & Cost of the ride\\
+	\hline
+	Output & Payment outcome\\
+	\hline
+	Description &Triggers the payment operation that will use the external payment system. As input takes only the computed cost of the ride and returns a completed/failure message.\\
+	\hline
+\end{tabularx}
+
+\subsubsection{ServerCommunicationManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& CommunicateReservation\\
+	\hline
+	Input & Expiring Time\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends a properly encoded message to the dual component placed into the car; into the message is stored the time at which the reservation will expire.\\
+	\hline
+	\hline
+	Interface Name& SendUnlockCar\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends a signal to the car that mean that it is to be unlocked\\
+	\hline
+	\hline
+	Interface Name& SendLockCar\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends a signal to the car that mean that it is to be locked\\
+	\hline
+	\hline
+	Interface Name& ReceiveRideStart\\
+	\hline
+	Input & Money Saving Option enabled, final destination\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Receives as inputs a flag about the state of the money saving option (enabled or not) and the final destination of the ride inserted from the user. Finally, these information will be passed to the Dispatcher through the appropriate interface.\\
+	\hline
+	\hline
+	Interface Name& ConfirmRideStart\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends a message to car, meaning that the ride can effectively start.\\
+	\hline
+	\hline
+	Interface Name& SuggestedArea\\
+	\hline
+	Input & Position of the parking area\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends a message to the car with the suggested area where the user has to park in order to obtain the discount associated with the saving money option.\\
+	\hline
+	\hline
+	Interface Name& RideStop\\
+	\hline
+	Input & Car identifier, number of people on board, final position, battery level\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Communicates that the user has ended the ride. All the information received from the car are encapsuled in a proper request that will be handled from the Dispatcher.\\
+	\hline
+	\hline
+	Interface Name& SendEndRide\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Signals that the user has confirmed through the screen the end of the ride, after having viewed the possible final cost of the ride.\\
+	\hline
+	\hline
+	Interface Name& SendPluginTimeout\\
+	\hline
+	Input & PluggedIn, is a flag and indicates if the user has plugged the car into the power grid\\
+	\hline
+	Output & -\\
+	\hline
+	Description & \\
+	\hline
+\end{tabularx}
+\subsubsection{Model}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& \\
+	\hline
+	Input & \\
+	\hline
+	Output & \\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+\subsubsection{CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& \\
+	\hline
+	Input & \\
+	\hline
+	Output & \\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+\subsubsection{CentralUnit}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& \\
+	\hline
+	Input & \\
+	\hline
+	Output & \\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+\subsubsection{ScreenManager}
+\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+	\hline
+	Interface Name& \\
+	\hline
+	Input & \\
+	\hline
+	Output & \\
+	\hline
+	Description &\\
+	\hline
+\end{tabularx}
+
 \section{Selected Architectural Styles and Patterns}
 %explanation (which, why and how) styles/patterns used
 In this section the design principles and choices that have been adopted in the development of the system will be faced.\\First of all, the type of the application. \textit{PowerEnJoy} will be developed as a Webapp in order to make it independent from the particular underlying Operating System. Thus, the software portability increases and the programmers' work overhead decreases.\\The choice of a Webapp leads to the implementation of a standard multi-tier architecture and this is why the proposed one is a three-tier structure. The presence of heterogeneous nodes on the \textit{Client Tier} (PCs/Smartphones and Cars) with different roles  has to be taken into account in the design phase. The solution is achieved with a proper and different software layers organisation: PCs/Smartphones run only the Presentation layer through the browser, while the Cars are equipped with a Built In SW which is in charge of both the GUI and part of the application logic. The system, however, is able to interact with both of these clients thanks to proper APIs.\\With regard to software design principles, there can be found, at this stage, at least two suitable design patterns: the \textit{MVC} and \textit{State} patterns.\\The \textit{MVC Pattern} is recommended for identifying the logical functionalities of the software modules (thus, increasing the cohesion) and to make it easier to apply changes to them in the future (thus, increasing the maintainability).\\The \textit{State Pattern} is suitable for treating the car states. With this solution, in each state, only a defined set of operations can be applied to a car. This makes the problem of managing a car simpler and avoids undesired behaviours.
