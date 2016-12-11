@@ -23580,9 +23580,9 @@
 											"showShadow": false,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1222,
+											"left": 1183,
 											"top": 256,
-											"width": 123.220703125,
+											"width": 200,
 											"height": 13,
 											"autoResize": false,
 											"alpha": 1.5707963267948966,
@@ -23592,7 +23592,7 @@
 											},
 											"edgePosition": 1,
 											"underline": false,
-											"text": "ExchangeMessage()",
+											"text": "ReceiveReservation(ExpiringTime)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -24337,7 +24337,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFYybisPT+GLzY="
 							},
-							"name": "ExchangeMessage()",
+							"name": "ReceiveReservation",
 							"source": {
 								"$ref": "AAAAAAFYzvcZW184oVI="
 							},
@@ -24346,6 +24346,7 @@
 							},
 							"visibility": "public",
 							"messageSort": "synchCall",
+							"arguments": "ExpiringTime",
 							"isConcurrentIteration": false
 						},
 						{
@@ -36953,7 +36954,7 @@
 															},
 															"edgePosition": 1,
 															"underline": false,
-															"text": "sendCost(cost)",
+															"text": "StoreCost(cost)",
 															"horizontalAlignment": 2,
 															"verticalAlignment": 5,
 															"wordWrap": false
@@ -40696,7 +40697,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFY0LwKJ+tT/3M="
 											},
-											"name": "sendCost",
+											"name": "StoreCost",
 											"source": {
 												"$ref": "AAAAAAFY0LwKJutKbRU="
 											},
@@ -43108,7 +43109,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "applyStateChange(car, newState)",
+													"text": "ChangeCarState(car, newState)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -43307,7 +43308,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFY0LwKKuun4W4="
 									},
-									"name": "applyStateChange",
+									"name": "ChangeCarState",
 									"source": {
 										"$ref": "AAAAAAFY0LwKKuukKsI="
 									},
