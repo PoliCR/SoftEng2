@@ -1,0 +1,91 @@
+\begin{longtable}{|>{\em}l|X|}
+	\hline
+	Interface Name& ReceiveReservation\\
+	\hline
+	Input & Expiring Time\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It receives the reservation and the expiring time for it.\\
+	\hline
+	\hline
+	Interface Name& ReceiveUnlockCar\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &The car receives the signal of unlock from the system. This operation is not carried out by this component anyway, but the request is forwarded to the CentralUnit. \\
+	\hline
+	\hline
+	Interface Name& SendBackRideStart\\
+	\hline
+	Input & Save Money Option, final destination\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It sends back to the system the preferences indicated by the user through the on board screen; in particular, the preferences cover the possibility that the user has enabled the money saving option (via the first parameter, which is a flag) and the final destination of the ride.\\
+	\hline
+	\hline
+	Interface Name& CommunicateParkArea\\
+	\hline
+	Input & Area position\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It communicates to the car the predefined position of the area where the user can park.\\
+	\hline
+	\hline
+	Interface Name& ReceiveRideStart\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &The system has successfully completed all the checks and the  tasks about the start of the ride; this will communicate the CentralUnit that it must prepare the car to start.\\
+	\hline
+	\hline
+	Interface Name& HandleStop\\
+	\hline
+	Input & Car identifier, number of people on board, final position, battery level\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It receives from the CentralUnit all the data the have to be passed the to system in order to properly manage the end of the ride.\\
+	\hline
+	\hline
+	Interface Name& ConfirmEndRide\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &The user, through the on board screen, has confirmed the end of the ride and he is getting out of the car.\\
+	\hline
+	\hline
+	Interface Name& SendCost\\
+	\hline
+	Input & Cost of the ride\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It stores the computed cost of the ride, received as input, into the CentralUnit.\\\\
+	\hline
+	Interface Name& LockCar\\
+	\hline
+	Input &-\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It signals that the car must be locked; this request will be passed to the CentralUnit.\\
+	\hline
+	\hline
+	Interface Name& PlugInTimeout\\
+	\hline
+	Input & PluggedIn\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It is triggered when the time that the user has to get out of the car and to plug it into the power grid has expired. The CentralUnit communicates to this component through this interface to let it know whether the car has been plugged in by the user in time. This operation is asynchronous.\\
+	\hline
+\end{longtable}

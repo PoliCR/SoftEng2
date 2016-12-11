@@ -6,7 +6,9 @@
 %-------------------------------------------------------------------------
 %   START DOCUMENT 
 %-------------------------------------------------------------------------
+
 \begin{document}
+
 
 % INPUT OF TITLE PAGE
 \input{dd_titlepage}
@@ -167,7 +169,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &When a user wants to start a new ride, using the webapp, he can simply select the available car he want to use. The ViewRender component catches his username and the unique identifier of the chosen car and, after that, calls the suitable interface of the Dispatcher with the obtained information.\\
+	Description &When a user wants to start a new ride, using the webapp, he can simply select the available car he want to use. The ViewRender component catches his username and the unique identifier of the chosen car and, after that, calls the suitable interface of the Dispatcher passing to it the input data.\\
 	\hline\hline
 	Interface Name& AbortPickUp\\
 	\hline
@@ -175,7 +177,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & Webpage\\
 	\hline
-	Description &This interface refers specifically to the case in which the ride cannot be started because the user has a non-positive money balance. Hence the output will be a webpage that reports this critical information to the user.\\
+	Description &This interface refers specifically to the case in which the ride cannot be started because the user has a non-positive money balance. Hence, the output will be a webpage that reports this critical information to the user.\\
 	\hline\hline
 	Interface Name& ChangeCarState\\
 	\hline
@@ -183,7 +185,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & Webpage\\
 	\hline
-	Description &Permits to update the status of the indicated car with the new state. In output will be a new webpage that confirms the result of the operation and shows all the information of the car.\\
+	Description &It permits to update the status of the indicated car with the new state. In output will be a new webpage that confirms the result of the operation and shows all the information of the car.\\
 	\hline
 \end{tabularx}
 \subsubsection{Dispatcher}
@@ -195,7 +197,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &Processes the incoming request from the user/employee; it is responsible for passing the request to the proper component that knows how to deal with it.\\
+	Description &It processes the incoming request from the user/employee; it is responsible for passing the request to the proper component that knows how to deal with it.\\
 	\hline
 \end{tabularx}
 \subsubsection{ReservationManager}
@@ -207,15 +209,15 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & Webpage\\
 	\hline
-	Description &Handles the request for a new reservation. Using the given username and car identifier, the ReservationManager collaborates with other components of the system in order to complete the process. As an output, a webpage is produced with summary information about the reservation operation.\\
+	Description &It handles the request for a new reservation. Using the given username and car identifier, the ReservationManager collaborates with other components of the system in order to complete the process. As an output, a webpage is produced with summary information about the reservation operation.\\
 	\hline \hline
 	Interface Name& DeleteReservation\\
 	\hline
-	Input & username\\
+	Input & username, reservation id\\
 	\hline
 	Output & Webpage\\
 	\hline
-	Description &The user has the possibility to cancel his reservation before the interval time expires. If this operation can be carried out without errors, according to the service policy, the reservation is effectively deleted from the model and an output webpage will be generated with a confirmation message. While if the reservation cannot be cancelled the webpage will simply notify an error message.\\
+	Description &The user has the possibility to cancel his reservation before the interval time expires. If this operation is carried out without errors, according to the service policy, the reservation is effectively deleted from the model and an output webpage will be generated with a confirmation message. On the contrary, if the reservation cannot be cancelled the webpage will simply notify an error message.\\
 	\hline
 \end{tabularx}
 \subsubsection{RegistrationManager}
@@ -227,7 +229,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & Webpage\\
 	\hline
-	Description &A person that wants to use \textit{PowerEnJoy} must be registered to the service. The operation of registration of a new user, offered via this interface, requires all the personal information of the user and the payment data. The result of this operation is a webpage with a recap of the inserted information and a confirmation of the success of registration.\\
+	Description &A person who wants to use \textit{PowerEnJoy} must be registered to the service. The operation of registration of a new user, offered via this interface, requires all the personal information of the user and the payment data. The result of this operation is a webpage with a recap of the inserted information and a confirmation of the success of registration.\\
 	\hline
 \end{tabularx}
 \subsubsection{StateManager}
@@ -239,7 +241,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & Webpage\\
 		\hline
-		Description &This operation refers to the employee managing mode of the system and means that he wants to change the state of a certain car; for this reason, the new state and the car identifier are required as inputs. While doing this operation the Model component will be involved.\\
+		Description &This operation refers to the case in which an employee wants to change the state of a certain car; consequently, the new state and the car identifier are required as inputs. While doing this operation the Model component will be invoked.\\
 		\hline
 	\end{tabularx}
 \subsubsection{LogInManager}
@@ -251,7 +253,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & Webpage\\
 		\hline
-		Description & Used in case of login operation, requires the username of the account and its password, if the check is successful returns a webpage appropriate to the account type (user or employee) otherwise, in case of failure, the returned webpage contains an error message.\\
+		Description & Used in case of login operation, it requires the username of the account and its password; if the check is successful it returns a suitable webpage according to the account type (user or employee) otherwise, in case of failure, the returned webpage contains an error message.\\
 		\hline
 	\end{tabularx}
 \subsubsection{MapController}
@@ -263,7 +265,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & Suggested Area\\
 		\hline
-		Description &Through this functionality, it is possible to obtain, as output, the position of a suggested area where the user has to park (in order to get the discount relate to the money saving option), which is defined starting from the final destination of the ride inserted from the user.\\
+		Description &This functionality is triggered when the user selects the money saving option. The user is given the positions of the suggested areas where to park the car, which are computed starting from the final destination of the ride inserted by the user.\\
 		\hline
 		\hline
 		Interface Name& CheckPosition\\
@@ -272,7 +274,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & Validity flag position\\
 		\hline
-		Description &At the end of each Ride, the system must check the final position of the car. Hence this operation checks if the position received from the car is valid, in terms of GPS coordinates; a validity flag of the given position will be produced in output.\\
+		Description &At the end of each ride, the system must check the final position of the car. Hence this operation checks if the position received from the car is valid, in terms of GPS coordinates; a validity flag of the given position will be produced as output.\\
 		\hline
 	\end{tabularx}
 \subsubsection{RideManager}
@@ -284,7 +286,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &It is the first operation executed when a user wants to pick up a car; then the RideManager interacts with other components to complete to pick up request. The pick up process started from the user, begins from the webapp and, if no errors are encountered, concludes on screen embedded into the car. Otherwise, the errors verified during all the operations are reported to the user through the webapp (via the ViewRender).\\
+	Description &It is the first operation that is enabled when a user wants to pick up a car; then the RideManager interacts with other components to complete the request. The process begins from the webapp and, if no errors are encountered, concludes on the screen embedded into the car. Otherwise, the errors that occur during the operations are reported to the user through the webapp (via the ViewRender).\\
 	\hline
 	\hline
 	Interface Name& RideParams\\
@@ -293,7 +295,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &This lets the RideManager component to know whether the user has enabled or not the \textit{MoneySavingOption} and, if enabled, the final destination; these two parameters are received from the on-board screen of the car.\\
+	Description &This lets the RideManager component know whether the user has enabled the \textit{MoneySavingOption} and, in case the final destination; these two parameters are fetched by the on-board screen of the car.\\
 	\hline
 	\hline
 	Interface Name& RideStop\\
@@ -302,7 +304,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &First operation done by the RideManager when the user wants to end his ride; Taking as input the number of people on board on the car during the ride, the final position (that is where the car has been parked) and the battery level, asks to the proper component to compute temporary cost of the ride that after will be communicated to the user through the on board screen. In this operation, the act of plugging the car into the power grid has not been taken into account because the system gives the user a small amount of time to get off the car and, if he wants, to plug it. Only after this time interval it is possible to check whether the user has or not plugged in the car (and compute the real final cost)\\
+	Description &This is the first operation that the RideManager does when the user wants to end his ride. It takes as input the number of people on board, the final position ( where the car has been parked) and the battery charge level; it asks the proper component to compute a temporary cost of the ride that is then communicated to the user through the on board screen. Note that the act of plugging the car into the power grid has not been taken into account yet because the system gives the user a small amount of time to get off the car and possibly to plug it in. Only after this time interval it will be possible to check whether the user has plugged in the car and to compute the real final cost.\\
 	\hline
 	\hline
 	Interface Name& RideEnd\\
@@ -311,7 +313,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &Represents a signal received from the car, when the user has confirmed the end of the ride through the screen. So, the status of the car can be updated.\\
+	Description &It is a signal received from the car, when the user has confirmed the end of the ride through the screen. So, the status of the car can be updated.\\
 	\hline
 	\hline
 	Interface Name& RidePayment\\
@@ -320,7 +322,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &At the end of the ride, as a last operation, the system has to perform the payment of the total cost; the use of this interface triggers, into the RideManager component, a sequence of calls to interfaces of other components which are necessary to execute conclusive operation for the current ride. The input of this interface is a flag meaning whether the user has plugged in or not the car into the power grid at the end of his drive. \\
+	Description &At the end of the ride, as the last operation, the system has to perform the payment of the total cost; the use of this interface triggers, inside the RideManager component, a sequence of calls to interfaces of other components which are necessary to execute the final operations of the ride. The input of this interface is a flag meaning whether the user has plugged the car into the power grid at the end of his ride. \\
 	\hline
 \end{tabularx}
 \subsubsection{RideCostCalculator}
@@ -332,7 +334,7 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & Cost of the ride (floating point number)\\
 	\hline
-	Description &Computes the total cost of the ride starting from number of people onboard during the ride, the final position where the user left the car, the final battery level and a flag that signals if the user has plugged or not the car into the power grid at the end of the ride. During the computation, the service policy presented in the RASD will be applied in order to correctly apply discounts or extra charges; the output of this operation is a number which represents the final cost of ride.\\
+	Description &It computes the total cost of the ride starting from the following input parameters: the number of people on board, the final position of the car, the final battery charge level and a flag that tells whether the user has plugged the car into the power grid at the end of the ride. During the computation, the service policy about discounts and extra charges presented in the \textit{RASD} will be applied; the output of this operation is a number which represents the final cost of the ride.\\
 	\hline
 \end{tabularx}
 
@@ -345,112 +347,12 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & Payment outcome\\
 	\hline
-	Description &Triggers the payment operation that will use the external payment system. As input takes only the computed cost of the ride and returns a completed/failure message.\\
+	Description &It triggers the payment operation that will rely on the external payment system. As input it takes only the computed cost of the ride and returns a successful/failure message.\\
 	\hline
 \end{tabularx}
 
 \subsubsection{ServerCommunicationManager}
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& CommunicateReservation\\
-	\hline
-	Input & Expiring Time\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends a properly encoded message to the dual component placed into the car; into the message is stored the time at which the reservation will expire.\\
-	\hline
-	\hline
-	Interface Name& SendUnlockCar\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends a signal to the car that mean that it is to be unlocked\\
-	\hline
-	\hline
-	Interface Name& SendLockCar\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends a signal to the car that mean that it is to be locked\\
-	\hline
-	\hline
-	Interface Name& ReceiveRideStart\\
-	\hline
-	Input & Money Saving Option enabled, final destination\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Receives as inputs a flag about the state of the money saving option (enabled or not) and the final destination of the ride inserted from the user. Finally, these information will be passed to the Dispatcher through the appropriate interface.\\
-	\hline
-	\hline
-	Interface Name& ConfirmRideStart\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends a message to car, meaning that the ride can effectively start.\\
-	\hline
-	\hline
-	Interface Name& SuggestedArea\\
-	\hline
-	Input & Position of the parking area\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends a message to the car with the suggested area where the user has to park in order to obtain the discount associated with the saving money option.\\
-	\hline
-	\hline
-	Interface Name& RideStop\\
-	\hline
-	Input & Car identifier, number of people on board, final position, battery level\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Communicates that the user has ended the ride. All the information received from the car are encapsuled in a proper request that will be handled from the Dispatcher.\\
-	\hline
-	\hline
-	Interface Name& SendEndRide\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Signals that the user has confirmed through the screen the end of the ride, after having viewed the possible final cost of the ride.\\
-	\hline
-	\hline
-	Interface Name& SendPluginTimeout\\
-	\hline
-	Input & PluggedIn, is a flag and indicates if the user has plugged the car into the power grid\\
-	\hline
-	Output & -\\
-	\hline
-	Description & \\
-	\hline
-	\hline
-	Interface Name& SuggestedArea\\
-	\hline
-	Input &AreaPosition\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Communicates to the car the computed position of the area where the user has to park\\
-	\hline
-	\hline
-	Interface Name& SendCost\\
-	\hline
-	Input &cost\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends the calculated cost of the ride, given as input, towards to car\\
-	\hline
-\end{tabularx}
+\LTXtable{\textwidth}{ServerCommunicationManagerTable.tex}
 \subsubsection{Model}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
@@ -460,102 +362,14 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Output & -\\
 	\hline
-	Description &Changes the current state of the given car to new one.\\
+	Description &It changes the current state of the given car into the new one.\\
 	\hline
 \end{tabularx}
+\\
+\\
+\\
 \subsubsection{CarCommunicationManager}
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& ReceiveReservation\\
-	\hline
-	Input & Expiring Time\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Receives into the car side, the reservation which will expire at the given time.\\
-	\hline
-	\hline
-	Interface Name& ReceiveUnlockCar\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Receives from the system, the specific command that means the car must be unlocked. However this operation isn't carried out from this component, but the request is forwarded to the CentralUnit. \\
-	\hline
-	\hline
-	Interface Name& SendBackRideStart\\
-	\hline
-	Input & Save Money Option, final destination\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Sends back to the system the preferences indicated by the user through the on board screen; in particular the preferences cover the possibility that the user has enabled the money saving option (via the first parameter, which is a flag) and the final destination of the ride.\\
-	\hline
-	\hline
-	Interface Name& CommunicateParkArea\\
-	\hline
-	Input & Area position\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Communicates to the car, which is the predefined position of the area where the use has to park.\\
-	\hline
-	\hline
-	Interface Name& ReceiveRideStart\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Means that the system has correctly completed all checks and tasks about the start of the ride; this will communicate with the CentralUnit that must prepare the car to start.\\
-	\hline
-	\hline
-	Interface Name& HandleStop\\
-	\hline
-	Input & Car identifier, number of people on board, final position, battery level\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Receives from the CentralUnit all the data the have to be passed the to central system in order to properly manage the end of the ride.\\
-	\hline
-	\hline
-	Interface Name& ConfirmEndRide\\
-	\hline
-	Input & -\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Means that the user, via the screen on board, has confirmed the end of the ride and he is getting out the car. This fact has to be communicated to the system.\\
-	\hline
-	\hline
-	Interface Name& SendCost\\
-	\hline
-	Input & Cost of the ride\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Stores the computed cost of the ride, received as input, into the CentralUnit.\\
-	\hline
-	\hline
-	Interface Name& LockCar\\
-	\hline
-	Input &-\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Means that the car must be locked; this request will be passed to the CentralUnit.\\
-	\hline
-	\hline
-	Interface Name& PlugInTimeout\\
-	\hline
-	Input & PluggedIn\\
-	\hline
-	Output & -\\
-	\hline
-	Description &Means that the time the user has to get out of the car and plug it into the power grid has expired. Then the CentralUnit communicates to this component through this interface which requires as input a flag that indicates if the user has plugged in the car or not. This operation is asynchronously done by the CentralUnit.\\
-	\hline
-	\end{tabularx}
+\LTXtable{\textwidth}{CarCommunicationManagerTable.tex}
 \subsubsection{CentralUnit}
 	\begin{tabularx}{\textwidth}{|>{\em}l|X|}
 		\hline
@@ -565,7 +379,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Stores into the car memory that it has been reserved.\\
+		Description &It stores into the car memory the reserved state.\\
 		\hline
 		\hline
 		Interface Name& Unlock\\
@@ -574,7 +388,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Effectively unlocks the car so the user can get on board.\\
+		Description &It unlocks the car so the user can get on.\\
 		\hline
 		\hline
 		Interface Name& StoreParkPosition\\
@@ -583,7 +397,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Stores into the car memory the position of the area where the user has to park; this position will be displayed via the ScreenManager.\\
+		Description &It stores into the car memory the position of the area where the user can park; this position will be displayed by the ScreenManager.\\
 		\hline
 		\hline
 		Interface Name& SetUpRideStart\\
@@ -592,7 +406,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Resets the internal memory of the car in order to correctly manage the new ride; in particular this involves the counter of the time spent on driving from the user to compute the cost of the ride.\\
+		Description &It resets the internal memory of the car in order to correctly manage the new ride; in particular this involves the resetting of the counter of the time spent on driving from the user.\\
 		\hline
 		\hline
 		Interface Name& StopRide\\
@@ -601,7 +415,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Activated from the signal given by the user from the touch screen meaning that he wants to end the ride, collects from the internal memory and sensors all the required information to compute the cost of the ride and conclude the ride. \\
+		Description &After the user has selected the end of the ride through the touch screen, the CentralUnit collects from the internal memory and sensors all the data that are necessary to compute the cost of the ride.\\
 		\hline
 		\hline
 		Interface Name& StoreCost\\
@@ -610,7 +424,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Stores the given cost of the current ride into memory.\\
+		Description &It stores the given cost of the current ride into the memory.\\
 		\hline
 		\hline
 		Interface Name& ConfirmEnd\\
@@ -619,7 +433,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Means that the user has confirmed the end of the ride and this must be communicated to the system in order to start all the final operations of the ride.\\
+		Description &The user has confirmed the end of the ride and this must be communicated to the system in order to start all the final operations on the ride.\\
 		\hline
 		\hline
 		Interface Name& Lock\\
@@ -628,7 +442,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Locks the car\\
+		Description &It locks the car\\
 		\hline
 	\end{tabularx}
 \subsubsection{ScreenManager}
@@ -640,7 +454,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description & Shows through the screen that the car has been reserved.\\
+		Description & It shows on the screen that the car has been reserved.\\
 		\hline
 		\hline
 		Interface Name& PromptRideStartOption\\
@@ -649,7 +463,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Activates on the screen the initial options for the ride; this includes the possibility to enable the money saving option and a special field where to insert the final destination. Obviously, also a start button is displayed.\\
+		Description &It activates on the screen the initial options for the ride; this includes the possibility to enable the money saving option and a special field where to insert the final destination. A start button is then displayed.\\
 		\hline
 		\hline
 		Interface Name& DisplayParkPosition\\
@@ -658,7 +472,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Displays on the screen the position on the map where the user has to park to obtain the special discount.\\
+		Description &It displays on the screen the position on the map where the user can park to obtain special discount.\\
 		\hline
 		\hline
 		Interface Name& PromptRideStart\\
@@ -667,7 +481,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Notifies to the user that the system and the car are ready to start the ride.\\
+		Description &Notifies the user that the system and the car are ready to start the ride.\\
 		\hline
 		\hline
 		Interface Name& StopRide\\
@@ -676,7 +490,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &The user when has ended driving, can press the stop button to communicate to the system that he has stopped his ride.\\
+		Description &At the end of the ride, the user can press the stop button to communicate to the system that he has finished his ride.\\
 		\hline
 		\hline
 		Interface Name& DisplayCost\\
@@ -685,7 +499,7 @@ Each component of the system, already identified in the \textit{Component View},
 		\hline
 		Output & -\\
 		\hline
-		Description &Shows on the screen the temporary cost of the current ride, given as input, which does not into account the 'plugged in' action. \\
+		Description &It shows on the screen the temporary cost of the current ride( given as input). \\
 		\hline
 	\end{tabularx}
 
@@ -1039,6 +853,7 @@ This section shows how both Functional and Non-Functional Requirements, already 
 \end{enumerate}
 \chapter{Effort Spent}
 %In this section you will include information about the number of hours each group member has worked towards the fulfillment of this deadline.
+In order to complete this document, each author worked for 25 hours.
 \chapter{References}
 \section{Tools}
 During the writing of this document, the following application tools have been used:

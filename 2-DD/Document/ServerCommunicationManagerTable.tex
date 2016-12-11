@@ -1,0 +1,101 @@
+\begin{longtable}{|>{\em}l|X|}  
+	\hline
+	Interface Name& CommunicateReservation\\
+	\hline
+	Input & Expiring Time\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It sends a properly encoded message to the dual component placed into the car; in the message the time at which the reservation will expire is stored.\\
+	\hline
+	\hline
+	Interface Name& SendUnlockCar\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It signals the car to unlock itself.\\
+	\hline
+	\hline
+	Interface Name& SendLockCar\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It signals the car to lock itself.\\
+	\hline
+	\hline
+	Interface Name& ReceiveRideStart\\
+	\hline
+	Input & Money Saving Option enabled, final destination\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It receives as inputs a flag about the state of the money saving option (enabled or not) and the final destination of the ride inserted by the user. These information will then be passed to the Dispatcher through the appropriate interface.\\
+	\hline
+	\hline
+	Interface Name& ConfirmRideStart\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It sends a message to the car to notify the start of the ride.\\
+	\hline
+	\hline
+	Interface Name& SuggestedArea\\
+	\hline
+	Input & Position of the parking area\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It sends a message to the car with the suggested areas where the user can park in order to obtain the discount associated with the saving money option.\\
+	\hline
+	\hline
+	Interface Name& RideStop\\
+	\hline
+	Input & Car identifier, number of people on board, final position, battery level\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It communicates that the user has ended the ride. All the information collected in the car are encapsulated in a proper request that will be handled by the Dispatcher.\\
+	\hline
+	\hline
+	Interface Name& SendEndRide\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It signals that the user has confirmed through the screen the end of the ride, after having seen the possible final cost of the ride.\\
+	\hline
+	\hline
+	Interface Name& SendPluginTimeout\\
+	\hline
+	Input & PluggedIn\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It indicates if the user has plugged the car into the power grid.\\
+	\hline
+	\hline
+	Interface Name& SuggestedArea\\
+	\hline
+	Input &AreaPosition\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Communicates to the car the computed positions of the areas where the user can park.\\
+	\hline
+	\hline
+	Interface Name& SendCost\\
+	\hline
+	Input &cost\\
+	\hline
+	Output & -\\
+	\hline
+	Description &It sends to the car the computed cost of the ride that is passed as input.\\
+	\hline
+\end{longtable}   
