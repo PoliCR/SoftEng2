@@ -186,7 +186,6 @@ Each component of the system, already identified in the \textit{Component View},
 	Description &Permits to update the status of the indicated car with the new state. In output will be a new webpage that confirms the result of the operation and shows all the information of the car.\\
 	\hline
 \end{tabularx}
-
 \subsubsection{Dispatcher}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
@@ -199,7 +198,6 @@ Each component of the system, already identified in the \textit{Component View},
 	Description &Processes the incoming request from the user/employee; it is responsible for passing the request to the proper component that knows how to deal with it.\\
 	\hline
 \end{tabularx}
-
 \subsubsection{ReservationManager}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
@@ -220,7 +218,6 @@ Each component of the system, already identified in the \textit{Component View},
 	Description &The user has the possibility to cancel his reservation before the interval time expires. If this operation can be carried out without errors, according to the service policy, the reservation is effectively deleted from the model and an output webpage will be generated with a confirmation message. While if the reservation cannot be cancelled the webpage will simply notify an error message.\\
 	\hline
 \end{tabularx}
-
 \subsubsection{RegistrationManager}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
@@ -233,48 +230,51 @@ Each component of the system, already identified in the \textit{Component View},
 	Description &A person that wants to use \textit{PowerEnJoy} must be registered to the service. The operation of registration of a new user, offered via this interface, requires all the personal information of the user and the payment data. The result of this operation is a webpage with a recap of the inserted information and a confirmation of the success of registration.\\
 	\hline
 \end{tabularx}
-
 \subsubsection{StateManager}
-%TODO decidere chi aggiorna lo stato (direttamente sul model o da questo comp)
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& \\
-	\hline
-	Input& New state, car identifier\\
-	\hline
-	Output & Webpage\\
-	\hline
-	Description &\\
-	\hline
-\end{tabularx}
-
+	\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+		\hline
+		Interface Name& ModifyCarState\\
+		\hline
+		Input& New state, car identifier\\
+		\hline
+		Output & Webpage\\
+		\hline
+		Description &This operation refers to the employee managing mode of the system and means that he wants to change the state of a certain car; for this reason, the new state and the car identifier are required as inputs. While doing this operation the Model component will be involved.\\
+		\hline
+	\end{tabularx}
 \subsubsection{LogInManager}
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& LogInRequest\\
-	\hline
-	Input & Username and password of the account\\
-	\hline
-	Output & Webpage\\
-	\hline
-	Description & Used in case of login operation, requires the username of the account and its password, if the check is successful returns a webpage appropriate to the account type (user or employee) otherwise, in case of failure, the returned webpage contains an error message.\\
-	\hline
-\end{tabularx}
-
+	\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+		\hline
+		Interface Name& LogInRequest\\
+		\hline
+		Input & Username and password of the account\\
+		\hline
+		Output & Webpage\\
+		\hline
+		Description & Used in case of login operation, requires the username of the account and its password, if the check is successful returns a webpage appropriate to the account type (user or employee) otherwise, in case of failure, the returned webpage contains an error message.\\
+		\hline
+	\end{tabularx}
 \subsubsection{MapController}
-%TODO map v. gps...
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& \\
-	\hline
-	Input & \\
-	\hline
-	Output & \\
-	\hline
-	Description &\\
-	\hline
-\end{tabularx}
-
+	\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+		\hline
+		Interface Name& SearchSuggestedArea\\
+		\hline
+		Input & Final destination\\
+		\hline
+		Output & Suggested Area\\
+		\hline
+		Description &Through this functionality, it is possible to obtain, as output, the position of a suggested area where the user has to park (in order to get the discount relate to the money saving option), which is defined starting from the final destination of the ride inserted from the user.\\
+		\hline
+		\hline
+		Interface Name& CheckPosition\\
+		\hline
+		Input & Position\\
+		\hline
+		Output & Validity flag position\\
+		\hline
+		Description &At the end of each Ride, the system must check the final position of the car. Hence this operation checks if the position received from the car is valid, in terms of GPS coordinates; a validity flag of the given position will be produced in output.\\
+		\hline
+	\end{tabularx}
 \subsubsection{RideManager}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
@@ -314,16 +314,15 @@ Each component of the system, already identified in the \textit{Component View},
 	Description &Represents a signal received from the car, when the user has confirmed the end of the ride through the screen. So, the status of the car can be updated.\\
 	\hline
 	\hline
-	Interface Name& RidePayment\\ %TODO
+	Interface Name& RidePayment\\
 	\hline
-	Input &PluggedIn, \\
+	Input &PluggedIn\\
 	\hline
 	Output & -\\
 	\hline
-	Description &\\
+	Description &At the end of the ride, as a last operation, the system has to perform the payment of the total cost; the use of this interface triggers, into the RideManager component, a sequence of calls to interfaces of other components which are necessary to execute conclusive operation for the current ride. The input of this interface is a flag meaning whether the user has plugged in or not the car into the power grid at the end of his drive. \\
 	\hline
 \end{tabularx}
-
 \subsubsection{RideCostCalculator}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
@@ -433,55 +432,262 @@ Each component of the system, already identified in the \textit{Component View},
 	\hline
 	Description & \\
 	\hline
+	\hline
+	Interface Name& SuggestedArea\\
+	\hline
+	Input &AreaPosition\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Communicates to the car the computed position of the area where the user has to park\\
+	\hline
+	\hline
+	Interface Name& SendCost\\
+	\hline
+	Input &cost\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends the calculated cost of the ride, given as input, towards to car\\
+	\hline
 \end{tabularx}
 \subsubsection{Model}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
-	Interface Name& \\
+	Interface Name& ChangeCarState\\
 	\hline
-	Input & \\
+	Input & Car identifier, new state\\
 	\hline
-	Output & \\
+	Output & -\\
 	\hline
-	Description &\\
+	Description &Changes the current state of the given car to new one.\\
 	\hline
 \end{tabularx}
 \subsubsection{CarCommunicationManager}
 \begin{tabularx}{\textwidth}{|>{\em}l|X|}
 	\hline
-	Interface Name& \\
+	Interface Name& ReceiveReservation\\
 	\hline
-	Input & \\
+	Input & Expiring Time\\
 	\hline
-	Output & \\
+	Output & -\\
 	\hline
-	Description &\\
+	Description &Receives into the car side, the reservation which will expire at the given time.\\
 	\hline
-\end{tabularx}
+	\hline
+	Interface Name& ReceiveUnlockCar\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Receives from the system, the specific command that means the car must be unlocked. However this operation isn't carried out from this component, but the request is forwarded to the CentralUnit. \\
+	\hline
+	\hline
+	Interface Name& SendBackRideStart\\
+	\hline
+	Input & Save Money Option, final destination\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Sends back to the system the preferences indicated by the user through the on board screen; in particular the preferences cover the possibility that the user has enabled the money saving option (via the first parameter, which is a flag) and the final destination of the ride.\\
+	\hline
+	\hline
+	Interface Name& CommunicateParkArea\\
+	\hline
+	Input & Area position\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Communicates to the car, which is the predefined position of the area where the use has to park.\\
+	\hline
+	\hline
+	Interface Name& ReceiveRideStart\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Means that the system has correctly completed all checks and tasks about the start of the ride; this will communicate with the CentralUnit that must prepare the car to start.\\
+	\hline
+	\hline
+	Interface Name& HandleStop\\
+	\hline
+	Input & Car identifier, number of people on board, final position, battery level\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Receives from the CentralUnit all the data the have to be passed the to central system in order to properly manage the end of the ride.\\
+	\hline
+	\hline
+	Interface Name& ConfirmEndRide\\
+	\hline
+	Input & -\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Means that the user, via the screen on board, has confirmed the end of the ride and he is getting out the car. This fact has to be communicated to the system.\\
+	\hline
+	\hline
+	Interface Name& SendCost\\
+	\hline
+	Input & Cost of the ride\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Stores the computed cost of the ride, received as input, into the CentralUnit.\\
+	\hline
+	\hline
+	Interface Name& LockCar\\
+	\hline
+	Input &-\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Means that the car must be locked; this request will be passed to the CentralUnit.\\
+	\hline
+	\hline
+	Interface Name& PlugInTimeout\\
+	\hline
+	Input & PluggedIn\\
+	\hline
+	Output & -\\
+	\hline
+	Description &Means that the time the user has to get out of the car and plug it into the power grid has expired. Then the CentralUnit communicates to this component through this interface which requires as input a flag that indicates if the user has plugged in the car or not. This operation is asynchronously done by the CentralUnit.\\
+	\hline
+	\end{tabularx}
 \subsubsection{CentralUnit}
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& \\
-	\hline
-	Input & \\
-	\hline
-	Output & \\
-	\hline
-	Description &\\
-	\hline
-\end{tabularx}
+	\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+		\hline
+		Interface Name& SetAsReserved\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Stores into the car memory that it has been reserved.\\
+		\hline
+		\hline
+		Interface Name& Unlock\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Effectively unlocks the car so the user can get on board.\\
+		\hline
+		\hline
+		Interface Name& StoreParkPosition\\
+		\hline
+		Input & Area position\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Stores into the car memory the position of the area where the user has to park; this position will be displayed via the ScreenManager.\\
+		\hline
+		\hline
+		Interface Name& SetUpRideStart\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Resets the internal memory of the car in order to correctly manage the new ride; in particular this involves the counter of the time spent on driving from the user to compute the cost of the ride.\\
+		\hline
+		\hline
+		Interface Name& StopRide\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Activated from the signal given by the user from the touch screen meaning that he wants to end the ride, collects from the internal memory and sensors all the required information to compute the cost of the ride and conclude the ride. \\
+		\hline
+		\hline
+		Interface Name& StoreCost\\
+		\hline
+		Input & Cost\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Stores the given cost of the current ride into memory.\\
+		\hline
+		\hline
+		Interface Name& ConfirmEnd\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Means that the user has confirmed the end of the ride and this must be communicated to the system in order to start all the final operations of the ride.\\
+		\hline
+		\hline
+		Interface Name& Lock\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Locks the car\\
+		\hline
+	\end{tabularx}
 \subsubsection{ScreenManager}
-\begin{tabularx}{\textwidth}{|>{\em}l|X|}
-	\hline
-	Interface Name& \\
-	\hline
-	Input & \\
-	\hline
-	Output & \\
-	\hline
-	Description &\\
-	\hline
-\end{tabularx}
+	\begin{tabularx}{\textwidth}{|>{\em}l|X|}
+		\hline
+		Interface Name& DisplayReserved\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description & Shows through the screen that the car has been reserved.\\
+		\hline
+		\hline
+		Interface Name& PromptRideStartOption\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Activates on the screen the initial options for the ride; this includes the possibility to enable the money saving option and a special field where to insert the final destination. Obviously, also a start button is displayed.\\
+		\hline
+		\hline
+		Interface Name& DisplayParkPosition\\
+		\hline
+		Input & position\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Displays on the screen the position on the map where the user has to park to obtain the special discount.\\
+		\hline
+		\hline
+		Interface Name& PromptRideStart\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Notifies to the user that the system and the car are ready to start the ride.\\
+		\hline
+		\hline
+		Interface Name& StopRide\\
+		\hline
+		Input & -\\
+		\hline
+		Output & -\\
+		\hline
+		Description &The user when has ended driving, can press the stop button to communicate to the system that he has stopped his ride.\\
+		\hline
+		\hline
+		Interface Name& DisplayCost\\
+		\hline
+		Input & Cost\\
+		\hline
+		Output & -\\
+		\hline
+		Description &Shows on the screen the temporary cost of the current ride, given as input, which does not into account the 'plugged in' action. \\
+		\hline
+	\end{tabularx}
 
 \section{Selected Architectural Styles and Patterns}
 %explanation (which, why and how) styles/patterns used
