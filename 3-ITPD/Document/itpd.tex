@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{report}
+
+%INPUT of SETTINGS (usepackage, styles, new command,...)
+\input{itpd_prefs}
+
+%-------------------------------------------------------------------------
+%   START DOCUMENT 
+%-------------------------------------------------------------------------
+\begin{document}
+
+% INPUT OF TITLE PAGE
+\input{itpd_titlepage}
+
+%-------------------------------------------------------------------------
+%   TOC
+%-------------------------------------------------------------------------
+%\pagestyle{plain}
+\pagenumbering{roman}
+\thispagestyle{empty}
+\tableofcontents
+\listoffigures
+\cleardoublepage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+%--------------------------------------------------------------------
+%  BEGIN TEXT
+%--------------------------------------------------------------------
+\chapter{Introduction}
+\section{Revision History}
+%Record all revisions to the document
+\section{Purpose and Scope}
+\section{List of Definitions and Abbreviations}
+\begin{description}
+	\item[PowerEnJoy]is the name of the system that has to be developed.
+	\item[System]sometimes called also \textit{system-to-be}, represents the application that will be described and implemented.
+	In particular, its structure and implementation will be explained in the following documents. People that will use the car-sharing service will interact with it, via some interfaces, in order to complete some operations (e.g.: reservation and renting).
+	\item[Renting]it is the act of picking-up an available car and of starting to drive.
+	\item[Ride] the event of picking-up a car, driving through the city and parking it. Every Ride is associated to a single user and to a single car.
+	\item[Reservation]it is the action of booking an available car.
+	\item[Car] a car is an electrical vehicle that will be used by a registered user.
+	\item[Not Registered User] indicates a person who hasn't registered to the system yet; for this reason he can't access to any of the offered function. The only possible action that he can carry out is the registration to get a personal account.
+	\item[Registered User] interacts with the system to use the sharing service. He has an account (which contains personal information, driving license number and payment data) that must be used to access to the application in order to exploit all the functionalities.
+	\item[Employee] it's a person who works for the company, whose main task is to plug into the power grid those cars that haven't been plugged in by the users. He is also in charge of taking care of the status of the cars and of moving the vehicles from a safe area to a charging area and vice versa if needed.
+	\item[Safe Area] indicates a set of parking lots where the users have to leave the car at the end of the rent; the set of the Safe Areas is pre-defined by the system management. These areas are spread all over the city.
+	\item[Plug] defines the electrical component that physically connects the car to the power grid.
+	\item[Charging Area] is a special \textit{Safe Area} that also provides a certain number of plugs that connect the cars to the power grid in order to recharge the battery.
+	\item[Registration] the procedure that an unregistered user has to perform to become a registered user. At the end, the unregistered user will have an account. To complete this operation three different types of data are required: personal information, driving license number and payment info.
+	\item[Search] this functionality lets the registered user search for available cars within a certain range from his/her current position or from a specified address.
+	\item[RASD] is the acronym of \textit{Requirements Analysis and Specification Document}
+	\item[DD] is the acronym of \textit{Design Document}
+	\item[ITPD] is the acronym of \textit{Integration Test Plan Document}
+\end{description}
+\section{List of Reference Documents}
+	\begin{itemize}
+		\item Project Assignments 2016-2017
+		\item RASD v1.1
+		\item DD v1.0
+		%TODO documentation of used tools
+	\end{itemize}
+\chapter{Integration Strategy}
+\section{Entry Criteria}
+%Specify the criteria that must be met before integration testing of specific elements may begin (e.g., functions must have been unit tested).
+\section{Elements to be Integrated}
+%Identify the components to be integrated, refer to your design document to identify
+% such components in a way that is consistent with your design.
+\section{Integration Test Strategy}
+%Describe the integration testing approach (top-down, bottom-up, functional groupings,
+%etc.) and the rationale for the choosing that approach.
+\section{Sequence of Component/Function Integration}
+%NOTE: The structure of this section may vary depending on the integration strategy you select in Section 2.3; use the structure proposed below as a non mandatory guide
+\subsection{Software Integration Sequence}
+%For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
+\subsection{Subsystem Integration Sequence}
+%Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section.
+\chapter{Individual Steps and Test Description}
+%For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set. You may refer to Chapter 3 and Chapter 4 of the test plan example [1] as an example of what we expect.
+%(NOTE: This is not a detailed description of test protocols. Think of this as the test design phase. Specific protocols will be written to fulfill the goals of the tests in this section.)
+\chapter{Tools and Test Equipment Required}
+%Identify all tools and test equipment needed to accomplish the integration. Refer to the tools presented during the lectures. Explain why and how you are going to use them.
+%Note that you may also use manual testing for some part. Consider manual testing as one of the possible tools you have available.
+\chapter{Program Stubs and Test Data Required}
+%Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
+\chapter{Effort Spent}
+%-------------------------------------------------------------------------
+%   END DOCUMENT
+%-------------------------------------------------------------------------
+\end{document} 
