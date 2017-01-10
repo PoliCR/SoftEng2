@@ -64,6 +64,18 @@
 \section{Elements to be Integrated}
 %Identify the components to be integrated, refer to your design document to identify
 % such components in a way that is consistent with your design.
+In order to build the full \textit{PowerEnJoy} system all its components have to be properly integrated. In this section the focus is on which components are selected and how these are aggregated.\\Let us consider the component diagram of the \textit{Design Document} to refer to the components to be integrated. For the integration testing purpose it is useful to organize the components into logical \textbf{Macro Areas} that will support the testing process as explained in the \textit{Integration Test Strategy} section:
+\begin{itemize}
+\item \textbf{Input Area} includes \textit{ViewRender} and \textit{Dispatcher} components. This pair of modules should be tested together to ensure that all input requests are properly received by the system.
+\item \textbf{Management Area} includes the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}, the \textit{ServerCommunicationManager} and the \textit{Dispatcher}. These modules are responsible for the business logic of the application and consequently should be tested together.
+\item \textbf{Render Area} is the set made of the \textit{ViewRender} and of the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}. This logical area has to be tested in order to ensure that all managers can update the view of the application without bugs.
+\item \textbf{Ride Area} includes \textit{RideManager},  \textit{MapController}, \textit{RideCostCalculator} and \textit{PaymentManager}. The tests on this area is crucial because it is responsible of the costs computation and of the payment process.
+\item \textbf{Data Area} is the group of components that deal with the \textit{Model} and the external \textit{DBMS}. This is made of the \textit{Model} itself and of the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}. Tests in this area aims at verifying the correctness of data through the various operations that the system has to perform on them.
+\item \textbf{CarCommunication Area} is the pair of \textit{ServerCommunicationManager}and \textit{CarCommunicationManager}. Here the tests have to ensure that flow of information in both directions is feasible and consistent.
+\item \textbf{Car Area} is the logical set of components that have to be tested on the car. \textit{CarCommunicationManager}, \textit{CentralUnit} and \textit{ScreenManager} are part of the Built-in sw for the car. 
+\end{itemize}
+Please note that the given groupings do not represent a partition of the set of components of the system (some components are shared by more than one macro area) but just a logical division that is convenient to carry out the integration testing. 
+Finally, a remark on the external components (\textit{MapService}, \textit{Payment System} and \textit{DBMS}): they are already available for integration testing and they only require a sufficient level of completion of the internal components to be actually tested.
 \section{Integration Test Strategy}
 %Describe the integration testing approach (top-down, bottom-up, functional groupings,
 %etc.) and the rationale for the choosing that approach.
