@@ -94,6 +94,35 @@ A final remark on the external components: the \textbf{MapService}, the \textbf{
 This section focuses on the interactions between pairs of components that will be progressively integrated. For each pair, a set of tests about the  function calls from one component to the other one is provided. This kind of test should cover all the possible calls in order to spot any type of undesirable behaviours just in time. For this reason, each function invocation is here evaluated many times under different circumstances depending on the actual values of the input parameters. Finally, for each such call the desired output is stated.
 This integration test phase will be organized according to the logical areas division shown in the \textit{Elements to be Integrated} section.
 \subsection{BLUE MACRO}
+\subsubsection{Dispatcher$\,\to\,$ReservationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ManageNewReservation(username, car)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & The reservation shows the confirmation\\
+	\hline 
+\end{tabularx}
+\subsubsection{Dispatcher$\,\to\,$ReservationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{DeleteReservation(username, reservationID)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Parameters are known & The reservation shows a webpage with a confirmation message.\\ 
+	\hline
+\end{tabularx}
+\subsection{YELLOW MACRO}
 \subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
@@ -101,14 +130,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
-	A null operationRequest & NullArgumentException\\
+	A null parameter & NullArgumentException\\
 	\hline
-	An empty or unknown operationRequest & InvalidArgumentException\\
+	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known operationRequest & Request is dispatched to other components\\
+	A known parameter & Request is dispatched to other components\\
 	\hline
 \end{tabularx}
-\subsection{YELLOW MACRO}
 \subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
@@ -120,7 +148,21 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Username and Car are known &  The ViewRender calls the suitable interface of the Dispatcher passing to it the input data\\
+	Parameters are known &  The ViewRender calls the suitable interface of the Dispatcher passing to it the input data\\
+	\hline
+\end{tabularx}
+\subsubsection{Device$\,\to\,$ViewRender}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ReserveACar(username, car)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null Parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumetException\\
+	\hline
+	Car and username are known & The car is going to be reserved\\
 	\hline
 \end{tabularx}
 \subsubsection{ViewRender$\,\to\,$Dispatcher}
@@ -128,36 +170,226 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	\multicolumn{2}{|c|}{\textbf{ChangeCarState(Car, NewState)}}\\
 	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
 	A null parameter & NullArgumentException\\
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Username and NewState are known & It permits to update the status of the indicated car with the new state\\
+	Parameters are known & It permits to update the status of the indicated car with the new state\\
 	\hline
 \end{tabularx}
 \subsection{RED MACRO}
-\subsubsection{FROM$\,\to\,$TO}
+\subsubsection{RideManager$\,\to\,$PaymentManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{method name}}\\
+	\multicolumn{2}{|c|}{\textbf{CheckBalance(userID)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
-	First & First Description\\
+	A null parameter & NullArgumentException\\
 	\hline
-	Second & Second description\\
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & User's account is check in order to has his balance\\
 	\hline
 \end{tabularx}
-\subsubsection{FROM$\,\to\,$TO}
+\subsubsection{RideManager$\,\to\,$MapController}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{method name}}\\
+	\multicolumn{2}{|c|}{\textbf{SearchSuggestedArea(FinalDestination)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
-	First & First Description\\
+	A null parameter & NullArgumentException\\
 	\hline
-	Second & Second description\\
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & The user is given the positions of the suggested areas where to park the car, which are computed starting from the final destination of the ride inserted by the user\\
+	\hline
+\end{tabularx}
+\subsubsection{RideManager$\,\to\,$RideCostCalculator}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{CalculateCost(PeopleOnBoard,Position,Batterylevel)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Parameters are known & It computes the total cost of the ride starting from the following input parameters: the number of people on board, the final position of the car, the final battery charge level and a flag that tells whether the user has plugged the car into the power grid at the end of the ride\\
+	\hline
+\end{tabularx}
+\subsubsection{RideManager$\,\to\,$MapController}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ChechPositon(MyPosition))}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter &  At the end of each ride, the system must check the final position of the car\\
+	\hline
+\end{tabularx}
+\subsection{PURPLE MACRO}
+\subsubsection{ServerCommunicationManager$\,\to\,$CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ReceiveReservation(ExpiringTime)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter &  It receives the reservation and the expiring time for it\\
+	\hline
+\end{tabularx}
+\subsubsection{CarCommunicationManager$\,\to\,$ServerCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ReceiveRideStart(SaveMoneyOPT,FinalDest)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Parameters are known &  The system has successfully completed all the checks and the tasks about the start of the ride; this will communicate the CentralUnit that it must prepare the car to start\\
+	\hline
+\end{tabularx}
+\subsubsection{ServerCommunicationManager$\,\to\,$CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{CommunicateParkArea(AreaPosition)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & It communicates to the car the predefined position of the area where the user can park\\
+	\hline
+\end{tabularx}
+\subsubsection{CarCommunicationManager$\,\to\,$ServerCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{RideStop(CarID,PeopleOnBoard,Position,BatteryLevel)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Parameters are known & It communicates that the user has ended the ride. All the information collected in the car are encapsulated in a proper request that will be handled by the Dispatcher\\
+	\hline
+\end{tabularx}
+\subsubsection{ServerCommunicationManager$\,\to\,$CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{SendCost(Cost)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & It sends to the car the computed cost of the ride that is passed as input\\
+	\hline
+\end{tabularx}
+\subsubsection{CarCommunicationManager$\,\to\,$ServerCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{SendPlugInTimeout(PluggedIn)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & It indicates if the user has plugged the car into the power grid\\
+	\hline
+\end{tabularx}
+\subsection{LIGHT BLUE}
+\subsubsection{CentralUnit$\,\to\,$CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{SendBackRideStart(SaveMoneyOpt,FinalDestination)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Parameters are known & It sends back to the system the preferences indicated by the user through the on board screen; in particular, the preferences cover the possibility that the user has enabled the money saving option and the final destination of the ride.\\
+	\hline
+\end{tabularx}
+\subsubsection{CarCommunicationManager$\,\to\,$CentralUnit}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{StoreParkPosition(AreaPosition)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & It stores into the car memory the position of the area where the user can park; this position will be displayed by the ScreenManager\\
+	\hline
+\end{tabularx}
+\subsubsection{CentralUnit$\,\to\,$ServerCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{DisplayParkPosition(Position)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & It displays on the screen the position on the map where the user can park to obtain special discount\\
+	\hline
+\end{tabularx}
+\subsubsection{CentralUnit$\,\to\,$CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{HandleStop(CarID,PeopleOnBoard,Position,BatteryLevel)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Parameters are known & It receives from the CentralUnit all the data the have to be passed the to system in order to properly manage the end of the ride\\
+	\hline
+\end{tabularx}
+\subsubsection{CentralUnit$\,\to\,$CarCommunicationManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{PlugInTimeout(PluggedIn)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	A known parameter & It is triggered when the time that the user has to get out of the car and to plug it into the power grid has expired\\
 	\hline
 \end{tabularx}
 %For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set. You may refer to Chapter 3 and Chapter 4 of the test plan example [1] as an example of what we expect.
