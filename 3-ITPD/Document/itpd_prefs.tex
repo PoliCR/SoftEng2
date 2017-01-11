@@ -111,10 +111,10 @@
 %-----
 % Image box, arguments: file path, caption
 %----
-\newcommand{\imagebox}[3]{
+\newcommand{\imagebox}[4]{
 \begin{figure}[H]
 \centering
-\fbox{\includegraphics[width=\textwidth,keepaspectratio,angle=#3]{#1}}
+\fbox{\includegraphics[width=\textwidth,keepaspectratio,angle=#3, scale=#4]{#1}}
 \caption{#2}
 \end{figure}
 }

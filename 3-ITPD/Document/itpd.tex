@@ -97,6 +97,14 @@ A final remark on the external components: the \textbf{MapService}, the \textbf{
 %For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
 \subsection{Subsystem Integration Sequence}
 %Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section.
+%TODO commentare thread!!
+\imagebox{../img/Thread-RideStart}{Ride Start Thread}{0}{1}
+\imagebox{../img/Thread-RideStop}{Ride Stop Thread}{0}{1}
+\imagebox{../img/Thread-Reservation}{Reservation Thread}{0}{1}
+\imagebox{../img/Thread-Registration}{Registration Thread}{0}{0.8}
+\imagebox{../img/Thread-LogIn}{Login Thread}{0}{0.8}
+\imagebox{../img/Thread-CarPlugIn}{Car Plug-in Thread}{0}{0.8}
+
 \chapter[Individual Steps and Test Description]{Individual Steps and Test \\Description}
 This section focuses on the interactions between pairs of components that will be progressively integrated. For each pair, a set of tests about the  function calls from one component to the other one is provided. This kind of test should cover all the possible calls in order to spot any type of undesirable behaviours just in time. For this reason, each function invocation is here evaluated many times under different circumstances depending on the actual values of the input parameters. Finally, for each such call the desired output is stated.
 This integration test phase will be organized according to the logical areas division shown in the \textit{Elements to be Integrated} section.
