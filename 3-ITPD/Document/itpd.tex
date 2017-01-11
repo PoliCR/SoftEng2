@@ -67,7 +67,7 @@
 In order to build the full \textit{PowerEnJoy} system all its components have to be properly integrated. In this section the focus is on which components are selected and how these are aggregated.\\Let us consider the component diagram of the \textit{Design Document} to refer to the components to be integrated. For the integration testing purpose it is useful to organize the components into logical \textbf{Macro Areas} that will support the testing process as explained in the \textit{Integration Test Strategy} section:
 \begin{itemize}
 \item \textbf{Input Area} includes \textit{ViewRender} and \textit{Dispatcher} components. This pair of modules should be tested together to ensure that all input requests are properly received by the system.
-\item \textbf{Management Area} includes the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}, the \textit{ServerCommunicationManager} and the \textit{Dispatcher}. These modules are responsible for the business logic of the application and consequently should be tested together.
+\item \textbf{Management Area} includes the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager} and the \textit{Dispatcher}. These modules are responsible for the business logic of the application and consequently should be tested together.
 \item \textbf{Render Area} is the set made of the \textit{ViewRender} and of the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}. This logical area has to be tested in order to ensure that all managers can update the view of the application without bugs.
 \item \textbf{Ride Area} includes \textit{RideManager},  \textit{MapController}, \textit{RideCostCalculator} and \textit{PaymentManager}. The tests on this area is crucial because it is responsible of the costs computation and of the payment process.
 \item \textbf{Data Area} is the group of components that deal with the \textit{Model} and the external \textit{DBMS}. This is made of the \textit{Model} itself and of the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}. Tests in this area aims at verifying the correctness of data through the various operations that the system has to perform on them.
@@ -93,11 +93,12 @@ A final remark on the external components: the \textbf{MapService}, the \textbf{
 \chapter{Individual Steps and Test Description}
 This section focuses on the interactions between pairs of components that will be progressively integrated. For each pair, a set of tests about the  function calls from one component to the other one is provided. This kind of test should cover all the possible calls in order to spot any type of undesirable behaviours just in time. For this reason, each function invocation is here evaluated many times under different circumstances depending on the actual values of the input parameters. Finally, for each such call the desired output is stated.
 This integration test phase will be organized according to the logical areas division shown in the \textit{Elements to be Integrated} section.
-\subsection{BLUE MACRO}
+For obvious space issues, in the current section only the most significant tests will be proposed, but keep in mind that such verification should be applied to every possible relation between the components.
+\subsection{Management Area}
 \subsubsection{Dispatcher$\,\to\,$ReservationManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{ManageNewReservation(username, car)}}\\
+	\multicolumn{2}{|c|}{\textbf{ManageNewReservation(username,carID)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -105,13 +106,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & The reservation shows the confirmation\\
-	\hline 
+	Valid parameters & A new reservation for the given username is associated to the specified car\\
+	\hline
 \end{tabularx}
-\subsubsection{Dispatcher$\,\to\,$ReservationManager}
+\subsubsection{Dispatcher$\,\to\,$RideManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{DeleteReservation(username, reservationID)}}\\
+	\multicolumn{2}{|c|}{\textbf{StartRide(username,carID)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -119,10 +120,60 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known & The reservation shows a webpage with a confirmation message.\\ 
+	Valid parameters & The RideManager registers that a new ride associated to the given username and car has started\\
 	\hline
 \end{tabularx}
-\subsection{YELLOW MACRO}
+\subsubsection{Dispatcher$\,\to\,$RideManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{RideParams(saveMoneyOpt,finalDest)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameters & The RideManager registers whether the user has enabled the Money Saving Option and his final destination\\
+	\hline
+\end{tabularx}
+\subsubsection{Dispatcher$\,\to\,$RideManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{RideStop(peopleOnBoard,position,batteryLevel)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameters & The RideManager registers the number of peopleOnBoard, the final position and the remaining batteryLevel\\
+	\hline
+\end{tabularx}
+\subsubsection{Dispatcher$\,\to\,$RideManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{RidePayment(pluggedIn)}}\\
+	\hline
+	Valid parameter & The RideManager registers whether the user has plugged the car into the power grid\\
+	\hline
+\end{tabularx}
+\subsubsection{Dispatcher$\,\to\,$StateManager}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ModifyCarState(carID,newState)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameters & The StateManager updates the car with the given carID to the newState\\
+	\hline
+\end{tabularx}
+\subsection{Input Area}
 \subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
@@ -134,13 +185,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & Request is dispatched to other components\\
+	Valid parameter & The request is dispatched to the proper component\\
 	\hline
 \end{tabularx}
 \subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{PickUpACar(Username, Car)}}\\
+	\multicolumn{2}{|c|}{\textbf{PickUpACar(username, carID)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -148,27 +199,27 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known &  The ViewRender calls the suitable interface of the Dispatcher passing to it the input data\\
+	Valid parameters &  The ViewRender calls the suitable interface of the Dispatcher passing to it the input data\\
 	\hline
 \end{tabularx}
 \subsubsection{Device$\,\to\,$ViewRender}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{ReserveACar(username, car)}}\\
+	\multicolumn{2}{|c|}{\textbf{ReserveACar(username, carID)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
-	A null Parameter & NullArgumentException\\
+	A null parameter & NullArgumentException\\
 	\hline
 	An empty or unknown parameter & InvalidArgumetException\\
 	\hline
-	Car and username are known & The car is going to be reserved\\
+	Valid parameters & The user inputs his username and the car he wants to reserve\\
 	\hline
 \end{tabularx}
 \subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{ChangeCarState(Car, NewState)}}\\
+	\multicolumn{2}{|c|}{\textbf{ChangeCarState(carID, NewState)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -176,14 +227,14 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known & It permits to update the status of the indicated car with the new state\\
+	Valid parameters & The request of changing the state of the car with the specified carID is sent to the Dispatcher\\
 	\hline
 \end{tabularx}
-\subsection{RED MACRO}
+\subsection{Ride Area}
 \subsubsection{RideManager$\,\to\,$PaymentManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{CheckBalance(userID)}}\\
+	\multicolumn{2}{|c|}{\textbf{CheckBalance(username)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -191,7 +242,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & User's account is check in order to has his balance\\
+	Valid parameter & The user balance is returned\\
 	\hline
 \end{tabularx}
 \subsubsection{RideManager$\,\to\,$MapController}
@@ -205,13 +256,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & The user is given the positions of the suggested areas where to park the car, which are computed starting from the final destination of the ride inserted by the user\\
+	Valid parameter & The MapController computes the suggested areas where to park the car\\
 	\hline
 \end{tabularx}
 \subsubsection{RideManager$\,\to\,$RideCostCalculator}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{CalculateCost(PeopleOnBoard,Position,Batterylevel)}}\\
+	\multicolumn{2}{|c|}{\textbf{CalculateCost(peopleOnBoard,position,batterylevel)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -219,13 +270,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known & It computes the total cost of the ride starting from the following input parameters: the number of people on board, the final position of the car, the final battery charge level and a flag that tells whether the user has plugged the car into the power grid at the end of the ride\\
+	Valid parameters & The RideCostCalculator computes the total cost of the ride starting from the following input parameters: the number of people on board, the final position of the car, the final battery charge level\\
 	\hline
 \end{tabularx}
 \subsubsection{RideManager$\,\to\,$MapController}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{ChechPositon(MyPosition))}}\\
+	\multicolumn{2}{|c|}{\textbf{ChechPositon(MyPosition)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -233,10 +284,10 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter &  At the end of each ride, the system must check the final position of the car\\
+	Valid parameter &  The MapController checks the position of the car\\
 	\hline
 \end{tabularx}
-\subsection{PURPLE MACRO}
+\subsection{CarCommunication Area}
 \subsubsection{ServerCommunicationManager$\,\to\,$CarCommunicationManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
@@ -248,13 +299,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter &  It receives the reservation and the expiring time for it\\
+	Valid parameter &  The CarCommunicationManager receives the reservation and the expiring time for it\\
 	\hline
 \end{tabularx}
 \subsubsection{CarCommunicationManager$\,\to\,$ServerCommunicationManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{ReceiveRideStart(SaveMoneyOPT,FinalDest)}}\\
+	\multicolumn{2}{|c|}{\textbf{ReceiveRideStart(SaveMoneyOpt,FinalDest)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -262,7 +313,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known &  The system has successfully completed all the checks and the tasks about the start of the ride; this will communicate the CentralUnit that it must prepare the car to start\\
+	Valid parameters &  The CarCommunicationManager notifies the ServerCommunicationManager that the ride is starting with indications about the preferences of the user\\
 	\hline
 \end{tabularx}
 \subsubsection{ServerCommunicationManager$\,\to\,$CarCommunicationManager}
@@ -276,13 +327,13 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & It communicates to the car the predefined position of the area where the user can park\\
+	Valid parameter & The ServerCommunicationManager communicates to the CarCommunicationManager the predefined position of the area where the user can park the car\\
 	\hline
 \end{tabularx}
 \subsubsection{CarCommunicationManager$\,\to\,$ServerCommunicationManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{RideStop(CarID,PeopleOnBoard,Position,BatteryLevel)}}\\
+	\multicolumn{2}{|c|}{\textbf{RideStop(carID,peopleOnBoard,position,batteryLevel)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
@@ -290,7 +341,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known & It communicates that the user has ended the ride. All the information collected in the car are encapsulated in a proper request that will be handled by the Dispatcher\\
+	Valid parameters & The CarCommunicationManager notifies that the user has ended the ride on the specified car. Information about the peopleOnBoard, the final position and the batteryLevel are also provided\\
 	\hline
 \end{tabularx}
 \subsubsection{ServerCommunicationManager$\,\to\,$CarCommunicationManager}
@@ -304,7 +355,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & It sends to the car the computed cost of the ride that is passed as input\\
+	Valid parameter & The ServerCommunicationManager sends the cost of the ride to the CarCommunicationManager\\
 	\hline
 \end{tabularx}
 \subsubsection{CarCommunicationManager$\,\to\,$ServerCommunicationManager}
@@ -318,10 +369,10 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & It indicates if the user has plugged the car into the power grid\\
+	Valid parameter & The CarCommunicationManager indicates if the user has plugged the car into the power grid\\
 	\hline
 \end{tabularx}
-\subsection{LIGHT BLUE}
+\subsection{Car Area}
 \subsubsection{CentralUnit$\,\to\,$CarCommunicationManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
@@ -333,7 +384,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known & It sends back to the system the preferences indicated by the user through the on board screen; in particular, the preferences cover the possibility that the user has enabled the money saving option and the final destination of the ride.\\
+	Valid parameters & The CentralUnit sends to the CarCommunicationManager the preferences of the user in terms of the money saving option and the final destination of the ride.\\
 	\hline
 \end{tabularx}
 \subsubsection{CarCommunicationManager$\,\to\,$CentralUnit}
@@ -347,10 +398,10 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & It stores into the car memory the position of the area where the user can park; this position will be displayed by the ScreenManager\\
+	Valid parameter & The CarCommunicationManager sends to the CentralUnit the position of the area where the user can park\\
 	\hline
 \end{tabularx}
-\subsubsection{CentralUnit$\,\to\,$ServerCommunicationManager}
+\subsubsection{CentralUnit$\,\to\,$ScreenManager}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
 	\multicolumn{2}{|c|}{\textbf{DisplayParkPosition(Position)}}\\
@@ -361,7 +412,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & It displays on the screen the position on the map where the user can park to obtain special discount\\
+	Valid parameter & The ScreenManager displays on the screen the position on the map where the user can park to obtain special discount\\
 	\hline
 \end{tabularx}
 \subsubsection{CentralUnit$\,\to\,$CarCommunicationManager}
@@ -375,7 +426,7 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Parameters are known & It receives from the CentralUnit all the data the have to be passed the to system in order to properly manage the end of the ride\\
+	Valid parameters & The CarCommunicationManager receives from the CentralUnit all the data that have to be passed the to system in order to properly manage the end of the ride\\
 	\hline
 \end{tabularx}
 \subsubsection{CentralUnit$\,\to\,$CarCommunicationManager}
@@ -389,7 +440,93 @@ This integration test phase will be organized according to the logical areas div
 	\hline
 	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	A known parameter & It is triggered when the time that the user has to get out of the car and to plug it into the power grid has expired\\
+	Valid parameter & The CentralUnit notifies the CarCommunicationManager whether the user has plugged the car into the power grid in time\\
+	\hline
+\end{tabularx}
+\subsection{Render Area}
+\subsubsection{MapController$\,\to\,$ViewRender}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ShowAvailableCars(position,range)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameters & A webpage with the available cars within the range of distance from the position specified is displayed by the ViewRender\\
+	\hline
+\end{tabularx}
+\subsubsection{LogInController$\,\to\,$ViewRender}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ShowMainPage(username)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameter & The Main Page of the specified user is displayed by the ViewRender\\
+	\hline
+\end{tabularx}
+\subsubsection{RideManager$\,\to\,$ViewRender}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{AbortPickUp(errorMsg)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameter & A webpage with the critical error is displayed by the ViewRender\\
+	\hline
+\end{tabularx}
+\subsection{Data Area}
+\subsubsection{RideManager$\,\to\,$Model}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{ChangeCarState(carID,newState)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameter & The state of the car with carID is set to newState on the database\\
+	\hline
+\end{tabularx}
+\subsubsection{RegistrationManager$\,\to\,$Model}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{InsertNewUser(credentials,username,licenseNumber,email,paymentinfo}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameters & A new record for a new user is created in the Model\\
+	\hline
+\end{tabularx}
+\subsubsection{LogInManager$\,\to\,$Model}
+\begin{tabularx}{\textwidth}{|X|X|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{FindUser(username,password)}}\\
+	\hline
+	\textit{Input} & \textit{Result}\\
+	\hline
+	A null parameter & NullArgumentException\\
+	\hline
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Valid parameters & The LogInManager checks that user is already registered\\
 	\hline
 \end{tabularx}
 %For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set. You may refer to Chapter 3 and Chapter 4 of the test plan example [1] as an example of what we expect.
