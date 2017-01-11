@@ -93,44 +93,49 @@ A final remark on the external components: the \textbf{MapService}, the \textbf{
 \chapter{Individual Steps and Test Description}
 This section focuses on the interactions between pairs of components that will be progressively integrated. For each pair, a set of tests about the  function calls from one component to the other one is provided. This kind of test should cover all the possible calls in order to spot any type of undesirable behaviours just in time. For this reason, each function invocation is here evaluated many times under different circumstances depending on the actual values of the input parameters. Finally, for each such call the desired output is stated.
 This integration test phase will be organized according to the logical areas division shown in the \textit{Elements to be Integrated} section.
-\subsection{title}
-\subsubsection{FROM$\,\to\,$TO}
+\subsection{BLUE MACRO}
+\subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{method name}}\\
+	\multicolumn{2}{|c|}{\textbf{DispatchRequest(ReserveRequest)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
-	First & First Description\\
+	A null operationRequest & NullArgumentException\\
 	\hline
-	Second & Second description\\
+	An empty or unknown operationRequest & InvalidArgumentException\\
+	\hline
+	A known operationRequest & Request is dispatched to other components\\
 	\hline
 \end{tabularx}
-\subsubsection{FROM$\,\to\,$TO}
+\subsection{YELLOW MACRO}
+\subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{method name}}\\
+	\multicolumn{2}{|c|}{\textbf{PickUpACar(Username, Car)}}\\
 	\hline
 	\textit{Input} & \textit{Result}\\
 	\hline
-	First & First Description\\
+	A null parameter & NullArgumentException\\
 	\hline
-	Second & Second description\\
+	An empty or unknown parameter & InvalidArgumentException\\
+	\hline
+	Username and Car are known &  The ViewRender calls the suitable interface of the Dispatcher passing to it the input data\\
 	\hline
 \end{tabularx}
-\subsubsection{FROM$\,\to\,$TO}
+\subsubsection{ViewRender$\,\to\,$Dispatcher}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{method name}}\\
+	\multicolumn{2}{|c|}{\textbf{ChangeCarState(Car, NewState)}}\\
 	\hline
-	\textit{Input} & \textit{Result}\\
+	A null parameter & NullArgumentException\\
 	\hline
-	First & First Description\\
+	An empty or unknown parameter & InvalidArgumentException\\
 	\hline
-	Second & Second description\\
+	Username and NewState are known & It permits to update the status of the indicated car with the new state\\
 	\hline
 \end{tabularx}
-\subsection{title2}
+\subsection{RED MACRO}
 \subsubsection{FROM$\,\to\,$TO}
 \begin{tabularx}{\textwidth}{|X|X|}
 	\hline
