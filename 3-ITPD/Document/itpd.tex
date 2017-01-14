@@ -61,15 +61,15 @@
 \chapter{Integration Strategy}
 \section{Entry Criteria}
 There are some criteria that impose some conditions on the project testing phase.\\
-Firstly we have to estimate how much the components are completed in order to use their functionalities.
+Firstly some considerations on the level of completion of the components with respect to their functionalities:
 \begin{itemize}
-	\item \textbf{Dispatcher} must have been fully completed in order to manage requests
-	\item Controllers like \textbf{ReservationManager},\textbf{RegistrationManager}, \textbf{StateManager}, \textbf{LogInManager} and \textbf{RideManager} can have functionalities that are to be completed, but must have been developed in order to provide basis methods
-	\item \textbf{ViewRender} can be forgotten for the first structural test that doesn't integrate the UI
-	\item Components like the \textbf{Payment Manager} and the \textbf{MapController} that interface with third-part components (\textbf{Payment System} and \textbf{MapServce}) must have fully developed in order to use external APIs
+	\item The \textbf{Dispatcher} must have been fully implemented in order to route the simulated requests
+	\item Controllers like the \textbf{ReservationManager}, the \textbf{RegistrationManager}, the \textbf{StateManager}, the \textbf{LogInManager} and the \textbf{RideManager} have to expose sufficiently developed interfaces in order to be able to test the requests management
+	\item No specific constraints on the \textbf{ViewRender} for the first structural testing phase which involves operations that don't integrate the UI
+	\item Components like the \textbf{Payment Manager} and the \textbf{MapController} that are to be linked with third-part components (\textbf{Payment System} and \textbf{MapServce}) must have fully developed in order to use the external APIs
 \end{itemize}
-Secondly, Requirements Analysis and Specification Document and Design Document must have been written.\\
-Thirdly, components must be individually tested (unit testing is not part of ITPD) in order to ensure that bugs from future tests between parts will be caused by the iteration among these and not by an internal problem.
+Secondly, the \textit{Requirements Analysis and Specification Document} and the \textit{Design Document} must have been written.\\
+Thirdly, the components must have been individually tested (unit testing is not part of this testing phase) in order to ensure that bugs from the upcoming integration tests will be caused exclusively by the iterations among these components and not by any kind of internal problem.
 %Specify the criteria that must be met before integration testing of specific elements may begin (e.g., functions must have been unit tested).
 \section{Elements to be Integrated}
 %Identify the components to be integrated, refer to your design document to identify
@@ -103,16 +103,24 @@ As previously mentioned, a thread analysis has to be performed too. This testing
 A final remark on the external components: the \textbf{MapService}, the \textbf{Payment System} and the \textbf{DBMS} components are already fully developed and in a bottom-up perspective they can be tested immediately using the corresponding system components as proper drivers. 
 \section{Sequence of Component Integration}
 %NOTE: The structure of this section may vary depending on the integration strategy you select in Section 2.3; use the structure proposed below as a non mandatory guide
-\subsection{Software Integration Sequence}
+This section will illustrate how the two different testing approaches, bottom-up and thread, are carried out. The order of presentation (that is bottom-up first and thread second) reflects the fact that to do a thread analysis one must have performed the bottom-up testing first.
+A set of tables and figures will help to describe these two strategies.
+\subsection{Bottom-Up Integration Strategy}
 %For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
-\subsection{Subsystem Integration Sequence}
+The bottom-up integration testing will be adopted within each \textit{Macro Area}. More precisely, for each pair of components that have function calls from one to the other a proper test suite will take care of testing all the possible interactions. After the testing of a pair of components, a third component which is in relation with one of this two tested modules is added and again its calls are checked. The same reasoning applies to the remaining components that belong to the same area.\\Let us introduce an example. Consider the components of the \textit{Input Area} as defined in the \textit{Elements to be Integrated} section: 
+\imagebox{../img/ExampleBottomUp2}{Bottom-up test example}{0}{0.45}
+\noindent where the following notation is adopted to state that Component 1 calls a function exposed by Component 2:
+\imagebox{../img/ExampleBottomUp}{Bottom-up notation}{0}{0.45}
+\noindent In the running example the bottom-up approach states that the already implemented part of the \textbf{ViewRender} \textit{drives} the already implemented portion of the \textbf{Dispatcher} component because the former calls all the methods exposed by the latter.\\The list of all the most significant methods invocations involved in the bottom-up testing for each pair of components of each \textit{Macro Area} is listed  in the \textit{Individual Steps and Test Description} section.
+\subsection{Thread Integration Strategy}
 %Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section.
-%TODO commentare thread!!
+The thread testing is performed in order to verify that chains of function calls among modules of different \textit{Macro Areas} lead to correct executions. This type of analysis is carried out when the components that it involves have a sufficient level of completion to support one specific functionality. The following figures show the most relevant threads analysis for the main functionalities of the system.\\Let us consider the \textit{Login Thread} as an example:
+\imagebox{../img/Thread-LogIn}{Login Thread}{0}{0.8}
+\noindent In order to complete the login operation the \textit{ViewRender} takes the request from the client and addresses it to the \textit{Dispatcher}. This last component realizes that this specific request should be handled by the \textit{LogInManager} which in turn needs to query the \textit{Model} to retrieve the client information.\\Please note that in these diagrams the purpose is only to show which components are needed to assess a specific functionality and not the entire control flow (see the sequence diagrams in the \textit{Design Document} for that). As such, some call links are omitted (for example the arc from the \textit{LogInManager} to the \textit{ViewRender} meaning that a web page is displayed at the end of the process is not present because it is not of interest).\\The following figures can be read with the same reasonings.
 \imagebox{../img/Thread-RideStart}{Ride Start Thread}{0}{1}
 \imagebox{../img/Thread-RideStop}{Ride Stop Thread}{0}{1}
 \imagebox{../img/Thread-Reservation}{Reservation Thread}{0}{1}
 \imagebox{../img/Thread-Registration}{Registration Thread}{0}{0.8}
-\imagebox{../img/Thread-LogIn}{Login Thread}{0}{0.8}
 \imagebox{../img/Thread-CarPlugIn}{Car Plug-in Thread}{0}{0.8}
 
 \chapter[Individual Steps and Test Description]{Individual Steps and Test \\Description}
