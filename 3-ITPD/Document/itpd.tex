@@ -560,6 +560,30 @@ For obvious space issues, in the current section only the most significant tests
 %Identify all tools and test equipment needed to accomplish the integration. Refer to the tools presented during the lectures. Explain why and how you are going to use them.
 %Note that you may also use manual testing for some part. Consider manual testing as one of the possible tools you have available.
 \chapter[Program Stubs and Test Data Required]{Program Stubs and Test Data\\Required}
+Using a bottom-up approach to test each pair of every macro-area previously defined, and a thread strategy to test the multiple iterations of components on a single action, we have to define some drivers that can simulate the invocations even if the components are fully developed.
+Here is the list of the drivers that will be developed in the integration testing phase.
+\begin{itemize}
+	\item \textbf{ReservationManager Driver}: is used to simulate methods that used in reservation phase
+	\item \textbf{RegistrationManager Driver}: is built in order to expose methods which you can use to register with.
+	\item \textbf{StateManager Driver}: provides methods that are used to change the state of the car
+	\item \textbf{LogInManager Driver}: exposes interfaces to test the login into the system
+	\item \textbf{RideManager Driver}: is used to give methods that are used to manage the ride
+\end{itemize}
+These drivers are used to link the \textit{Dispatcher} to the \textit{Model}, in order to simulate the communication between each component of the \textit{Management Area}
+\begin{itemize}
+	\item \textbf{RideCostCalculator Driver}: is built to provide methods used for the calculation of the cost of the ride
+\end{itemize}
+This is used in order to simulate a true communication between the \textit{Ride Area} and the \textit{Input Area}
+\begin{itemize}
+	\item \textbf{ServerCommunicationManager Driver}: is a server component used to simulate the most important iteration between the server to the car
+	\item \textbf{CarCommunicationManager Driver}: is a car interface used to provide methods that are used to give a communication between car and server
+\end{itemize}
+These are used to link the car communication part to the server one, creating a connection between the \textit{CarCommunication Area} and the \textit{Input Area}.
+\begin{itemize}
+	\item \textbf{Model Driver}:is used to invoke methods that are linked to the \textbf{DBMS}
+\end{itemize}
+This is used to link the \textit{Input Area} to the external \textit{DBMS}.
+As you can see, there are no need to build a \textbf{Dispatcher Driver}, or a \textbf{PaymentManager Driver} or a \textbf{MapController Driver} because, as it was said previously, they are fully developed because they have to manage request or interact to external components.
 %Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
 \chapter{Effort Spent}
 %-------------------------------------------------------------------------
