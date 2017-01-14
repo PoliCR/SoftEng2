@@ -60,6 +60,16 @@
 	\end{itemize}
 \chapter{Integration Strategy}
 \section{Entry Criteria}
+There are some criteria that impose some conditions on the project testing phase.\\
+Firstly we have to estimate how much the components are completed in order to use their functionalities.
+\begin{itemize}
+	\item \textbf{Dispatcher} must have been fully completed in order to manage requests
+	\item Controllers like \textbf{ReservationManager},\textbf{RegistrationManager}, \textbf{StateManager}, \textbf{LogInManager} and \textbf{RideManager} can have functionalities that are to be completed, but must have been developed in order to provide basis methods
+	\item \textbf{ViewRender} can be forgotten for the first structural test that doesn't integrate the UI
+	\item Components like the \textbf{Payment Manager} and the \textbf{MapController} that interface with third-part components (\textbf{Payment System} and \textbf{MapServce}) must have fully developed in order to use external APIs
+\end{itemize}
+Secondly, Requirements Analysis and Specification Document and Design Document must have been written.\\
+Thirdly, components must be individually tested (unit testing is not part of ITPD) in order to ensure that bugs from future tests between parts will be caused by the iteration among these and not by an internal problem.
 %Specify the criteria that must be met before integration testing of specific elements may begin (e.g., functions must have been unit tested).
 \section{Elements to be Integrated}
 %Identify the components to be integrated, refer to your design document to identify
