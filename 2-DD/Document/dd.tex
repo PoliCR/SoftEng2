@@ -73,7 +73,7 @@ During the writing of this document, the following resources have been taken int
 The first chapter recalls the purpose and the scope of the system that has to be developed and in particular of the current document, which focuses on the architecture of \textit{PowerEnJoy}.\\
 In the second chapter, which is the core of the \textit{Design Document},
 the overall architecture will be presented at various levels of abstraction. After that a brief explanation of the architectural styles and patterns used is provided.\\
-The third chapter covers the algorithmic part of the system; some interesting algorithms that will be useful later on in the real implementation are described in pseudocode.\\
+The third chapter covers the algorithmic part of the system; some interesting algorithms that will be useful later on in the real implementation are described in pseudo-code.\\
 The fourth chapter contains the mockups of both the webapp user interfaces and the ad-hoc touch screen embedded into the cars. Along with them, there is a small description.\\
 The fifth chapter reports the mapping of the requirements, identified in the \textit{RASD}, with respect to the architecture's components.\\
 The sixth and seventh chapters simply refers to the time effort spent in writing the \textit{DD} and the tools used to do it.
@@ -507,6 +507,12 @@ Each component of the system, already identified in the \textit{Component View},
 %explanation (which, why and how) styles/patterns used
 In this section the design principles and choices that have been adopted in the development of the system will be faced.\\First of all, the type of the application. \textit{PowerEnJoy} will be developed as a Webapp in order to make it independent from the particular underlying Operating System. Thus, the software portability increases and the programmers' work overhead decreases.\\The choice of a Webapp leads to the implementation of a standard multi-tier architecture and this is why the proposed one is a three-tier structure. The presence of heterogeneous nodes on the \textit{Client Tier} (PCs/Smartphones and Cars) with different roles  has to be taken into account in the design phase. The solution is achieved with a proper and different software layers organisation: PCs/Smartphones run only the Presentation layer through the browser, while the Cars are equipped with a Built In SW which is in charge of both the GUI and part of the application logic. The system, however, is able to interact with both of these clients thanks to proper APIs.\\With regard to software design principles, there can be found, at this stage, at least two suitable design patterns: the \textit{MVC} and \textit{State} patterns.\\The \textit{MVC Pattern} is recommended for identifying the logical functionalities of the software modules (thus, increasing the cohesion) and to make it easier to apply changes to them in the future (thus, increasing the maintainability).\\The \textit{State Pattern} is suitable for treating the car states. With this solution, in each state, only a defined set of operations can be applied to a car. This makes the problem of managing a car simpler and avoids undesired behaviours.
 \section{Other Design Decisions}
+\subsection{Technological Choices}
+The implementation of the system will be carried out using: 
+\begin{itemize}
+	\item the \textit{JavaEE} standard, specifically for realizing the web-application and all the other related components that form the back-end part, because it lets to manage quite easily a lot of connections (from users and cars), better satisfy both functional and non functional requirements and, lastly,  it enables the development team to focus mainly on the application logic thus abstracting from low level details
+	\item a combination of \textit{HTML, CSS} and \textit{Javascript} for the front-end part of the system, which is the one that the users see and interact with, for the reason that these three different technologies let create both functional and fancy web pages and do not add any high performance specific requirement 
+\end{itemize}
 \subsection{ER Diagram}
 An important issue in the Design Process is to select the suitable data that the system has to store in the database. This is crucial in the Design Phase because it affects the implementation of all the system functionalities, which rely on these data. The following diagram shows the pieces of information that the database server provides to the application.
 \imagebox{../UML/UML_img/ERProject}{ER Diagram}{0}
@@ -851,6 +857,17 @@ This section shows how both Functional and Non-Functional Requirements, already 
 		\item RideCostCalculator
 	\end{itemize}
 \end{enumerate}
+\chapter{Changelog}
+\begin{itemize}
+	\item 1.0
+	\begin{itemize}
+		\item Initial release of the document
+	\end{itemize}
+	\item 1.1
+		\begin{itemize}
+			\item Added section \textit{2.7.1 Technological Choices}, in which are listed the different technologies and standards that will be used in the implementation phase.
+		\end{itemize}
+\end{itemize}
 \chapter{Effort Spent}
 %In this section you will include information about the number of hours each group member has worked towards the fulfillment of this deadline.
 In order to complete this document, each author worked for 25 hours.
