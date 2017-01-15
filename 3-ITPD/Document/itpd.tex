@@ -38,10 +38,10 @@
 \end{tabularx}
 
 \section{Purpose and Scope}
-The Integration Test Plan Document (after referred simply as \textit{ITPD}) covers the whole process of integration of the components of the system; in particular it explains in a detailed way how these ones will be integrated and the specific sequence that must be followed.\\
-The document firstly tackles the integration plan issue starting from some assumptions, as listed in the Entry Criteria section; after that the component diagram presented in the DD is splitted up in different macroareas that will be useful to better realize the bottom-up approach (Elements to be integrated section).\\
+The Integration Test Plan Document (later on simply referred as \textit{ITPD}) covers the whole process of integration of the components of the system; in particular it explains in a detailed way how these ones will be integrated and the specific sequence that must be followed.\\
+The document firstly tackles the integration plan issue starting from some assumptions, as listed in the \textit{Entry Criteria} section; after that the component diagram presented in the \textit{DD} is split up in different macro areas that will be useful to carry out the bottom-up approach (\textit{Elements to be integrated} section).\\
 Then the strategy that leads the integration plan is stated and, obviously along with it, its rationale. Following the strategy, the sequence of integration of the components and the single steps are derived.\\
-The main goal of the integration test plan is to ensure the all the developed components properly combine together in order to realize all the functionalities and also to check that any unexpected behaviours of the system arise.
+The main goal of the integration test plan is firstly to ensure that all the developed components properly combine together in order to accomplish all the functionalities and secondly to spot any undesirable behaviour of the system.
 \section{List of Definitions and Abbreviations}
 \begin{description}
 	\item[PowerEnJoy]is the name of the system that has to be developed.
@@ -75,13 +75,12 @@ The main goal of the integration test plan is to ensure the all the developed co
 There are some criteria that impose some conditions on the project testing phase.\\
 Firstly some considerations on the level of completion of the components with respect to their functionalities:
 \begin{itemize}
-	\item The \textbf{Dispatcher} must have been fully implemented in order to route the simulated requests
-	\item Controllers like the \textbf{ReservationManager}, the \textbf{RegistrationManager}, the \textbf{StateManager}, the \textbf{LogInManager} and the \textbf{RideManager} have to expose sufficiently developed interfaces in order to be able to test the requests management
-	\item No specific constraints on the \textbf{ViewRender} for the first structural testing phase which involves operations that don't integrate the UI
-	\item Components like the \textbf{Payment Manager} and the \textbf{MapController} that are to be linked with third-part components (\textbf{Payment System} and \textbf{MapServce}) must have fully developed in order to use the external APIs
+	\item The \textbf{Dispatcher} must have been fully implemented in order to route the simulated requests.
+	\item Controllers like the \textbf{ReservationManager}, the \textbf{RegistrationManager}, the \textbf{StateManager}, the \textbf{LogInManager} and the \textbf{RideManager} have to expose sufficiently developed interfaces in order to be able to test the requests management.
+	\item Components like the \textbf{Payment Manager} and the \textbf{MapController} that are to be linked with third-party components (\textbf{Payment System} and \textbf{MapServce}) must have been fully developed in order to use the external APIs.
 \end{itemize}
 Secondly, the \textit{Requirements Analysis and Specification Document} and the \textit{Design Document} must have been written.\\
-Thirdly, the components must have been individually tested (unit testing is not part of this testing phase) in order to ensure that bugs from the upcoming integration tests will be caused exclusively by the iterations among these components and not by any kind of internal problem.
+Thirdly, the components must have been individually tested (unit testing is not intrinsically part of this testing phase) in order to ensure that bugs from the upcoming integration tests will be caused exclusively by the iterations among these components and not by any kind of internal problem.
 %Specify the criteria that must be met before integration testing of specific elements may begin (e.g., functions must have been unit tested).
 \section{Elements to be Integrated}
 %Identify the components to be integrated, refer to your design document to identify
@@ -90,7 +89,7 @@ In order to build the full \textit{PowerEnJoy} system all its components have to
 \begin{itemize}
 \item \textbf{Input Area} includes \textit{ViewRender} and \textit{Dispatcher} components. This pair of modules should be tested together to ensure that all input requests are properly received by the system.
 \imageboxNoFit{../img/input}{Input Area}{0}{0.3}
-\item \textbf{Management Area} includes the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager} and the \textit{Dispatcher}. These modules are responsible for the business logic of the application and consequently should be tested together.
+\item \textbf{Management Area} includes the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LogInManager}, the \textit{MapController}, the \textit{RideManager} and the \textit{Dispatcher}. These modules are responsible for the business logic of the application and consequently should be tested together.
 \imageboxNoFit{../img/management}{Management Area}{0}{0.3}
 \item \textbf{Render Area} is the set made of the \textit{ViewRender} and of the \textit{ReservationManager}, the \textit{RegistrationManager}, the \textit{StateManager}, the \textit{LoginManager}, the \textit{MapController}, the \textit{RideManager}. This logical area has to be tested in order to ensure that all managers can update the view of the application without bugs.
 \imageboxNoFit{../img/render}{Render Area}{0}{0.3}
@@ -103,19 +102,18 @@ In order to build the full \textit{PowerEnJoy} system all its components have to
 \item \textbf{Car Area} is the logical set of components that have to be tested on the car. \textit{CarCommunicationManager}, \textit{CentralUnit} and \textit{ScreenManager} are part of the Built-in sw for the car. 
 \imageboxNoFit{../img/car}{Car Area}{0}{0.3}
 \end{itemize}
-Please note that the given groupings do not represent a partition of the set of components of the system (some components are shared by more than one macro area) but just a logical division that is convenient to carry out the integration testing. 
-Finally, a remark on the external components (\textit{MapService}, \textit{Payment System} and \textit{DBMS}): they are already available for integration testing and they only require a sufficient level of completion of the internal components to be actually tested.
+Please note that the given groupings do not represent a partition of the set of components of the system (some components are shared by more than one macro area) but just a logical division that is convenient to carry out the integration testing because each macro area is responsible of a sub-set of the system functionalities. 
+Finally, a remark on the external components (\textit{MapService}, \textit{Payment System} and \textit{DBMS}): they are already available for integration testing and they only require that the internal components that are faced with are fully developed.
 \section{Integration Test Strategy}
 %Describe the integration testing approach (top-down, bottom-up, functional groupings,
 %etc.) and the rationale for the choosing that approach.
 The integration testing process will be carried out with both bottom-up and threads approaches. In particular, the bottom-up testing will be executed between modules that belong to the same macro area (as defined in the \textit{Elements to be Integrated} section) throughout their development process while the threads analysis will be eventually performed among modules of different areas when the previous internal tests are successfully passed.\\
 This testing strategy is incremental by construction because it follows the the development of the components and consequently it makes it easier to spot possible errors during the implementation. As portions of components are added to the existing ones, the integration testing will be triggered on the new parts making use of suitable drivers in order to simulate the calls from one caller component to the called one that has to be tested.\\
-This continuous iteration of the bottom-up approach guarantees the testing coverage of the all the possible interactions of the components.\\
-As previously mentioned, a thread analysis has to be performed too. This testing phase aims at verifying that the chains of function calls among components of different macro areas produce correct actions. The threads testing approach is chosen because it simulates the standard behaviour of the system, in terms of user requests. It could be considered a means to study the system performances too in this sense.\\
-A final remark on the external components: the \textbf{MapService}, the \textbf{Payment System} and the \textbf{DBMS} components are already fully developed and in a bottom-up perspective they can be tested immediately using the corresponding system components as proper drivers. 
+This continuous iteration of the bottom-up approach guarantees the testing coverage of all the possible interactions of the components.\\
+As previously mentioned, a thread analysis has to be performed too. This testing phase aims at verifying that the chains of function calls among components of different macro areas produce correct actions. The threads testing approach is chosen because it simulates the standard behaviour of the system, in terms of user requests. It could be considered a means to study the system performances too in this sense.
 \section{Sequence of Component Integration}
 %NOTE: The structure of this section may vary depending on the integration strategy you select in Section 2.3; use the structure proposed below as a non mandatory guide
-This section will illustrate how the two different testing approaches, bottom-up and thread, are carried out. The order of presentation (that is bottom-up first and thread second) reflects the fact that to do a thread analysis one must have performed the bottom-up testing first.
+This section will illustrate how the two different testing approaches, bottom-up and thread, are carried out. The order of presentation (that is bottom-up first and thread second) reflects the fact that to do a thread analysis on a set of components one must have performed the bottom-up testing on the same items first.
 A set of tables and figures will help to describe these two strategies.
 \subsection{Bottom-Up Integration Strategy}
 %For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
@@ -583,49 +581,46 @@ For obvious space issues, in the current section only the most significant tests
 Testing tools are important because they can automatize and speed up the testing of the system; the used tools that will be presented later in this section, are then useful to properly test firstly the single components and secondly how they integrate and communicate with each other in order to form the complete system and perform all the operations.\\
 Considering that the chosen technology for the implementation of webapplication is JavaEE, the following testing tools are taken into account:
 \begin{itemize}
-	\item Mockito and JUnit are used in the first step of this process because, nevertheless they are mainly designed for unit testing, using them it is possible to exploit all the dependencies and interactions for each couple of components, as done in the bottom-up phase integration for the component in each macroarea but also while integrating the full 'chain' of components that realize a single thread
-	\item Arquillian framework because it lets write test cases against Java Containers and also to check dependency injection of components and transaction control (for example for the Data macroarea that involves interactions with the DBMS).
+	\item Mockito and JUnit are used in the first step of this process because, even though they are mainly designed for unit testing, it is possible to exploit all the dependencies and interactions for each couple of components, as done  both in the bottom-up phase integration both in the thread analysis.
+	\item Arquillian framework because it let us write test cases against Java Containers and also to check dependency injection of components and transaction control (for example for the Data macroarea that involves interactions with the DBMS).
 \end{itemize}
 
 \section{Test Equipment}
-In order to properly execute the whole integration testing phase on the system, different type of equipments are required to carry out both the testing on the purely software part (that will be deployed on the server) and the part which will be embedded into the car (that includes the on-board touch screen, the central unit and the specific component devoted to the communication with the server). \\
-In particular, starting then from the previous statement, it is fundamental to have:
+In order to properly execute the whole integration testing phase on the system, a set of equipment is required to carry out both the testing on the purely software part (that will be deployed on the server) and the part which will be embedded into the car (that includes the on-board touch screen, the central unit and the specific component devoted to the communication with the server). \\
+In particular, it is fundamental to have:
 \begin{itemize}
-	\item at least a device for each type (personal computer, tablet and smart-phone) that will be used from the user to access the system's functionalities and from the employees of the car-sharing company
-	\item the application server, properly configured and already working with the webapplication deployed on it
-	\item the DBMS already initialized (with all the tables required) and running on a specific server machine
-	\item both the external component (that is the MapService and the PaymentSystem) must be available through their APIs
+	\item at least a device for each type (personal computer, tablet and smart-phone) that will be used by the user to access the system  functionalities and by the employees of the car-sharing company.
+	\item the application server, properly configured and already working with the webapplication deployed on it.
+	\item the DBMS already initialized (with all the tables required) and running on a specific server machine.
+	\item both the external components (that is the MapService and the PaymentSystem) must be available through their APIs.
 	\item a fully working prototype of the subsystem that will be installed in each car, complete with the communication part.
-	\item a fully working prototype of a charging station that will be available in each charging area
+	\item a fully working prototype of a charging station that will be available in each charging area.
 \end{itemize}
-For a better and real testing context it would better to have a complete real car and charging station too. However, while testing for the first time the system it is fine to have only a simplified model of both car and charging station because it can be costly and quite difficult to have nearby the development area but when the testing is in an advanced phase real cars and charging stations should be used to have a better feedback from the system.\\
-In conclusion, for constructing a simply environment to properly test the overall system, all these elements are the minimum that is required; after having checked the all the functionalities are working properly for this simple case, it is possible to add more components (for example more devices, cars and/or charging stations) to simulate a more realistic case that let's also to check the performance and the reliability of the developed system.
+For a better and real testing context it would better to have a complete real car and charging station too. However, while for testing the system for the first time it is fine to have only a simplified model of both the car and the  charging station, when the testing is in an advanced phase real cars and charging stations should be used to have a better feedback from the system.\\
+In conclusion, to have a simple environment to properly test the overall system, all these elements are the minimum that is required; after having checked that all the functionalities are working properly for this simple case, it is possible to add more components (for example more devices, cars and/or charging stations) to simulate a more realistic case that let also check the performance and the reliability of the developed system.
 
-\chapter[Program Stubs and Test Data Required]{Program Stubs and Test Data\\Required}
-Using a bottom-up approach to test each pair of every macro-area previously defined, and a thread strategy to test the multiple iterations of components on a single action, we have to define some drivers that can simulate the invocations even if the components are fully developed.
-Here is the list of the drivers that will be developed in the integration testing phase.
+\chapter[Program Drivers and Test Data Required]{Program Drivers and Test Data\\Required}
+Throughout the bottom-up testing phase several drivers that simulate the function invocations among couples of components are needed.
+Here is the list of the drivers that will be taken into account:
 \begin{itemize}
-	\item \textbf{ReservationManager Driver}: is used to simulate methods that used in reservation phase
-	\item \textbf{RegistrationManager Driver}: is built in order to expose methods which you can use to register with.
-	\item \textbf{StateManager Driver}: provides methods that are used to change the state of the car
-	\item \textbf{LogInManager Driver}: exposes interfaces to test the login into the system
-	\item \textbf{RideManager Driver}: is used to give methods that are used to manage the ride
+	\item \textbf{ReservationManager Driver}: it is used to simulate methods that are used in the reservation phase.
+	\item \textbf{RegistrationManager Driver}: it is designed in order to expose methods with which a user can register.
+	\item \textbf{StateManager Driver}: it tests functions that are used to change the state of a car.
+	\item \textbf{LogInManager Driver}: it calls interfaces to test the login functionality.
+	\item \textbf{RideManager Driver}: it tests the methods that are used to manage the ride.
 \end{itemize}
-These drivers are used to link the \textit{Dispatcher} to the \textit{Model}, in order to simulate the communication between each component of the \textit{Management Area}
+These drivers are used to simulate the communication between each component of the \textit{Management Area}
 \begin{itemize}
-	\item \textbf{RideCostCalculator Driver}: is built to provide methods used for the calculation of the cost of the ride
+	\item \textbf{RideCostCalculator Driver}: it tests methods for the computation of the cost of a ride.
 \end{itemize}
-This is used in order to simulate a true communication between the \textit{Ride Area} and the \textit{Input Area}
 \begin{itemize}
-	\item \textbf{ServerCommunicationManager Driver}: is a server component used to simulate the most important iteration between the server to the car
-	\item \textbf{CarCommunicationManager Driver}: is a car interface used to provide methods that are used to give a communication between car and server
+	\item \textbf{ServerCommunicationManager Driver}: This driver on the server side simulates the calls between the server and the car.
+	\item \textbf{CarCommunicationManager Driver}: This driver checks the methods that are used between the car and the server.
 \end{itemize}
-These are used to link the car communication part to the server one, creating a connection between the \textit{CarCommunication Area} and the \textit{Input Area}.
 \begin{itemize}
-	\item \textbf{Model Driver}:is used to invoke methods that are linked to the \textbf{DBMS}
+	\item \textbf{Model Driver}: It is used to invoke methods that are linked with the \textbf{DBMS}
 \end{itemize}
-This is used to link the \textit{Input Area} to the external \textit{DBMS}.
-As you can see, there are no need to build a \textbf{Dispatcher Driver}, or a \textbf{PaymentManager Driver} or a \textbf{MapController Driver} because, as it was said previously, they are fully developed because they have to manage request or interact to external components.
+As mentioned in the \textit{Entry Criteria} section, there is no need to build a \textbf{Dispatcher Driver}, a \textbf{PaymentManager Driver} or a \textbf{MapController Driver} because they are already fully developed.
 %Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
 \chapter{Effort Spent}
 In order to complete this document, each author worked for 15 hours.
