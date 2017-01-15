@@ -29,7 +29,19 @@
 \chapter{Introduction}
 \section{Revision History}
 %Record all revisions to the document
+\begin{tabularx}{\textwidth}{|l|l|X|}
+	\hline
+	Version & Date & Summary\\
+	\hline
+	1.0 & 15/01/2017 & First release of the document\\
+	\hline
+\end{tabularx}
+
 \section{Purpose and Scope}
+The Integration Test Plan Document (after referred simply as \textit{ITPD}) covers the whole process of integration of the components of the system; in particular it explains in a detailed way how these ones will be integrated and the specific sequence that must be followed.\\
+The document firstly tackles the integration plan issue starting from some assumptions, as listed in the Entry Criteria section; after that the component diagram presented in the DD is splitted up in different macroareas that will be useful to better realize the bottom-up approach (Elements to be integrated section).\\
+Then the strategy that leads the integration plan is stated and, obviously along with it, its rationale. Following the strategy, the sequence of integration of the components and the single steps are derived.\\
+The main goal of the integration test plan is to ensure the all the developed components properly combine together in order to realize all the functionalities and also to check that any unexpected behaviours of the system arise.
 \section{List of Definitions and Abbreviations}
 \begin{description}
 	\item[PowerEnJoy]is the name of the system that has to be developed.
@@ -116,7 +128,7 @@ The bottom-up integration testing will be adopted within each \textit{Macro Area
 %Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section.
 The thread testing is performed in order to verify that chains of function calls among modules of different \textit{Macro Areas} lead to correct executions. This type of analysis is carried out when the components that it involves have a sufficient level of completion to support one specific functionality. The following figures show the most relevant threads analysis for the main functionalities of the system.\\Let us consider the \textit{Login Thread} as an example:
 \imagebox{../img/Thread-LogIn}{Login Thread}{0}{0.8}
-\noindent In order to complete the login operation the \textit{ViewRender} takes the request from the client and addresses it to the \textit{Dispatcher}. This last component realizes that this specific request should be handled by the \textit{LogInManager} which in turn needs to query the \textit{Model} to retrieve the client information.\\Please note that in these diagrams the purpose is only to show which components are needed to assess a specific functionality and not the entire control flow (see the sequence diagrams in the \textit{Design Document} for that). As such, some call links are omitted (for example the arc from the \textit{LogInManager} to the \textit{ViewRender} meaning that a web page is displayed at the end of the process is not present because it is not of interest).\\The following figures can be read with the same reasonings.
+\noindent In order to complete the login operation the \textit{ViewRender} takes the request from the client and addresses it to the \textit{Dispatcher}. This last component realizes that this specific request should be handled by the \textit{LogInManager} which in turn needs to query the \textit{Model} to retrieve the client information.\\Please note that in these diagrams the purpose is only to show which components are needed to assess a specific functionality and not the entire control flow (see the sequence diagrams in the \textit{Design Document} for that). As such, some call links are omitted (for example the arc from the \textit{LogInManager} to the \textit{ViewRender} meaning that a web page is displayed at the end of the process is not present because it is not of interest).\\The following figures can be read with the same reasoning.
 \imagebox{../img/Thread-RideStart}{Ride Start Thread}{0}{1}
 \imagebox{../img/Thread-RideStop}{Ride Stop Thread}{0}{1}
 \imagebox{../img/Thread-Reservation}{Reservation Thread}{0}{1}
@@ -567,6 +579,28 @@ For obvious space issues, in the current section only the most significant tests
 \chapter{Tools and Test Equipment Required}
 %Identify all tools and test equipment needed to accomplish the integration. Refer to the tools presented during the lectures. Explain why and how you are going to use them.
 %Note that you may also use manual testing for some part. Consider manual testing as one of the possible tools you have available.
+\section{Tools}
+Testing tools are important because they can automatize and speed up the testing of the system; the used tools that will be presented later in this section, are then useful to properly test firstly the single components and secondly how they integrate and communicate with each other in order to form the complete system and perform all the operations.\\
+Considering that the chosen technology for the implementation of webapplication is JavaEE, the following testing tools are taken into account:
+\begin{itemize}
+	\item Mockito and JUnit are used in the first step of this process because, nevertheless they are mainly designed for unit testing, using them it is possible to exploit all the dependencies and interactions for each couple of components, as done in the bottom-up phase integration for the component in each macroarea but also while integrating the full 'chain' of components that realize a single thread
+	\item Arquillian framework because it lets write test cases against Java Containers and also to check dependency injection of components and transaction control (for example for the Data macroarea that involves interactions with the DBMS).
+\end{itemize}
+
+\section{Test Equipment}
+In order to properly execute the whole integration testing phase on the system, different type of equipments are required to carry out both the testing on the purely software part (that will be deployed on the server) and the part which will be embedded into the car (that includes the on-board touch screen, the central unit and the specific component devoted to the communication with the server). \\
+In particular, starting then from the previous statement, it is fundamental to have:
+\begin{itemize}
+	\item at least a device for each type (personal computer, tablet and smart-phone) that will be used from the user to access the system's functionalities and from the employees of the car-sharing company
+	\item the application server, properly configured and already working with the webapplication deployed on it
+	\item the DBMS already initialized (with all the tables required) and running on a specific server machine
+	\item both the external component (that is the MapService and the PaymentSystem) must be available through their APIs
+	\item a fully working prototype of the subsystem that will be installed in each car, complete with the communication part.
+	\item a fully working prototype of a charging station that will be available in each charging area
+\end{itemize}
+For a better and real testing context it would better to have a complete real car and charging station too. However, while testing for the first time the system it is fine to have only a simplified model of both car and charging station because it can be costly and quite difficult to have nearby the development area but when the testing is in an advanced phase real cars and charging stations should be used to have a better feedback from the system.\\
+In conclusion, for constructing a simply environment to properly test the overall system, all these elements are the minimum that is required; after having checked the all the functionalities are working properly for this simple case, it is possible to add more components (for example more devices, cars and/or charging stations) to simulate a more realistic case that let's also to check the performance and the reliability of the developed system.
+
 \chapter[Program Stubs and Test Data Required]{Program Stubs and Test Data\\Required}
 Using a bottom-up approach to test each pair of every macro-area previously defined, and a thread strategy to test the multiple iterations of components on a single action, we have to define some drivers that can simulate the invocations even if the components are fully developed.
 Here is the list of the drivers that will be developed in the integration testing phase.
@@ -594,6 +628,7 @@ This is used to link the \textit{Input Area} to the external \textit{DBMS}.
 As you can see, there are no need to build a \textbf{Dispatcher Driver}, or a \textbf{PaymentManager Driver} or a \textbf{MapController Driver} because, as it was said previously, they are fully developed because they have to manage request or interact to external components.
 %Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
 \chapter{Effort Spent}
+In order to complete this document, each author worked for 15 hours.
 %-------------------------------------------------------------------------
 %   END DOCUMENT
 %-------------------------------------------------------------------------
