@@ -599,7 +599,7 @@ In particular, it is fundamental to have:
 For a better and real testing context it would better to have a complete real car and charging station too. However, while for testing the system for the first time it is fine to have only a simplified model of both the car and the  charging station, when the testing is in an advanced phase real cars and charging stations should be used to have a better feedback from the system.\\
 In conclusion, to have a simple environment to properly test the overall system, all these elements are the minimum that is required; after having checked that all the functionalities are working properly for this simple case, it is possible to add more components (for example more devices, cars and/or charging stations) to simulate a more realistic case that let also check the performance and the reliability of the developed system.
 
-\chapter[Program Drivers and Data Test Required]{Program Drivers and Data Test\\Approach}
+\chapter[Program Drivers and Data Test Required]{Program Drivers and Data Test\\Required}
 \section{Program Drivers}
 Throughout the bottom-up testing phase several drivers that simulate the function invocations among couples of components are needed.
 Here is the list of the drivers that will be taken into account:
@@ -622,7 +622,7 @@ These drivers are used to simulate the communication between each component of t
 	\item \textbf{Model Driver}: It is used to invoke methods that are linked with the \textbf{DBMS}
 \end{itemize}
 As mentioned in the \textit{Entry Criteria} section, there is no need to build a \textbf{Dispatcher Driver}, a \textbf{PaymentManager Driver} or a \textbf{MapController Driver} because they are already fully developed.
-\section{Data Test Approach}
+\section{Data Test Required}
 The integration testing is carried out by using several different instances for the input data of the components to be tested. This is necessary in order to evaluate the behaviour of the system both when the input data are consistent and when they are not. In the former case, a semantically correct output is expected and its result can be checked while in the latter case the focus is on the policy adopted by the system to manage the errors. This approach, which contributes to the robustness of the system, is achieved by testing the methods invocations between the components with a set of possible inputs. Consequently, the set of data input that are used in the testing of a method invocation includes for each parameter:
 \begin{itemize}
 	\item A null instance: this is the most common error and the system policy involves that when such an error is detected a NullArgumentException is raised.
