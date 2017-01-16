@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{report}
+
+%INPUT of SETTINGS (usepackage, styles, new command,...)
+\input{ppd_prefs}
+
+%-------------------------------------------------------------------------
+%   START DOCUMENT 
+%-------------------------------------------------------------------------
+\begin{document}
+
+% INPUT OF TITLE PAGE
+\input{ppd_titlepage}
+
+%-------------------------------------------------------------------------
+%   TOC
+%-------------------------------------------------------------------------
+%\pagestyle{plain}
+\pagenumbering{roman}
+\thispagestyle{empty}
+\tableofcontents
+\listoffigures
+\cleardoublepage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+%--------------------------------------------------------------------
+%  BEGIN TEXT
+%--------------------------------------------------------------------
+\chapter{Introduction}
+
+\chapter{Effort Spent}
+In order to complete this document, each author worked for 20 hours.
+%-------------------------------------------------------------------------
+%   END DOCUMENT
+%-------------------------------------------------------------------------
+\end{document} 
