@@ -66,6 +66,132 @@ Version & Date & Summary\\
 	\item ITPD v1.0
 \end{itemize}
 \chapter{Project Size Estimation}
+This section talks about the estimation of the size of the project, giving an estimation of lines of code that must be writter.
+This evaluation comes from the evaluation of the lines of code that occure to write only the Business Logic part, leaving out the User Interface part.\\
+\textit{Function Point} is the approach used to simulate how the project will be expensive in terms of lines of code.\\
+From this estimation it will be easy to find how much time will be spent on developing the Business Logic part of the project.
+\section{Size Estimation: function point}
+Functionalities that are to be developed and their complexity are provided by the Function Point approach.\\
+\\\\
+\centerline{\textit{Internal Logic Files \& External Logic Files}}
+\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
+	\hline
+	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50-2222\\
+	\hline
+	 & 1 & Low & Low & Adw\\
+	 & 2-5 & Low & Adw & High\\
+	 & 6+ & Adw & High & High\\
+	\hline
+\end{tabularx}
+\\\\
+\centerline{\textit{External Outputs \& External Inquiries}}
+\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
+	\hline
+	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50-2222\\
+	\hline
+	& 1 & Low & Low & Adw\\
+	& 2-5 & Low & Adw & High\\
+	& 6+ & Adw & High & High\\
+	\hline
+\end{tabularx}
+\\\\
+\centerline{\textit{External Input}}
+\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
+	\hline
+	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50-2222\\
+	\hline
+	& 1 & Low & Low & Adw\\
+	& 2-5 & Low & Adw & High\\
+	& 6+ & Adw & High & High\\
+	\hline
+\end{tabularx}
+\\\\
+\centerline{\textit{Complexity Weights}}
+\\\\
+\begin{tabularx}{\textwidth}{|X|l|c|c|c|}
+	\hline
+	\multicolumn{2}{|X|}{} & \multicolumn{3}{X|}{\textit{Complexity Weight}}\\
+	\hline
+	\textit{Function Type} & Acronimous & \textit{Low} & \textit{Mid} & \textit{High}\\
+	\hline
+	Internal Logic Files & ILFs & 7 & 9 & 15\\
+	External Logic Files & ELFs & 5 & 7 & 10\\
+	External Inputs & EIs & 2 & 4 & 6\\
+	External Inquiries & EQs & 4 & 5 & 7\\
+	External Outputs & EOs & 2 & 3 & 4\\
+	\hline
+\end{tabularx}
+\subsection{Internal Logic Files: ILFs}
+Some functionalities store information into the PowerEnjoy system, in order to remember data and let the system use and manage them.\\
+The login is one of these functionalities: the system has to store the \textit{User Data} in order to recognize him. When the data is stored, it will be composed by many fields explaining the personal information.\\
+\textit{Safe Area}, \textit{Parking Area} and \textit{Car Data} are inserted by the system at each time a new station or vehicle is added into the system.\\
+Differently, \textit{Registration} and \textit{Reservation} are continuously added, through a new operation on the app.
+\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+	\hline
+	\textit{ILFs} & \textit{Complexity} & \textit{Low}\\
+	\hline
+	User Data & Mid & 9\\
+	Safe Area Data & Low & 7\\
+	Parking Area Data & Low & 7\\
+	Reservation Data & Mid & 9\\
+	Car Data & Low & 7\\
+	Registration Data & Avg & 9\\
+	\hline
+\end{tabularx}
+\subsection{External Logic Files: ELFs}
+The application manages the interaction and the system acquires information from the external services used.
+\textit{Payment Data} and \textit{Map Data} are considered External Logic Files, because they are provided by external component.\\
+Because of these components are not part of our system, PowerEnjoy will obtain information thanks to external APIs in order to link internal to external data.\\\\ 
+\begin{tabularx}{\textwidth}{|X|X|X|}
+	\hline
+	\textit{ELFs} & \textit{Complexity} & \textit{Low}\\
+	\hline
+	Maps Data & Mid & 7\\
+	Payment Data & Mid & 9\\
+	\hline
+\end{tabularx}
+\subsection{External Inputs: EIs}
+These sections underline the methods called by an operation of the User on our application. The action is so called a client-server action, because the system reacts to an User operation.\\
+There are two different type of these changes:
+\begin{itemize}
+	\item \textbf{UI Action}: the user click some buttons, or insert some text on the User Interface of the application, or on the car screen.
+	\item \textbf{Physical Action}: the user plugs the car in a Parking Area.
+\end{itemize}
+\begin{tabularx}{\textwidth}{|X|X|X|}
+	\hline
+	\textit{EIs} & \textit{Complexity} & \textit{Low}\\
+	\hline
+	Login & Mid & 4\\
+	Create Reservation & High & 6\\
+	Delete Reservation & Mid & 4\\
+	Plug In & Low & 2\\
+	Enable MoneySavingOption & Low & 2\\
+	\hline
+\end{tabularx}
+\subsection{External Inquiries: EQs}
+These operation that involves an input and an output are the \textit{Ride} actions: when it starts and when it stops.\\
+Starting the ride, the user interact with the Car UI so that the Car System can communicate to the Server that the Ride is started, and the Server can change User Interface on board displaying his navigation.\\
+Otherwise, the system will calculate the cost, when the user interacts with the UI and it will display temporary how much he has to pay.\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+	\hline
+	\textit{EQs} & \textit{Complexity} & \textit{Low}\\
+	\hline
+	Ride Start & High & 7\\
+	Ride Stop & High & 7\\
+	\hline
+\end{tabularx}
+\subsection{External Outputs: EOs}
+\subsection{Overall Estimation}
 \chapter{Project Cost and Effort Estimation}
 \chapter{Schedule}
 \chapter{Resource Allocation}
