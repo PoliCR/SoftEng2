@@ -79,7 +79,7 @@ Functionalities that are to be developed and their complexity are provided by th
 	\hline
 	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
 	\hline
-	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50-2222\\
+	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50+\\
 	\hline
 	 & 1 & Low & Low & Adw\\
 	 & 2-5 & Low & Adw & High\\
@@ -87,33 +87,41 @@ Functionalities that are to be developed and their complexity are provided by th
 	\hline
 \end{tabularx}
 \\\\
-\centerline{\textit{External Outputs \& External Inquiries}}
+Each line of this table underlines how it becomes more heavy the computation with the increasing of \textit{Data Elements} and \textit{Record Elements}.\\
+Adding few records or some data, the program is rapidly loading, stretching the response time.
+\\\\
+\centerline{\textit{External Outputs \& External Inputs}}
 \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
 	\hline
 	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
 	\hline
-	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50-2222\\
+	\multirow{3}{*}{\textit{Record Elements}} & & 1-9 & 10-19 & 20+\\
 	\hline
 	& 1 & Low & Low & Adw\\
-	& 2-5 & Low & Adw & High\\
-	& 6+ & Adw & High & High\\
+	& 2-3 & Low & Adw & High\\
+	& 4+ & Adw & High & High\\
 	\hline
 \end{tabularx}
 \\\\
-\centerline{\textit{External Input}}
+With \textit{External Outputs} and \textit{External Inputs}, the size of Data and Records must be smaller than the previous ones seen in \textit{Internal Logic Files} and \textit{External Logic Files}.\\We have a big load adding only one record, or a few data, getting worst the performance of the system.
+\\\\
+\centerline{\textit{External Inquiries}}
 \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
 	\hline
 	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
 	\hline
-	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50-2222\\
+	\multirow{3}{*}{\textit{Record Elements}} & & 1-4 & 5-9 & 10+\\
 	\hline
 	& 1 & Low & Low & Adw\\
-	& 2-5 & Low & Adw & High\\
-	& 6+ & Adw & High & High\\
+	& 2-4 & Low & Adw & High\\
+	& 5+ & Adw & High & High\\
 	\hline
 \end{tabularx}
+\\\\
+The parts of External Input is the heavier, because it is an interaction between the User and the System.\\
+The table is so heavier at littler variations. One record, or few data are enough to increase the performance of the system. 
 \\\\
 \centerline{\textit{Complexity Weights}}
 \\\\
@@ -126,10 +134,14 @@ Functionalities that are to be developed and their complexity are provided by th
 	Internal Logic Files & ILFs & 7 & 9 & 15\\
 	External Logic Files & ELFs & 5 & 7 & 10\\
 	External Inputs & EIs & 2 & 4 & 6\\
-	External Inquiries & EQs & 4 & 5 & 7\\
+	External Inquiries & EQs & 6 & 8 & 10\\
 	External Outputs & EOs & 2 & 3 & 4\\
 	\hline
 \end{tabularx}
+\\\\
+The general complexity is so defined.\\
+It is obviously heavier a Funcion Type like the \textit{Internal Logic Files} or an \textit{External Inquiries}, which manage the update of the Data and the communication between the User and the System, than a \textit{External Output}, \textit{External Input} or an \textit{External Logic Files}, that gives only an output or take an input.\\
+
 \subsection{Internal Logic Files: ILFs}
 Some functionalities store information into the PowerEnjoy system, in order to remember data and let the system use and manage them.\\
 The login is one of these functionalities: the system has to store the \textit{User Data} in order to recognize him. When the data is stored, it will be composed by many fields explaining the personal information.\\
@@ -157,7 +169,7 @@ Because of these components are not part of our system, PowerEnjoy will obtain i
 	\textit{ELFs} & \textit{Complexity} & \textit{Low}\\
 	\hline
 	Maps Data & Mid & 7\\
-	Payment Data & Mid & 9\\
+	Payment Data & High & 10\\
 	\hline
 \end{tabularx}
 \subsection{External Inputs: EIs}
@@ -186,8 +198,8 @@ Otherwise, the system will calculate the cost, when the user interacts with the 
 	\hline
 	\textit{EQs} & \textit{Complexity} & \textit{Low}\\
 	\hline
-	Ride Start & High & 7\\
-	Ride Stop & High & 7\\
+	Ride Start & High & 10\\
+	Ride Stop & High & 10\\
 	\hline
 \end{tabularx}
 \subsection{External Outputs: EOs}
@@ -235,7 +247,8 @@ Since a pro-active risk-management approach is desirable, for each category of r
     Risk & Probability & Impact & Strategy \\ \hline
     Poor motivation & Moderate & Moderate & Try to select people that are skilled in particular fields and have experience in their work. Praise their commitment with rewards. \\ \hline
     Conflicts within the work team & Low & Moderate & Promote the cooperation of people by making a community that periodically meets and discuss on the level of the project. \\ \hline
-    Key staff are ill at critical times in the project & Moderate & Serious & Consider the possibility to have several people working on common tasks in order to prevent excessive time losses. \\ \hline
+    Key staff are ill at critical times in the project & Moderate & Serious & Consider the possibility to have several people working on common tasks in order to prevent excessive time losses.\\
+    \hline
     \end{tabularx}
 \chapter{Effort Spent}
 %TODO complete hours
