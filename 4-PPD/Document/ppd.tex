@@ -65,12 +65,12 @@ Version & Date & Summary\\
 	\item DD v1.1
 	\item ITPD v1.0
 \end{itemize}
-\chapter{Project Size Estimation}
+\chapter{Project size, cost and effort estimation}
 This section talks about the estimation of the size of the project, giving an estimation of lines of code that must be writter.
 This evaluation comes from the calculation of the lines of code that occur to write both the Business Logic part and the User Interface part.\\
 \textit{Function Point} is the approach used to simulate how the project will be expensive in terms of lines of code.\\
 From this estimation it will be easy to find how much time will be spent on developing the Business Logic part of the project.
-\section{Size Estimation: function point}
+\section{Size Estimation: function points}
 Functionalities that are to be developed and their complexity are provided by the Function Point approach.\\In each table is reported how much load can take developing these parts: from \textit{Low}, not so much expensive, to \textit{High}, the heavier.\\
 \\\\
 \centerline{\textit{Internal Logic Files \& External Logic Files}}
@@ -265,8 +265,61 @@ Having this result, the \textit{Lower Bound} and the \textit{Upper Bound} of the
 	\textbf{5336} & \textbf{7772}\\
 	\hline
 \end{tabularx}
-
-\chapter{Project Cost and Effort Estimation}
+\newpage
+\section{Cost and effort estimation: COCOMO II}
+This section deals with the estimation of the cost and the effort that are required to develop the system. The evaluation will be carried out using the \textit{COnstructive COst MOdel II} (later on referred as \textit{COCOMO II}) and will make use of the estimated size of the project obtained in the previous section. Let us first introduce the empirical formula that will guide the effort estimation process:
+\begin{equation} \label{formula:1}
+Effort = A \cdot Size^E \cdot \begin{matrix} \prod_{i=1}^{17} EM_i \end{matrix}
+\end{equation}
+\noindent where:
+\begin{itemize}
+	\item Effort is expressed in PM (Person-Months)
+	\item $A = 2.94$ is a productivity constant in PM/KSLOC (Person-Months/Kilo-Source Lines of Code)
+	\item Size is the estimated size of the project in KSLOC obtained in the previous analysis
+	\item E is an aggregated index of five \textit{Scale Factors}
+	\item $EM_{i}$ stands for \textit{Effort Multiplier} and corresponds to the value of a specific entry that will be explained later in the \textit{Cost Drivers} subsection
+\end{itemize}
+Next subsections are focused on the evaluation of the two last operands of the previous formula. At the end of the section the final result obtained applying formula \ref{formula:1} is shown.
+\subsection{Scale Factors}
+The first step consists in evaluating the actual value of exponent E in formula \ref{formula:1}. To do so, a list of \textit{Scale Factors} have to be computed. These entries represent an heterogeneous set of variables and their values are assigned according to the following table:
+\\\\
+\begin{tabularx}{\textwidth}{ |p{1.6cm}|p{1.8cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|X|}
+    \hline
+    Scale Factor & Very low & Low & Nominal & High & Very high & Extra high \\ \hline
+    PREC \newline \newline \newline \newline $SF_{i}$ & Thoroughly unprecedented \newline \newline 6.20& Largely unprecedented \newline \newline 4.96& Somewhat unprecedented \newline \newline 3.72& Generally familiar \newline \newline \newline 2.48& Largely familiar \newline \newline \newline 1.24& Thoroughly  familiar \newline \newline \newline 0.00\\ \hline
+    FLEX \newline \newline \newline \newline $SF_{i}$ & Rigorous \newline \newline \newline \newline 5.07& Occasional relaxation \newline \newline 4.05& Some relaxation\newline \newline \newline 3.04& General conformity \newline \newline 2.03& Some conformity \newline \newline 1.01& General goals \newline \newline \newline 0.00\\ \hline
+    RESL \newline \newline \newline \newline $SF_{i}$ & Little ($20\%$) \newline \newline \newline 7.07& Some ($40\%$) \newline \newline \newline 5.65& Often ($60\%$) \newline \newline \newline 4.24& Generally ($75\%$) \newline \newline \newline 2.83& Mostly ($90\%$) \newline \newline \newline 1.41& Full ($100\%$) \newline \newline \newline \newline 0.00\\ \hline
+     TEAM \newline \newline \newline \newline \newline $SF_{i}$ & Very difficult interactions \newline \newline 5.48& Some difficult interactions \newline \newline 4.38& Basically cooperative interactions \newline 3.29& Largely cooperative \newline \newline \newline 2.19& Highly cooperative \newline \newline \newline 1.10& Seamless interactions \newline \newline \newline \newline 0.00\\ \hline
+      PMAT \newline \newline \newline \newline $SF_{i}$ & Level 1 Lower \newline \newline \newline 7.80& Level 1 Upper \newline \newline \newline 6.24& Level 2 \newline \newline \newline \newline 4.68& Level 3 \newline \newline \newline \newline 3.12& Level 4 \newline \newline \newline \newline 1.56& Level 5 \newline \newline \newline \newline 0.00\\ \hline
+\end{tabularx}\\\\\\
+Let us discuss each of these entries:
+\begin{itemize}
+	\item \textbf{Precedentedness}: It is the index that defines the previous experience of the team in developing such projects. This is the very first project, thus a \textit{Very low} level is reasonable.
+	\item \textbf{Development flexibility}: The index of the flexibility for the project choices with respect to the external interfaces and the requirements. The project has strict requirements to abide by in terms of functionalities of the system, but no specific architecture is required. This variable is then assigned a level of \textit{Nominal}.
+	\item \textbf{Architecture and risk resolution}: It reflects the capability of managing possible risks with an accurate contingency plan and the fact that a reasonable schedule is sketched. In the document both these aspects are covered in detail, so for this variable the right choice is to pick the \textit{Very High} level.
+	\item \textbf{Team cohesion}: It deals with the capability of the members of the team to work together in harmony and sharing the same vision. The team is made of only three people in this project and they work with great commitment and together, thus \textit{Very high} is the right degree.
+	\item \textbf{Process Maturity}: it is a index of the maturity of the organization. Even though this is the very first project of the team, the schedule has been accurately defined, the project widely documented and discussed among the members of the team. Consequently \textit{Nominal} level is reasonable.
+\end{itemize}
+Here is the re-cap of the \textit{Scale Factors} analysis:
+\\\\
+\begin{tabularx}{\textwidth}{|p{8cm}|X|X|}
+	\hline
+	\textit{Scale Factor} & \textit{Level} & \textit{Value}\\
+	\hline
+	Precedentness (PREC) & Very low & 6.20\\
+	Development flexibility (FLEX) & Nominal & 3.04\\
+	Architecture and risk resolution (RESL) & Very high & 1.41\\
+	Team cohesion (TEAM) & Very high & 1.10\\
+	Process Maturity (PMAT) & Nominal & 4.68\\
+	\hline
+	Total &  & 16.43\\
+	\hline
+\end{tabularx}\\\\\\
+It is now possible to evaluate exponent $E$ with the following formula:
+$$E = 0.91+0.01 \cdot \sum_{i=1}^5 SF_i$$
+The result is 
+$$E = 1.0743$$
+\subsection{Cost Drivers}
 \chapter{Schedule}
 \chapter{Resource Allocation}
 \chapter{Risk Management and Mitigation}
