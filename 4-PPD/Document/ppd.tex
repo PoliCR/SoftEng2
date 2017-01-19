@@ -146,7 +146,7 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
-	\textit{ILFs} & \textit{Complexity} & \textit{Low}\\
+	\textit{ILFs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	User Data & Mid & 9\\
 	Safe Area Data & Low & 7\\
@@ -155,7 +155,7 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 	Car Data & Low & 7\\
 	\hline
 	\hline
-	Total & \multicolumn{2}{X|}{39}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{39}\\
 	\hline
 \end{tabularx}
 \subsection{External Logic Files: ELFs}
@@ -165,13 +165,13 @@ Because of these components are not part of our system, PowerEnjoy will obtain i
 Payment Data will be more complex to develop, because the system has to guarantee the security of the payment and of the information, avoiding every type of external attack.\\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
-	\textit{ELFs} & \textit{Complexity} & \textit{Low}\\
+	\textit{ELFs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	Maps Data & Mid & 7\\
 	Payment Data & High & 10\\
 	\hline
 	\hline
-	Total & \multicolumn{2}{X|}{17}\\
+	Total & \multicolumn{1}{X}{}& \multicolumn{1}{X|}{17}\\
 	\hline
 \end{tabularx}
 \subsection{External Inputs: EIs}
@@ -184,7 +184,7 @@ There are two different type of these changes:
 The most complex will be the creation of the reservation, because it has to interact with data, creating them and inserting them linking the User Interface to the remote DBMS.\\It is easy to see how is more easy to develop the part that check if the car has been plugged or not, after the stop of the ride.\\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
-	\textit{EIs} & \textit{Complexity} & \textit{Low}\\
+	\textit{EIs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	Login & Mid & 4\\
 	Registration & Mid & 4\\
@@ -194,7 +194,7 @@ The most complex will be the creation of the reservation, because it has to inte
 	Enable MoneySavingOption & Low & 2\\
 	\hline
 	\hline
-	Total & \multicolumn{2}{X|}{22}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{22}\\
 	\hline
 \end{tabularx}
 \subsection{External Inquiries: EQs}
@@ -205,7 +205,7 @@ So \textit{Ride Start} and \textit{Ride Stop} are easily considered as high comp
 Differently, the \textit{Search} for a car or the \textit{Pick Up} of it, are actions which involve only one communication car - system, so they are considered easier to develop.\\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
-	\textit{EQs} & \textit{Complexity} & \textit{Low}\\
+	\textit{EQs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	Search & Mid & 8\\
 	Pick Up & Mid & 8\\
@@ -213,7 +213,7 @@ Differently, the \textit{Search} for a car or the \textit{Pick Up} of it, are ac
 	Ride Stop & High & 10\\
 	\hline
 	\hline
-	Total & \multicolumn{2}{X|}{36}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{36}\\
 	\hline
 \end{tabularx}
 \subsection{External Outputs: EOs}
@@ -222,12 +222,12 @@ The cost notification is one example from EOs section: the user, stopping the ri
 \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
-	\textit{EOs} & \textit{Complexity} & \textit{Low}\\
+	\textit{EOs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	Payment Notification & Low & 2\\
 	\hline
 	\hline
-	Total & \multicolumn{2}{X|}{2}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{2}\\
 	\hline
 \end{tabularx}
 \subsection{Overall Estimation}
@@ -247,7 +247,8 @@ Considering the whole estimation of the Function Types, the total will be the su
 	\hline
 	External Outputs & EOs & 2\\
 	\hline
-	Total & \multicolumn{2}{X|}{116}\\
+	\hline
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{116}\\
 	\hline
 \end{tabularx}
 \\\\
