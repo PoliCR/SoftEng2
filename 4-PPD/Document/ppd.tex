@@ -265,17 +265,35 @@ Considering the whole estimation of the Function Types, the total will be the su
 	\hline
 \end{tabularx}
 \\\\
-Having this result, the \textit{Lower Bound} and the \textit{Upper Bound} of the total number of lines of code are easily calculable through the usage of some constants in this way:
+Having this result, the total lines of code are easily calculable using   \textit{conversion factor} and the \textit{usage percentage} used to specify how much the project is divided in different languages. Using this method we can consider the entire project, from the Business Logic to the UI development part, adopting a weighted average between languages:
 \\\\
-\begin{tabularx}{\textwidth}{|X|X|}
+\begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
-	\textit{Lower Bound} & \textit{Upper Bound}\\
+	\textbf{Language} & \textbf{Conversion factor (SLOC/FP)} & \textbf{Usage percentage}\\
 	\hline
-	\textit{$184\times$46} & \textit{$184\times$67}\\
+	\textit{HTML} & 34 & 15\%\\
 	\hline
-	\textbf{8464} & \textbf{12328}\\
+	\textit{JEE} & 46 & 75\%\\
+	\hline
+	\textit{Javascript} & 43 & 10\%\\
 	\hline
 \end{tabularx}
+\\\\
+According to these constants and the usage percentage of the language, he total lines of code to write are:\\
+\begin{equation}
+	\centerline{\textit{Code Lines =} $H\textsubscript{t}\cdot$($C\textsubscript{HTML}\cdot$P\textsubscript{HTML} + $C\textsubscript{JEE}\cdot$P\textsubscript{JEE} + $C\textsubscript{JS}\cdot$P\textsubscript{JS})}
+\end{equation}
+Where:
+\begin{itemize}
+	\item C\textsubscript{i} express the \textit{conversion factor} of the \textit{i} language
+	\item P\textsubscript{i}
+	express the \textit{usage percentage} of the \textit{i} of the language in the whole project
+	\item H\textsubscript{t} is the \textit{FPs result}
+\end{itemize}
+The result is so found:
+\begin{equation}
+\centerline{\textit{Code Lines =} $184\cdot$($34\textsubscript{HTML}\cdot$0.15\textsubscript{HTML} + $46\textsubscript{JEE}\cdot$0.75\textsubscript{JEE} + $43\textsubscript{JS}\cdot$0.1\textsubscript{JS}) \textit{= 8078}}
+\end{equation}
 \newpage
 \section{Cost and effort estimation: COCOMO II}
 This section deals with the estimation of the cost and the effort that are required to develop the system. The evaluation will be carried out using the \textit{COnstructive COst MOdel II} (later on referred as \textit{COCOMO II}) and will make use of the estimated size of the project obtained in the previous section. Let us first introduce the empirical formula that will guide the effort estimation process:
