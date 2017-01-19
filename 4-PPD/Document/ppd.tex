@@ -75,13 +75,14 @@ Functionalities that are to be developed and their complexity are provided by th
 \\\\
 \centerline{\textit{Internal Logic Files \& External Logic Files}}
 \\\\
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\begin{tabularx}{\textwidth}{|p{1cm}|X|X|X|X|}
 	\hline
-	\multicolumn{2}{|X|}{} & \multicolumn{3}{|c|}{\textit{Data Element}}\\
+	\multicolumn{2}{|X|}{} & \multicolumn{3}{c|}{\textit{Data Element}}\\
 	\hline
-	\multirow{3}{*}{\textit{Record Elements}} & & 1-19 & 20-49 & 50+\\
-	\hline
-	 & 1 & Low & Low & Adw\\
+ 	 \multirow{1}{*}{}& & 1-19 & 20-49 & 50+\\ \cline{2-5}	
+	%\hline
+
+	 \multirow{3}{*}{\rotatebox[origin=c]{90}{\parbox{10mm}{Record\\Elements}}}  & 1 & Low & Low & Adw\\
 	 & 2-5 & Low & Adw & High\\
 	 & 6+ & Adw & High & High\\
 	\hline
@@ -321,7 +322,15 @@ The result is
 $$E = 1.0743$$
 \subsection{Cost Drivers}
 \chapter{Schedule}
+A fundamental part of the project plan is also the scheduling. This step allows to divide the overall work that has to be done in separated tasks and moreover to define when and how they will be completed; in particular the estimation of the calendar time required to execute each task is provided through the Gantt diagram.\\
+It should be noted that the time estimation of the tasks is not trivial and while doing this it's important to consider that the productivity is not proportional to the number of people of the team and that some extra time must be added because sometimes the flow of the events does not follow the expected one.\\
+The analysis and the definition of the various tasks is carried out at a quite coarse grained level thus only the main activities are included into the Gantt diagram, however they shouldn't be too small (for example a reasonable length is between 1 and 2 weeks).\\
+Lastly, the start of the schedule of the project is set to the month of October.\\
 \chapter{Resource Allocation}
+The Resource Allocation phase is strongly correlated with the Schedule phase because its main goal is to properly assign every single task, defined in the previous step, to the components of the development team.
+The assignment process should be done carefully and in such a way to optimize the effort of each team member; for instance, the allocation of all the activities and tasks is done with respect to the three authors of these documents assuming that will be also the development team.\\
+As for the Schedule, the Resource Allocation is presented via a Gantt diagram too.\\
+
 \chapter{Risk Management and Mitigation}
 This section deals with the possible risks that can threaten the system during its development process. These hazards can stem from a variety of sources and thus can be classified as:
 \begin{itemize}
