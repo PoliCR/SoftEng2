@@ -122,9 +122,9 @@ The table is so heavier at littler variations. One record, or few data are enoug
 \\\\
 \centerline{\textit{Complexity Weights}}
 \\\\
-\begin{tabularx}{\textwidth}{|X|l|c|c|c|}
+\begin{tabularx}{\textwidth}{|l|l|X|X|X|}
 	\hline
-	\multicolumn{2}{|X|}{} & \multicolumn{3}{X|}{\textit{Complexity Weight}}\\
+	\multicolumn{2}{|X|}{} & \multicolumn{3}{c|}{\textit{Complexity Weight}}\\
 	\hline
 	\textit{Function Type} & Acronym & \textit{Low} & \textit{Mid} & \textit{High}\\
 	\hline
@@ -149,13 +149,15 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 	\textit{ILFs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	User Data & Mid & 9\\
+	Employee Data & Low & 7\\
 	Safe Area Data & Low & 7\\
 	Parking Area Data & Low & 7\\
 	Reservation Data & Mid & 9\\
+	Ride Data & Mid & 9\\
 	Car Data & Low & 7\\
 	\hline
 	\hline
-	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{39}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{55}\\
 	\hline
 \end{tabularx}
 \subsection{External Logic Files: ELFs}
@@ -187,14 +189,23 @@ The most complex will be the creation of the reservation, because it has to inte
 	\textit{EIs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	Login & Mid & 4\\
+	Logout & Low & 2 \\
 	Registration & Mid & 4\\
-	Create Reservation & High & 6\\
+	Insert Reservation & High & 6\\
 	Delete Reservation & Mid & 4\\
-	Plug In & Low & 2\\
-	Enable MoneySavingOption & Low & 2\\
+	Car Plug In & High & 6\\
+	Update Car Status & Low & 2\\
+	Insert a new car & Mid & 4 \\
+	Update a car & Mid & 4\\
+	Delete a car & Mid & 4\\
+	Insert a new charging area & High & 6\\
+	Update charging area & Mid & 4\\
+	Delete charging area & Mid & 4\\
+	Convey end ride via touch screen & Mid & 4 \\ 
+	Insert final destination & Mid & 4\\
 	\hline
 	\hline
-	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{22}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{62}\\
 	\hline
 \end{tabularx}
 \subsection{External Inquiries: EQs}
@@ -207,13 +218,14 @@ Differently, the \textit{Search} for a car or the \textit{Pick Up} of it, are ac
 	\hline
 	\textit{EQs} & \textit{Complexity} & \textit{Points}\\
 	\hline
-	Search & Mid & 8\\
-	Pick Up & Mid & 8\\
-	Ride Start & High & 10\\
-	Ride Stop & High & 10\\
+	Search for available cars & Mid & 8\\
+	Show cars information & Mid & 8\\
+	Enable MoneySavingOption & High & 10\\
+	Pick Up a car & High & 10\\
+	Ride initialization & HIgh & 8\\
 	\hline
 	\hline
-	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{36}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{44}\\
 	\hline
 \end{tabularx}
 \subsection{External Outputs: EOs}
@@ -225,9 +237,10 @@ The cost notification is one example from EOs section: the user, stopping the ri
 	\textit{EOs} & \textit{Complexity} & \textit{Points}\\
 	\hline
 	Payment Notification & Low & 2\\
+	Notify Expired Reservation & Mid & 4\\
 	\hline
 	\hline
-	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{2}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{6}\\
 	\hline
 \end{tabularx}
 \subsection{Overall Estimation}
@@ -237,18 +250,18 @@ Considering the whole estimation of the Function Types, the total will be the su
 	\hline
 	\textit{Function Type} & \textit{Acronym} & \textit{Value}\\
 	\hline
-	Internal Logic Files & ILFs & 39\\
+	Internal Logic Files & ILFs & 55\\
 	\hline
 	External Logic Files & ELFs & 17\\
 	\hline
-	External Inputs & EIs & 22\\
+	External Inputs & EIs & 62\\
 	\hline
-	External Inquiries & EQs & 36\\
+	External Inquiries & EQs & 44\\
 	\hline
-	External Outputs & EOs & 2\\
+	External Outputs & EOs & 6\\
 	\hline
 	\hline
-	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{116}\\
+	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{184}\\
 	\hline
 \end{tabularx}
 \\\\
@@ -258,9 +271,9 @@ Having this result, the \textit{Lower Bound} and the \textit{Upper Bound} of the
 	\hline
 	\textit{Lower Bound} & \textit{Upper Bound}\\
 	\hline
-	\textit{$116\times$46} & \textit{$116\times$67}\\
+	\textit{$184\times$46} & \textit{$184\times$67}\\
 	\hline
-	\textbf{5336} & \textbf{7772}\\
+	\textbf{8464} & \textbf{12328}\\
 	\hline
 \end{tabularx}
 \newpage
