@@ -37,7 +37,7 @@ Version & Date & Summary\\
 \end{tabularx}
 \section{Purpose and Scope}
 The Project Plan Document (later referred with the acronym \textit{PPD}) refers to the issues that concern the development process of the system. In particular, it covers the critical phase of the estimation of the project in terms of size, cost and time effort. In order to carry out this type of analysis, different methodologies will be used as explained in the second chapter; the result obtained consider a quite large set of various aspects, each one properly represented by a numerical factor. It's important to notice that the assignment of a specific value to these factors is not trivial at all.\\
-The second key point of this document is about the Schedule and Resource Allocation. After having identified all the tasks that have to be executed to complete the project, it is important to define when these different activities should be done. Going down into details, in the Schedule section, it is defined a temporal plan which visually explain the date and time organization of the tasks to be carried out; this then infer a sorting between the tasks. On the other hand, the Resource Allocation establishes for each member of the team the tasks that he to do in the different phases of the project; moreover, while some of them are resource consuming (thus they will be executed from more than 1 person at the same time) , others are strictly sequential so it impossible to be executed simultaneously. At this point is quite clear that there is a strong correlation between the Schedule and Resource Allocation part.
+The second key point of this document is about the Schedule and Resource Allocation. After having identified all the tasks that have to be executed to complete the project, it is important to define when these different activities should be done. Going down into details, in the Schedule section, it is defined a temporal plan which visually explain the date and time organization of the tasks to be carried out; this then infer a sorting between the tasks. On the other hand, the Resource Allocation establishes for each member of the team the tasks that he to do in the different phases of the project; moreover, while some of them are resource consuming (thus they will be executed from more than 1 person at the same time) , others are strictly sequential so it impossible to be executed simultaneously. At this point is quite clear that there is a strong correlation between the Schedule and Resource Allocation part.\\
 Lastly, it's fundamental to study all the risks that can arise through the different phases of the project development (such as requirements analysis, design of the system architecture, code implementation and testing, deployment and start up) but also while the project is completed and the developed system is running. The identified risks can be grouped into a few groups by considering the aspects they affect the most and for every single task there is an estimation of the impact that it can have on the system and a strategy on how to deal with it. 
 \section{Definitions, Acronyms, Abbreviations}
 \begin{description}
@@ -106,7 +106,7 @@ Adding few records or some data, the program is rapidly loading, stretching the 
 	\hline
 \end{tabularx}
 \\\\
-With \textit{External Outputs} and \textit{External Inputs}, the size of Data and Records must be smaller than the previous ones seen in \textit{Internal Logic Files} and \textit{External Logic Files}.\\We have a big load adding only one record, or a few data, getting worst the performance of the system.
+With \textit{External Outputs} and \textit{External Inputs}, the size of Data and Records must be smaller than the previous ones seen in \textit{Internal Logic Files} and \textit{External Logic Files}.\\There is a big load adding only one record, or a few data, getting worst the performance of the system.
 \\\\
 \centerline{\textit{External Inquiries}}
 \\\\
@@ -145,7 +145,7 @@ It is obviously heavier a Function Type like the \textit{Internal Logic Files} o
 \subsection{Internal Logic Files: ILFs}
 Some functionalities store information into the PowerEnJoy system, in order to remember data and let the system use and manage them.\\
 The login is one of these functionalities: the system has to store the \textit{User Data} in order to recognize him. When the data is stored, it will be composed by many fields explaining the personal information, in order to characterize every person.\\
-\textit{Safe Area}, \textit{Parking Area} and \textit{Car Data} are inserted by the system at each time a new station or vehicle is added into the system. \textit{Safe Area} and \textit{Parking Area} will be condensed in the same table, but diversified by some attributes, in order to have an increase of performance, searching for the data in only one place. \\\\
+\textit{Safe Area}, \textit{Charging Area} and \textit{Car Data} are inserted by the system at each time a new station or vehicle is added into the system. \textit{Safe Area} and \textit{Charging Area} will be condensed in the same table, but diversified by some attributes, in order to have an increase of performance, searching for the data in only one place. \\\\
 Differently, \textit{Reservation} is continuously added, through a new operation on the app.
 \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
@@ -155,7 +155,7 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 	User Data & Mid & 9\\
 	Employee Data & Low & 7\\
 	Safe Area Data & Low & 7\\
-	Parking Area Data & Low & 7\\
+	Charging Area Data & Low & 7\\
 	Reservation Data & Mid & 9\\
 	Ride Data & Mid & 9\\
 	Car Data & Low & 7\\
@@ -165,11 +165,11 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 	\hline
 \end{tabularx}
 \\\\
-\textit{User Data}, \textit{Reservation Data} and \textit{Ride Data} have a \textit{mid} because they have more attributes that will be manage. Differently, \textit{Employee Data}, \textit{Safe Area Data} and \textit{Car Data} have a \textit{Low} complexity because they have few attributes.
+\textit{User Data}, \textit{Reservation Data} and \textit{Ride Data} have a \textit{mid} complexity because they have more attributes that will be managed. Differently, \textit{Employee Data}, \textit{Safe Area Data} and \textit{Car Data} have a \textit{Low} complexity because they have few attributes.
 \subsection{External Logic Files: ELFs}
 The application manages the interaction and the system acquires information from the external services used.
 \textit{Payment Data} and \textit{Map Data} are considered External Logic Files, because they are provided by external component.\\
-Because of these components are not part of our system, PowerEnJoy will obtain information thanks to external APIs in order to link internal to external data.\\
+Because of these components are not part of the system, PowerEnJoy will obtain information thanks to external APIs in order to link internal to external data.\\
 Payment Data will be more complex to develop, because the system has to guarantee the security of the payment and of the information, avoiding every type of external attack.\\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
@@ -185,11 +185,11 @@ Payment Data will be more complex to develop, because the system has to guarante
 \\\\
 In this table, \textit{Payment Data} part is considered more complex than the \textit{Map Data} one, because it has to guarantee security, despite the performance. 
 \subsection{External Inputs: EIs}
-These sections underline the methods called by an operation of the User on our application. The action is so called a client-server action, because the system reacts to an User operation.\\
+This section underlines the methods called by an operation of the User on the application. The action is so called a client-server action, because the system reacts to an User operation.\\
 There are two different type of these changes:
 \begin{itemize}
 	\item \textbf{UI Action}: the user click some buttons, or insert some text on the User Interface of the application, or on the car screen.
-	\item \textbf{Physical Action}: the user plugs the car in a Parking Area.
+	\item \textbf{Physical Action}: the user plugs the car in a Charging Area.
 \end{itemize}
 The most complex will be the creation of the reservation, because it has to interact with data, creating them and inserting them linking the User Interface to the remote DBMS.\\It is easy to see how is more easy to develop the part that check if the car has been plugged or not, after the stop of the ride.\\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
@@ -218,10 +218,11 @@ The most complex will be the creation of the reservation, because it has to inte
 \end{tabularx}
 \\\\
 \textit{Insert Reservation}, \textit{Insert a new charging area} are considered \textit{High} as complexity, because they interact directly and manually to the \textit{DBMS}. For the same reason, \textit{Delete Reservation}, \textit{Delete a car}, \textit{Update a charging area} and \textit{Delete a charging area} are consider \textit{Mid} complex because.\\
-\textit{Car Plug In} has an \textit{High} complexity because the car has to interact to the System.\\
-\textit{Login}, \textit{Logout}, \textit{Registration}, \textit{Update Car Status}, \textit{Convey end ride} and \textit{Insert Final Destination} are all considered as \textit{Mid} or \textit{Low} complexity because they manage few data or the communication is created between Mobile Phone - System.
+%TODO Because?!...
+\textit{Car Plug In} has an \textit{High} complexity because the car has to interact with the system.\\
+\textit{Login}, \textit{Logout}, \textit{Registration}, \textit{Update Car Status}, \textit{Convey end ride} and \textit{Insert Final Destination} are all considered as \textit{Mid} or \textit{Low} complexity because they manage few data or the communication is created between Mobile Device - System.
 \subsection{External Inquiries: EQs}
-These operation that involves an input and an output are the \textit{Ride} actions: when it starts and when it stops.\\
+These operations that involves an input and an output are the \textit{Ride} actions: when it starts and when it stops.\\
 Starting the ride, the user interact with the Car UI so that the Car System can communicate to the Server that the Ride is started, and the Server can change User Interface on board displaying his navigation.\\
 Otherwise, the system will calculate the cost, when the user interacts with the UI and it will display temporary how much he has to pay.\\
 So \textit{Ride Start} and \textit{Ride Stop} are easily considered as high complex to develop, because they have different communication between the car and the system.\\
@@ -243,8 +244,10 @@ Differently, the \textit{Search} for a car or the \textit{Pick Up} of it, are ac
 \\\\
 \textit{Pick Up a Car}, \textit{Ride initialization} and \textit{Money Saving Option} are considered all with an \textit{high} complexity, because they have to establish a communication between Car and System.\\
 Differently, the \textit{Search for available cars} and the \textit{Show cars informations} operations are considered \textit{Mid}, because it is easier to link Mobile App to the System.
+%TODO Mobile app??
 \subsection{External Outputs: EOs}
 External Outputs are elementary operations that generates data that are presented to the User, without any client action.\\
+%TODO Ma non c'è nella tabella cost notification
 The cost notification is one example from EOs section: the user, stopping the ride, gets out of the car, and after a certain time the system checks if he has plugged or not his vehicle. After this, the system displays how much the user has to pay.\\ This is an example of an operation send by the system without any actions of the user.
 \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
@@ -296,9 +299,9 @@ Having this result, the total lines of code are easily calculable using   \texti
 	\hline
 \end{tabularx}
 \\\\
-According to these constants and the usage percentage of the language, he total lines of code to write are:\\
+According to these constants and the usage percentage of the language, the total lines of code to write are:\\
 \begin{equation}
-	\centerline{\textit{Code Lines =} $H\textsubscript{t}\cdot$($C\textsubscript{HTML}\cdot$P\textsubscript{HTML} + $C\textsubscript{JEE}\cdot$P\textsubscript{JEE} + $C\textsubscript{JS}\cdot$P\textsubscript{JS})}
+	\centerline{\textit{Source Lines of Code =} $H\textsubscript{t}\cdot$($C\textsubscript{HTML}\cdot$P\textsubscript{HTML} + $C\textsubscript{JEE}\cdot$P\textsubscript{JEE} + $C\textsubscript{JS}\cdot$P\textsubscript{JS})}
 \end{equation}
 Where:
 \begin{itemize}
@@ -309,7 +312,7 @@ Where:
 \end{itemize}
 The result is so found:
 \begin{equation}
-\centerline{\textit{Code Lines =} $184\cdot$($34\textsubscript{HTML}\cdot$0.15\textsubscript{HTML} + $46\textsubscript{JEE}\cdot$0.75\textsubscript{JEE} + $43\textsubscript{JS}\cdot$0.1\textsubscript{JS}) \textit{= \textbf{8078}}}
+\centerline{\textit{Source Lines of Code =} $184\cdot$($34\textsubscript{HTML}\cdot$0.15\textsubscript{HTML} + $46\textsubscript{JEE}\cdot$0.75\textsubscript{JEE} + $43\textsubscript{JS}\cdot$0.1\textsubscript{JS}) \textit{= \textbf{8078}}}
 \end{equation}
 \newpage
 \section{Cost and effort estimation: COCOMO II}
@@ -340,10 +343,10 @@ The first step consists in evaluating the actual value of exponent E in formula 
 \end{tabularx}\\\\\\
 Let us discuss each of these entries:
 \begin{itemize}
-	\item \textbf{Precedentedness}: It is the index that defines the previous experience of the team in developing such projects. This is the very first project, thus a \textit{Very low} level is reasonable.
-	\item \textbf{Development flexibility}: The index of the flexibility for the project choices with respect to the external interfaces and the requirements. The project has strict requirements to abide by in terms of functionalities of the system, but no specific architecture is required. This variable is then assigned a level of \textit{Nominal}.
-	\item \textbf{Architecture and risk resolution}: It reflects the capability of managing possible risks with an accurate contingency plan and the fact that a reasonable schedule is sketched. In the document both these aspects are covered in detail, so for this variable the right choice is to pick the \textit{Very High} level.
-	\item \textbf{Team cohesion}: It deals with the capability of the members of the team to work together in harmony and sharing the same vision. The team is made of only three people in this project and they work with great commitment and together, thus \textit{Very high} is the right degree.
+	\item \textbf{Precedentedness}: it is the index that defines the previous experience of the team in developing such projects. This is the very first project, thus a \textit{Very low} level is reasonable.
+	\item \textbf{Development flexibility}: the index of the flexibility for the project choices with respect to the external interfaces and the requirements. The project has strict requirements to abide by in terms of functionalities of the system, but no specific architecture is required. This variable is then assigned a level of \textit{Nominal}.
+	\item \textbf{Architecture and risk resolution}: it reflects the capability of managing possible risks with an accurate contingency plan and the fact that a reasonable schedule is sketched. In the document both these aspects are covered in detail, so for this variable the right choice is to pick the \textit{Very High} level.
+	\item \textbf{Team cohesion}: it deals with the capability of the members of the team to work together in harmony and sharing the same vision. The team is made of only three people in this project and they work with great commitment and together, thus \textit{Very high} is the right degree.
 	\item \textbf{Process Maturity}: it is a index of the maturity of the organization. Even though this is the very first project of the team, the schedule has been accurately defined, the project widely documented and discussed among the members of the team. Consequently \textit{Nominal} level is reasonable.
 \end{itemize}
 Here is the re-cap of the \textit{Scale Factors} analysis:
@@ -404,9 +407,9 @@ After the evaluation of exponent $E$, it is time to compute the \textit{Effort M
 \imageboxNoFit{../img/SCED_Cost_Driver.jpg}{SCED Cost Driver}{0}{0.54}
 \end{itemize}
 \chapter{Schedule}
-A fundamental part of the project plan is also the scheduling. This step allows to divide the overall work that has to be done in separated tasks and moreover to define when and how they will be completed; in particular the estimation of the calendar time required to execute each task is provided through the Gantt diagram.\\
+A fundamental part of the \textit{Project Plan} is the scheduling. This step allows to divide the overall work, that has to be done, in separated tasks and moreover to define when and how they will be completed; in particular the estimation of the calendar time required to execute each task is provided through the Gantt diagram.\\
 It should be noted that the time estimation of the tasks is not trivial and while doing this it's important to consider that the productivity is not proportional to the number of people of the team and that some extra time must be added because sometimes the flow of the events does not follow the expected one.\\
-The analysis and the definition of the various tasks is carried out at a quite coarse grained level thus only the main activities are included into the Gantt diagram, however they shouldn't be too small (for example a reasonable length is between 1 and 2 weeks).\\
+The analysis and the definition of the various tasks is carried out at a quite coarse grained level thus only the main activities are included into the Gantt diagram, however they shouldn't be too small (a reasonable length is between 1 and 2 weeks).\\
 Lastly, the start of the schedule of the project is set to the month of October.\\
 \chapter{Resource Allocation}
 The Resource Allocation phase is strongly correlated with the Schedule phase because its main goal is to properly assign every single task, defined in the previous step, to the components of the development team.
