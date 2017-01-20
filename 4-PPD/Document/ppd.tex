@@ -160,6 +160,8 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{55}\\
 	\hline
 \end{tabularx}
+\\\\
+\textit{User Data}, \textit{Reservation Data} and \textit{Ride Data} have a \textit{mid} because they have more attributes that will be manage. Differently, \textit{Employee Data}, \textit{Safe Area Data} and \textit{Car Data} have a \textit{Low} complexity because they have few attributes.
 \subsection{External Logic Files: ELFs}
 The application manages the interaction and the system acquires information from the external services used.
 \textit{Payment Data} and \textit{Map Data} are considered External Logic Files, because they are provided by external component.\\
@@ -176,6 +178,8 @@ Payment Data will be more complex to develop, because the system has to guarante
 	Total & \multicolumn{1}{X}{}& \multicolumn{1}{X|}{17}\\
 	\hline
 \end{tabularx}
+\\\\
+In this table, \textit{Payment Data} part is considered more complex than the \textit{Map Data} one, because it has to guarantee security, despite the performance. 
 \subsection{External Inputs: EIs}
 These sections underline the methods called by an operation of the User on our application. The action is so called a client-server action, because the system reacts to an User operation.\\
 There are two different type of these changes:
@@ -208,6 +212,10 @@ The most complex will be the creation of the reservation, because it has to inte
 	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{62}\\
 	\hline
 \end{tabularx}
+\\\\
+\textit{Insert Reservation}, \textit{Insert a new charging area} are considered \textit{High} as complexity, because they interact directly and manually to the \textit{DBMS}. For the same reason, \textit{Delete Reservation}, \textit{Delete a car}, \textit{Update a charging area} and \textit{Delete a charging area} are consider \textit{Mid} complex because.\\
+\textit{Car Plug In} has an \textit{High} complexity because the car has to interact to the System.\\
+\textit{Login}, \textit{Logout}, \textit{Registration}, \textit{Update Car Status}, \textit{Convey end ride} and \textit{Insert Final Destination} are all considered as \textit{Mid} or \textit{Low} complexity because they manage few data or the communication is created between Mobile Phone - System.
 \subsection{External Inquiries: EQs}
 These operation that involves an input and an output are the \textit{Ride} actions: when it starts and when it stops.\\
 Starting the ride, the user interact with the Car UI so that the Car System can communicate to the Server that the Ride is started, and the Server can change User Interface on board displaying his navigation.\\
@@ -228,6 +236,9 @@ Differently, the \textit{Search} for a car or the \textit{Pick Up} of it, are ac
 	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{44}\\
 	\hline
 \end{tabularx}
+\\\\
+\textit{Pick Up a Car}, \textit{Ride initialization} and \textit{Money Saving Option} are considered all with an \textit{high} complexity, because they have to establish a communication between Car and System.\\
+Differently, the \textit{Search for available cars} and the \textit{Show cars informations} operations are considered \textit{Mid}, because it is easier to link Mobile App to the System.
 \subsection{External Outputs: EOs}
 External Outputs are elementary operations that generates data that are presented to the User, without any client action.\\
 The cost notification is one example from EOs section: the user, stopping the ride, gets out of the car, and after a certain time the system checks if he has plugged or not his vehicle. After this, the system displays how much the user has to pay.\\ This is an example of an operation send by the system without any actions of the user.
@@ -243,6 +254,8 @@ The cost notification is one example from EOs section: the user, stopping the ri
 	Total & \multicolumn{1}{X}{} & \multicolumn{1}{X|}{6}\\
 	\hline
 \end{tabularx}
+\\\\
+\textit{Payment Notification} is considered less complex than the \textit{Notify Expired Reservation} because it has to check less fields and to screen a simple interface with the cost.
 \subsection{Overall Estimation}
 Considering the whole estimation of the Function Types, the total will be the summation of each one of the Total previously found. 
 \\\\
@@ -292,7 +305,7 @@ Where:
 \end{itemize}
 The result is so found:
 \begin{equation}
-\centerline{\textit{Code Lines =} $184\cdot$($34\textsubscript{HTML}\cdot$0.15\textsubscript{HTML} + $46\textsubscript{JEE}\cdot$0.75\textsubscript{JEE} + $43\textsubscript{JS}\cdot$0.1\textsubscript{JS}) \textit{= 8078}}
+\centerline{\textit{Code Lines =} $184\cdot$($34\textsubscript{HTML}\cdot$0.15\textsubscript{HTML} + $46\textsubscript{JEE}\cdot$0.75\textsubscript{JEE} + $43\textsubscript{JS}\cdot$0.1\textsubscript{JS}) \textit{= \textbf{8078}}}
 \end{equation}
 \newpage
 \section{Cost and effort estimation: COCOMO II}
