@@ -36,6 +36,9 @@ Version & Date & Summary\\
 \hline
 \end{tabularx}
 \section{Purpose and Scope}
+The Project Plan Document (later referred with the acronym \textit{PPD}) refers to the issues that concern the development process of the system. In particular, it covers the critical phase of the estimation of the project in terms of size, cost and time effort. In order to carry out this type of analysis, different methodologies will be used as explained in the second chapter; the result obtained consider a quite large set of various aspects, each one properly represented by a numerical factor. It's important to notice that the assignment of a specific value to these factors is not trivial at all.\\
+The second key point of this document is about the Schedule and Resource Allocation. After having identified all the tasks that have to be executed to complete the project, it is important to define when these different activities should be done. Going down into details, in the Schedule section, it is defined a temporal plan which visually explain the date and time organization of the tasks to be carried out; this then infer a sorting between the tasks. On the other hand, the Resource Allocation establishes for each member of the team the tasks that he to do in the different phases of the project; moreover, while some of them are resource consuming (thus they will be executed from more than 1 person at the same time) , others are strictly sequential so it impossible to be executed simultaneously. At this point is quite clear that there is a strong correlation between the Schedule and Resource Allocation part.
+Lastly, it's fundamental to study all the risks that can arise through the different phases of the project development (such as requirements analysis, design of the system architecture, code implementation and testing, deployment and start up) but also while the project is completed and the developed system is running. The identified risks can be grouped into a few groups by considering the aspects they affect the most and for every single task there is an estimation of the impact that it can have on the system and a strategy on how to deal with it. 
 \section{Definitions, Acronyms, Abbreviations}
 \begin{description}
 	\item[PowerEnJoy]is the name of the system that has to be developed.
@@ -65,14 +68,15 @@ Version & Date & Summary\\
 	\item DD v1.1
 	\item ITPD v1.0
 \end{itemize}
-\chapter{Project size, cost and effort estimation}
+\chapter[Project size, cost and effort estimation]{Project size, cost and effort\\estimation}
 This section talks about the estimation of the size of the project, giving an estimation of lines of code that must be written.
 This evaluation comes from the calculation of the lines of code that occur to write both the Business Logic part and the User Interface part.\\
 \textit{Function Point} is the approach used to simulate how the project will be expensive in terms of lines of code.\\
 From this estimation it will be easy to find how much time will be spent on developing the Business Logic part of the project.
-\section{Size Estimation: function points}
+\section{Size Estimation: Function Points}
 Functionalities that are to be developed and their complexity are provided by the Function Point approach.\\In each table is reported how much load can take developing these parts: from \textit{Low}, not so much expensive, to \textit{High}, the heavier.\\
-\\\\
+\\
+\\
 \centerline{\textit{Internal Logic Files \& External Logic Files}}
 \\\\
 \begin{tabularx}{\textwidth}{|p{1cm}|X|X|X|X|}
@@ -139,7 +143,7 @@ The table is so heavier at littler variations. One record, or few data are enoug
 The general complexity is so defined.\\
 It is obviously heavier a Function Type like the \textit{Internal Logic Files} or an \textit{External Inquiries}, which manage the update of the Data and the communication between the User and the System, than a \textit{External Output}, \textit{External Input} or an \textit{External Logic Files}, that gives only an output or take an input.\\
 \subsection{Internal Logic Files: ILFs}
-Some functionalities store information into the PowerEnjoy system, in order to remember data and let the system use and manage them.\\
+Some functionalities store information into the PowerEnJoy system, in order to remember data and let the system use and manage them.\\
 The login is one of these functionalities: the system has to store the \textit{User Data} in order to recognize him. When the data is stored, it will be composed by many fields explaining the personal information, in order to characterize every person.\\
 \textit{Safe Area}, \textit{Parking Area} and \textit{Car Data} are inserted by the system at each time a new station or vehicle is added into the system. \textit{Safe Area} and \textit{Parking Area} will be condensed in the same table, but diversified by some attributes, in order to have an increase of performance, searching for the data in only one place. \\\\
 Differently, \textit{Reservation} is continuously added, through a new operation on the app.
@@ -165,7 +169,7 @@ Differently, \textit{Reservation} is continuously added, through a new operation
 \subsection{External Logic Files: ELFs}
 The application manages the interaction and the system acquires information from the external services used.
 \textit{Payment Data} and \textit{Map Data} are considered External Logic Files, because they are provided by external component.\\
-Because of these components are not part of our system, PowerEnjoy will obtain information thanks to external APIs in order to link internal to external data.\\
+Because of these components are not part of our system, PowerEnJoy will obtain information thanks to external APIs in order to link internal to external data.\\
 Payment Data will be more complex to develop, because the system has to guarantee the security of the payment and of the information, avoiding every type of external attack.\\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 	\hline
