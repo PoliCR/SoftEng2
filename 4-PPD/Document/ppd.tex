@@ -373,26 +373,42 @@ After the evaluation of exponent $E$, it is time to compute the \textit{Effort M
 \begin{itemize}
 	\item \textbf{Required Software Reliability}
 \imageboxNoFit{../img/RELY_Cost_Driver}{RELY Cost Driver}{0}{0.54}
+The system is in charge of managing data inside the car that can potentially lead to major issues (inability to open the car, incorrect battery level visualization) but not so dangerous for human life. Thus, only financial losses related to clients dissatisfaction are to be considered in this context and a \textit{Nominal} level is reasonable. 
 	\item \textbf{Database Size}
 \imageboxNoFit{../img/DATA_Cost_Driver}{DATA Cost Driver}{0}{0.54}
+This is an index of the effort needed to maintain the data required to complete the test of the project. Since the estimated project size is not so large (P = 8078 lines of code) and for testing purpose only few MB of storage are necessary (let's say D = 2 MB),  the $D/P = 248$  ratio indicates that for this cost driver the level has to be set to \textit{High}.
 	\item \textbf{Product Complexity}
 \imageboxNoFit{../img/CPLX_Cost_Driver.jpg}{CPLX Cost Driver}{0}{0.54}
+This index is the average of the values of five different entries: control operations, computational operations, device-dependent operations, data management operations and user interface management operations.\\
+Control operation estimates the complexity of the operators and the methods used in each component and the calls from one module to another one. At this level only the higher-level architecture is designed, so the real implementation is not available, but considering the expertise of the work team a \textit{Nominal} level is reasonable.\\Computational Operations estimates the complexity of the mathematical expression used in the project and for the same reason explained in the previous entry a \textit{Nominal} level is chosen.\\
+Device-dependent Operations is related to the management of the I/O operations. There are different types of operations of this kind (i.e the management of the re-charge of a car) and the I/O processing of course includes device selection, status checking and error management. This corresponds to a \textit{Nominal} level too.\\
+Data Management Operations estimates the complexity in the data management from the data structure handled by the system to the management of data within the Database. Quite complex structures are needed to manage information such as car positions and map services. For this reason the level of this entry should be set to \textit{High}.\\
+User Interface Management Operations estimates the complexity of the User Interface of the system. A simple but fancy and intuitive interface will guide users of the system in performing the desired operations. \textit{Low} level is here appropriate.\\
+As mentioned above CPLX Cost Driver is set to the average of these values: \textit{Nominal} is the result.
 	\item \textbf{Developed for Reusability}
 \imageboxNoFit{../img/RUSE_Cost_Driver.jpg}{RUSE Cost Driver}{0}{0.54}
+This Cost Driver accounts for the reusability of the components of the system. Since this project and its modules are inteded as a standalone work a \textit{Low} level is chosen.
 	\item \textbf{Documentation Match to Life-Cycle Needs}
 \imageboxNoFit{../img/DOCU_Cost_Driver.jpg}{DOCU Cost Driver}{0}{0.54}
+This parameter describes how well the documentation deals the application requirements. The documentation provided catches every need of the product life-cycle, thus a \textit{Nominal} level is the right choice.
 	\item \textbf{Execution Time Constraint}
 \imageboxNoFit{../img/TIME_Cost_Driver.jpg}{TIME Cost Driver}{0}{0.54}
+This is a measure of the expected amount of CPU usage with respect to the hardware capability. Since the system is constantly in connection with the cars and chances are that many users are requesting services at the same time a \textit{Very high} level is chosen.
 	\item \textbf{Main Storage Constraint}
 \imageboxNoFit{../img/STOR_Cost_Driver.jpg}{STOR Cost Driver}{0}{0.54}
+This is an index of the cost required to store the software program on the main storage. This is a very little concern since nowadays the cost related to storage is very low. \textit{Nominal} level is chosen. 
 	\item \textbf{Platform Volatility}
 \imageboxNoFit{../img/PVOL_Cost_Driver.jpg}{PVOL Cost Driver}{0}{0.54}
+This parameter stands for the frequency of changes and updates in the platform (i.e software and hardware) of the system. Since the core of the system is developed with a well-known, stable and standardized infrastucture (JEE mainly) few updates are likely to be applied. For this reason a \textit{Low} level is reasonable.
 	\item \textbf{Analyst Capability}
 \imageboxNoFit{../img/ACAP_Cost_Driver.jpg}{ACAP Cost Driver}{0}{0.54}
+This is an index of the ability, efficiency and commitment of the analysts (that in this case coincide with the team work) to properly understand the problem with respect of the real world in which the system will work. The members of this team adopted a systematic way in dealing the different aspects of the project with a complete documentation as a result. The level of this parameter is consequently set to \textit{High}. 
 	\item \textbf{Programmer Capability}
 \imageboxNoFit{../img/PCAP_Cost_Driver.jpg}{PCAP Cost Driver}{0}{0.54}
+This parameter catches the capability of the programmers in the sense of being able to work as a team rather than as individuals. Communication,  Cooperation and thoroughness have been constant throughout the development. A \textit{High} level is suitable here.
 	\item \textbf{Personnel Continuity}
 \imageboxNoFit{../img/PCON_Cost_Driver.jpg}{PCON Cost Driver}{0}{0.54}
+This index informs about the project's annual personnel turnover: 3\% is a very high continuity while 48\% a very low continuity. For what concerns this project the three members of the team worked thoroughly for the entire project. Thus, \textit{Very high} level is the right choice. 
 	\item \textbf{Application Experience}
 \imageboxNoFit{../img/APEX_Cost_Driver.jpg}{APEX Cost Driver}{0}{0.54}
 	\item \textbf{Platform Experience}
