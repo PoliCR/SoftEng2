@@ -36,7 +36,17 @@
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	602 & \multirow{3}{*}{Variables without a meaningful names}\\
+	610 & \\
+	611 & \\
+	\hline
+	\hline
+	67 & \multirow{2}{*}{Constants are not declared using all uppercase with words separated by an underscore}\\
+	68 & \\
+	\hline
 \end{tabularx}
+\\\\
+Other variables names, methods names and class name are used properly and have a meaningful name.\\Only \textit{throwaway} are sometimes composed by a one-character word.\\Class name is written with the first letter in capitalized and method names are verbs with the first letter of each addition word capitalized.\\Variables, methods and class are written with the camel notation.\\The other constant is written using all uppercase with words separated by an underscore.
 \subsection{Indention}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -60,7 +70,15 @@
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	204 & \multirow{5}{*}{Comments used doesn't explain anything more than what the code say}\\
+	240 & \\
+	287 & \\
+	313 & \\
+	314 & \\
+	\hline
 \end{tabularx}
+\\\\
+The remaining part of the code is not commented sufficiently: there could be more lines which explain the function of a code block, especially in the critical parts.\\The other lines of code are meaningful and explain what the code is doing correctly.
 \subsection{Java Source File}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -78,7 +96,16 @@
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	393 & \multirow{3}{*}{Methods aren't grouped by functionality, scope or accessibility to the other close to it}\\
+	621 & \\
+	684 & \\
+	\hline
+	95 & \multirow{3}{*}{Methods are long. They should be divided into more sub-methods that are maybe useful to reuse in future}\\
+	201 & \\
+	443 & \\
+	\hline
 \end{tabularx}
+Other class, variables and methods positions are respected and are grouped by functionality rather than by scope or accessibility.\\Moreover, the code doesn't contain any duplicates.
 \subsection{Initialization and Declarations}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -86,11 +113,7 @@
 	\hline
 \end{tabularx}
 \subsection{Method Calls}
-\begin{tabularx}{\textwidth}{|l|X|}
-	\hline
-	\textit{Line} & \textit{Issue}\\
-	\hline
-\end{tabularx}
+There is no error to underline.\\Every method has parameters presented in the correct order.\\When a method is called, it is called the right one, although there are similar names.\\Return value of the method is used properly in each case. 
 \subsection{Arrays}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -98,11 +121,7 @@
 	\hline
 \end{tabularx}
 \subsection{Object Comparison}
-\begin{tabularx}{\textwidth}{|l|X|}
-	\hline
-	\textit{Line} & \textit{Issue}\\
-	\hline
-\end{tabularx}
+Every object comparison is done with the \textit{java} method \textbf{equals()} and not with the \textbf{==} or the \textbf{!=}.\\The object is correctly compared to something with the \textit{==} when it is important to see if the variable is null.
 \subsection{Output Format}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -120,7 +139,11 @@
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	142 & \multirow{2}{*}{Exception used isn't meaningful}\\
+	328 & \\
+	\hline
 \end{tabularx}
+Other exceptions are used correctly and have a correct meaning that helps to find the problem of different program routine.
 \subsection{Flow of Control}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -134,6 +157,19 @@
 	\hline
 \end{tabularx}
 \section{Other issues}
+This section underline problems that are not specified in the \textit{Checklist issues} because of their importance.
+\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textit{Line} & \textit{Issue}\\
+	\hline
+	285 & \multirow{2}{*}{TODO must be commented differently with the notation \textit{\textbackslash\textbackslash TODO} so that every IDE can find it easily and recognize it}\\
+	367 & \\
+	\hline
+	360 & It is better to have near the same type of parameters. In this example, \textit{String} ones are divided\\
+	\hline
+	694 & Eliminate wrapping lines that aren't used to visualize the code better\\
+	\hline
+\end{tabularx}
 \chapter{Effort Spent}
 \chapter{Revision History}
 %-------------------------------------------------------------------------
