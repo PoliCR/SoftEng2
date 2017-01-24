@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{report}
+
+%INPUT of SETTINGS (usepackage, styles, new command,...)
+\input{cid_prefs}
+
+%-------------------------------------------------------------------------
+%   START DOCUMENT 
+%-------------------------------------------------------------------------
+\begin{document}
+
+% INPUT OF TITLE PAGE
+\input{cid_titlepage}
+
+%-------------------------------------------------------------------------
+%   TOC
+%-------------------------------------------------------------------------
+%\pagestyle{plain}
+\pagenumbering{roman}
+\thispagestyle{empty}
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+%--------------------------------------------------------------------
+%  BEGIN TEXT
+%--------------------------------------------------------------------
+\chapter{Code description}
+\section{Assigned class}
+\section{Functional role}
+\chapter{Code issues}
+\section{Notation}
+\section{Checklist issues}
+\subsection{Naming Conventions}
+\subsection{Indention}
+\subsection{File Organization}
+\subsection{Wrapping Lines}
+\subsection{Comments}
+\subsection{Java Source File}
+\subsection{Package and Import Statements}
+\subsection{Class and Interface Declarations}
+\subsection{Initialization and Declarations}
+\subsection{Method Calls}
+\subsection{Arrays}
+\subsection{Object Comparison}
+\subsection{Output Format}
+\subsection{Computation, Comparisons and Assignments}
+\subsection{Exceptions}
+\subsection{Flow of Control}
+\subsection{Files}
+\section{Other issues}
+\chapter{Effort Spent}
+\chapter{Revision History}
+%-------------------------------------------------------------------------
+%   END DOCUMENT
+%-------------------------------------------------------------------------
+\end{document} 
