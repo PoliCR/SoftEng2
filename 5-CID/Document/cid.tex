@@ -44,18 +44,19 @@ The Code Inspection activity will be carried on the previously stated class with
 	611 & \\
 	\hline
 	\hline
-	67 & \multirow{2}{\linewidth}{{Constants are not declared using all uppercase with words separated by an underscore}}\\
+	67 & \multirow{2}{\linewidth}{{Constants are not declared using all upper case with words separated by an underscore}}\\
 	68 & \\
 	\hline
 \end{tabularx}
 \\\\
-Other variables names, methods names and class name are used properly and have a meaningful name.\\Only \textit{throwaway} are sometimes composed by a one-character word.\\Class name is written with the first letter in capitalized and method names are verbs with the first letter of each addition word capitalized.\\Variables, methods and class are written with the camel notation.\\The other constant is written using all uppercase with words separated by an underscore.
+Other variables names, methods names and class name are used properly and have a meaningful name.\\Only \textit{throwaway} are sometimes composed by a one-character word.\\Class name is written with the first letter in capitalized and method names are verbs with the first letter of each addition word capitalized.\\Variables, methods and class are written with the camel notation.\\The other constant is written using all upper case with words separated by an underscore.
 \subsection{Indention}
-\begin{tabularx}{\textwidth}{|l|X|}
-	\hline
-	\textit{Line} & \textit{Issue}\\
-	\hline
-\end{tabularx}
+%\begin{tabularx}{\textwidth}{|l|X|}
+%	\hline
+%	\textit{Line} & \textit{Issue}\\
+%	\hline
+%\end{tabularx}
+Throughout all the class, four spaces are used consistently to properly indent the code instructions; moreover, any \textit{tabs} command are used to indent the	 lines.
 \subsection{Braces}
 No significant issues are found with respect to bracing usage. The "Kernighan and Ritchie" style is adopted and it is consistent throughout the entire class. In general, curly braces are used for blocks within \textit{If}, \textit{while}, \textit{do-while}, \textit{try-catch} and \textit{for} clauses with only one statement too with the following exception:
 \\\\
@@ -67,6 +68,18 @@ No significant issues are found with respect to bracing usage. The "Kernighan an
 	\hline
 \end{tabularx}
 \subsection{File Organization}
+%TODO
+Blank lines and optional comments are properly used to separate different sections of the code.\\
+The following table reports the lines that exceed the maximum length of 80 characters, along with a rationale.\\
+\\
+\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textit{Line} & \textit{Issue}\\
+	\hline
+\end{tabularx}\\
+\\
+Similarly to the previous table, the following one reports the lines that exceed the maximum length of 120 characters, along with a brief rationale.\\
+\\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
@@ -98,7 +111,7 @@ In general the code is neat, tidy and statements on consecutive lines are proper
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
-	204 & \multirow{5}{\linewidth}{Comments used doesn't explain anything more than what the code say}\\
+	204 & \multirow{5}{\linewidth}{Comments used doesn't explain anything more than what the code says}\\
 	240 & \\
 	287 & \\
 	313 & \\
@@ -108,11 +121,14 @@ In general the code is neat, tidy and statements on consecutive lines are proper
 \\\\
 The remaining part of the code is not commented sufficiently: there could be more lines which explain the function of a code block, especially in the critical parts.\\The other lines of code are meaningful and explain what the code is doing correctly.
 \subsection{Java Source File}
-\begin{tabularx}{\textwidth}{|l|X|}
-	\hline
-	\textit{Line} & \textit{Issue}\\
-	\hline
-\end{tabularx}
+%\begin{tabularx}{\textwidth}{|l|X|}
+%	\hline
+%	\textit{Line} & \textit{Issue}\\
+%	\hline
+%\end{tabularx}
+The Java Source File contains only a single \textit{public class} which is, obviously, the assigned \textit{ShoppingListEvents} one. For this reason, the unique public class is also the first one in the file.\\
+Since there is no complete javadoc of the class (except for a few words that do not add any extra information with respect to the class name) it is impossible to check if the external interfaces are implemented properly because their descriptions in the javadoc is totally missing.\\
+Furthermore, the javadoc of the methods is frequently absent while in the case it is present, it is very short and never covers the input parameters, the returned output (if present) and the exceptions thrown of the related method.
 \subsection{Package and Import Statements}
 No issues of this type. Package declaration (\textit{package org.apache.ofbiz.order.shoppinglist;}) is the very first non comment statement and \textit{import} statements follow.
 \subsection{Class and Interface Declarations}
@@ -128,11 +144,12 @@ No issues of this type. Package declaration (\textit{package org.apache.ofbiz.or
 	201 & \\
 	443 & \\
 	\hline
-\end{tabularx}
+\end{tabularx}\\
+\\
 Other class, variables and methods positions are respected and are grouped by functionality rather than by scope or accessibility.\\Moreover, the code doesn't contain any duplicates.
 \subsection{Initialization and Declarations}
 No critical issues are found in this field. In particular, variables and class members type are consistent with respect to their declarations.\\The scope of variables is aligned with the purpose of the block of code in which the variables are declared: since the class in consideration is essentially a list of methods for almost every variable the scope is limited to the method in which it is declared.\\Objects are always initialized before use or if a computation is needed they are set to \textit{null}.\\Most times declarations of variables occur at the beginning of the blocks in which they will be used, thus making possible to easily look up for a particular variable.\\
-Event though the overall class is well structured with respect to initilizations and declarations, one may question about these arguments:
+Event though the overall class is well structured with respect to initializations and declarations, one may question about these arguments:
 \\\\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -154,25 +171,34 @@ Event though the overall class is well structured with respect to initilizations
 	366 & \\
 	\hline
 \end{tabularx}
-\\\\
 \subsection{Method Calls}
 There is no error to underline.\\Every method has parameters presented in the correct order.\\When a method is called, it is called the right one, although there are similar names.\\Return value of the method is used properly in each case. 
 \subsection{Arrays}
 Arrays problems is not an issue in this class since there are no off-by-one errors (i.e. array elements are accessed without indexing problems and loops are executed a right number of times) and out-of-bounds elements.
 \subsection{Object Comparison}
-Every object comparison is done with the \textit{java} method \textbf{equals()} and not with the \textbf{==} or the \textbf{!=}.\\The object is correctly compared to something with the \textit{==} when it is important to see if the variable is null.
+Every object comparison is done with the \textit{Java} method \textbf{equals()} and not with the \textbf{==} or the \textbf{!=}.\\The object is correctly compared to something with the \textit{==} when it is important to see if the variable is null.
 \subsection{Output Format}
+In the code there aren't instructions that directly display text and messages to the users (such as, for example, \textit{System.out.println(..)}); however the code in some cases deals with variables of type \textit{string}: for each of them the strings correctly spelled and free of grammatical errors. Also, they are always correctly formatted, in terms of both line stepping and spacing.\\
+More specifically, error messages (some of them write into the log others instead are simply returned strings) are syntactically correct, however in some cases they are not totally clear and does not provide any specific guidance on how to correct the problem. This situation can be found at the following lines:\\
+\\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+		109 & \multirow{3}{\linewidth}{These instructions write into the log just a generic error message, which seems to be poorly detailed in order to provide a precise way on how to correct the problem}\\
+		160 & \\
+		235 & \\
+	\hline
 \end{tabularx}
+
 \subsection{Computation, Comparisons and Assignments}
-\begin{tabularx}{\textwidth}{|l|X|}
-	\hline
-	\textit{Line} & \textit{Issue}\\
-	\hline
-\end{tabularx}
+%TODO
+%\begin{tabularx}{\textwidth}{|l|X|}
+%	\hline
+%	\textit{Line} & \textit{Issue}\\
+%	\hline
+%\end{tabularx}
+The class implementations is devoid of any kind of \textit{brutish programming}.
 \subsection{Exceptions}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -181,22 +207,25 @@ Every object comparison is done with the \textit{java} method \textbf{equals()} 
 	142 & \multirow{2}{*}{Exception used isn't meaningful}\\
 	328 & \\
 	\hline
-\end{tabularx}
+\end{tabularx}\\
+\\
 Other exceptions are used correctly and have a correct meaning that helps to find the problem of different program routine.
 \subsection{Flow of Control}
 The class has no particular complex control flow structures but is indeed quite redundant with \textit{if} statements that weigh down the reading of the code. Typically these \textit{if} clauses are not followed by \textit{else} counterparts and so the default branches in these cases are trivially the instructions that follow the \textit{if} block.\\For what concerns loops most of the times the preferred pattern is the \textit{for-each} loop, consequently initialization,increment and termination are not issues. The standard \textit{for} loops are well formed too.
 \subsection{Files}
-\begin{tabularx}{\textwidth}{|l|X|}
-	\hline
-	\textit{Line} & \textit{Issue}\\
-	\hline
-\end{tabularx}
+%\begin{tabularx}{\textwidth}{|l|X|}
+%	\hline
+%	\textit{Line} & \textit{Issue}\\
+%	\hline
+%\end{tabularx}
+The \textit{ShoppingListEvents} class doesn't use any external file, for this reason there aren't instructions involving file management.
 \section{Other issues}
 This section underline problems that are not specified in the \textit{Checklist issues} because of their importance.\\\\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	%TODO sistemare....
 	285 & \multirow{2}{\linewidth}{TODO must be commented differently with the notation \textit{\textbackslash\textbackslash TODO} so that every IDE can find it easily and recognize it}\\
 	367 & \\
 	\hline
@@ -206,7 +235,16 @@ This section underline problems that are not specified in the \textit{Checklist 
 	\hline
 \end{tabularx}
 \chapter{Effort Spent}
+%TODO completare ore lavoro
+In order to complete this document, each author worked for XX hours.
 \chapter{Revision History}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+	\hline
+	Version & Date & Summary\\
+	\hline
+	1.0 & 05/02/2017 & First release of the CI document\\
+	\hline
+\end{tabularx}
 %-------------------------------------------------------------------------
 %   END DOCUMENT
 %-------------------------------------------------------------------------
