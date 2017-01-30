@@ -31,6 +31,7 @@ The assigned class, named \textbf{\textit{ShoppingListEvents}}, is part of the \
 in particular the interested class is part of the \textit{\textbf{org.apache.ofbiz.order.shoppinglist} package}.\\
 The Code Inspection activity will be carried on the previously stated class with the final intent to discover any possible error that affects the quality and functional behaviour of piece of the software.
 \section{Functional role}
+%TODO importante dire che i metodi sono statici!!
 \chapter{Code issues}
 This chapter reports all the issues found into the class implementation with respect to the check list provided within the \textit{Code Inspection Assignment Task Description} document. The first section just explain what is the adopted notation for reporting the various issues, while the second one, the core of this document, goes methodically through every single point of the checklist and if a problem of that kind is found, using a table, the line(s) affected and a brief rationale are reported.
 \section{Notation}
@@ -41,11 +42,10 @@ Moreover, in order to maintain the same structure of the given checklist, each p
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
-	\hline
+	\hline \hline
 	602 & \multirow{3}{*}{Variables without a meaningful names}\\
 	610 & \\
 	611 & \\
-	\hline
 	\hline
 	67 & \multirow{2}{\linewidth}{{Constants are not declared using all upper case with words separated by an underscore}}\\
 	68 & \\
@@ -59,13 +59,14 @@ Other variables names, methods names and class name are used properly and have a
 %	\textit{Line} & \textit{Issue}\\
 %	\hline
 %\end{tabularx}
-Throughout all the class, four spaces are used consistently to properly indent the code instructions; moreover, any \textit{tabs} command are used to indent the	 lines.
+Throughout all the class, four spaces are used consistently to properly indent the code instructions; moreover, any \textit{tabs} command are used to indent the lines.
 \subsection{Braces}
 No significant issues are found with respect to bracing usage. The "Kernighan and Ritchie" style is adopted and it is consistent throughout the entire class. In general, curly braces are used for blocks within \textit{If}, \textit{while}, \textit{do-while}, \textit{try-catch} and \textit{for} clauses with only one statement too with the following exception:
 \\\\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
+	\hline
 	\hline
 	337 & \multirow{1}{*}{\textit{If} clause with only one statement is devoid of curly braces}\\
 	\hline
@@ -77,15 +78,28 @@ The following table reports the lines that exceed the maximum length of 80 chara
 \\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
+	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
 \end{tabularx}\\
 \\
 Similarly to the previous table, the following one reports the lines that exceed the maximum length of 120 characters, along with a brief rationale.\\
 \\
-\begin{tabularx}{\textwidth}{|l|X|}
+\begin{tabularx}{\textwidth}{|p{1.5 cm}|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
+	\hline
+	\hline
+	85, 99, 107, 110, 126, 151, 161, 206, 214, 216, 236, 283, 294, 299, 304, 342, 344, 369, 402, 479, 503, 656 &All these lines are characterized by an object assignment with a method call, which in most cases has a long list of parameters\\
+	\hline
+	95, 201, 360, 548 & In this case the lines refer to method signatures (composed of qualifiers, name, parameters, exceptions)\\
+	\hline
+	143, 148, 188, 289, 291, 297, 371, 414, 524 & The lines represent simply method calls and the maximum allowed length is broken because of long list of parameters. In particular, in \textit{line 188} is also present an in-line if which lengthens the numbers furthermore the length \\
+	\hline 
+	277 & This line refers to an if clause which is quite long because are used different method calls\\ 
+	\hline
+	490 & \multirow{2}{\linewidth}{These are comment lines simply explaining an else branch of an if statement}\\
+	491 & \\
 	\hline
 \end{tabularx}
 \subsection{Wrapping Lines}
@@ -94,6 +108,7 @@ In general the code is neat, tidy and statements on consecutive lines are proper
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
+	\hline
 	\hline
 	110 & \multirow{12}{\linewidth}{In method \textit{UtilProperties.getMessage(...)} the second parameter is attached to a comma}\\
 	126 & \\
@@ -113,6 +128,7 @@ In general the code is neat, tidy and statements on consecutive lines are proper
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
+	\hline
 	\hline
 	204 & \multirow{5}{\linewidth}{Comments used doesn't explain anything more than what the code says}\\
 	240 & \\
@@ -139,6 +155,7 @@ No issues of this type. Package declaration (\textit{package org.apache.ofbiz.or
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	\hline
 	393 & \multirow{3}{\linewidth}{Methods aren't grouped by functionality, scope or accessibility to the other close to it}\\
 	621 & \\
 	684 & \\
@@ -158,15 +175,14 @@ Event though the overall class is well structured with respect to initialization
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	\hline
 	67 & \multirow{3}{\linewidth}{The three \textit{public static final} variables may be set to \textit{private} since they are unlikely to be used outside this class}\\
 	68 & \\
 	69 & \\
 	\hline
-	\hline
 	81 & \multirow{3}{\linewidth}{String variables \textit{shoppingListId} and \textit{selectedCartItems} are reassigned after initialization in previous lines. A legal operation, but a new object is created.}\\
 	85 & \\
 	121 & \\
-	\hline
 	\hline
 	293 & \multirow{4}{\linewidth}{Variables declarations should be put at the beginning of the corresponding blocks and not in these positions}\\
 	332 & \\
@@ -188,6 +204,7 @@ More specifically, error messages (some of them write into the log others instea
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	\hline
 		109 & \multirow{3}{\linewidth}{These instructions write into the log just a generic error message, which seems to be poorly detailed in order to provide a precise way on how to correct the problem}\\
 		160 & \\
 		235 & \\
@@ -206,6 +223,7 @@ The class implementations is devoid of any kind of \textit{brutish programming}.
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
+	\hline
 	\hline
 	142 & \multirow{2}{*}{Exception used isn't meaningful}\\
 	328 & \\
@@ -228,6 +246,7 @@ This section underline problems that are not specified in the \textit{Checklist 
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
+	\hline
 	%TODO sistemare....
 	285 & \multirow{2}{\linewidth}{TODO must be commented differently with the notation \textit{\textbackslash\textbackslash TODO} so that every IDE can find it easily and recognize it}\\
 	367 & \\
@@ -244,6 +263,7 @@ In order to complete this document, each author worked for XX hours.
 \begin{tabularx}{\textwidth}{|l|l|X|}
 	\hline
 	Version & Date & Summary\\
+	\hline
 	\hline
 	1.0 & 05/02/2017 & First release of the CI document\\
 	\hline
