@@ -31,7 +31,7 @@ The assigned class, named \textbf{\textit{ShoppingListEvents}}, is part of the \
 in particular the interested class is part of the \\ \textit{\textbf{org.apache.ofbiz.order.shoppinglist} package}.\\
 The Code Inspection activity will be carried on the previously stated class with the intention of discovering any possible error that affects the quality and the functional behaviour of this piece of software.
 \section{Functional role}
-The class \textbf{\textit{ShoppingListEvents}} has to be considered in the field of orders management. As stated in the Apache OFBiz\textsuperscript{\textregistered} Project Overview \footnote{\url{https://ofbiz.apache.org/apache-ofbiz-project-overview.html}}:"The Order entities are used to manage information about sales and purchase orders and information leading up to an order".In particular the given class is in charge of managing a specific aspect of orders: the control of shopping lists and carts. As such, the class offers some suitable methods that other classes and components can use. These are the most significant:
+The class \textbf{\textit{ShoppingListEvents}} has to be considered in the field of orders management. As stated in the Apache OFBiz\textsuperscript{\textregistered} Project Overview \footnote{\url{https://ofbiz.apache.org/apache-ofbiz-project-overview.html}}:"The Order entities are used to manage information about sales and purchase orders and information leading up to an order". In particular the given class is in charge of managing a specific aspect of orders: the control of shopping lists and carts. As such, the class offers some suitable methods that other classes and components can use. These are the most significant:
 \begin{itemize}
 	\item \textit{public static String addBulkFromCart(...)} receive an \textit{HttpServletRequest} request for the creation of a shopping list along with an identifier for the list itself.
 	\item \textit{public static String addListToCart(...)} scans a shopping list and add the corresponding items into the cart.
@@ -87,14 +87,29 @@ No significant issues are found with respect to bracing usage. The "Kernighan an
 	\hline
 \end{tabularx}
 \subsection{File Organization}
-%TODO
 Blank lines and optional comments are properly used to separate different sections of the code.\\
 The following table reports the lines that exceed the maximum length of 80 characters, along with a rationale.\\
 \\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
-	\hline
 	\textit{Line} & \textit{Issue}\\
+	\hline
+	\hline
+	18 & Closing part of comment delimitation exceeds the maximum length. The interested comment is the first part of the file and reports the disclaimer on licenses and permissions.	 \\
+	\hline
+	249 & \multirow{7}{\linewidth}{These lines are comment lines which precede methods or sometimes a single instruction. They try to explain the rationale on what comes next, for example the purpose of the following method, an explanation of what is the role a specific line of code or why that particular method is being called.}\\
+	287 & \\
+	358& \\
+	391& \\
+	441& \\
+	490& \\
+	491& \\
+	\hline
+	277 & This line is associated with an if clause: it breaks the length limit because the expression checks the results of different method calls which involves also strings concatenation.\\
+	\hline
+	499 & A boolean variable is assigned with a double nested if-else in-line structure.\\
+	\hline
+	542 & This return instruction is characterized with a method invocation that contains itself another method call. \\
 	\hline
 \end{tabularx}\\
 \\
@@ -111,11 +126,6 @@ Similarly to the previous table, the following one reports the lines that exceed
 	\hline
 	143, 148, 188, 289, 291, 297, 371, 414, 524 & The lines represent simply method calls and the maximum allowed length is broken because of long list of parameters. In particular, in \textit{line 188} is also present an in-line if which lengthens the numbers furthermore the length \\
 	\hline 
-	277 & This line refers to an if clause which is quite long because are used different method calls\\ 
-	\hline
-	490 & \multirow{2}{\linewidth}{These are comment lines simply explaining an else branch of an if statement}\\
-	491 & \\
-	\hline
 \end{tabularx}
 \subsection{Wrapping Lines}
 In general the code is neat, tidy and statements on consecutive lines are properly aligned. Typically line breaks after commas (such as in definition of the input parameters of methods) and operators are respected with this exception:
@@ -227,13 +237,10 @@ More specifically, error messages (some of them write into the log others instea
 \end{tabularx}
 
 \subsection{Computation, Comparisons and Assignments}
-%TODO
-%\begin{tabularx}{\textwidth}{|l|X|}
-%	\hline
-%	\textit{Line} & \textit{Issue}\\
-%	\hline
-%\end{tabularx}
-The class implementations is devoid of any kind of \textit{brutish programming}.
+The class implementation is devoid of any kind of \textit{brutish programming}. When required, parenthesis are properly used to avoid precedence problems and, moreover, the order of computations and evaluation of objects and/or clauses is always correct and consistent.\\
+Since arithmetic divisions are not present, there is no need to check whether the denominators are zero or not while other mathematical operations, even if rarely used, never deal with non integer numbers; for this reason it's impossible to obtain wrong results in terms of truncation and rounding.\\
+All the comparisons and Boolean operators are correctly coded and throw-catch expressions that manage error conditions appear to be, in most of the cases, reasonable with the expected behaviour of the implementation. (For more details on this issue please check the next section on \textit{Exceptions})\\
+Lastly, the code is free of implicit type conversions.
 \subsection{Exceptions}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -262,20 +269,16 @@ This section contains problems, issues or simply remarks that are not systematic
 	\textit{Line} & \textit{Issue}\\
 	\hline
 	\hline
-	%TODO sistemare....
 	285 & \multirow{2}{\linewidth}{TODO reminders must be commented with the usual notation \textit{\textbackslash\textbackslash TODO} so that every IDE can find them easily and recognize them}\\
 	367 & \\
 	\hline
-	360 & It is better to have parameters of the same type one close to the other. At this line, \textit{String} input parameters are divided\\
-	\hline
-	694 & Eliminate wrapping lines that aren't used to visualize the code better\\
-	\hline
 	314 & The overloaded method \textit{public static String addListToCart(...)} should return a string, but this implementation of the method is used only to make small computations and it returns a non significant value (an empty string).\\
+	\hline
+	360 & It is better to have parameters of the same type one close to the other. At this line, \textit{String} input parameters are divided\\
 	\hline
 \end{tabularx}
 \chapter{Effort Spent}
-%TODO completare ore lavoro
-In order to complete this document, each author worked for XX hours.
+In order to complete this document, each author worked for 15 hours.
 \chapter{Revision History}
 \begin{tabularx}{\textwidth}{|l|l|X|}
 	\hline
