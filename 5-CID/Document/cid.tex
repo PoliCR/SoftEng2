@@ -27,23 +27,38 @@
 %--------------------------------------------------------------------
 \chapter{Code description}
 \section{Assigned class}
-The assigned class, named \textbf{\textit{ShoppingListEvents}}, is part of the \textit{Apache OFBiz} project which focuses on enterprises processes and includes specific frameworks for ERP, CRM and other business-oriented functionalities;
-in particular the interested class is part of the \textit{\textbf{org.apache.ofbiz.order.shoppinglist} package}.\\
-The Code Inspection activity will be carried on the previously stated class with the final intent to discover any possible error that affects the quality and functional behaviour of piece of the software.
+The assigned class, named \textbf{\textit{ShoppingListEvents}}, is part of the \textit{Apache OFBiz} project which focuses on enterprises processes and includes specific frameworks for ERP, CRM and other business-oriented services;
+in particular the interested class is part of the \\ \textit{\textbf{org.apache.ofbiz.order.shoppinglist} package}.\\
+The Code Inspection activity will be carried on the previously stated class with the intention of discovering any possible error that affects the quality and the functional behaviour of this piece of software.
 \section{Functional role}
-%TODO importante dire che i metodi sono statici!!
+The class \textbf{\textit{ShoppingListEvents}} has to be considered in the field of orders management. As stated in the Apache OFBiz\textsuperscript{\textregistered} Project Overview \footnote{\url{https://ofbiz.apache.org/apache-ofbiz-project-overview.html}}:"The Order entities are used to manage information about sales and purchase orders and information leading up to an order".In particular the given class is in charge of managing a specific aspect of orders: the control of shopping lists and carts. As such, the class offers some suitable methods that other classes and components can use. These are the most significant:
+\begin{itemize}
+	\item \textit{public static String addBulkFromCart(...)} receive an \textit{HttpServletRequest} request for the creation of a shopping list along with an identifier for the list itself.
+	\item \textit{public static String addListToCart(...)} scans a shopping list and add the corresponding items into the cart.
+	\item \textit{public static String replaceShoppingListItem(...)} updates the shopping list with a new item.
+	\item \textit{public static String getAutoSaveListId(...)} creates a special shopping list that records shopping bag contents between user visits.
+	\item \textit{public static void fillAutoSaveList(...)} fills the special shopping list with the current cart.
+	\item \textit{public static String saveCartToAutoSaveList(...)} saves the cart associated to the input \textit{HttpServletRequest} request to the special shopping list.
+	\item \textit{public static int clearListInfo(...)} simply removes all the items from the input shopping list.
+	\item \textit{public static int makeListItemSurveyResp(...)} creates records for survey responses on survey items.
+	\item \textit{public static Map < String, List < String > > getItemSurveyInfos(...)} creates a  map keyed on item ID containing a list of survey response IDs.
+	\item \textit{public static List < String > getItemSurveyInfo(...)} returns a list of survey response IDs for a shopping list item.
+	\item \textit{public static String createGuestShoppingListCookies(...)} creates the guest cookies associated to the input \textit{HttpServletRequest} request for a shopping list.
+	\item \textit{public static String clearGuestShoppingListCookies(...)} clears the guest cookies associated to the input \textit{HttpServletRequest} request for a shopping list. 
+\end{itemize}
+Please notice that most of the methods in this class are declared as \textit{public static}: this choice is consistent with the functional role of the class as \textit{a support for orders management}. It is likely that other classes and components use these methods to make small operations in a generic and standard way: thus, a \textit{static} access modifier is reasonable.
 \chapter{Code issues}
-This chapter reports all the issues found into the class implementation with respect to the check list provided within the \textit{Code Inspection Assignment Task Description} document. The first section just explain what is the adopted notation for reporting the various issues, while the second one, the core of this document, goes methodically through every single point of the checklist and if a problem of that kind is found, using a table, the line(s) affected and a brief rationale are reported.
+This chapter contains the list of all the issues found in the class with respect to the check list provided within the \textit{Code Inspection Assignment Task Description} document. The first section just shows the adopted notation for reporting the various issues, while the second one, the core of this document, goes methodically through every single point of the check list and if a problem of that kind is found, using a table, the line(s) of the code affected and a brief comment are reported.
 \section{Notation}
-The notation adopted is very simple: if any issue of a specific type isn't found, just a short comment is provided to motivate the absence of a that problem, otherwise with the help of a table, are reported the line(s) where the issues have been found with a related short explanation.\\
-Moreover, in order to maintain the same structure of the given checklist, each point is analysed in a different subsection.
+The notation adopted is simple: if no issues of a specific type are found then just a short comment is provided to motivate the absence of that problem, otherwise with the help of a table, the line(s) where the issues have been found along with a related short explanation are provided.\\
+Moreover, in order to keep the same structure of the given check list and to make it possible to easily search for a specific type of issue, each point is analysed in a different subsection.
 \section{Checklist issues}
 \subsection{Naming Conventions}
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline \hline
-	602 & \multirow{3}{*}{Variables without a meaningful names}\\
+	602 & \multirow{3}{*}{Variables without meaningful names}\\
 	610 & \\
 	611 & \\
 	\hline
@@ -52,7 +67,7 @@ Moreover, in order to maintain the same structure of the given checklist, each p
 	\hline
 \end{tabularx}
 \\\\
-Other variables names, methods names and class name are used properly and have a meaningful name.\\Only \textit{throwaway} are sometimes composed by a one-character word.\\Class name is written with the first letter in capitalized and method names are verbs with the first letter of each addition word capitalized.\\Variables, methods and class are written with the camel notation.\\The other constant is written using all upper case with words separated by an underscore.
+Other variables names, methods names and class name are used properly and have meaningful names.\\Only \textit{throwaway} are sometimes composed by a one-character word.\\Class name is written with the first letter in capitalized and method names are verbs with the first letter of each subsequent word capitalized.\\Variables, methods and class are written with the camel notation.\\The other constant is written using all upper case with words separated by an underscore.
 \subsection{Indention}
 %\begin{tabularx}{\textwidth}{|l|X|}
 %	\hline
@@ -146,8 +161,8 @@ The remaining part of the code is not commented sufficiently: there could be mor
 %	\hline
 %\end{tabularx}
 The Java Source File contains only a single \textit{public class} which is, obviously, the assigned \textit{ShoppingListEvents} one. For this reason, the unique public class is also the first one in the file.\\
-Since there is no complete javadoc of the class (except for a few words that do not add any extra information with respect to the class name) it is impossible to check if the external interfaces are implemented properly because their descriptions in the javadoc is totally missing.\\
-Furthermore, the javadoc of the methods is frequently absent while in the case it is present, it is very short and never covers the input parameters, the returned output (if present) and the exceptions thrown of the related method.
+Since there is no complete \textit{javadoc} of the class (except for a few words that do not add any extra information with respect to the class name) it is impossible to check if the external interfaces are implemented properly because their descriptions in the javadoc is totally missing.\\
+Furthermore, the javadoc of the methods is absent most times while in the case it is present, it is very short and never covers the input parameters, the returned output and the exceptions thrown by the method.
 \subsection{Package and Import Statements}
 No issues of this type. Package declaration (\textit{package org.apache.ofbiz.order.shoppinglist;}) is the very first non comment statement and \textit{import} statements follow.
 \subsection{Class and Interface Declarations}
@@ -197,8 +212,8 @@ Arrays problems is not an issue in this class since there are no off-by-one erro
 \subsection{Object Comparison}
 Every object comparison is done with the \textit{Java} method \textbf{equals()} and not with the \textbf{==} or the \textbf{!=}.\\The object is correctly compared to something with the \textit{==} when it is important to see if the variable is null.
 \subsection{Output Format}
-In the code there aren't instructions that directly display text and messages to the users (such as, for example, \textit{System.out.println(..)}); however the code in some cases deals with variables of type \textit{string}: for each of them the strings correctly spelled and free of grammatical errors. Also, they are always correctly formatted, in terms of both line stepping and spacing.\\
-More specifically, error messages (some of them write into the log others instead are simply returned strings) are syntactically correct, however in some cases they are not totally clear and does not provide any specific guidance on how to correct the problem. This situation can be found at the following lines:\\
+In the code there aren't instructions that directly display text and messages to the users (such as, for example, \textit{System.out.println(..)}); however the code in some cases deals with variables of type \textit{String}: for each of them the strings are correctly spelled and free of grammatical errors. Also, they are always correctly formatted, in terms of both line stepping and spacing.\\
+More specifically, error messages (some of them write into the log others instead are simply returned as strings) are syntactically correct, however in some cases they are not totally clear and does not provide any specific guidance on how to correct the problem. This situation can be found at the following lines:\\
 \\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
@@ -241,19 +256,21 @@ The class has no particular complex control flow structures but is indeed quite 
 %\end{tabularx}
 The \textit{ShoppingListEvents} class doesn't use any external file, for this reason there aren't instructions involving file management.
 \section{Other issues}
-This section underline problems that are not specified in the \textit{Checklist issues} because of their importance.\\\\
+This section contains problems, issues or simply remarks that are not systematically specified in the \textit{Check list issues} but can be of concern as well.\\\\
 \begin{tabularx}{\textwidth}{|l|X|}
 	\hline
 	\textit{Line} & \textit{Issue}\\
 	\hline
 	\hline
 	%TODO sistemare....
-	285 & \multirow{2}{\linewidth}{TODO must be commented differently with the notation \textit{\textbackslash\textbackslash TODO} so that every IDE can find it easily and recognize it}\\
+	285 & \multirow{2}{\linewidth}{TODO reminders must be commented with the usual notation \textit{\textbackslash\textbackslash TODO} so that every IDE can find them easily and recognize them}\\
 	367 & \\
 	\hline
-	360 & It is better to have near the same type of parameters. In this example, \textit{String} ones are divided\\
+	360 & It is better to have parameters of the same type one close to the other. At this line, \textit{String} input parameters are divided\\
 	\hline
 	694 & Eliminate wrapping lines that aren't used to visualize the code better\\
+	\hline
+	314 & The overloaded method \textit{public static String addListToCart(...)} should return a string, but this implementation of the method is used only to make small computations and it returns a non significant value (an empty string).\\
 	\hline
 \end{tabularx}
 \chapter{Effort Spent}
